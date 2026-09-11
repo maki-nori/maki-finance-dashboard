@@ -1,0 +1,611 @@
+{
+ "schema": 1,
+ "period": "2026-08",
+ "title": "Financial Analysis – Aug 2026",
+ "source": "Financial Analysis Aug 2026.docx",
+ "sites": {
+  "M1": {
+   "code": "M1",
+   "notes": [
+    "Large Payment:",
+    "Repair - £ 1k for safety certificate including EICR and PAT test.",
+    "Advert - Fresher Fair £ 709",
+    "Sales increase 45%, net profit sitting at 49%"
+   ],
+   "capex": null,
+   "capex_label": null,
+   "profit_to_date": null,
+   "bep_pct": null,
+   "start": null,
+   "start_precision": null,
+   "recovered_note": null
+  },
+  "M3": {
+   "code": "M3",
+   "notes": [
+    "Music Licence - £ 1075",
+    "Sales increase 13% while wages remain the same.",
+    "Net profit sitting at 28% which is 5% lower than Aug 25 (33%)"
+   ],
+   "capex": null,
+   "capex_label": null,
+   "profit_to_date": null,
+   "bep_pct": null,
+   "start": null,
+   "start_precision": null,
+   "recovered_note": null
+  },
+  "IKI 2": {
+   "code": "IKI 2",
+   "notes": [
+    "Large Payment:",
+    "Sales went down £ 5k compare to last year. However wages and food cost are well control.",
+    "Net profit sitting at 41% which 7% higher than Aug 25"
+   ],
+   "capex": null,
+   "capex_label": null,
+   "profit_to_date": null,
+   "bep_pct": null,
+   "start": null,
+   "start_precision": null,
+   "recovered_note": null
+  },
+  "M6": {
+   "code": "M6",
+   "notes": [
+    "Wages and food cost are well control. Net profit sitting at 31%",
+    "Equipment – 5 burner £ 4591"
+   ],
+   "capex": null,
+   "capex_label": null,
+   "profit_to_date": null,
+   "bep_pct": null,
+   "start": null,
+   "start_precision": null,
+   "recovered_note": null
+  },
+  "M7": {
+   "code": "M7",
+   "notes": [
+    "Net profit sitting at 31%, sales has increase £ 6k compare to last year"
+   ],
+   "capex": null,
+   "capex_label": null,
+   "profit_to_date": null,
+   "bep_pct": null,
+   "start": null,
+   "start_precision": null,
+   "recovered_note": null
+  },
+  "M8": {
+   "code": "M8",
+   "notes": [
+    "Large Payment:",
+    "Advert - £ 3k including fresher fair and freshers festival group."
+   ],
+   "capex": 886922.0,
+   "capex_label": "Total fit-out cost",
+   "profit_to_date": 728661.0,
+   "bep_pct": 82.16,
+   "start": "2023-01-01",
+   "start_precision": "year",
+   "recovered_note": null
+  },
+  "M9": {
+   "code": "M9",
+   "notes": [
+    "VAT sitting at 12%",
+    "Ice machine - £ 2004"
+   ],
+   "capex": 949497.0,
+   "capex_label": "Total fit-out cost",
+   "profit_to_date": 796510.0,
+   "bep_pct": null,
+   "start": "2023-08-13",
+   "start_precision": "day",
+   "recovered_note": "Total fit out cost: £ 949,497 – Fully recover on July 2025"
+  },
+  "M10": {
+   "code": "M10",
+   "notes": [
+    "Advert - £ 3k including freshers festival group and Native Freshers",
+    "£ 5.5k services charge",
+    "Link to start up Budget: Click here"
+   ],
+   "capex": null,
+   "capex_label": null,
+   "profit_to_date": null,
+   "bep_pct": null,
+   "start": null,
+   "start_precision": null,
+   "recovered_note": null
+  },
+  "M11": {
+   "code": "M11",
+   "notes": [
+    "Sales increase 20%",
+    "Repair - £ 4.3k"
+   ],
+   "capex": 722018.0,
+   "capex_label": "Total fit-out cost",
+   "profit_to_date": 221460.0,
+   "bep_pct": 30.67,
+   "start": "2025-06-07",
+   "start_precision": "day",
+   "recovered_note": null
+  },
+  "M12": {
+   "code": "M12",
+   "notes": [
+    "Large Payment:",
+    "Sales has increase 10%, wages and food cost has improved"
+   ],
+   "capex": 491180.0,
+   "capex_label": "Total fit-out cost",
+   "profit_to_date": 120313.0,
+   "bep_pct": 24.49,
+   "start": "2025-06-14",
+   "start_precision": "day",
+   "recovered_note": null
+  },
+  "M13": {
+   "code": "M13",
+   "notes": [
+    "Large Payment:",
+    "Services charge - £ 11.6k",
+    "Music licence - £ 2.8k"
+   ],
+   "capex": 684955.0,
+   "capex_label": "Total fit-out cost",
+   "profit_to_date": 292108.0,
+   "bep_pct": 42.65,
+   "start": "2025-08-06",
+   "start_precision": "day",
+   "recovered_note": null
+  },
+  "M14": {
+   "code": "M14",
+   "notes": [
+    "Large Payment: £ 90k to MPD",
+    "Glasswasher - £ 2.3k",
+    "Halal Food festival - £ 2520, which showing on sales as it has increase 10%",
+    "Net profit sitting at 32%  which almost double of previous month."
+   ],
+   "capex": 676373.0,
+   "capex_label": "Total fit-out cost",
+   "profit_to_date": 248408.0,
+   "bep_pct": 36.73,
+   "start": "2025-11-14",
+   "start_precision": "day",
+   "recovered_note": null
+  },
+  "M15": {
+   "code": "M15",
+   "notes": [
+    "Large Payment: £ 50k to MPD",
+    "Repair- £ 2.5k",
+    "Net profit sitting at 29%, wages and food cost are well control."
+   ],
+   "capex": 702834.0,
+   "capex_label": "Total fit-out cost",
+   "profit_to_date": 409418.0,
+   "bep_pct": 58.25,
+   "start": "2025-11-29",
+   "start_precision": "day",
+   "recovered_note": null
+  },
+  "M16": {
+   "code": "M16",
+   "notes": [
+    "Large Payment: £ 30k to MPD",
+    "Wok cooker - £ 1443"
+   ],
+   "capex": 479456.0,
+   "capex_label": "Total fit-out cost",
+   "profit_to_date": 177593.0,
+   "bep_pct": 37.04,
+   "start": "2025-12-01",
+   "start_precision": "day",
+   "recovered_note": null
+  },
+  "M17": {
+   "code": "M17",
+   "notes": [
+    "Large Payment:",
+    "Card receivable between Kobas and Worldpay does not match - £ 800 diff. will speak to Worldpay",
+    "Sales increase 14% while net profit sitting at 20%"
+   ],
+   "capex": 574024.0,
+   "capex_label": "Total fit-out cost",
+   "profit_to_date": 162696.0,
+   "bep_pct": 28.34,
+   "start": "2026-02-06",
+   "start_precision": "day",
+   "recovered_note": null
+  },
+  "M18": {
+   "code": "M18",
+   "notes": [
+    "Large Payment:",
+    "Best month to date and also the first profitable month."
+   ],
+   "capex": 968104.0,
+   "capex_label": "Total fit-out cost",
+   "profit_to_date": -168644.0,
+   "bep_pct": null,
+   "start": "2026-03-06",
+   "start_precision": "day",
+   "recovered_note": null
+  },
+  "NORI": {
+   "code": "NORI",
+   "notes": [
+    "Large Payment:",
+    "Making Loss £ 32.7k",
+    "Sales drop 18%",
+    "Summaries for the building:",
+    "Total Loss – £ 31,342"
+   ],
+   "capex": 63112.0,
+   "capex_label": "Total capex",
+   "profit_to_date": -169478.0,
+   "bep_pct": null,
+   "start": "2026-03-06",
+   "start_precision": "day",
+   "recovered_note": null
+  },
+  "M19": {
+   "code": "M19",
+   "notes": [
+    "Large Payment:",
+    "Making Loss £ 15.7k",
+    "£5144 – dragon installation in July"
+   ],
+   "capex": 655916.0,
+   "capex_label": "Total capex",
+   "profit_to_date": -49351.0,
+   "bep_pct": null,
+   "start": "2026-06-27",
+   "start_precision": "day",
+   "recovered_note": null
+  },
+  "M20": {
+   "code": "M20",
+   "notes": [
+    "Large Payment:",
+    "£ 1230 – bid levy"
+   ],
+   "capex": 581392.0,
+   "capex_label": "Total capex",
+   "profit_to_date": -92829.0,
+   "bep_pct": 15.97,
+   "start": "2026-07-03",
+   "start_precision": "day",
+   "recovered_note": null
+  },
+  "M21": {
+   "code": "M21",
+   "notes": [
+    "Large Payment:",
+    "Trading for 11 days, net profit sitting at 12%"
+   ],
+   "capex": 981619.0,
+   "capex_label": "Total capex",
+   "profit_to_date": -9660.0,
+   "bep_pct": 0.98,
+   "start": "2026-08-21",
+   "start_precision": "day",
+   "recovered_note": null
+  }
+ },
+ "group_table": {
+  "M1": {
+   "revenue": 152954.0,
+   "rent": 2628.0,
+   "wage": 22409.0,
+   "cost_of_sales": 32652.0,
+   "variable": 10135.0,
+   "tax": 9815.69,
+   "np": 75314.0,
+   "np_pct": 49.24
+  },
+  "M3": {
+   "revenue": 182988.0,
+   "rent": 4406.0,
+   "wage": 50482.0,
+   "cost_of_sales": 39193.0,
+   "variable": 23902.0,
+   "tax": 12809.0,
+   "np": 52196.0,
+   "np_pct": 28.52
+  },
+  "M6": {
+   "revenue": 108536.0,
+   "rent": 7522.0,
+   "wage": 21400.0,
+   "cost_of_sales": 23469.0,
+   "variable": 14517.0,
+   "tax": 7598.0,
+   "np": 34031.0,
+   "np_pct": 31.35
+  },
+  "M7": {
+   "revenue": 335121.0,
+   "rent": 23234.0,
+   "wage": 80255.0,
+   "cost_of_sales": 75131.0,
+   "variable": 27465.0,
+   "tax": 23459.0,
+   "np": 105578.0,
+   "np_pct": 31.5
+  },
+  "M8": {
+   "revenue": 215456.0,
+   "rent": 11068.0,
+   "wage": 58543.0,
+   "cost_of_sales": 48352.0,
+   "variable": 31812.0,
+   "tax": 15082.0,
+   "np": 50599.0,
+   "np_pct": 23.48
+  },
+  "M9": {
+   "revenue": 292932.0,
+   "rent": 22701.0,
+   "wage": 74466.0,
+   "cost_of_sales": 64372.0,
+   "variable": 40548.0,
+   "tax": 34531.0,
+   "np": 56314.0,
+   "np_pct": 19.22
+  },
+  "M10": {
+   "revenue": 117168.0,
+   "rent": 18117.0,
+   "wage": 23751.0,
+   "cost_of_sales": 25865.0,
+   "variable": 19334.0,
+   "tax": 8202.0,
+   "np": 21899.0,
+   "np_pct": 18.69
+  },
+  "M11": {
+   "revenue": 108995.0,
+   "rent": 9000.0,
+   "wage": 28001.0,
+   "cost_of_sales": 21433.0,
+   "variable": 19219.0,
+   "tax": 7630.0,
+   "np": 23712.0,
+   "np_pct": 21.76
+  },
+  "M12": {
+   "revenue": 129672.0,
+   "rent": 16152.0,
+   "wage": 36051.0,
+   "cost_of_sales": 32941.0,
+   "variable": 13043.0,
+   "tax": 9077.0,
+   "np": 22408.0,
+   "np_pct": 17.28
+  },
+  "M13": {
+   "revenue": 170430.0,
+   "rent": 29061.0,
+   "wage": 46064.0,
+   "cost_of_sales": 42401.0,
+   "variable": 28659.0,
+   "tax": 11930.0,
+   "np": 12315.0,
+   "np_pct": 7.23
+  },
+  "M14": {
+   "revenue": 191084.0,
+   "rent": 13082.0,
+   "wage": 41103.0,
+   "cost_of_sales": 38616.0,
+   "variable": 23522.0,
+   "tax": 13376.0,
+   "np": 61386.0,
+   "np_pct": 32.13
+  },
+  "M15": {
+   "revenue": 300733.0,
+   "rent": 27940.0,
+   "wage": 62576.0,
+   "cost_of_sales": 59381.0,
+   "variable": 41286.0,
+   "tax": 21051.0,
+   "np": 88499.0,
+   "np_pct": 29.43
+  },
+  "M16": {
+   "revenue": 135721.0,
+   "rent": 14835.0,
+   "wage": 39758.0,
+   "cost_of_sales": 31328.0,
+   "variable": 31146.0,
+   "tax": 9500.0,
+   "np": 9152.0,
+   "np_pct": 6.74
+  },
+  "M17": {
+   "revenue": 138611.0,
+   "rent": 15552.0,
+   "wage": 34423.0,
+   "cost_of_sales": 30578.0,
+   "variable": 20874.0,
+   "tax": 9703.0,
+   "np": 27482.0,
+   "np_pct": 19.83
+  },
+  "M18": {
+   "revenue": 159542.0,
+   "rent": 35203.0,
+   "wage": 49475.0,
+   "cost_of_sales": 35356.0,
+   "variable": 26951.0,
+   "tax": 11168.0,
+   "np": 1388.0,
+   "np_pct": 0.87
+  },
+  "M19": {
+   "revenue": 97663.0,
+   "rent": 15000.0,
+   "wage": 36164.0,
+   "cost_of_sales": 26586.0,
+   "variable": 28805.0,
+   "tax": 6836.0,
+   "np": -15728.0,
+   "np_pct": -16.1
+  },
+  "M20": {
+   "revenue": 177889.0,
+   "rent": 16231.0,
+   "wage": 50665.0,
+   "cost_of_sales": 42119.0,
+   "variable": 18746.0,
+   "tax": 12452.0,
+   "np": 37677.0,
+   "np_pct": 21.18
+  },
+  "NORI": {
+   "revenue": 86230.0,
+   "rent": 35000.0,
+   "wage": 26412.0,
+   "cost_of_sales": 22270.0,
+   "variable": 29241.0,
+   "tax": 6036.0,
+   "np": -32730.0,
+   "np_pct": -37.96
+  },
+  "M21": {
+   "revenue": 81803.0,
+   "rent": 12500.0,
+   "wage": 2536.0,
+   "cost_of_sales": 36663.0,
+   "variable": 14718.0,
+   "tax": 5726.0,
+   "np": 9660.0,
+   "np_pct": 11.81
+  },
+  "IKI 2": {
+   "revenue": 158288.0,
+   "rent": 6600.0,
+   "wage": 24222.0,
+   "cost_of_sales": 36410.0,
+   "variable": 14180.0,
+   "tax": 10760.0,
+   "np": 66116.0,
+   "np_pct": 41.77
+  }
+ },
+ "group_total": {
+  "revenue": 3341819.0,
+  "rent": 335833.0,
+  "wage": 808754.0,
+  "cost_of_sales": 765117.0,
+  "variable": 478104.0,
+  "tax": 246741.0,
+  "np": 707271.0,
+  "np_pct": null
+ },
+ "prior_year": {
+  "M1": {
+   "prior_year": {
+    "sales": 45.58,
+    "wages": 10.28,
+    "food": 12.06
+   },
+   "prior_year_label": "Aug-25"
+  },
+  "M3": {
+   "prior_year": {
+    "sales": 12.92,
+    "wages": 4.05,
+    "food": 8.34
+   },
+   "prior_year_label": "Aug-25"
+  },
+  "IKI 2": {
+   "prior_year": {
+    "sales": 42.56,
+    "wages": 6.83,
+    "food": 7.83
+   },
+   "prior_year_label": "Aug-25"
+  },
+  "M6": {
+   "prior_year": {
+    "sales": 12.51,
+    "wages": 4.73,
+    "food": 6.67
+   },
+   "prior_year_label": "Aug-25"
+  },
+  "M7": {
+   "prior_year": {
+    "sales": 6.95,
+    "wages": 0.7,
+    "food": 2.98
+   },
+   "prior_year_label": "Aug-25"
+  },
+  "M8": {
+   "prior_year": {
+    "sales": 9.62,
+    "wages": 2.52,
+    "food": 6.5
+   },
+   "prior_year_label": "Aug-25"
+  },
+  "M9": {
+   "prior_year": {
+    "sales": 6.51,
+    "wages": 0.27,
+    "food": 5.3
+   },
+   "prior_year_label": "Aug-25"
+  },
+  "M10": {
+   "prior_year": {
+    "sales": 3.28,
+    "wages": 3.62,
+    "food": 12.39
+   },
+   "prior_year_label": "Aug-25"
+  },
+  "M11": {
+   "prior_year": {
+    "sales": 20.41,
+    "wages": 6.4,
+    "food": 19.24
+   },
+   "prior_year_label": "Aug-25"
+  },
+  "M12": {
+   "prior_year": {
+    "sales": 10.11,
+    "wages": 4.13,
+    "food": 5.62
+   },
+   "prior_year_label": "Aug-25"
+  },
+  "M13": {
+   "prior_year": {
+    "sales": 6.36,
+    "wages": 1.94,
+    "food": 7.14
+   },
+   "prior_year_label": "Aug-25"
+  }
+ },
+ "closing_notes": [
+  "Turnover - £ 3.3M, overall sales has increase £ 400k with Birmingham trading for 10 days.",
+  "Net profit £ 707k sitting at 21%. This is the best month so far",
+  "Edinburgh and Glasgow site performance are strong during this festival month.",
+  "M1 showing very well control when sales have increase. Their net profit sitting at 49% which is the highest across the group.",
+  "M7 is the highest-revenue site at £ 335k, with net profit 32%",
+  "Shoreditch and Nori are the only 2site that making loss."
+ ]
+}

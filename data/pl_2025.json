@@ -1,0 +1,363 @@
+{
+ "schema": 1,
+ "year": 2025,
+ "source": "Maki_Ramen_Consolidated_PL_2025.xlsx",
+ "lines": {
+  "revenue": [
+   {
+    "month": "Jan",
+    "value": 1379362.7
+   },
+   {
+    "month": "Feb",
+    "value": 1396656.65
+   },
+   {
+    "month": "Mar",
+    "value": 1502876.58
+   },
+   {
+    "month": "Apr",
+    "value": 1432056.97
+   },
+   {
+    "month": "May",
+    "value": 1519192.92
+   },
+   {
+    "month": "Jun",
+    "value": 1632717.76
+   },
+   {
+    "month": "Jul",
+    "value": 1925986.8
+   },
+   {
+    "month": "Aug",
+    "value": 2270906.66
+   },
+   {
+    "month": "Sep",
+    "value": 1961050.15
+   },
+   {
+    "month": "Oct",
+    "value": 2108395.54
+   },
+   {
+    "month": "Nov",
+    "value": 2135476.32
+   },
+   {
+    "month": "Dec",
+    "value": 2927161.96
+   }
+  ],
+  "wages": [
+   {
+    "month": "Jan",
+    "value": 390309.0
+   },
+   {
+    "month": "Feb",
+    "value": 419281.0
+   },
+   {
+    "month": "Mar",
+    "value": 388199.0
+   },
+   {
+    "month": "Apr",
+    "value": 363080.0
+   },
+   {
+    "month": "May",
+    "value": 344801.0
+   },
+   {
+    "month": "Jun",
+    "value": 419062.0
+   },
+   {
+    "month": "Jul",
+    "value": 483843.0
+   },
+   {
+    "month": "Aug",
+    "value": 525128.0
+   },
+   {
+    "month": "Sep",
+    "value": 523845.0
+   },
+   {
+    "month": "Oct",
+    "value": 533984.0
+   },
+   {
+    "month": "Nov",
+    "value": 555166.0
+   },
+   {
+    "month": "Dec",
+    "value": 688980.0
+   }
+  ],
+  "rent": [
+   {
+    "month": "Jan",
+    "value": 129266.0
+   },
+   {
+    "month": "Feb",
+    "value": 123540.0
+   },
+   {
+    "month": "Mar",
+    "value": 94417.0
+   },
+   {
+    "month": "Apr",
+    "value": 98826.0
+   },
+   {
+    "month": "May",
+    "value": 101587.0
+   },
+   {
+    "month": "Jun",
+    "value": 146657.0
+   },
+   {
+    "month": "Jul",
+    "value": 83376.0
+   },
+   {
+    "month": "Aug",
+    "value": 193329.0
+   },
+   {
+    "month": "Sep",
+    "value": 146813.0
+   },
+   {
+    "month": "Oct",
+    "value": 128118.0
+   },
+   {
+    "month": "Nov",
+    "value": 184254.0
+   },
+   {
+    "month": "Dec",
+    "value": 276609.0
+   }
+  ],
+  "food": [
+   {
+    "month": "Jan",
+    "value": 414414.0
+   },
+   {
+    "month": "Feb",
+    "value": 354888.0
+   },
+   {
+    "month": "Mar",
+    "value": 346089.0
+   },
+   {
+    "month": "Apr",
+    "value": 419525.0
+   },
+   {
+    "month": "May",
+    "value": 375583.0
+   },
+   {
+    "month": "Jun",
+    "value": 403607.0
+   },
+   {
+    "month": "Jul",
+    "value": 564744.0
+   },
+   {
+    "month": "Aug",
+    "value": 533428.0
+   },
+   {
+    "month": "Sep",
+    "value": 481300.0
+   },
+   {
+    "month": "Oct",
+    "value": 639771.0
+   },
+   {
+    "month": "Nov",
+    "value": 570951.0
+   },
+   {
+    "month": "Dec",
+    "value": 738281.0
+   }
+  ],
+  "variable": [
+   {
+    "month": "Jan",
+    "value": 206782.42
+   },
+   {
+    "month": "Feb",
+    "value": 167509.61
+   },
+   {
+    "month": "Mar",
+    "value": 277719.23
+   },
+   {
+    "month": "Apr",
+    "value": 183302.11
+   },
+   {
+    "month": "May",
+    "value": 196210.57
+   },
+   {
+    "month": "Jun",
+    "value": 197301.45
+   },
+   {
+    "month": "Jul",
+    "value": 292014.41
+   },
+   {
+    "month": "Aug",
+    "value": 230284.11
+   },
+   {
+    "month": "Sep",
+    "value": 268843.66
+   },
+   {
+    "month": "Oct",
+    "value": 281136.29
+   },
+   {
+    "month": "Nov",
+    "value": 303659.56
+   },
+   {
+    "month": "Dec",
+    "value": 389537.6
+   }
+  ],
+  "total_costs": [
+   {
+    "month": "Jan",
+    "value": 1140771.42
+   },
+   {
+    "month": "Feb",
+    "value": 1065218.61
+   },
+   {
+    "month": "Mar",
+    "value": 1106424.23
+   },
+   {
+    "month": "Apr",
+    "value": 1064733.11
+   },
+   {
+    "month": "May",
+    "value": 1018181.57
+   },
+   {
+    "month": "Jun",
+    "value": 1166627.45
+   },
+   {
+    "month": "Jul",
+    "value": 1423977.41
+   },
+   {
+    "month": "Aug",
+    "value": 1482169.11
+   },
+   {
+    "month": "Sep",
+    "value": 1420801.66
+   },
+   {
+    "month": "Oct",
+    "value": 1583009.29
+   },
+   {
+    "month": "Nov",
+    "value": 1614030.56
+   },
+   {
+    "month": "Dec",
+    "value": 2093407.6
+   }
+  ],
+  "ebitda": [
+   {
+    "month": "Jan",
+    "value": 238591.29
+   },
+   {
+    "month": "Feb",
+    "value": 331438.04
+   },
+   {
+    "month": "Mar",
+    "value": 396452.35
+   },
+   {
+    "month": "Apr",
+    "value": 367323.86
+   },
+   {
+    "month": "May",
+    "value": 501011.35
+   },
+   {
+    "month": "Jun",
+    "value": 466090.31
+   },
+   {
+    "month": "Jul",
+    "value": 502009.4
+   },
+   {
+    "month": "Aug",
+    "value": 788737.54
+   },
+   {
+    "month": "Sep",
+    "value": 540248.49
+   },
+   {
+    "month": "Oct",
+    "value": 525386.25
+   },
+   {
+    "month": "Nov",
+    "value": 521445.76
+   },
+   {
+    "month": "Dec",
+    "value": 833754.36
+   }
+  ]
+ },
+ "total_revenue": 22191841.01,
+ "sites": {},
+ "caveats": [
+  "The 2025 book stops at EBITDA. The 2026 management accounts deduct tax as well, so only revenue is compared like for like.",
+  "2025 covers the sites trading that year. 2026 has more of them, so part of any increase is simply new sites rather than the same shops doing better."
+ ]
+}

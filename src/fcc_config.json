@@ -1,0 +1,189 @@
+{
+  "_comment": "Finance Control Centre registry. Xero tenant name -> display code. Codes per maki_site_codes.md (Michael's mapping wins). Dubai/MRLLC is never listed here on purpose. hidden=true removes a company from the board (dormant).",
+  "as_of_timezone_offset_hours": 4,
+  "cash_alarm_gbp": 1000000,
+  "alert_window_days": 30,
+  "calendar_horizon_days": 90,
+  "calendar_lookback_days": 35,
+  "overdue_grace_days": 5,
+  "feed_dir": "xero_finance/scripts/output",
+  "snapshot_dir": "cash-snapshots",
+  "db_path": "xero_finance/xero_finance.db",
+  "cash_dashboard_html": "cash-dashboard.html",
+  "companies": [
+    {
+      "tenant": "M1TOO Ltd",
+      "code": "M1",
+      "cluster": "Scotland & Newcastle",
+      "feed": "daily_bank_M1.csv"
+    },
+    {
+      "tenant": "Fountain Good Food Ltd",
+      "code": "M3",
+      "cluster": "Scotland & Newcastle",
+      "feed": "daily_bank_M3.csv"
+    },
+    {
+      "tenant": "South Ikigai Ltd",
+      "code": "IKI 2",
+      "cluster": "Scotland & Newcastle",
+      "feed": "daily_bank_IKI2.csv"
+    },
+    {
+      "tenant": "Maki 1HW Ltd",
+      "code": "M6",
+      "cluster": "Scotland & Newcastle",
+      "feed": "daily_bank_M6.csv"
+    },
+    {
+      "tenant": "Maki SJQ",
+      "code": "M7",
+      "cluster": "Scotland & Newcastle",
+      "feed": "daily_bank_M7.csv"
+    },
+    {
+      "tenant": "Renfield Delight Ltd",
+      "code": "M8",
+      "cluster": "Scotland & Newcastle",
+      "feed": "daily_bank_M8.csv"
+    },
+    {
+      "tenant": "Maki Manchester Ltd",
+      "code": "M9",
+      "cluster": "North England & Midlands",
+      "feed": "daily_bank_M9.csv"
+    },
+    {
+      "tenant": "Maki Leeds Limited",
+      "code": "M10",
+      "cluster": "North England & Midlands",
+      "feed": "daily_bank_M10.csv"
+    },
+    {
+      "tenant": "Maki Leicester Ltd",
+      "code": "M11",
+      "cluster": "North England & Midlands",
+      "feed": "daily_bank_M11.csv"
+    },
+    {
+      "tenant": "Maki Newcastle Ltd",
+      "code": "M12",
+      "cluster": "Scotland & Newcastle",
+      "feed": "daily_bank_M12.csv"
+    },
+    {
+      "tenant": "Maki Aberdeen Ltd",
+      "code": "M13",
+      "cluster": "Scotland & Newcastle",
+      "feed": "daily_bank_M13.csv"
+    },
+    {
+      "tenant": "Maki Yorkshire Ltd",
+      "code": "M14",
+      "cluster": "North England & Midlands",
+      "feed": "daily_bank_M14.csv"
+    },
+    {
+      "tenant": "Maki Metro Ltd",
+      "code": "M15",
+      "cluster": "Scotland & Newcastle",
+      "feed": "daily_bank.csv"
+    },
+    {
+      "tenant": "Maki Nottingham Ltd",
+      "code": "M16",
+      "cluster": "North England & Midlands",
+      "feed": "daily_bank_M16.csv"
+    },
+    {
+      "tenant": "Maki Lakeside Ltd",
+      "code": "M17",
+      "cluster": "South England",
+      "feed": "daily_bank_M17.csv"
+    },
+    {
+      "tenant": "Maki Soho Ltd",
+      "code": "M18",
+      "cluster": "South England",
+      "feed": "daily_bank_M18.csv"
+    },
+    {
+      "tenant": "Maki Shoreditch Ltd",
+      "code": "M19",
+      "cluster": "South England",
+      "feed": "daily_bank_M19.csv"
+    },
+    {
+      "tenant": "Maki Southampton Ltd",
+      "code": "M20",
+      "cluster": "South England",
+      "feed": "daily_bank_M20.csv"
+    },
+    {
+      "tenant": "Maki Birmingham Ltd",
+      "code": "M21",
+      "cluster": "North England & Midlands",
+      "feed": "daily_bank_M21.csv"
+    },
+    {
+      "tenant": "Maki Nori Ltd",
+      "code": "NORI",
+      "cluster": "South England",
+      "feed": "daily_bank_NORI.csv"
+    },
+    {
+      "tenant": "Maki Property Ltd",
+      "code": "MP",
+      "cluster": "Central",
+      "feed": "daily_bank_MP.csv",
+      "is_property_co": true
+    },
+    {
+      "tenant": "AAHQ Ltd",
+      "code": "AAHQ",
+      "cluster": "Central",
+      "feed": null
+    }
+  ],
+  "franchisee_contacts": [
+    "4lex hospitality"
+  ],
+  "intercompany_contact_patterns": [
+    "maki ",
+    "m1too",
+    "fountain good food",
+    "renfield delight",
+    "south ikigai",
+    "aahq",
+    "aa factory"
+  ],
+  "not_connected_yet": {
+    "companies_house": "Company numbers and year ends not wired yet, so corporation tax and Companies House filing deadlines cannot be dated.",
+    "rent_register": "Maki Property rent register (Google Sheet) not wired yet. Landlord rent dates below come from the bank feed pattern, not the register.",
+    "xero_bills": "Xero bills and invoices last synced 25 May 2026, so due dates for franchise fees and intercompany are not available. Patterns come from the bank feed.",
+    "companies_house_filings": "Companies House filing deadlines and confirmation-statement dates are not wired, so the filing rule on Company Health cannot be checked for any company."
+  },
+  "ma_history_file": "ma_history.json",
+  "ma_code_aliases": {
+    "M5": "IKI 2",
+    "Nori": "NORI"
+  },
+  "fa_status_dir": "fa-status",
+  "health": {
+    "_comment": "Company Health rules ruled 8-Sep-2026. A rule that cannot be checked is reported as not checked, never as green.",
+    "negative_np_months_for_red": 3,
+    "feed_stale_days": 4
+  },
+  "targets": {
+    "revenue_year": 32000000,
+    "_comment": "Revenue target for 2026, set by Michael 10-Sep-2026."
+  },
+  "prior_year_pl": "pl_2025.json",
+  "bep_overrides": {
+    "M10": {
+      "capex": 924658.56,
+      "profit_to_date": 615136.0,
+      "source": "Given directly by Michael on 10-Sep-2026. The monthly analysis links a start-up budget for Leeds instead of a figure."
+    }
+  }
+}

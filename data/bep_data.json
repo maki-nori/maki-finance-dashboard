@@ -1,0 +1,395 @@
+{
+ "schema": 1,
+ "period": "2026-08",
+ "source": "Financial Analysis Aug 2026.docx",
+ "as_at": "2026-09-10",
+ "rows": [
+  {
+   "code": "M9",
+   "capex": 949497.0,
+   "capex_label": "Total fit-out cost",
+   "profit_to_date": 796510.0,
+   "bep_pct_monica": null,
+   "bep_pct": 83.89,
+   "start": "2023-08-13",
+   "start_precision": "day",
+   "recovered_note": "Total fit out cost: £ 949,497 – Fully recover on July 2025",
+   "sign_conflict": false,
+   "sign_corrected": null,
+   "notes": [
+    "VAT sitting at 12%",
+    "Ice machine - £ 2004"
+   ],
+   "fully_recovered": true
+  },
+  {
+   "code": "M8",
+   "capex": 886922.0,
+   "capex_label": "Total fit-out cost",
+   "profit_to_date": 728661.0,
+   "bep_pct_monica": 82.16,
+   "bep_pct": 82.16,
+   "start": "2023-01-01",
+   "start_precision": "year",
+   "recovered_note": null,
+   "sign_conflict": false,
+   "sign_corrected": null,
+   "notes": [
+    "Large Payment:",
+    "Advert - £ 3k including fresher fair and freshers festival group."
+   ],
+   "fully_recovered": false
+  },
+  {
+   "code": "M15",
+   "capex": 702834.0,
+   "capex_label": "Total fit-out cost",
+   "profit_to_date": 409418.0,
+   "bep_pct_monica": 58.25,
+   "bep_pct": 58.25,
+   "start": "2025-11-29",
+   "start_precision": "day",
+   "recovered_note": null,
+   "sign_conflict": false,
+   "sign_corrected": null,
+   "notes": [
+    "Large Payment: £ 50k to MPD",
+    "Repair- £ 2.5k",
+    "Net profit sitting at 29%, wages and food cost are well control."
+   ],
+   "fully_recovered": false
+  },
+  {
+   "code": "M13",
+   "capex": 684955.0,
+   "capex_label": "Total fit-out cost",
+   "profit_to_date": 292108.0,
+   "bep_pct_monica": 42.65,
+   "bep_pct": 42.65,
+   "start": "2025-08-06",
+   "start_precision": "day",
+   "recovered_note": null,
+   "sign_conflict": false,
+   "sign_corrected": null,
+   "notes": [
+    "Large Payment:",
+    "Services charge - £ 11.6k",
+    "Music licence - £ 2.8k"
+   ],
+   "fully_recovered": false
+  },
+  {
+   "code": "M16",
+   "capex": 479456.0,
+   "capex_label": "Total fit-out cost",
+   "profit_to_date": 177593.0,
+   "bep_pct_monica": 37.04,
+   "bep_pct": 37.04,
+   "start": "2025-12-01",
+   "start_precision": "day",
+   "recovered_note": null,
+   "sign_conflict": false,
+   "sign_corrected": null,
+   "notes": [
+    "Large Payment: £ 30k to MPD",
+    "Wok cooker - £ 1443"
+   ],
+   "fully_recovered": false
+  },
+  {
+   "code": "M14",
+   "capex": 676373.0,
+   "capex_label": "Total fit-out cost",
+   "profit_to_date": 248408.0,
+   "bep_pct_monica": 36.73,
+   "bep_pct": 36.73,
+   "start": "2025-11-14",
+   "start_precision": "day",
+   "recovered_note": null,
+   "sign_conflict": false,
+   "sign_corrected": null,
+   "notes": [
+    "Large Payment: £ 90k to MPD",
+    "Glasswasher - £ 2.3k",
+    "Halal Food festival - £ 2520, which showing on sales as it has increase 10%",
+    "Net profit sitting at 32%  which almost double of previous month."
+   ],
+   "fully_recovered": false
+  },
+  {
+   "code": "M11",
+   "capex": 722018.0,
+   "capex_label": "Total fit-out cost",
+   "profit_to_date": 221460.0,
+   "bep_pct_monica": 30.67,
+   "bep_pct": 30.67,
+   "start": "2025-06-07",
+   "start_precision": "day",
+   "recovered_note": null,
+   "sign_conflict": false,
+   "sign_corrected": null,
+   "notes": [
+    "Sales increase 20%",
+    "Repair - £ 4.3k"
+   ],
+   "fully_recovered": false
+  },
+  {
+   "code": "M17",
+   "capex": 574024.0,
+   "capex_label": "Total fit-out cost",
+   "profit_to_date": 162696.0,
+   "bep_pct_monica": 28.34,
+   "bep_pct": 28.34,
+   "start": "2026-02-06",
+   "start_precision": "day",
+   "recovered_note": null,
+   "sign_conflict": false,
+   "sign_corrected": null,
+   "notes": [
+    "Large Payment:",
+    "Card receivable between Kobas and Worldpay does not match - £ 800 diff. will speak to Worldpay",
+    "Sales increase 14% while net profit sitting at 20%"
+   ],
+   "fully_recovered": false
+  },
+  {
+   "code": "M12",
+   "capex": 491180.0,
+   "capex_label": "Total fit-out cost",
+   "profit_to_date": 120313.0,
+   "bep_pct_monica": 24.49,
+   "bep_pct": 24.49,
+   "start": "2025-06-14",
+   "start_precision": "day",
+   "recovered_note": null,
+   "sign_conflict": false,
+   "sign_corrected": null,
+   "notes": [
+    "Large Payment:",
+    "Sales has increase 10%, wages and food cost has improved"
+   ],
+   "fully_recovered": false
+  },
+  {
+   "code": "M20",
+   "capex": 581392.0,
+   "capex_label": "Total capex",
+   "profit_to_date": 92829.0,
+   "bep_pct_monica": 15.97,
+   "bep_pct": 15.97,
+   "start": "2026-07-03",
+   "start_precision": "day",
+   "recovered_note": null,
+   "sign_conflict": false,
+   "sign_corrected": "The analysis types this as a loss of 92,829, but the 2026-08 management account has the same figure as a profit. Read as a profit.",
+   "notes": [
+    "Large Payment:",
+    "£ 1230 – bid levy"
+   ],
+   "fully_recovered": false
+  },
+  {
+   "code": "M21",
+   "capex": 981619.0,
+   "capex_label": "Total capex",
+   "profit_to_date": 9660.0,
+   "bep_pct_monica": 0.98,
+   "bep_pct": 0.98,
+   "start": "2026-08-21",
+   "start_precision": "day",
+   "recovered_note": null,
+   "sign_conflict": false,
+   "sign_corrected": "The analysis types this as a loss of 9,660, but the 2026-08 management account has the same figure as a profit. Read as a profit.",
+   "notes": [
+    "Large Payment:",
+    "Trading for 11 days, net profit sitting at 12%"
+   ],
+   "fully_recovered": false
+  },
+  {
+   "code": "M19",
+   "capex": 655916.0,
+   "capex_label": "Total capex",
+   "profit_to_date": -49351.0,
+   "bep_pct_monica": null,
+   "bep_pct": -7.52,
+   "start": "2026-06-27",
+   "start_precision": "day",
+   "recovered_note": null,
+   "sign_conflict": false,
+   "sign_corrected": null,
+   "notes": [
+    "Large Payment:",
+    "Making Loss £ 15.7k",
+    "£5144 – dragon installation in July"
+   ],
+   "fully_recovered": false
+  },
+  {
+   "code": "M18",
+   "capex": 968104.0,
+   "capex_label": "Total fit-out cost",
+   "profit_to_date": -168644.0,
+   "bep_pct_monica": null,
+   "bep_pct": -17.42,
+   "start": "2026-03-06",
+   "start_precision": "day",
+   "recovered_note": null,
+   "sign_conflict": false,
+   "sign_corrected": null,
+   "notes": [
+    "Large Payment:",
+    "Best month to date and also the first profitable month."
+   ],
+   "fully_recovered": false
+  },
+  {
+   "code": "NORI",
+   "capex": 63112.0,
+   "capex_label": "Total capex",
+   "profit_to_date": -169478.0,
+   "bep_pct_monica": null,
+   "bep_pct": -268.54,
+   "start": "2026-03-06",
+   "start_precision": "day",
+   "recovered_note": null,
+   "sign_conflict": false,
+   "sign_corrected": null,
+   "notes": [
+    "Large Payment:",
+    "Making Loss £ 32.7k",
+    "Sales drop 18%",
+    "Summaries for the building:",
+    "Total Loss – £ 31,342"
+   ],
+   "fully_recovered": false
+  },
+  {
+   "code": "M1",
+   "capex": null,
+   "capex_label": null,
+   "profit_to_date": null,
+   "bep_pct_monica": null,
+   "bep_pct": null,
+   "start": null,
+   "start_precision": null,
+   "recovered_note": null,
+   "sign_conflict": false,
+   "sign_corrected": null,
+   "notes": [
+    "Large Payment:",
+    "Repair - £ 1k for safety certificate including EICR and PAT test.",
+    "Advert - Fresher Fair £ 709",
+    "Sales increase 45%, net profit sitting at 49%"
+   ],
+   "fully_recovered": false
+  },
+  {
+   "code": "M3",
+   "capex": null,
+   "capex_label": null,
+   "profit_to_date": null,
+   "bep_pct_monica": null,
+   "bep_pct": null,
+   "start": null,
+   "start_precision": null,
+   "recovered_note": null,
+   "sign_conflict": false,
+   "sign_corrected": null,
+   "notes": [
+    "Music Licence - £ 1075",
+    "Sales increase 13% while wages remain the same.",
+    "Net profit sitting at 28% which is 5% lower than Aug 25 (33%)"
+   ],
+   "fully_recovered": false
+  },
+  {
+   "code": "IKI 2",
+   "capex": null,
+   "capex_label": null,
+   "profit_to_date": null,
+   "bep_pct_monica": null,
+   "bep_pct": null,
+   "start": null,
+   "start_precision": null,
+   "recovered_note": null,
+   "sign_conflict": false,
+   "sign_corrected": null,
+   "notes": [
+    "Large Payment:",
+    "Sales went down £ 5k compare to last year. However wages and food cost are well control.",
+    "Net profit sitting at 41% which 7% higher than Aug 25"
+   ],
+   "fully_recovered": false
+  },
+  {
+   "code": "M6",
+   "capex": null,
+   "capex_label": null,
+   "profit_to_date": null,
+   "bep_pct_monica": null,
+   "bep_pct": null,
+   "start": null,
+   "start_precision": null,
+   "recovered_note": null,
+   "sign_conflict": false,
+   "sign_corrected": null,
+   "notes": [
+    "Wages and food cost are well control. Net profit sitting at 31%",
+    "Equipment – 5 burner £ 4591"
+   ],
+   "fully_recovered": false
+  },
+  {
+   "code": "M7",
+   "capex": null,
+   "capex_label": null,
+   "profit_to_date": null,
+   "bep_pct_monica": null,
+   "bep_pct": null,
+   "start": null,
+   "start_precision": null,
+   "recovered_note": null,
+   "sign_conflict": false,
+   "sign_corrected": null,
+   "notes": [
+    "Net profit sitting at 31%, sales has increase £ 6k compare to last year"
+   ],
+   "fully_recovered": false
+  },
+  {
+   "code": "M10",
+   "capex": null,
+   "capex_label": null,
+   "profit_to_date": null,
+   "bep_pct_monica": null,
+   "bep_pct": null,
+   "start": null,
+   "start_precision": null,
+   "recovered_note": null,
+   "sign_conflict": false,
+   "sign_corrected": null,
+   "notes": [
+    "Advert - £ 3k including freshers festival group and Native Freshers",
+    "£ 5.5k services charge",
+    "Link to start up Budget: Click here"
+   ],
+   "fully_recovered": false
+  }
+ ],
+ "total_capex": 9417402.0,
+ "total_recovered": 2872183.0,
+ "sites_with_capex": 14,
+ "sites_without_capex": [
+  "M1",
+  "M3",
+  "IKI 2",
+  "M6",
+  "M7",
+  "M10"
+ ],
+ "note": "Break-even is the cumulative management-accounts profit a site has made since it opened, against what it cost to build. Both figures are Monica's, from the monthly analysis.",
+ "percent_recovered": 30.5,
+ "outstanding": 6545219.0
+}

@@ -1,0 +1,836 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Finance Control Centre</title>
+<style>
+  :root { --orange:#F47A20; --orange-dk:#c95f0f; --orange-lt:#fff1e6; --ink:#1f1f1f; --mute:#6b6b6b; --line:#e6e6e3; --bg:#f7f7f5; --card:#fff;
+          --red:#b1331c; --red-lt:#fde9e3; --amber:#8a5a00; --amber-lt:#fff4d6; --green:#0a7a3d; --green-lt:#e7f5ec; }
+  * { box-sizing:border-box; }
+  body { margin:0; font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",Roboto,Helvetica,Arial,sans-serif; background:var(--bg); color:var(--ink); line-height:1.45; -webkit-font-smoothing:antialiased; }
+  header { background:var(--orange); color:#fff; padding:14px 16px 0; position:sticky; top:0; z-index:5; }
+  header h1 { margin:0; font-size:18px; font-weight:700; letter-spacing:.2px; }
+  header .sub { font-size:12px; opacity:.92; margin:2px 0 10px; }
+  nav { display:flex; gap:4px; overflow-x:auto; }
+  nav button { background:transparent; border:0; color:#fff; padding:10px 12px; font-size:14px; font-weight:600; opacity:.75; border-bottom:3px solid transparent; white-space:nowrap; cursor:pointer; }
+  nav button.on { opacity:1; border-bottom-color:#fff; }
+  nav button:disabled { opacity:.4; cursor:default; }
+  main { max-width:1100px; margin:0 auto; padding:14px 12px 60px; }
+  section.tab { display:none; } section.tab.on { display:block; }
+  .card { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:14px; margin-bottom:12px; }
+  .card h2 { margin:0 0 8px; font-size:15px; }
+  .card h2 small { font-weight:400; color:var(--mute); font-size:12px; margin-left:6px; }
+  .big { font-size:34px; font-weight:800; letter-spacing:-.5px; line-height:1.1; }
+  .row { display:flex; flex-wrap:wrap; gap:10px; }
+  .kpi { flex:1 1 140px; background:var(--bg); border-radius:10px; padding:10px 12px; }
+  .kpi .l { font-size:12px; color:var(--mute); } .kpi .v { font-size:20px; font-weight:700; }
+  .pos { color:var(--green); } .neg { color:var(--red); }
+  .pill { display:inline-block; padding:2px 8px; border-radius:999px; font-size:11px; font-weight:700; }
+  .pill.red { background:var(--red-lt); color:var(--red); } .pill.amber { background:var(--amber-lt); color:var(--amber); }
+  .pill.green { background:var(--green-lt); color:var(--green); } .pill.grey { background:#eee; color:var(--mute); }
+  .alarm { border:2px solid var(--red); background:var(--red-lt); }
+  table { width:100%; border-collapse:collapse; font-size:13px; }
+  th, td { text-align:left; padding:7px 6px; border-bottom:1px solid var(--line); vertical-align:top; }
+  th { font-size:11px; color:var(--mute); text-transform:uppercase; letter-spacing:.4px; font-weight:600; }
+  td.n, th.n { text-align:right; font-variant-numeric:tabular-nums; white-space:nowrap; }
+  .wrap { overflow-x:auto; }
+  .muted { color:var(--mute); font-size:12px; }
+  .src { color:var(--mute); font-size:11px; margin-top:8px; }
+  .li { padding:8px 0; border-bottom:1px solid var(--line); display:flex; gap:10px; align-items:flex-start; }
+  .li:last-child { border-bottom:0; }
+  .li .who { min-width:52px; font-weight:700; }
+  .li .what { flex:1; }
+  .li .amt { font-variant-numeric:tabular-nums; font-weight:700; white-space:nowrap; }
+  .filters { display:flex; gap:8px; flex-wrap:wrap; margin-bottom:10px; }
+  select, input[type=search] { font:inherit; padding:8px 10px; border:1px solid var(--line); border-radius:8px; background:#fff; }
+  .chip { border:1px solid var(--line); background:#fff; border-radius:999px; padding:6px 10px; font-size:12px; cursor:pointer; }
+  .chip.on { background:var(--orange); color:#fff; border-color:var(--orange); }
+  .day { margin:14px 0 6px; font-weight:700; font-size:13px; color:var(--orange-dk); position:sticky; top:96px; background:var(--bg); padding:4px 0; }
+  .ev { background:#fff; border:1px solid var(--line); border-left:4px solid var(--line); border-radius:10px; padding:10px 12px; margin-bottom:6px; display:grid; grid-template-columns:56px 1fr auto; gap:8px; align-items:start; }
+  .ev.due { border-left-color:var(--orange); } .ev.overdue { border-left-color:var(--red); background:var(--red-lt); }
+  .ev.paid { border-left-color:var(--green); opacity:.85; } .ev.check { border-left-color:var(--amber); }
+  .ev .code { font-weight:800; } .ev .cat { font-weight:600; } .ev .note { font-size:12px; color:var(--mute); }
+  .ev .amt { text-align:right; font-weight:700; font-variant-numeric:tabular-nums; white-space:nowrap; }
+  .ev .basis { font-size:11px; color:var(--mute); text-align:right; }
+  iframe { width:100%; height:520px; border:1px solid var(--line); border-radius:10px; background:#fff; }
+  details summary { cursor:pointer; color:var(--orange-dk); font-weight:600; font-size:13px; }
+  /* chart tokens: one categorical hue (Maki orange, stepped to clear 3:1 on the card),
+     a recessive neutral for the "everything else" segment, and reserved status colours. */
+  .viz { --series-1:#E2650F; --series-1-soft:#f6d5bd; --neutral:#dedcd6; --neutral-ink:#6b6b6b;
+         --good:#0a7a3d; --bad:#b1331c; --warn:#b57200; --grid:#ececE8; }
+  .grid2 { display:grid; grid-template-columns:1.55fr 1fr; gap:12px; align-items:start; }
+  .grid3 { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; align-items:start; }
+  .tiles { display:grid; grid-template-columns:repeat(6,1fr); gap:10px; margin-bottom:12px; }
+  .tile { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:12px 13px; position:relative; overflow:hidden; }
+  .tile::before { content:""; position:absolute; left:0; top:0; bottom:0; width:3px; background:var(--orange); }
+  .tile.is-good::before { background:var(--green); } .tile.is-bad::before { background:var(--red); }
+  .tile .tl { font-size:10.5px; text-transform:uppercase; letter-spacing:.06em; color:var(--mute); font-weight:700; }
+  .tile .tv { font-size:25px; font-weight:750; letter-spacing:-.02em; margin:5px 0 4px; font-variant-numeric:tabular-nums; }
+  .tile .ts { font-size:11.5px; color:var(--mute); display:flex; align-items:center; gap:6px; flex-wrap:wrap; }
+  .chip2 { font-size:11px; font-weight:700; padding:1px 6px; border-radius:5px; font-variant-numeric:tabular-nums; white-space:nowrap; }
+  .chip2.up { color:var(--green); background:var(--green-lt); } .chip2.down { color:var(--red); background:var(--red-lt); }
+  .chip2.flat { color:var(--mute); background:#eee; }
+  svg.plot { width:100%; display:block; overflow:visible; }
+  svg.plot text { font-size:10.5px; fill:var(--mute); font-variant-numeric:tabular-nums; }
+  svg.plot text.val { font-size:10.5px; font-weight:700; fill:var(--ink); }
+  svg.plot .gl { stroke:var(--grid); stroke-width:1; }
+  svg.plot .hit { fill:transparent; cursor:pointer; }
+  svg.plot g.col:hover rect.mk, svg.plot g.row:hover rect.mk { filter:brightness(.93); }
+  .tip { position:fixed; z-index:50; pointer-events:none; background:#1f1f1f; color:#fff; font-size:12px;
+         padding:7px 9px; border-radius:8px; line-height:1.4; max-width:260px; box-shadow:0 4px 14px rgba(0,0,0,.22); opacity:0; transition:opacity .09s; }
+  .tip b { color:#fff; } .tip .k { color:#c9c7c1; }
+  .legend { display:flex; gap:14px; flex-wrap:wrap; font-size:11.5px; color:var(--mute); margin:2px 0 6px; }
+  .legend i { display:inline-block; width:10px; height:10px; border-radius:3px; margin-right:5px; vertical-align:-1px; }
+  .gauge { display:flex; align-items:center; gap:14px; }
+  .gauge .num { font-size:27px; font-weight:750; letter-spacing:-.02em; font-variant-numeric:tabular-nums; }
+  .walk .wk { display:flex; justify-content:space-between; align-items:baseline; padding:7px 0; border-bottom:1px solid var(--line); font-size:13px; }
+  .walk .wk:last-child { border-bottom:0; }
+  .walk .wl { color:var(--mute); } .walk .wv { font-weight:700; font-variant-numeric:tabular-nums; }
+  .walk .wk.tot { border-top:2px solid var(--line); margin-top:2px; }
+  .walk .wk.tot .wl { color:var(--ink); font-weight:650; } .walk .wk.tot .wv { font-size:19px; }
+  .seg { display:flex; height:14px; border-radius:7px; overflow:hidden; background:var(--bg); margin:8px 0 6px; }
+  .seg span { display:block; }
+  .barrow { display:grid; grid-template-columns:96px 1fr 88px; gap:10px; align-items:center; padding:5px 0; cursor:pointer; }
+  .barrow:hover { background:var(--orange-lt); }
+  .barrow .lb { font-size:12.5px; font-weight:700; }
+  .barrow .lb small { display:block; font-weight:400; color:var(--mute); font-size:11px; }
+  .barrow .tr { height:16px; background:var(--bg); border-radius:4px; position:relative; overflow:hidden; }
+  .barrow .fl { position:absolute; top:0; bottom:0; left:0; border-radius:4px; }
+  .barrow .rt { text-align:right; font-variant-numeric:tabular-nums; font-weight:700; font-size:12.5px; }
+  .seglab { display:flex; gap:12px; flex-wrap:wrap; font-size:11.5px; color:var(--mute); }
+  .toggle { display:inline-flex; border:1px solid var(--line); border-radius:8px; overflow:hidden; }
+  .toggle button { border:0; background:#fff; font:inherit; font-size:12px; padding:5px 11px; cursor:pointer; color:var(--mute); }
+  .toggle button.on { background:var(--orange); color:#fff; font-weight:650; }
+  @media (max-width:900px) { .tiles{grid-template-columns:repeat(3,1fr);} .grid2,.grid3{grid-template-columns:1fr;} }
+  @media (max-width:560px) { .tiles{grid-template-columns:repeat(2,1fr);} .tile .tv{font-size:21px;} .barrow{grid-template-columns:74px 1fr 74px;} }
+  table.matrix { font-size:12.5px; border-collapse:separate; border-spacing:0; }
+  table.matrix th.stick { position:sticky; left:0; background:var(--card); z-index:2; text-transform:none; font-size:12px;
+    color:var(--ink); font-weight:600; white-space:nowrap; border-right:1px solid var(--line); }
+  table.matrix thead th { background:var(--orange); color:#fff; text-align:right; padding:6px 8px; font-size:11.5px; letter-spacing:.02em; }
+  table.matrix thead th.stick { background:var(--orange); }
+  table.matrix td, table.matrix th { padding:5px 8px; white-space:nowrap; }
+  table.matrix tr.names td { font-size:10.5px; padding-top:3px; padding-bottom:5px; }
+  table.matrix tr.hd th.stick, table.matrix tr.hd td { background:var(--bg); font-weight:700; }
+  table.matrix tr.sub th.stick, table.matrix tr.sub td { color:var(--mute); }
+  table.matrix .tot { background:var(--orange-lt); font-weight:700; position:sticky; right:0; z-index:2;
+    border-left:1px solid var(--line); }
+  table.matrix thead th.tot { background:var(--orange-dk); }
+  table.matrix tr:hover td { background:rgba(226,101,15,.08); }
+  .dot { display:inline-block; width:10px; height:10px; border-radius:50%; margin-right:6px; vertical-align:middle; }
+  .dot.red{background:var(--red);} .dot.amber{background:#d99000;} .dot.green{background:var(--green);} .dot.unknown{background:#bbb;}
+  .hrow { border:1px solid var(--line); border-left:5px solid var(--line); border-radius:10px; padding:10px 12px; margin-bottom:8px; background:#fff; }
+  .hrow.red{border-left-color:var(--red);} .hrow.amber{border-left-color:#d99000;} .hrow.green{border-left-color:var(--green);} .hrow.unknown{border-left-color:#bbb;}
+  .hrow .hh { display:flex; align-items:baseline; gap:8px; flex-wrap:wrap; }
+  .hrow .hh b { font-size:15px; }
+  .tests { margin-top:6px; display:grid; grid-template-columns:1fr; gap:2px; }
+  .tst { font-size:12.5px; display:flex; gap:8px; align-items:flex-start; }
+  .tst .tl { min-width:172px; color:var(--mute); }
+  .bars { display:flex; align-items:flex-end; gap:6px; height:120px; margin:6px 0 2px; }
+  .bars .b { flex:1; display:flex; flex-direction:column; justify-content:flex-end; align-items:center; height:100%; }
+  .bars .b i { display:block; width:100%; background:var(--orange); opacity:.55; border-radius:4px 4px 0 0; min-height:2px; }
+  .bars .b i.neg { background:var(--red); }
+  .bars .b em { font-style:normal; font-size:10.5px; color:var(--mute); margin-top:4px; }
+  .bars .b s { text-decoration:none; font-size:10.5px; font-weight:700; margin-bottom:3px; white-space:nowrap; }
+  .bad { color:var(--red); font-weight:700; } .good { color:var(--green); font-weight:700; }
+  @media (max-width:600px) { .tst .tl{min-width:120px;} .bars{height:96px;} .bars .b s{font-size:9px;} .big{font-size:28px;} th,td{padding:6px 4px;} iframe{height:420px;} .ev{grid-template-columns:48px 1fr auto;} }
+</style>
+</head>
+<body>
+<header>
+  <h1>Finance Control Centre</h1>
+  <div class="sub" id="sub">Loading…</div>
+  <nav id="nav">
+    <button data-tab="today" class="on">Today</button>
+    <button data-tab="calendar">Calendar</button>
+    <button data-tab="health">Company Health</button>
+    <button data-tab="ma">Management Accounts</button>
+    <button data-tab="bep">Break-even</button>
+  </nav>
+</header>
+<main>
+  <section class="tab on" id="tab-today"></section>
+  <section class="tab" id="tab-calendar"></section>
+  <section class="tab" id="tab-health"></section>
+  <section class="tab" id="tab-ma"></section>
+  <section class="tab" id="tab-bep"></section>
+</main>
+<script src="data/fcc.js"></script>
+<script>
+(function(){
+  const D = window.FCC; if(!D){ document.getElementById('sub').textContent='data/fcc.js not found. Run build_fcc.py.'; return; }
+  const gbp = n => n==null ? '<span class="muted">not available</span>' : (n<0?'-':'') + '£' + Math.abs(Math.round(n)).toLocaleString('en-GB');
+  const gbp2 = n => n==null ? '<span class="muted">not available</span>' : (n<0?'-':'') + '£' + Math.abs(n).toLocaleString('en-GB',{minimumFractionDigits:2,maximumFractionDigits:2});
+  const sgn = n => n==null ? '<span class="muted">n/a</span>' : `<span class="${n<0?'neg':'pos'}">${n<0?'-':'+'}£${Math.abs(Math.round(n)).toLocaleString('en-GB')}</span>`;
+  const esc = s => String(s==null?'':s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+  const fmtD = s => { const d=new Date(s+'T00:00:00'); return d.toLocaleDateString('en-GB',{weekday:'short',day:'numeric',month:'short'}); };
+  const fmtY = s2 => { const dd=new Date(s2+'T00:00:00'); return dd.toLocaleDateString('en-GB',{day:'numeric',month:'short',year:'numeric'}); };
+  const rel = n => n===0?'today':n===1?'tomorrow':n>1?`in ${n} days`:n===-1?'yesterday':`${-n} days ago`;
+
+  document.getElementById('sub').textContent = `As of ${fmtD(D.as_of)} · built ${D.generated_at.replace('T',' ').slice(0,16)} · UK companies only, read-only`;
+
+  // tabs
+  document.querySelectorAll('#nav button[data-tab]').forEach(b=>b.onclick=()=>{
+    document.querySelectorAll('#nav button').forEach(x=>x.classList.remove('on')); b.classList.add('on');
+    document.querySelectorAll('section.tab').forEach(s=>s.classList.toggle('on', s.id==='tab-'+b.dataset.tab));
+    try{ location.hash=b.dataset.tab; }catch(e){}
+  });
+  const h0 = (location.hash||'').replace('#','');
+  if(h0 && document.querySelector(`[data-tab=${h0}]`)) document.querySelector(`[data-tab=${h0}]`).click();
+
+  // ---------------- shared chart helpers ----------------
+  const TIP = document.createElement('div'); TIP.className='tip'; document.body.appendChild(TIP);
+  function tipOn(el, html){
+    el.addEventListener('mouseenter', e=>{ TIP.innerHTML=html; TIP.style.opacity='1'; });
+    el.addEventListener('mousemove', e=>{
+      const w=TIP.offsetWidth, h=TIP.offsetHeight;
+      TIP.style.left = Math.min(window.innerWidth-w-10, Math.max(8, e.clientX+14)) + 'px';
+      TIP.style.top  = Math.max(8, e.clientY - h - 12) + 'px';
+    });
+    el.addEventListener('mouseleave', ()=>{ TIP.style.opacity='0'; });
+    el.addEventListener('focus', ()=>{ TIP.innerHTML=html; TIP.style.opacity='1'; });
+    el.addEventListener('blur', ()=>{ TIP.style.opacity='0'; });
+  }
+  function wireTips(root){ root.querySelectorAll('[data-tip]').forEach(el=>tipOn(el, el.getAttribute('data-tip'))); }
+  const m1 = v => (v<0?'-':'')+'£'+(Math.abs(v)/1e6).toFixed(2)+'m';
+  const k0 = v => (v<0?'-':'')+'£'+Math.round(Math.abs(v)/1e3).toLocaleString('en-GB')+'k';
+  const pc1 = v => v==null ? '–' : (v>0?'+':'')+v.toFixed(1)+'%';
+  const chip = (v, goodUp, fmt) => {
+    if(v==null) return '<span class="chip2 flat">no comparison</span>';
+    const good = goodUp ? v>0 : v<0;
+    const cls = v===0 ? 'flat' : good ? 'up' : 'down';
+    return `<span class="chip2 ${cls}">${fmt(v)}</span>`;
+  };
+  // arc gauge: one value against a target, hero number beside it
+  function gauge(ratio, label, state){
+    const r=34, C=2*Math.PI*r, frac=Math.max(0, Math.min(1.3, ratio||0));
+    const col = state==='good' ? 'var(--good)' : state==='bad' ? 'var(--bad)' : 'var(--warn)';
+    return `<svg class="plot" viewBox="0 0 84 84" style="width:84px;height:84px;flex:0 0 84px" role="img" aria-label="${esc(label)}">
+      <circle cx="42" cy="42" r="${r}" fill="none" stroke="var(--neutral)" stroke-width="10"/>
+      <circle cx="42" cy="42" r="${r}" fill="none" stroke="${col}" stroke-width="10" stroke-linecap="round"
+        stroke-dasharray="${(Math.min(frac,1)*C).toFixed(1)} ${C.toFixed(1)}" transform="rotate(-90 42 42)"/>
+    </svg>`;
+  }
+  // horizontal bar list; rows are clickable
+  function barList(rows, opts){
+    const mx = Math.max(...rows.map(r=>Math.abs(r.value)), 1);
+    return rows.map(r=>{
+      const col = r.value<0 ? 'var(--bad)' : (r.color||'var(--series-1)');
+      const w = (Math.abs(r.value)/mx*100).toFixed(1);
+      return `<div class="barrow" ${r.go?`data-go="${esc(r.go)}"`:''} data-tip="${esc(r.tip||'')}" tabindex="0">
+        <div class="lb">${esc(r.label)}${r.sub?`<small>${esc(r.sub)}</small>`:''}</div>
+        <div class="tr"><span class="fl" style="width:${w}%;background:${col}"></span></div>
+        <div class="rt" style="${r.value<0?'color:var(--bad)':''}">${opts.fmt(r.value)}</div></div>`;
+    }).join('');
+  }
+
+  // ---------------- TODAY ----------------
+  const C = D.cash, L = D.leaving, M = D.ma, H = D.health, B = D.bep;
+  (function(){
+    let h = '<div class="viz">';
+    const g  = (M && M.group) || {};
+    const gp = (M && M.group_prior) || {};
+    const P = D.projection, TG = D.target, PY = D.prior_year;
+    const foodT = (M && M.food_target) || 25;
+
+    // ---- the six numbers, each with what it is being compared to ----
+    const tiles = [
+      { l:'Group cash', v:gbp(C.group_total), s:`${chip(C.day_delta,true,k0)} since ${C.prev_date?fmtD(C.prev_date):'yesterday'}`,
+        state: C.alarm_hit?'bad':'good',
+        tip:`<b>Group cash</b><br><span class="k">Snapshot</span> ${esc(C.snapshot_date)}<br><span class="k">Alarm</span> £${(C.alarm/1e6).toFixed(0)}m<br><span class="k">Week</span> ${C.week_delta>=0?'+':''}£${Math.round(C.week_delta).toLocaleString('en-GB')}` },
+      { l:`Leaving in ${L.window_days} days`, v:gbp(L.total),
+        s: L.by_category.length ? `biggest: ${esc(L.by_category[0].category)} ${gbp(L.by_category[0].amount)}` : 'nothing dated', state:'',
+        tip:`<b>Money out</b><br>Estimated from each company's bank-feed pattern.<br>${L.by_category.map(c=>`<span class="k">${esc(c.category)}</span> £${Math.round(c.amount).toLocaleString('en-GB')}`).join('<br>')}` },
+      { l:`Cash in ${L.window_days} days`, v: P?gbp(P.closing):'–',
+        s: P?`${chip(P.closing-P.opening,true,k0)} on today`:'no projection',
+        state: !P?'':P.closing<C.alarm?'bad':'good',
+        tip: P?`<b>Where cash lands</b><br><span class="k">Today</span> £${Math.round(P.opening).toLocaleString('en-GB')}<br><span class="k">Money in, last 30 days</span> +£${Math.round(P.inflow).toLocaleString('en-GB')}<br><span class="k">Due out, next ${L.window_days} days</span> -£${Math.round(P.outflow).toLocaleString('en-GB')}<br><span class="k">Lands near</span> £${Math.round(P.closing).toLocaleString('en-GB')}`:'' },
+      { l:`Sales, ${M?esc(M.latest_label):'latest month'}`, v:gbp(g.sales), s:`${chip(g.sales_delta,true,k0)} on ${M?esc(M.prior_label):'last month'}`, state:'',
+        tip:`<b>Sales</b><br><span class="k">${M?esc(M.prior_label):''}</span> £${Math.round(gp.sales||0).toLocaleString('en-GB')}<br><span class="k">Year to date</span> £${Math.round(g.ytd_sales||0).toLocaleString('en-GB')}` },
+      { l:'Net profit', v:gbp(g.np), s:`${chip(g.np_delta,true,k0)} on ${M?esc(M.prior_label):'last month'}`,
+        state: g.np>0?'good':'bad',
+        tip:`<b>Net profit</b><br><span class="k">Margin</span> ${g.np_pct}%<br><span class="k">${M?esc(M.prior_label):''}</span> £${Math.round(gp.np||0).toLocaleString('en-GB')} at ${gp.np_pct}%<br><span class="k">Year to date</span> £${Math.round(g.ytd_np||0).toLocaleString('en-GB')}` },
+      { l:'Food cost', v:(g.food_pct==null?'–':g.food_pct.toFixed(1)+'%'), s:`${chip(g.food_pct==null?null:g.food_pct-foodT,false,v=>(v>0?'+':'')+v.toFixed(1)+'pp')} against the ${foodT}% target`,
+        state: g.food_pct==null?'':g.food_pct<=foodT?'good':'bad',
+        tip:`<b>Food cost</b><br><span class="k">Target</span> ${foodT}% of sales<br><span class="k">${M?esc(M.prior_label):''}</span> ${gp.food_pct}%` },
+    ];
+    h += `<div class="tiles">` + tiles.map(t=>`<div class="tile ${t.state?'is-'+t.state:''}" data-tip="${esc(t.tip)}" tabindex="0">
+      <div class="tl">${esc(t.l)}</div><div class="tv">${t.v}</div><div class="ts">${t.s}</div></div>`).join('') + `</div>`;
+
+    // ---- road to the revenue target ----
+    if(TG){
+      const tm = v => '£'+(v/1e6).toFixed(2)+'m';
+      const gap = TG.projection_seasonal==null ? null : TG.projection_seasonal - TG.target;
+      h += `<div class="card"><h2>Road to ${tm(TG.target)} <small>revenue, ${TG.months_done} months done, ${TG.months_left} to go</small></h2>
+        <div class="seg" style="height:26px">
+          <span style="width:${Math.min(100,TG.pct)}%;background:var(--series-1)" data-tip="<b>Banked</b> £${Math.round(TG.ytd).toLocaleString('en-GB')} to ${esc(TG.through)}"></span>
+          <span style="width:${Math.max(0,100-TG.pct)}%;background:var(--neutral)" data-tip="<b>Still to sell</b> £${Math.round(TG.needed).toLocaleString('en-GB')}"></span></div>
+        <div class="seglab" style="margin-bottom:10px">
+          <span><span class="dot" style="background:var(--series-1)"></span>${gbp(TG.ytd)} banked (${TG.pct}%)</span>
+          <span><span class="dot" style="background:var(--neutral)"></span>${gbp(TG.needed)} still to sell</span></div>
+        <div class="row">
+          <div class="kpi" data-tip="<b>What it takes</b><br>${gbp(TG.needed)} over ${TG.months_left} months." tabindex="0">
+            <div class="l">Needed every month from here</div><div class="v">${gbp(TG.needed_per_month)}</div>
+            <div class="muted">${TG.ytd_average?`the year has averaged ${gbp(TG.ytd_average)}`:''}</div></div>
+          <div class="kpi" data-tip="<b>Run rate</b><br>Keeps the year-to-date average going for the last ${TG.months_left} months." tabindex="0">
+            <div class="l">If the average holds</div><div class="v ${TG.projection_run_rate>=TG.target?'pos':'neg'}">${tm(TG.projection_run_rate)}</div>
+            <div class="muted">${TG.projection_run_rate>=TG.target?'clears it':gbp(TG.target-TG.projection_run_rate)+' short'}</div></div>
+          ${TG.projection_seasonal!=null?`<div class="kpi" data-tip="<b>Seasonal</b><br>Repeats last year's month-by-month shape from here, scaled by how ${esc((M&&M.latest_label)||'this month')} compared with the same month last year." tabindex="0">
+            <div class="l">If the year repeats last year's shape</div><div class="v ${TG.projection_seasonal>=TG.target?'pos':'neg'}">${tm(TG.projection_seasonal)}</div>
+            <div class="muted">${gap>=0?gbp(gap)+' clear':gbp(-gap)+' short'}</div></div>`:''}
+          ${TG.prior_year_total?`<div class="kpi" data-tip="<b>Last year</b><br>Full-year revenue from the 2025 consolidated profit and loss." tabindex="0">
+            <div class="l">All of 2025</div><div class="v">${tm(TG.prior_year_total)}</div>
+            <div class="muted">${TG.ytd>TG.prior_year_total?'already passed':gbp(TG.prior_year_total-TG.ytd)+' to go to match it'}</div></div>`:''}
+        </div>
+        <div class="src">${esc(TG.basis)}</div></div>`;
+    }
+
+    // ---- month chart + the two gauges ----
+    h += `<div class="grid2">`;
+    h += `<div class="card"><h2 id="mchart-h">Revenue by month
+        <span style="float:right"><span class="toggle" id="mtog">
+          <button data-mode="yoy" class="on">2025 vs 2026</button><button data-mode="split">Sales split</button><button data-mode="margin">Margin</button></span></span></h2>
+      <div id="mchart"></div></div>`;
+
+    const foodState  = g.food_pct==null?'':g.food_pct<=foodT?'good':'bad';
+    const closeState = !P?'':P.closing<C.alarm?'bad':'good';
+    h += `<div>
+      <div class="card"><h2>Where cash lands <small>next ${L.window_days} days</small></h2>
+        ${P?`<div class="walk">
+          <div class="wk" data-tip="<b>Cash today</b><br>Snapshot ${esc(C.snapshot_date)}"><span class="wl">Today</span><span class="wv">${gbp(P.opening)}</span></div>
+          <div class="wk" data-tip="<b>Money in</b><br>What actually landed in the bank over the last 30 days across ${P.companies_covered} companies, transfers between our own companies taken out."><span class="wl">Money in, on last month</span><span class="wv pos">+${gbp(P.inflow)}</span></div>
+          <div class="wk" data-tip="<b>Money out</b><br>The calendar's estimate for the next ${L.window_days} days."><span class="wl">Money out</span><span class="wv neg">-${gbp(P.outflow)}</span></div>
+          <div class="wk tot"><span class="wl">Lands near</span><span class="wv" style="color:${closeState==='bad'?'var(--bad)':'var(--good)'}">${gbp(P.closing)}</span></div>
+        </div>
+        <div class="src">${esc(P.basis)}</div>`:'<div class="muted">No projection: the bank feeds did not give enough to work from.</div>'}</div>
+      <div class="card"><h2>Food cost <small>how much of the ${foodT}% allowance is used</small></h2>
+        <div class="gauge">${gauge(g.food_pct==null?0:g.food_pct/foodT, 'food cost against target', foodState)}
+          <div><div class="num" style="color:${foodState==='good'?'var(--good)':'var(--bad)'}">${g.food_pct==null?'–':g.food_pct.toFixed(1)+'%'}</div>
+          <div class="muted">${g.food_pct==null?'':(g.food_pct<=foodT?`${(foodT-g.food_pct).toFixed(1)} points under target`:`${(g.food_pct-foodT).toFixed(1)} points over target`)}${M&&M.over_food?`<br>${M.over_food.length} site${M.over_food.length===1?'':'s'} over it.`:''}</div></div></div></div>
+      <div class="card"><h2>Company health <small>${H?H.rows.length:0} companies</small></h2>
+        ${H?`<div class="seg">
+          ${['red','amber','green','unknown'].map(k=>{const n=(H.counts||{})[k]||0; const w=n/H.rows.length*100;
+            const c={red:'var(--bad)',amber:'var(--warn)',green:'var(--good)',unknown:'var(--neutral)'}[k];
+            return n?`<span style="width:${w}%;background:${c}"></span>`:''; }).join('')}
+        </div><div class="seglab">
+          <span><span class="dot red"></span>${(H.counts||{}).red||0} red</span>
+          <span><span class="dot amber"></span>${(H.counts||{}).amber||0} watch</span>
+          <span><span class="dot green"></span>${(H.counts||{}).green||0} green</span>
+          <span><span class="dot unknown"></span>${(H.counts||{}).unknown||0} not checked</span></div>
+        <div style="margin-top:8px"><a href="#health" class="muted" style="color:var(--orange-dk);font-weight:600;font-size:12.5px">Open Company Health</a></div>`:'<div class="muted">Not built.</div>'}
+      </div></div>`;
+    h += `</div>`;
+
+    // ---- break-even summary strip ----
+    if(B){
+      const pctRec = B.percent_recovered;
+      h += `<div class="card"><h2>Build cost recovered <small>${B.sites_with_capex} sites with a build cost on record</small>
+        <span style="float:right"><a href="#bep" class="muted" style="color:var(--orange-dk);font-weight:600;font-size:12.5px">Open Break-even</a></span></h2>
+        <div class="row">
+          <div class="kpi"><div class="l">Total spent building sites</div><div class="v">${gbp(B.total_capex)}</div></div>
+          <div class="kpi"><div class="l">Earned back so far</div><div class="v pos">${gbp(B.total_recovered)}</div></div>
+          <div class="kpi"><div class="l">Still to earn back</div><div class="v">${gbp(B.outstanding)}</div></div>
+          <div class="kpi"><div class="l">Recovered</div><div class="v">${pctRec==null?'–':pctRec.toFixed(1)+'%'}</div></div>
+        </div>
+        <div class="seg" style="height:18px">
+          <span style="width:${Math.min(100,pctRec||0)}%;background:var(--series-1)" data-tip="<b>Earned back</b> £${Math.round(B.total_recovered).toLocaleString('en-GB')}"></span>
+          <span style="width:${Math.max(0,100-(pctRec||0))}%;background:var(--neutral)" data-tip="<b>Still to earn back</b> £${Math.round(B.outstanding).toLocaleString('en-GB')}"></span></div>
+        <div id="bepbars" style="margin-top:10px"></div>
+        <div class="src">Cumulative management-accounts profit since each site opened, against what it cost to build. Click a site to open the Break-even tab. Source: ${esc(B.source)}.</div></div>`;
+    }
+
+    // ---- needs attention ----
+    h += `<div class="card"><h2>Needs attention <small>${D.attention.length} items</small></h2>`;
+    if(!D.attention.length) h += `<div class="muted">Nothing red or amber right now.</div>`;
+    D.attention.forEach(a=>{ h += `<div class="li"><span class="pill ${a.level}">${a.level.toUpperCase()}</span><div class="who">${esc(a.company)}</div><div class="what">${esc(a.text)}</div></div>`; });
+    h += `</div>`;
+
+    // ---- cash by company + money out by category ----
+    h += `<div class="grid2">
+      <div class="card"><h2>Cash by company <small>snapshot ${fmtD(C.snapshot_date)} · click a row for its calendar</small></h2>
+        <div id="cashbars"></div>
+        <div class="src">Group ${gbp2(C.group_total)}, a simple sum with no intercompany elimination. Tide sits outside the headline: ${gbp(C.tide_total)} across all accounts.</div></div>
+      <div class="card"><h2>Money out, next ${L.window_days} days</h2><div id="catbars"></div>
+        <div class="src">${esc(L.basis)}</div></div></div>`;
+
+    // ---- coming in ----
+    const inc = Object.entries(D.incoming);
+    let delTot=0, franTot=0, interTot=0;
+    inc.forEach(([code,x])=>{ if(x.deliveroo) delTot+=x.deliveroo.avg_week; if(x.franchise) franTot+=x.franchise.total_180d; if(x.intercompany) interTot+=x.intercompany.total_90d; });
+    h += `<div class="card"><h2>Coming in <small>patterns from the bank feed</small></h2><div class="row">
+      <div class="kpi"><div class="l">Deliveroo, typical week</div><div class="v">${gbp(delTot)}</div></div>
+      <div class="kpi"><div class="l">Franchise fees, last 180 days</div><div class="v">${gbp(franTot)}</div></div>
+      <div class="kpi"><div class="l">Intercompany, last 90 days</div><div class="v">${gbp(interTot)}</div></div></div>
+      <details style="margin-top:8px"><summary>By company</summary><div class="wrap"><table><thead><tr><th>Co</th><th>Deliveroo</th><th>Franchise</th><th>Intercompany (90d)</th></tr></thead><tbody>`;
+    inc.forEach(([code,x])=>{
+      h += `<tr><td><b>${esc(code)}</b></td>
+        <td>${x.deliveroo?`${gbp(x.deliveroo.avg_week)}/wk, usually ${x.deliveroo.weekday}, next ${fmtD(x.deliveroo.next)}`:'<span class="muted">none</span>'}</td>
+        <td>${x.franchise?`${gbp(x.franchise.total_180d)} from ${esc(x.franchise.from_.join(', '))}`:'<span class="muted">none</span>'}</td>
+        <td>${x.intercompany?gbp(x.intercompany.total_90d):'<span class="muted">none</span>'}</td></tr>`;
+    });
+    h += `</tbody></table></div></details></div>`;
+
+    h += `<div class="card"><h2>Daily cash dashboard <small>the existing 09:00 view, embedded</small></h2><iframe src="cash-dashboard.html" loading="lazy" title="Cash dashboard"></iframe></div>`;
+    h += `<div class="card"><h2>Not yet on the board <small>named, never filled with zero</small></h2>`;
+    D.gaps.forEach(gp2=>{ h += `<div class="li"><div class="who">${esc(gp2.company)}</div><div class="what muted">${esc(gp2.text)}</div></div>`; });
+    h += `</div></div>`;
+    const T = document.getElementById('tab-today');
+    T.innerHTML = h;
+
+    // ---- the month chart, drawn twice depending on the toggle ----
+    const ser = (M && M.group_series) || {};
+    function drawMonths(mode){
+      const box = document.getElementById('mchart');
+      const sales = ser.sales||[], np = ser.np||[];
+      if(!sales.length){ box.innerHTML='<div class="muted">Not available.</div>'; return; }
+      const W=1000, HGT=196, padL=6, padB=34, padT=18;
+      if(mode==='yoy'){
+        const prior = ((PY&&PY.lines)||{}).revenue || [];
+        if(!prior.length){ box.innerHTML='<div class="muted">2025 is not loaded. Run extract_pl_2025.py.</div>'; return; }
+        const byM = {}; prior.forEach(x=>byM[x.month]=x.value);
+        const pts = sales.map(x=>({month:x.month, now:x.value, was:byM[x.month]??null}));
+        const mx = Math.max(...pts.map(x=>Math.max(x.now, x.was||0)));
+        const bw = (W - padL*2) / pts.length;
+        const y = v => padT + (HGT-padT-padB) * (1 - v/mx);
+        let sv = `<svg class="plot" viewBox="0 0 ${W} ${HGT}" preserveAspectRatio="none" style="height:210px" role="img" aria-label="Revenue by month, 2025 against 2026">`;
+        pts.forEach((x,i)=>{
+          const gw = bw*0.74, half = gw/2, x0 = padL + i*bw + bw*0.13;
+          const base = y(0);
+          const d2 = (x.was!=null && x.now) ? (x.now-x.was)/x.was*100 : null;
+          sv += `<g class="col">`;
+          if(x.was!=null) sv += `<rect class="mk" x="${x0}" y="${y(x.was)}" width="${half-2}" height="${Math.max(1,base-y(x.was))}" fill="var(--neutral)" rx="4"/>
+            <text x="${x0+(half-2)/2}" y="${y(x.was)-5}" text-anchor="middle">${m1(x.was)}</text>`;
+          sv += `<rect class="mk" x="${x0+half+2}" y="${y(x.now)}" width="${half-2}" height="${Math.max(1,base-y(x.now))}" fill="var(--series-1)" rx="4"/>
+            <text class="val" x="${x0+half+2+(half-2)/2}" y="${y(x.now)-5}" text-anchor="middle">${m1(x.now)}</text>
+            <text x="${x0+gw/2}" y="${HGT-14}" text-anchor="middle">${x.month}</text>
+            ${d2!=null?`<text x="${x0+gw/2}" y="${HGT-3}" text-anchor="middle" fill="${d2<0?'var(--bad)':'var(--good)'}" style="font-weight:700">${d2>0?'+':''}${d2.toFixed(0)}%</text>`:''}
+            <rect class="hit" x="${x0-bw*0.13}" y="0" width="${bw}" height="${HGT-padB}"
+              data-tip="<b>${x.month}</b><br><span class='k'>2026</span> ${m1(x.now)}<br><span class='k'>2025</span> ${x.was==null?'not available':m1(x.was)}${d2!=null?`<br><span class='k'>Change</span> ${d2>0?'+':''}${d2.toFixed(1)}% (${k0(x.now-x.was)})`:''}"/></g>`;
+        });
+        const done = pts.filter(x=>x.was!=null);
+        const sumNow = done.reduce((a,x)=>a+x.now,0), sumWas = done.reduce((a,x)=>a+x.was,0);
+        box.innerHTML = sv + `</svg><div class="legend"><span><i style="background:var(--neutral)"></i>2025</span><span><i style="background:var(--series-1)"></i>2026</span>
+          <span>Same months both years: ${m1(sumWas)} to ${m1(sumNow)}, <b style="color:var(--good)">+${((sumNow-sumWas)/sumWas*100).toFixed(0)}%</b></span></div>
+          <div class="src">${esc(((PY&&PY.caveats)||[]).join(' '))}</div>`;
+        wireTips(box);
+        return;
+      }
+      if(mode==='margin'){
+        const pts = sales.map((s,i)=>({month:s.month, v: np[i] && s.value ? np[i].value/s.value*100 : null}))
+                         .filter(p=>p.v!=null);
+        const mx = Math.max(...pts.map(p=>p.v), 5), mn = Math.min(...pts.map(p=>p.v), 0);
+        const x = i => padL + (W-padL*2) * (i+0.5)/pts.length;
+        const y = v => padT + (HGT-padT-padB) * (1 - (v-mn)/((mx-mn)||1));
+        let sv = `<svg class="plot" viewBox="0 0 ${W} ${HGT}" preserveAspectRatio="none" style="height:200px" role="img" aria-label="Net profit margin by month">`;
+        [mn, (mn+mx)/2, mx].forEach(v=>{ sv += `<line class="gl" x1="0" x2="${W}" y1="${y(v)}" y2="${y(v)}"/>`; });
+        if(mn<0) sv += `<line x1="0" x2="${W}" y1="${y(0)}" y2="${y(0)}" stroke="var(--baseline,#c3c2b7)" stroke-width="1.5"/>`;
+        sv += `<polyline fill="none" stroke="var(--series-1)" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"
+                 points="${pts.map((p,i)=>`${x(i)},${y(p.v)}`).join(' ')}"/>`;
+        pts.forEach((p,i)=>{
+          sv += `<g class="col"><circle cx="${x(i)}" cy="${y(p.v)}" r="4.5" fill="${p.v<0?'var(--bad)':'var(--series-1)'}" stroke="#fff" stroke-width="2"/>
+            <text class="val" x="${x(i)}" y="${y(p.v)-11}" text-anchor="middle" fill="${p.v<0?'var(--bad)':'var(--ink)'}">${p.v.toFixed(0)}%</text>
+            <text x="${x(i)}" y="${HGT-8}" text-anchor="middle">${p.month}</text>
+            <rect class="hit" x="${x(i)-28}" y="0" width="56" height="${HGT-padB}"
+              data-tip="<b>${p.month} 2026</b><br><span class='k'>Margin</span> ${p.v.toFixed(1)}%<br><span class='k'>Sales</span> ${m1(sales[i].value)}<br><span class='k'>Net profit</span> ${k0(np[i].value)}"/></g>`;
+        });
+        box.innerHTML = sv + `</svg><div class="legend"><span><i style="background:var(--series-1)"></i>Net profit as a share of sales</span></div>
+          <div class="src">Chart labels from the monthly analysis, so rounded.</div>`;
+      } else {
+        const mx = Math.max(...sales.map(s=>s.value));
+        const bw = (W - padL*2) / sales.length;
+        const y = v => padT + (HGT-padT-padB) * (1 - v/mx);
+        let sv = `<svg class="plot" viewBox="0 0 ${W} ${HGT}" preserveAspectRatio="none" style="height:200px" role="img" aria-label="Sales split into costs and net profit by month">`;
+        sales.forEach((s,i)=>{
+          const p = (np[i]||{}).value || 0, costs = s.value - p;
+          const x0 = padL + i*bw + bw*0.14, w = bw*0.72;
+          const yTop = y(s.value), yProfit = y(Math.max(p,0)), base = y(0);
+          const hCost = Math.max(1, (p>0? y(p) : base) - yTop);
+          const hProf = p>0 ? Math.max(1, base - y(p)) : 0;
+          sv += `<g class="col">
+            <rect class="mk" x="${x0}" y="${yTop}" width="${w}" height="${hCost}" fill="var(--neutral)" rx="4"/>
+            ${p>0?`<rect class="mk" x="${x0}" y="${y(p)}" width="${w}" height="${hProf}" fill="var(--series-1)" rx="4"/>`:''}
+            <text class="val" x="${x0+w/2}" y="${yTop-6}" text-anchor="middle">${m1(s.value)}</text>
+            <text x="${x0+w/2}" y="${HGT-14}" text-anchor="middle">${s.month}</text>
+            <text x="${x0+w/2}" y="${HGT-3}" text-anchor="middle" fill="${p<0?'var(--bad)':'var(--series-1)'}" style="font-weight:700">${k0(p)}</text>
+            <rect class="hit" x="${x0-bw*0.14}" y="0" width="${bw}" height="${HGT-padB}"
+              data-tip="<b>${s.month} 2026</b><br><span class='k'>Sales</span> ${m1(s.value)}<br><span class='k'>Costs</span> ${m1(costs)}<br><span class='k'>Net profit</span> ${k0(p)} (${s.value?(p/s.value*100).toFixed(1):'0'}%)"/></g>`;
+        });
+        box.innerHTML = sv + `</svg><div class="legend"><span><i style="background:var(--series-1)"></i>Net profit</span><span><i style="background:var(--neutral)"></i>Everything it cost to make it</span><span>Figures under each month are that month's net profit.</span></div>
+          <div class="src">The two parts add up to sales. Chart labels from the monthly analysis, so rounded to the nearest £10k on sales and £1k on profit.</div>`;
+      }
+      wireTips(box);
+    }
+    drawMonths('yoy');
+    T.querySelectorAll('#mtog button').forEach(b=>b.onclick=()=>{
+      T.querySelectorAll('#mtog button').forEach(x=>x.classList.remove('on')); b.classList.add('on'); drawMonths(b.dataset.mode);
+    });
+
+    // ---- build cost recovered, per site ----
+    if(B){
+      const rows = B.rows.filter(r=>r.capex).map(r=>({
+        label:r.code,
+        sub:(r.fully_recovered || (r.profit_to_date||0)>=r.capex) ? 'paid back' : `${gbp(Math.max(0,r.capex-(r.profit_to_date||0)))} to go`,
+        value:Math.max(-100, Math.min(100, r.bep_pct||0)),
+        color:(r.fully_recovered || (r.profit_to_date||0)>=r.capex) ? 'var(--good)' : ((r.bep_pct||0)>=50 ? 'var(--series-1)' : 'var(--series-1-soft)'),
+        go:'#bep',
+        tip:`<b>${esc(r.code)}</b><br><span class="k">Build cost</span> £${Math.round(r.capex).toLocaleString('en-GB')}<br><span class="k">Earned back</span> £${Math.round(r.profit_to_date||0).toLocaleString('en-GB')}<br><span class="k">Still to earn</span> £${Math.round(Math.max(0,r.capex-(r.profit_to_date||0))).toLocaleString('en-GB')}<br><span class="k">Opened</span> ${esc(r.start||'not given')}`
+      }));
+      const el = document.getElementById('bepbars');
+      if(el){
+        el.innerHTML = barList(rows, {fmt:v=>v.toFixed(1)+'%'});
+        el.querySelectorAll('.barrow').forEach(b2=>{ b2.removeAttribute('data-go');
+          b2.onclick = ()=>{ document.querySelector('[data-tab=bep]').click(); window.scrollTo({top:0,behavior:'smooth'}); }; });
+      }
+    }
+
+    // ---- cash by company ----
+    document.getElementById('cashbars').innerHTML = barList(
+      C.companies.filter(r=>r.cash!=null).map(r=>({
+        label:r.code, sub:r.cluster, value:r.cash, go:r.code,
+        tip:`<b>${esc(r.code)}</b> ${esc(r.tenant)}<br><span class="k">Cash</span> £${Math.round(r.cash).toLocaleString('en-GB')}<br><span class="k">Day</span> ${r.day==null?'n/a':(r.day>=0?'+':'')+'£'+Math.round(r.day).toLocaleString('en-GB')}<br><span class="k">Week</span> ${r.week==null?'n/a':(r.week>=0?'+':'')+'£'+Math.round(r.week).toLocaleString('en-GB')}${r.unrec_n?`<br><span class="k">Unreconciled</span> ${r.unrec_n} lines`:''}`
+      })), {fmt:gbp});
+    // ---- money out by category ----
+    document.getElementById('catbars').innerHTML = barList(
+      L.by_category.map(x=>({label:x.category.length>22?x.category.slice(0,21)+'…':x.category, value:x.amount,
+        tip:`<b>${esc(x.category)}</b><br><span class="k">Next ${L.window_days} days</span> £${Math.round(x.amount).toLocaleString('en-GB')}<br><span class="k">Share</span> ${(x.amount/L.total*100).toFixed(0)}% of everything due out`})),
+      {fmt:gbp});
+    wireTips(T);
+    T.querySelectorAll('[data-go]').forEach(el=>{
+      const go = ()=>{ document.querySelector('[data-tab=calendar]').click();
+        const sel=document.querySelector('#f-co'); if(sel){ sel.value=el.dataset.go; sel.dispatchEvent(new Event('change')); }
+        window.scrollTo({top:0,behavior:'smooth'}); };
+      el.onclick = go;
+      el.onkeydown = e=>{ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); go(); } };
+    });
+  })();
+
+  // ---------------- CALENDAR ----------------
+  const cal = D.calendar;
+  const cats = [...new Set(cal.map(i=>i.category))];
+  const cos = D.companies.map(c=>c.code);
+  let cf = { co:'all', cat:new Set(cats), status:'open', q:'' };
+  const cw = document.getElementById('tab-calendar');
+  function renderCal(){
+    let html = `<div class="card"><div class="filters">
+      <select id="f-co"><option value="all">All companies</option>${cos.map(c=>`<option ${cf.co===c?'selected':''}>${c}</option>`).join('')}</select>
+      <select id="f-st"><option value="open" ${cf.status==='open'?'selected':''}>Due + overdue</option><option value="all" ${cf.status==='all'?'selected':''}>Everything incl. paid</option><option value="overdue" ${cf.status==='overdue'?'selected':''}>Overdue only</option></select>
+      <input type="search" id="f-q" placeholder="search" value="${esc(cf.q)}"></div>
+      <div class="filters">${cats.map(c=>`<span class="chip ${cf.cat.has(c)?'on':''}" data-cat="${esc(c)}">${esc(c)}</span>`).join('')}</div>`;
+    let rows = cal.filter(i => (cf.co==='all'||i.company===cf.co) && cf.cat.has(i.category)
+      && (cf.status==='all' || (cf.status==='open' ? i.status!=='paid' : i.status==='overdue'))
+      && (!cf.q || (i.company+' '+i.category+' '+i.note+' '+i.basis).toLowerCase().includes(cf.q.toLowerCase())));
+    const overdue = rows.filter(i=>i.status==='overdue'), rest = rows.filter(i=>i.status!=='overdue');
+    const in30 = rest.filter(i=>i.status==='due' && i.days>=0 && i.days<=D.leaving.window_days).reduce((s,i)=>s+i.amount,0);
+    html += `<div class="row"><div class="kpi"><div class="l">Overdue</div><div class="v ${overdue.length?'neg':''}">${overdue.length}</div></div>
+      <div class="kpi"><div class="l">Leaving in ${D.leaving.window_days} days (this filter)</div><div class="v">${gbp(in30)}</div></div>
+      <div class="kpi"><div class="l">Items shown</div><div class="v">${rows.length}</div></div></div></div>`;
+    const ev = i => `<div class="ev ${i.status}"><div class="code">${esc(i.company)}</div><div><div class="cat">${esc(i.category)} <span class="pill ${i.status==='overdue'?'red':i.status==='paid'?'green':i.status==='check'?'amber':'grey'}">${i.status}</span></div><div class="note">${esc(i.note)}</div></div><div><div class="amt">${gbp(i.amount)}</div><div class="basis">${esc(i.basis)}</div></div></div>`;
+    if(overdue.length){ html += `<div class="day" style="color:var(--red)">Overdue, pinned</div>` + overdue.map(ev).join(''); }
+    let last=null;
+    rest.sort((a,b)=>a.date<b.date?-1:a.date>b.date?1:b.amount-a.amount).forEach(i=>{
+      if(i.date!==last){ last=i.date; const dayTot = rest.filter(x=>x.date===i.date && x.status!=='paid').reduce((s,x)=>s+x.amount,0); html += `<div class="day">${fmtD(i.date)} <span class="muted">· ${rel(i.days)}${dayTot?' · '+gbp(dayTot)+' due':''}</span></div>`; }
+      html += ev(i);
+    });
+    if(!rows.length) html += `<div class="muted">Nothing matches.</div>`;
+    html += `<div class="src" style="margin-top:14px">Every date and amount comes from the pattern in that company's Xero bank feed (as at: ${esc(Object.entries(D.feed_as_at).map(([k,v])=>k+' '+v).join(', '))}). Actual = seen in the bank. Estimate = projected from the last payment. Check = no recent payment on record, confirm before relying on it. Corporation tax, Companies House filings and landlord rent from the rent register are not wired yet.</div>`;
+    cw.innerHTML = html;
+    cw.querySelector('#f-co').onchange = e=>{cf.co=e.target.value; renderCal();};
+    cw.querySelector('#f-st').onchange = e=>{cf.status=e.target.value; renderCal();};
+    cw.querySelector('#f-q').oninput = e=>{cf.q=e.target.value; renderCal(); cw.querySelector('#f-q').focus(); const el=cw.querySelector('#f-q'); el.setSelectionRange(el.value.length,el.value.length);};
+    cw.querySelectorAll('.chip').forEach(ch=>ch.onclick=()=>{ const c=ch.dataset.cat; if(cf.cat.has(c)&&cf.cat.size>1) cf.cat.delete(c); else cf.cat.add(c); renderCal(); });
+  }
+  renderCal();
+
+  // ---------------- COMPANY HEALTH ----------------
+  (function(){
+    const H = D.health, w = document.getElementById('tab-health');
+    if(!H){ w.innerHTML = '<div class="card muted">No health data in this build.</div>'; return; }
+    const lab = {red:'Red', amber:'Watch', green:'Green', unknown:'Not checked', 'n/a':'Not applicable'};
+    let hf = { show:'all' };
+    function draw(){
+      const c = H.counts||{};
+      let x = `<div class="card"><h2>Company health <small>as at ${fmtD(H.as_of)} · ${H.rows.length} companies</small></h2>
+        <div class="row">
+          <div class="kpi"><div class="l">Red</div><div class="v ${c.red?'neg':''}">${c.red||0}</div></div>
+          <div class="kpi"><div class="l">Watch</div><div class="v">${c.amber||0}</div></div>
+          <div class="kpi"><div class="l">Green</div><div class="v pos">${c.green||0}</div></div>
+          <div class="kpi"><div class="l">Nothing to judge on</div><div class="v">${c.unknown||0}</div></div>
+        </div>
+        <div class="filters" style="margin-top:10px">
+          ${['all','red','amber','green'].map(k=>`<span class="chip ${hf.show===k?'on':''}" data-show="${k}">${k==='all'?'All':lab[k]}</span>`).join('')}
+        </div>
+        <div class="src">${esc(H.basis)} The five tests are: ${H.rules.map(r=>esc(r.label)).join(', ')}.</div></div>`;
+
+      const rows = H.rows.filter(r=>hf.show==='all'||r.overall===hf.show);
+      rows.forEach(r=>{
+        x += `<div class="hrow ${r.overall}">
+          <div class="hh"><span class="dot ${r.overall}"></span><b>${esc(r.code)}</b>
+            <span class="muted">${esc(r.tenant)} · ${esc(r.cluster)}</span>
+            <span class="pill ${r.overall==='red'?'red':r.overall==='amber'?'amber':r.overall==='green'?'green':'grey'}" style="margin-left:auto">${lab[r.overall]}</span></div>
+          <div class="tests">`;
+        H.rules.forEach(rule=>{
+          const t = r.tests[rule.key]; if(!t) return;
+          x += `<div class="tst"><span class="tl"><span class="dot ${t.state==='n/a'?'unknown':t.state}"></span>${esc(rule.label)}</span><span>${esc(t.text)}</span></div>`;
+        });
+        x += `</div>`;
+        if(r.running && r.running.length){
+          x += `<details style="margin-top:6px"><summary>How the data behind it is running</summary><div class="tests" style="margin-top:6px">`;
+          r.running.forEach(t=>{ x += `<div class="tst"><span class="tl"><span class="dot ${t.state}"></span></span><span>${esc(t.text)}</span></div>`; });
+          x += `</div></details>`;
+        }
+        x += `</div>`;
+      });
+      if(!rows.length) x += `<div class="card muted">Nothing in that band.</div>`;
+      x += `<div class="card"><h2>What is not checked yet</h2>
+        <div class="li"><div class="who">All</div><div class="what muted">Companies House filing dates and corporation tax year ends are not connected, so that test is blank for every company.</div></div>
+        <div class="li"><div class="who">All</div><div class="what muted">The three-month loss rule needs three closed months of net profit. ${H.latest_ma_month?esc(H.latest_ma_month)+' and '+esc(H.prior_ma_month)+' are loaded':'none are loaded'}, so it shows as a watch, never red.</div></div></div>`;
+      w.innerHTML = x;
+      w.querySelectorAll('.chip').forEach(ch=>ch.onclick=()=>{ hf.show=ch.dataset.show; draw(); });
+    }
+    draw();
+  })();
+
+  // ---------------- MANAGEMENT ACCOUNTS ----------------
+  (function(){
+    const M = D.ma, w = document.getElementById('tab-ma');
+    if(!M){ w.innerHTML = '<div class="card muted">No management accounts in this build. Run extract_ma_history.py.</div>'; return; }
+    const g = M.group||{};
+    const pct = v => v==null ? '<span class="muted">–</span>' : v.toFixed(1)+'%';
+    const bars = (series, fmt) => {
+      if(!series||!series.length) return '<div class="muted">Not available.</div>';
+      const mx = Math.max(...series.map(p=>Math.abs(p.value)))||1;
+      return `<div class="bars">` + series.map(p=>{
+        const hgt = Math.max(2, Math.round(Math.abs(p.value)/mx*76));
+        return `<div class="b"><s class="${p.value<0?'bad':''}">${fmt(p.value)}</s><i class="${p.value<0?'neg':''}" style="height:${hgt}%"></i><em>${esc(p.month)}</em></div>`;
+      }).join('') + `</div>`;
+    };
+    const m1 = v => (v<0?'-':'')+'£'+(Math.abs(v)/1e6).toFixed(2)+'m';
+    const k1 = v => (v<0?'-':'')+'£'+Math.round(Math.abs(v)/1e3)+'k';
+
+    let x = `<div class="card"><h2>${esc(M.latest_label)} <small>group, all sites · ${M.sites.length} sites</small></h2>
+      <div class="row">
+        <div class="kpi"><div class="l">Sales</div><div class="v">${gbp(g.sales)}</div><div class="muted">${g.sales_delta!=null?sgn(g.sales_delta)+' vs '+esc(M.prior_label):''}</div></div>
+        <div class="kpi"><div class="l">Net profit</div><div class="v ${g.np<0?'neg':'pos'}">${gbp(g.np)}</div><div class="muted">${g.np_delta!=null?sgn(g.np_delta)+' vs '+esc(M.prior_label):''}</div></div>
+        <div class="kpi"><div class="l">Net profit %</div><div class="v">${pct(g.np_pct)}</div></div>
+        <div class="kpi"><div class="l">Year to date sales</div><div class="v">${gbp(g.ytd_sales)}</div></div>
+        <div class="kpi"><div class="l">Year to date net profit</div><div class="v">${gbp(g.ytd_np)}</div></div>
+      </div>
+      <div class="row" style="margin-top:8px">
+        <div class="kpi"><div class="l">Wages</div><div class="v">${pct(g.wages_pct)}</div></div>
+        <div class="kpi"><div class="l">Rent</div><div class="v">${pct(g.rent_pct)}</div></div>
+        <div class="kpi"><div class="l">Food <span class="muted">target ${M.food_target}%</span></div><div class="v ${g.food_pct>M.food_target?'neg':'pos'}">${pct(g.food_pct)}</div></div>
+        <div class="kpi"><div class="l">Variable</div><div class="v">${pct(g.variable_pct)}</div></div>
+        <div class="kpi"><div class="l">VAT</div><div class="v">${pct(g.vat_pct)}</div></div>
+
+      </div>
+      <div class="src">Source: ${esc(M.source)}. ${esc((M.notes||[]).filter(Boolean).join(' '))}</div></div>`;
+
+    x += `<div class="card"><h2>Group sales by month <small>2026</small></h2>${bars((M.group_series||{}).sales, m1)}
+      <h2 style="margin-top:14px">Group net profit by month <small>2026</small></h2>${bars((M.group_series||{}).np, k1)}
+      <div class="src">${esc((M.group_series||{}).note||'')}</div></div>`;
+
+    if(M.flags && M.flags.length){
+      x += `<div class="card"><h2>Read this before you act on a number</h2>`;
+      M.flags.forEach(f=>{ x += `<div class="li"><span class="pill ${f.level}">${f.level.toUpperCase()}</span><div class="who">${esc(f.code)}</div><div class="what">${esc(f.text)}</div></div>`; });
+      x += `</div>`;
+    }
+
+    x += `<div class="card"><h2>Movements <small>${esc(M.latest_label)} against ${esc(M.prior_label)}</small></h2><div class="row">
+      <div class="kpi" style="flex:1 1 260px"><div class="l">Biggest improvements in net profit</div>
+        ${M.movers_up.map(r=>`<div class="tst"><span class="tl"><b>${esc(r.code)}</b> ${esc(r.name||'')}</span><span>${sgn(r.np_delta)}</span></div>`).join('')}</div>
+      <div class="kpi" style="flex:1 1 260px"><div class="l">Biggest falls in net profit</div>
+        ${(M.movers_down.length?'':'<div class="muted">No site fell.</div>')}${M.movers_down.map(r=>`<div class="tst"><span class="tl"><b>${esc(r.code)}</b> ${esc(r.name||'')}</span><span>${sgn(r.np_delta)}</span></div>`).join('')}</div>
+      <div class="kpi" style="flex:1 1 260px"><div class="l">Losing money this month</div>
+        ${M.losers.length?M.sites.filter(r=>r.np!=null&&r.np<0).map(r=>`<div class="tst"><span class="tl"><b>${esc(r.code)}</b> ${esc(r.name||'')}</span><span class="bad">${gbp(r.np)}</span></div>`).join('')+`<div class="muted" style="margin-top:4px">Together ${gbp(M.loser_total)}.</div>`:'<div class="muted">None.</div>'}</div>
+      <div class="kpi" style="flex:1 1 260px"><div class="l">Over the ${M.food_target}% food target</div>
+        ${M.over_food.length?M.over_food.map(r=>`<div class="tst"><span class="tl"><b>${esc(r.code)}</b>${r.caution?' <span class="pill amber">check the MA first</span>':''}</span><span class="bad">${pct(r.food_pct)}</span></div>`).join(''):'<div class="muted">None.</div>'}</div>
+    </div></div>`;
+
+    // the annual-workbook layout: management-account lines down, site numbers across
+    const order = M.by_number || M.sites.map(r=>r.code);
+    const byCode = {}; M.sites.forEach(r=>byCode[r.code]=r);
+    const cols = order.map(c=>byCode[c]).filter(Boolean);
+    const money0 = v => v==null ? '<span class="muted">–</span>' : (v<0?'-':'')+'£'+Math.abs(Math.round(v)).toLocaleString('en-GB');
+    const p2 = v => v==null ? '<span class="muted">–</span>' : v.toFixed(2)+'%';
+    const share = (r,key) => (r.pounds && r.pounds[key]!=null && r.sales) ? r.pounds[key]/r.sales*100 : r[key+'_pct'];
+    const LINES = [
+      {k:'sales',   label:'Sales',          get:r=>r.sales,            fmt:money0, cls:'hd'},
+      {k:'wages',   label:'Wages',          get:r=>r.pounds.wages,     fmt:money0},
+      {k:'wagesp',  label:'Wages %',        get:r=>share(r,'wages'),   fmt:p2, pct:true},
+      {k:'rent',    label:'Rent',           get:r=>r.pounds.rent,      fmt:money0},
+      {k:'rentp',   label:'Rent %',         get:r=>share(r,'rent'),    fmt:p2, pct:true},
+      {k:'food',    label:'Food costs',     get:r=>r.pounds.food,      fmt:money0},
+      {k:'foodp',   label:'Food costs %',   get:r=>share(r,'food'),    fmt:p2, pct:true, target:M.food_target},
+      {k:'var',     label:'Variable costs', get:r=>r.pounds.variable,  fmt:money0},
+      {k:'varp',    label:'Variable costs %',get:r=>share(r,'variable'),fmt:p2, pct:true},
+      {k:'vat',     label:'VAT',            get:r=>r.pounds.vat,       fmt:money0},
+      {k:'vatp',    label:'VAT %',          get:r=>share(r,'vat'),     fmt:p2, pct:true},
+      {k:'total',   label:'Total costs',    get:r=>r.total_costs,      fmt:money0, cls:'hd'},
+      {k:'np',      label:'Net profit',     get:r=>r.np,               fmt:money0, cls:'hd', sign:true},
+      {k:'npp',     label:'Net profit %',   get:r=>r.np_pct,           fmt:p2, pct:true, sign:true},
+      {k:'ytd',     label:'Year to date net profit', get:r=>r.ytd_np,  fmt:money0, sign:true, cls:'sub'},
+    ];
+    x += `<div class="card"><h2>${esc(M.latest_label)} by site <small>the workbook layout, site numbers across</small></h2>
+      <div class="wrap"><table class="matrix"><thead><tr><th class="l stick"></th>
+      ${cols.map(r=>`<th class="n">${esc(r.code)}</th>`).join('')}<th class="n tot">Total</th></tr></thead>
+      <tr class="names"><th class="l stick"></th>${cols.map(r=>`<td class="n muted">${esc((r.name||'').slice(0,14))}</td>`).join('')}<td class="n tot muted">group</td></tr>
+      <tbody>`;
+    LINES.forEach(ln=>{
+      const gv = ln.get(g);
+      x += `<tr class="${ln.cls||''}"><th class="l stick">${esc(ln.label)}</th>`;
+      cols.forEach(r=>{
+        const v = ln.get(r);
+        let cls = 'n';
+        if(ln.sign && v!=null && v<0) cls += ' bad';
+        if(ln.target && v!=null && v>ln.target) cls += ' bad';
+        if(ln.target && v!=null && v<=ln.target) cls += ' good';
+        x += `<td class="${cls}" data-tip="<b>${esc(r.code)}</b> ${esc(r.name||'')}<br><span class='k'>${esc(ln.label)}</span> ${ln.fmt(v)}${ln.pct?'':(r.sales&&v!=null&&!ln.sign?`<br><span class='k'>of sales</span> ${(v/r.sales*100).toFixed(1)}%`:'')}">${ln.fmt(v)}</td>`;
+      });
+      x += `<td class="n tot ${ln.sign&&gv!=null&&gv<0?'bad':''}">${ln.fmt(gv)}</td></tr>`;
+    });
+    x += `</tbody></table></div>
+      <div class="src">Pounds ${esc((M.sites[0]||{}).pounds_basis||'as written in the monthly analysis')}. Percentages are of that site's sales. Total is the group column from the same analysis.</div></div>`;
+
+    if(M.first_half_group){
+      const f = M.first_half_group;
+      x += `<div class="card"><h2>The year so far <small>how the two closed months sit against the first half</small></h2><div class="row">
+        <div class="kpi"><div class="l">January to June sales</div><div class="v">${gbp(f.sales)}</div></div>
+        <div class="kpi"><div class="l">January to June net profit</div><div class="v ${f.np<0?'neg':'pos'}">${gbp(f.np)}</div></div>
+        <div class="kpi"><div class="l">${esc(M.prior_label)} net profit</div><div class="v">${M.group_prior?gbp(M.group_prior.np):'<span class="muted">not available</span>'}</div></div>
+        <div class="kpi"><div class="l">${esc(M.latest_label)} net profit</div><div class="v pos">${gbp(g.np)}</div></div>
+      </div><div class="src">${esc(M.first_half_group.basis||'')}</div></div>`;
+    }
+
+    x += `<div class="card"><h2>Not on this tab yet</h2>`;
+    (M.store_gaps||[]).forEach(t=>{ x += `<div class="li"><div class="who">MA</div><div class="what muted">${esc(t)}</div></div>`; });
+    x += `</div>`;
+    w.innerHTML = x;
+  })();
+
+  // ---------------- BREAK-EVEN ----------------
+  (function(){
+    const B = D.bep, w = document.getElementById('tab-bep');
+    if(!B){ w.innerHTML = '<div class="card muted">No break-even data. Run extract_analysis_docx.py after the monthly Financial Analysis document lands in the project folder.</div>'; return; }
+    const M = D.ma;
+    const latestNP = {}; ((M&&M.sites)||[]).forEach(r=>{ latestNP[r.code] = r.np; });
+    const asOf = (M && M.latest_month) ? M.latest_month : B.period;
+    const monthsTrading = (start, prec) => {
+      if(!start || !asOf || prec==='year') return null;
+      const a = new Date(start+'T00:00:00'), b = new Date(asOf+'-01T00:00:00');
+      const m = (b.getFullYear()-a.getFullYear())*12 + (b.getMonth()-a.getMonth()) + 1;
+      return m>0 ? m : null;
+    };
+    let bf = { show:'all' };
+
+    function rowsFor(){
+      const rows = B.rows.filter(r=>r.capex).map(r=>{
+        const mt = monthsTrading(r.start, r.start_precision);
+        const outstanding = Math.max(0, r.capex - (r.profit_to_date||0));
+        const run = latestNP[r.code];
+        const avg = (mt && r.profit_to_date!=null) ? r.profit_to_date/mt : null;
+        const monthsLeftRun = (run && run>0 && outstanding>0) ? outstanding/run : null;
+        const monthsLeftAvg = (avg && avg>0 && outstanding>0) ? outstanding/avg : null;
+        const done = (r.profit_to_date||0) >= r.capex || r.fully_recovered;
+        return {...r, months_trading:mt, outstanding, run, avg, monthsLeftRun, monthsLeftAvg, done};
+      });
+      rows.sort((a,b2)=> (b2.bep_pct??-1e9) - (a.bep_pct??-1e9));
+      return rows;
+    }
+    const R = rowsFor();
+    const band = r => r.done ? 'done' : (r.bep_pct||0) < 0 ? 'behind' : (r.bep_pct||0) >= 50 ? 'over' : 'under';
+    const bandLab = {done:'Paid back', over:'Over halfway', under:'Under way', behind:'Still going backwards'};
+    const bandCol = {done:'var(--good)', over:'var(--series-1)', under:'var(--series-1-soft)', behind:'var(--bad)'};
+
+    function draw(){
+      const counts = {done:0,over:0,under:0,behind:0}; R.forEach(r=>counts[band(r)]++);
+      const shown = R.filter(r=>bf.show==='all'||band(r)===bf.show);
+      const newSites = R.filter(r=>r.start && r.start >= '2025-06-01');
+      const newCapex = newSites.reduce((s2,r)=>s2+r.capex,0);
+      const newRec  = newSites.reduce((s2,r)=>s2+(r.profit_to_date||0),0);
+
+      let x = `<div class="viz">`;
+      x += `<div class="tiles">
+        <div class="tile" data-tip="<b>Total build cost</b><br>${B.sites_with_capex} sites with a figure on record.<br>No figure yet for ${esc((B.sites_without_capex||[]).join(', '))}." tabindex="0">
+          <div class="tl">Total spent building</div><div class="tv">${gbp(B.total_capex)}</div><div class="ts">${B.sites_with_capex} sites on record</div></div>
+        <div class="tile is-good" data-tip="<b>Earned back</b><br>Cumulative management-accounts profit since each site opened." tabindex="0">
+          <div class="tl">Earned back</div><div class="tv">${gbp(B.total_recovered)}</div><div class="ts">${B.percent_recovered.toFixed(1)}% of what was spent</div></div>
+        <div class="tile" data-tip="<b>Still to earn back</b><br>Build cost less profit made so far." tabindex="0">
+          <div class="tl">Still to earn back</div><div class="tv">${gbp(B.outstanding)}</div><div class="ts">across ${R.filter(r=>!r.done).length} sites</div></div>
+        <div class="tile is-good" data-tip="<b>Paid back</b><br>Sites whose profit since opening now covers what they cost to build." tabindex="0">
+          <div class="tl">Paid back</div><div class="tv">${counts.done}</div><div class="ts">of ${R.length} sites</div></div>
+        <div class="tile" data-tip="<b>Opened since June 2025</b><br>${esc(newSites.map(r=>r.code).join(', '))}" tabindex="0">
+          <div class="tl">New sites, spent</div><div class="tv">${gbp(newCapex)}</div><div class="ts">${newSites.length} opened since June 2025</div></div>
+        <div class="tile ${newRec<0?'is-bad':''}" data-tip="<b>New sites, earned back</b><br>The same ${newSites.length} sites' profit since opening." tabindex="0">
+          <div class="tl">New sites, earned back</div><div class="tv">${gbp(newRec)}</div><div class="ts">${newCapex?(newRec/newCapex*100).toFixed(1):'0'}% of their build cost</div></div>
+      </div>`;
+
+      x += `<div class="card"><h2>The whole estate <small>build cost against profit since opening</small></h2>
+        <div class="seg" style="height:22px">
+          <span style="width:${Math.min(100,B.percent_recovered)}%;background:var(--series-1)"
+            data-tip="<b>Earned back</b> £${Math.round(B.total_recovered).toLocaleString('en-GB')}"></span>
+          <span style="width:${Math.max(0,100-B.percent_recovered)}%;background:var(--neutral)"
+            data-tip="<b>Still to earn back</b> £${Math.round(B.outstanding).toLocaleString('en-GB')}"></span></div>
+        <div class="seglab"><span><span class="dot" style="background:var(--series-1)"></span>Earned back ${gbp(B.total_recovered)} (${B.percent_recovered.toFixed(1)}%)</span>
+          <span><span class="dot" style="background:var(--neutral)"></span>Still to earn back ${gbp(B.outstanding)}</span></div>
+        <div class="src">${esc(B.note)} Source: ${esc(B.source)}, as at ${esc(B.period)}.</div></div>`;
+
+      x += `<div class="card"><div class="filters">
+        ${['all','done','over','under','behind'].map(k=>`<span class="chip ${bf.show===k?'on':''}" data-show="${k}">${k==='all'?`All ${R.length}`:bandLab[k]+' '+counts[k]}</span>`).join('')}
+      </div><h2 style="margin-top:4px">By site <small>how much of the build cost each one has earned back</small></h2>`;
+      shown.forEach(r=>{
+        const p = Math.max(-100, Math.min(100, r.bep_pct||0));
+        const col = bandCol[band(r)];
+        // prefer the site's own monthly average; fall back to the latest month when the
+        // start date is too vague to average over; say plainly when neither applies
+        let eta;
+        if(r.done) eta = 'Paid back';
+        else if(r.monthsLeftAvg!=null) eta = r.monthsLeftAvg<=120 ? `about ${Math.ceil(r.monthsLeftAvg)} more months at its own average` : 'more than 10 years at its average so far';
+        else if(r.monthsLeftRun!=null) eta = r.monthsLeftRun<=120 ? `about ${Math.ceil(r.monthsLeftRun)} more months at ${(M&&M.latest_label)||'this month'}'s profit` : `more than 10 years at ${(M&&M.latest_label)||'this month'}'s profit`;
+        else eta = (r.run!=null && r.run<=0) ? 'losing money, so not paying itself back yet' : 'no profit figure to project from';
+        x += `<div class="barrow" style="grid-template-columns:104px 1fr 150px" data-tip="<b>${esc(r.code)}</b><br><span class='k'>Build cost</span> £${Math.round(r.capex).toLocaleString('en-GB')}<br><span class='k'>Profit since opening</span> £${Math.round(r.profit_to_date||0).toLocaleString('en-GB')}<br><span class='k'>Still to earn</span> £${Math.round(r.outstanding).toLocaleString('en-GB')}<br><span class='k'>Trading</span> ${r.months_trading?r.months_trading+' months from '+esc(r.start):(r.start_precision==='year'?'since '+esc(r.start.slice(0,4))+', exact date not given':'start date not given')}<br><span class='k'>${esc((M&&M.latest_label)||'Latest month')}</span> ${r.run==null?'no figure':'£'+Math.round(r.run).toLocaleString('en-GB')}" tabindex="0">
+          <div class="lb">${esc(r.code)}<small>${r.months_trading?r.months_trading+' month'+(r.months_trading===1?'':'s')+' trading':(r.start_precision==='year'?'trading since '+esc(r.start.slice(0,4)):'start date unknown')}</small></div>
+          <div class="tr" style="height:18px">${p>=0
+            ? `<span class="fl" style="width:${p}%;background:${col}"></span>`
+            : `<span class="fl" style="width:${Math.min(28,Math.abs(p))}%;background:var(--bad)"></span>`}</div>
+          <div class="rt" style="${(r.bep_pct||0)<0?'color:var(--bad)':''}">${r.done?'100%':(r.bep_pct==null?'–':r.bep_pct.toFixed(1)+'%')}<small style="display:block;font-weight:400;color:var(--mute);font-size:10.5px">${esc(eta)}</small></div></div>`;
+      });
+      if(!shown.length) x += `<div class="muted">Nothing in that band.</div>`;
+      x += `<div class="legend" style="margin-top:10px">
+        <span><i style="background:var(--good)"></i>Paid back</span>
+        <span><i style="background:var(--series-1)"></i>Over halfway</span>
+        <span><i style="background:var(--series-1-soft)"></i>Under way</span>
+        <span><i style="background:var(--bad)"></i>Still going backwards</span></div></div>`;
+
+      x += `<div class="card"><h2>The numbers behind it</h2><div class="wrap"><table>
+        <thead><tr><th>Site</th><th>Opened</th><th class="n">Months</th><th class="n">Build cost</th><th class="n">Profit since opening</th><th class="n">Still to earn</th><th class="n">Recovered</th><th class="n">${esc((M&&M.latest_label)||'Latest')}</th><th>At this rate</th></tr></thead><tbody>`;
+      R.forEach(r=>{
+        x += `<tr><td><b>${esc(r.code)}</b></td><td class="muted">${!r.start?'<span class="muted">unknown</span>':r.start_precision==='year'?esc(r.start.slice(0,4)):fmtY(r.start)}</td>
+          <td class="n">${r.months_trading||'–'}</td><td class="n">${gbp(r.capex)}</td>
+          <td class="n ${(r.profit_to_date||0)<0?'bad':''}">${gbp(r.profit_to_date)}</td>
+          <td class="n">${r.done?'<span class="pill green">none</span>':gbp(r.outstanding)}</td>
+          <td class="n ${(r.bep_pct||0)<0?'bad':''}">${r.done?'100%':(r.bep_pct==null?'–':r.bep_pct.toFixed(1)+'%')}</td>
+          <td class="n">${r.run==null?'<span class="muted">–</span>':gbp(r.run)}</td>
+          <td class="muted">${r.done?'paid back':(r.monthsLeftRun==null?'not earning yet':r.monthsLeftRun>120?`more than 10 years at ${(M&&M.latest_label)||'this month'}'s profit`:`${Math.ceil(r.monthsLeftRun)} months on ${(M&&M.latest_label)||'the latest month'}`)}</td></tr>`;
+      });
+      x += `<tr><th>Total</th><th></th><th></th><th class="n">${gbp(B.total_capex)}</th><th class="n">${gbp(B.total_recovered)}</th><th class="n">${gbp(B.outstanding)}</th><th class="n">${B.percent_recovered.toFixed(1)}%</th><th></th><th></th></tr>`;
+      x += `</tbody></table></div>
+        <div class="src">"At this rate" divides what is left by that site's profit in ${esc((M&&M.latest_label)||'the latest month')}. That month is the Edinburgh Fringe, so for the Scottish sites it flatters the answer. The bar chart above uses each site's own monthly average instead, which is the steadier number.</div></div>`;
+
+      const flagged = B.rows.filter(r=>r.sign_corrected || r.fully_recovered);
+      x += `<div class="card"><h2>Read this before you act on a number</h2>`;
+      flagged.forEach(r=>{ x += `<div class="li"><span class="pill amber">CHECK</span><div class="who">${esc(r.code)}</div><div class="what">${esc(r.sign_corrected || r.recovered_note)}</div></div>`; });
+      (B.sites_without_capex||[]).length && (x += `<div class="li"><div class="who">${esc((B.sites_without_capex||[]).join(', '))}</div><div class="what muted">No build cost in the monthly analysis, so these sites are not in any total on this tab. They are the older sites plus Leeds, whose start-up budget is a link rather than a figure.</div></div>`);
+      x += `<div class="li"><div class="who">All</div><div class="what muted">Profit since opening is Monica's cumulative figure from the analysis document, not a sum of this board's monthly management accounts. Where the two differ, hers is the one on this tab.</div></div></div>`;
+      x += `</div>`;
+      w.innerHTML = x;
+      wireTips(w);
+      w.querySelectorAll('.chip[data-show]').forEach(ch=>ch.onclick=()=>{ bf.show=ch.dataset.show; draw(); });
+    }
+    draw();
+  })();
+
+})();
+</script>
+</body>
+</html>

@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-28T18:44:44+04:00",
+ "generated_at": "2026-09-28T18:52:24+04:00",
  "as_of": "2026-09-28",
  "companies": [
   {
@@ -22809,133 +22809,247 @@
  },
  "projection": {
   "window_days": 30,
-  "month_end": "2026-10-31",
-  "days_to_month_end": 33,
+  "month_end": "2026-09-30",
+  "days_to_month_end": 2,
   "opening": 2777538.17,
-  "inflow": 3721811.04,
+  "inflow": 225564.31,
   "inflow_30d": 3383464.58,
-  "outflow": 3244251.0,
-  "closing": 3255098.21,
+  "outflow": 644533.87,
+  "closing": 2358568.61,
   "out_by_category": [
    {
     "category": "Payroll (net wages)",
-    "amount": 1401767.82
+    "amount": 627236.36
    },
    {
     "category": "Supplier payment run",
-    "amount": 976337.64
-   },
-   {
-    "category": "Rent",
-    "amount": 295772.72
-   },
-   {
-    "category": "PAYE to HMRC",
-    "amount": 262547.83
-   },
-   {
-    "category": "VAT",
-    "amount": 245656.43
+    "amount": 15851.99
    },
    {
     "category": "Business rates",
-    "amount": 37550.05
-   },
-   {
-    "category": "Nest pension",
-    "amount": 24618.51
+    "amount": 1445.52
    }
   ],
   "payroll_in_window": true,
   "by_company": [
    {
     "code": "MP",
-    "inflow": 424601.08
+    "inflow": 25733.4
    },
    {
     "code": "M7",
-    "inflow": 333599.46
+    "inflow": 20218.15
    },
    {
     "code": "M9",
-    "inflow": 318532.68
+    "inflow": 19305.01
    },
    {
     "code": "M21",
-    "inflow": 261228.62
+    "inflow": 15832.04
    },
    {
     "code": "M15",
-    "inflow": 244927.33
+    "inflow": 14844.08
    },
    {
     "code": "M8",
-    "inflow": 219567.19
+    "inflow": 13307.1
    },
    {
     "code": "M14",
-    "inflow": 188273.23
+    "inflow": 11410.5
    },
    {
     "code": "M13",
-    "inflow": 180595.29
+    "inflow": 10945.17
    },
    {
     "code": "M20",
-    "inflow": 179112.75
+    "inflow": 10855.32
    },
    {
     "code": "M18",
-    "inflow": 169812.76
+    "inflow": 10291.68
    },
    {
     "code": "M3",
-    "inflow": 168790.85
+    "inflow": 10229.75
    },
    {
     "code": "M16",
-    "inflow": 152603.97
+    "inflow": 9248.73
    },
    {
     "code": "M10",
-    "inflow": 139106.86
+    "inflow": 8430.72
    },
    {
     "code": "M12",
-    "inflow": 119274.01
+    "inflow": 7228.73
    },
    {
     "code": "M17",
-    "inflow": 114645.81
+    "inflow": 6948.23
    },
    {
     "code": "M19",
-    "inflow": 113046.61
+    "inflow": 6851.31
    },
    {
     "code": "M1",
-    "inflow": 104852.82
+    "inflow": 6354.72
    },
    {
     "code": "M6",
-    "inflow": 102154.47
+    "inflow": 6191.18
    },
    {
     "code": "NORI",
-    "inflow": 92559.61
+    "inflow": 5609.67
    },
    {
     "code": "M11",
-    "inflow": 92204.24
+    "inflow": 5588.14
    },
    {
     "code": "IKI 2",
-    "inflow": 2321.38
+    "inflow": 140.69
    }
   ],
   "companies_covered": 21,
   "companies_total": 22,
-  "basis": "Runs to 31 October 2026, the last day of the month, so the month's payroll is inside it. Money in is what actually landed in the bank over the last 30 days across 21 companies (£3,383,465, transfers between our own companies taken out), carried forward at the same daily rate for the 33 days left. Money out is everything the calendar expects between now and then. Neither is a forecast of trading."
+  "basis": "Runs to 30 September 2026, the last day of the month, so the month's payroll is inside it. Money in is what actually landed in the bank over the last 30 days across 21 companies (£3,383,465, transfers between our own companies taken out), carried forward at the same daily rate for the 2 days left. Money out is everything the calendar expects between now and then. Neither is a forecast of trading.",
+  "next": {
+   "window_days": 30,
+   "month_end": "2026-10-31",
+   "days_to_month_end": 33,
+   "opening": 2777538.17,
+   "inflow": 3721811.04,
+   "inflow_30d": 3383464.58,
+   "outflow": 3244251.0,
+   "closing": 3255098.21,
+   "out_by_category": [
+    {
+     "category": "Payroll (net wages)",
+     "amount": 1401767.82
+    },
+    {
+     "category": "Supplier payment run",
+     "amount": 976337.64
+    },
+    {
+     "category": "Rent",
+     "amount": 295772.72
+    },
+    {
+     "category": "PAYE to HMRC",
+     "amount": 262547.83
+    },
+    {
+     "category": "VAT",
+     "amount": 245656.43
+    },
+    {
+     "category": "Business rates",
+     "amount": 37550.05
+    },
+    {
+     "category": "Nest pension",
+     "amount": 24618.51
+    }
+   ],
+   "payroll_in_window": true,
+   "by_company": [
+    {
+     "code": "MP",
+     "inflow": 424601.08
+    },
+    {
+     "code": "M7",
+     "inflow": 333599.46
+    },
+    {
+     "code": "M9",
+     "inflow": 318532.68
+    },
+    {
+     "code": "M21",
+     "inflow": 261228.62
+    },
+    {
+     "code": "M15",
+     "inflow": 244927.33
+    },
+    {
+     "code": "M8",
+     "inflow": 219567.19
+    },
+    {
+     "code": "M14",
+     "inflow": 188273.23
+    },
+    {
+     "code": "M13",
+     "inflow": 180595.29
+    },
+    {
+     "code": "M20",
+     "inflow": 179112.75
+    },
+    {
+     "code": "M18",
+     "inflow": 169812.76
+    },
+    {
+     "code": "M3",
+     "inflow": 168790.85
+    },
+    {
+     "code": "M16",
+     "inflow": 152603.97
+    },
+    {
+     "code": "M10",
+     "inflow": 139106.86
+    },
+    {
+     "code": "M12",
+     "inflow": 119274.01
+    },
+    {
+     "code": "M17",
+     "inflow": 114645.81
+    },
+    {
+     "code": "M19",
+     "inflow": 113046.61
+    },
+    {
+     "code": "M1",
+     "inflow": 104852.82
+    },
+    {
+     "code": "M6",
+     "inflow": 102154.47
+    },
+    {
+     "code": "NORI",
+     "inflow": 92559.61
+    },
+    {
+     "code": "M11",
+     "inflow": 92204.24
+    },
+    {
+     "code": "IKI 2",
+     "inflow": 2321.38
+    }
+   ],
+   "companies_covered": 21,
+   "companies_total": 22,
+   "basis": "Runs to 31 October 2026, the last day of the month, so the month's payroll is inside it. Money in is what actually landed in the bank over the last 30 days across 21 companies (£3,383,465, transfers between our own companies taken out), carried forward at the same daily rate for the 33 days left. Money out is everything the calendar expects between now and then. Neither is a forecast of trading."
+  }
  },
  "gaps": [
   {

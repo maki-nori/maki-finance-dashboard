@@ -62,12 +62,39 @@
          --good:#0a7a3d; --bad:#b1331c; --warn:#b57200; --grid:#ececE8; }
   .grid2 { display:grid; grid-template-columns:1.55fr 1fr; gap:12px; align-items:start; }
   .grid3 { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; align-items:start; }
-  .tiles { display:grid; grid-template-columns:repeat(6,1fr); gap:10px; margin-bottom:12px; }
-  .tile { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:12px 13px; position:relative; overflow:hidden; }
+  /* Management Accounts controls, chart and diverging bars */
+  .ctlcard { position:sticky; top:96px; z-index:4; box-shadow:0 6px 14px -12px rgba(0,0,0,.5); }
+  @media (max-width:760px){ .ctlcard { position:static; } }
+  .ctls { display:flex; flex-wrap:wrap; gap:10px; }
+  .ctl { display:flex; flex-direction:column; gap:3px; font-size:11px; color:var(--mute); font-weight:700;
+         text-transform:uppercase; letter-spacing:.05em; min-width:150px; flex:1 1 170px; }
+  .ctl select { font:inherit; font-size:13px; font-weight:500; text-transform:none; letter-spacing:0;
+         color:var(--ink); background:var(--card); border:1px solid var(--line); border-radius:8px;
+         padding:7px 8px; width:100%; }
+  .ctl select:focus-visible, .chip:focus-visible { outline:2px solid var(--series-1); outline-offset:1px; }
+  .chip.sm { font-size:11px; padding:3px 8px; }
+  .sitepick { margin-top:6px; }
+  .chartwrap { width:100%; overflow-x:auto; }
+  .chart { width:100%; min-width:560px; height:auto; display:block; }
+  .chart .gl { stroke:var(--line); stroke-width:1; }
+  .chart .zero { stroke:var(--mute); stroke-width:1; opacity:.5; }
+  .chart .ax { fill:var(--mute); font-size:10px; font-family:inherit; }
+  .matrix .sub2 { display:block; font-size:10.5px; font-weight:400; color:var(--mute); }
+  .tr2 { position:relative; height:18px; background:var(--neutral); border-radius:4px; overflow:hidden; }
+  .tr2 .mid { position:absolute; left:50%; top:0; bottom:0; width:1px; background:var(--line); }
+  .tr2 .fl2 { position:absolute; top:0; bottom:0; border-radius:3px; }
+  @media (max-width:700px){ .ctl { flex:1 1 100%; } }
+  .tiles { display:grid; grid-template-columns:repeat(auto-fit,minmax(132px,1fr)); gap:10px; margin-bottom:12px; }
+  .tile { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:12px 12px; position:relative; overflow:hidden; min-width:0; container-type:inline-size; }
   .tile::before { content:""; position:absolute; left:0; top:0; bottom:0; width:3px; background:var(--orange); }
   .tile.is-good::before { background:var(--green); } .tile.is-bad::before { background:var(--red); }
   .tile .tl { font-size:10.5px; text-transform:uppercase; letter-spacing:.06em; color:var(--mute); font-weight:700; }
-  .tile .tv { font-size:25px; font-weight:750; letter-spacing:-.02em; margin:5px 0 4px; font-variant-numeric:tabular-nums; }
+  /* the figure is sized off the TILE's own width, not the viewport: seven tiles on one
+     row leaves about 160px each, and "£1,942,953" has to fit inside that whatever the
+     window is doing. The vw line stays first as the fallback for anything without
+     container queries. */
+  .tile .tv { font-size:clamp(17px,1.6vw,25px); font-weight:750; letter-spacing:-.02em; margin:5px 0 4px; font-variant-numeric:tabular-nums; white-space:nowrap; }
+  .tile .tv { font-size:clamp(15px,14.5cqi,25px); }
   .tile .ts { font-size:11.5px; color:var(--mute); display:flex; align-items:center; gap:6px; flex-wrap:wrap; }
   .chip2 { font-size:11px; font-weight:700; padding:1px 6px; border-radius:5px; font-variant-numeric:tabular-nums; white-space:nowrap; }
   .chip2.up { color:var(--green); background:var(--green-lt); } .chip2.down { color:var(--red); background:var(--red-lt); }
@@ -175,6 +202,7 @@
     document.querySelectorAll('#nav button').forEach(x=>x.classList.remove('on')); b.classList.add('on');
     document.querySelectorAll('section.tab').forEach(s=>s.classList.toggle('on', s.id==='tab-'+b.dataset.tab));
     try{ location.hash=b.dataset.tab; }catch(e){}
+    try{ fitTiles(); }catch(e){}
   });
   const h0 = (location.hash||'').replace('#','');
   if(h0 && document.querySelector(`[data-tab=${h0}]`)) document.querySelector(`[data-tab=${h0}]`).click();
@@ -193,6 +221,25 @@
     el.addEventListener('blur', ()=>{ TIP.style.opacity='0'; });
   }
   function wireTips(root){ root.querySelectorAll('[data-tip]').forEach(el=>tipOn(el, el.getAttribute('data-tip'))); }
+
+  // A headline figure must never be cut off. The CSS size is a starting point only:
+  // how wide "£1,942,953" actually draws depends on the reader's font, so measure the
+  // rendered text against the tile it sits in and step the size down until it fits.
+  // Runs after every render, on tab switch and on resize; tiles in a hidden tab have no
+  // width to measure, which is why the tab switch re-runs it.
+  function fitTiles(root){
+    (root||document).querySelectorAll('.tiles .tile .tv').forEach(v=>{
+      if(!v.offsetParent) return;
+      v.style.fontSize = '';
+      const room = () => v.clientWidth - 1;
+      const text = () => { const r = document.createRange(); r.selectNodeContents(v);
+                           return r.getBoundingClientRect().width; };
+      if(room() <= 0) return;
+      let f = parseFloat(getComputedStyle(v).fontSize) || 22;
+      for(let i = 0; i < 60 && text() > room() && f > 11; i++){ f -= 0.5; v.style.fontSize = f + 'px'; }
+    });
+  }
+  let fitT; addEventListener('resize', ()=>{ clearTimeout(fitT); fitT = setTimeout(()=>fitTiles(), 120); });
   const m1 = v => (v<0?'-':'')+'£'+(Math.abs(v)/1e6).toFixed(2)+'m';
   const k0 = v => (v<0?'-':'')+'£'+Math.round(Math.abs(v)/1e3).toLocaleString('en-GB')+'k';
   const pc1 = v => v==null ? '–' : (v>0?'+':'')+v.toFixed(1)+'%';
@@ -233,24 +280,31 @@
     const gp = (M && M.group_prior) || {};
     const P = D.projection, TG = D.target, PY = D.prior_year;
     const foodT = (M && M.food_target) || 25;
+    const wageT = (M && M.wage_target) || 27;
+    const meShort = x => new Date(x+'T00:00:00').toLocaleDateString('en-GB',{day:'numeric',month:'short'});
+    const meLab = P && P.month_end ? meShort(P.month_end) : null;
 
     // ---- the six numbers, each with what it is being compared to ----
     const tiles = [
       { l:'Group cash', v:gbp(C.group_total), s:`${chip(C.day_delta,true,k0)} since ${C.prev_date?fmtD(C.prev_date):'yesterday'}`,
         state: C.alarm_hit?'bad':'good',
         tip:`<b>Group cash</b><br><span class="k">Snapshot</span> ${esc(C.snapshot_date)}<br><span class="k">Alarm</span> £${(C.alarm/1e6).toFixed(0)}m<br><span class="k">Week</span> ${C.week_delta>=0?'+':''}£${Math.round(C.week_delta).toLocaleString('en-GB')}` },
-      { l:`Leaving in ${L.window_days} days`, v:gbp(L.total),
-        s: L.by_category.length ? `biggest: ${esc(L.by_category[0].category)} ${gbp(L.by_category[0].amount)}` : 'nothing dated', state:'',
-        tip:`<b>Money out</b><br>Estimated from each company's bank-feed pattern.<br>${L.by_category.map(c=>`<span class="k">${esc(c.category)}</span> £${Math.round(c.amount).toLocaleString('en-GB')}`).join('<br>')}` },
-      { l:`Cash in ${L.window_days} days`, v: P?gbp(P.closing):'–',
-        s: P?`${chip(P.closing-P.opening,true,k0)} on today`:'no projection',
+      { l: P?`Left at ${meLab}`:'Left at month end', v: P?gbp(P.closing):'–',
+        s: P?`<span style="white-space:nowrap">+${k0(P.inflow)} in</span><br><span style="white-space:nowrap">-${k0(P.outflow)} out</span>`:'no projection',
         state: !P?'':P.closing<C.alarm?'bad':'good',
-        tip: P?`<b>Where cash lands</b><br><span class="k">Today</span> £${Math.round(P.opening).toLocaleString('en-GB')}<br><span class="k">Money in, last 30 days</span> +£${Math.round(P.inflow).toLocaleString('en-GB')}<br><span class="k">Due out, next ${L.window_days} days</span> -£${Math.round(P.outflow).toLocaleString('en-GB')}<br><span class="k">Lands near</span> £${Math.round(P.closing).toLocaleString('en-GB')}`:'' },
+        tip: P?`<b>Cash left at ${meLab}</b><br><span class="k">Today</span> £${Math.round(P.opening).toLocaleString('en-GB')}<br><span class="k">Money in, ${P.days_to_month_end} days</span> +£${Math.round(P.inflow).toLocaleString('en-GB')}<br><span class="k">Due out by ${meLab}</span> -£${Math.round(P.outflow).toLocaleString('en-GB')}${(P.out_by_category||[]).map(c=>`<br>&nbsp;&nbsp;<span class="k">${esc(c.category)}</span> £${Math.round(c.amount).toLocaleString('en-GB')}`).join('')}<br><span class="k">Left</span> £${Math.round(P.closing).toLocaleString('en-GB')}<br>Payroll leaves on the last day of the month, so it is inside this.`:'' },
+      { l: (P&&P.next)?`Left at ${meShort(P.next.month_end)}`:'Left at next month end', v: (P&&P.next)?gbp(P.next.closing):'–',
+        s: (P&&P.next)?`${chip(P.next.closing-P.closing,true,k0)} on ${meLab}`:'no projection',
+        state: !(P&&P.next)?'':P.next.closing<C.alarm?'bad':'good',
+        tip: (P&&P.next)?`<b>Cash left at ${meShort(P.next.month_end)}</b><br><span class="k">Today</span> £${Math.round(P.next.opening).toLocaleString('en-GB')}<br><span class="k">Money in, ${P.next.days_to_month_end} days</span> +£${Math.round(P.next.inflow).toLocaleString('en-GB')}<br><span class="k">Due out</span> -£${Math.round(P.next.outflow).toLocaleString('en-GB')}<br>Both months' payroll inside it.`:'' },
       { l:`Sales, ${M?esc(M.latest_label):'latest month'}`, v:gbp(g.sales), s:`${chip(g.sales_delta,true,k0)} on ${M?esc(M.prior_label):'last month'}`, state:'',
         tip:`<b>Sales</b><br><span class="k">${M?esc(M.prior_label):''}</span> £${Math.round(gp.sales||0).toLocaleString('en-GB')}<br><span class="k">Year to date</span> £${Math.round(g.ytd_sales||0).toLocaleString('en-GB')}` },
       { l:'Net profit', v:gbp(g.np), s:`${chip(g.np_delta,true,k0)} on ${M?esc(M.prior_label):'last month'}`,
         state: g.np>0?'good':'bad',
         tip:`<b>Net profit</b><br><span class="k">Margin</span> ${g.np_pct}%<br><span class="k">${M?esc(M.prior_label):''}</span> £${Math.round(gp.np||0).toLocaleString('en-GB')} at ${gp.np_pct}%<br><span class="k">Year to date</span> £${Math.round(g.ytd_np||0).toLocaleString('en-GB')}` },
+      { l:'Wage cost', v:(g.wages_pct==null?'–':g.wages_pct.toFixed(1)+'%'), s:`${chip(g.wages_pct==null?null:g.wages_pct-wageT,false,v=>(v>0?'+':'')+v.toFixed(1)+'pp')} against the ${wageT}% target`,
+        state: g.wages_pct==null?'':g.wages_pct<=wageT?'good':'bad',
+        tip:`<b>Wage cost</b><br><span class="k">Target</span> ${wageT}% of sales<br><span class="k">${M?esc(M.latest_label):''}</span> £${Math.round((g.pounds&&g.pounds.wages)||0).toLocaleString('en-GB')} on £${Math.round(g.sales||0).toLocaleString('en-GB')} of sales<br><span class="k">${M?esc(M.prior_label):''}</span> ${gp.wages_pct}%<br>Management accounts, not the payroll run.` },
       { l:'Food cost', v:(g.food_pct==null?'–':g.food_pct.toFixed(1)+'%'), s:`${chip(g.food_pct==null?null:g.food_pct-foodT,false,v=>(v>0?'+':'')+v.toFixed(1)+'pp')} against the ${foodT}% target`,
         state: g.food_pct==null?'':g.food_pct<=foodT?'good':'bad',
         tip:`<b>Food cost</b><br><span class="k">Target</span> ${foodT}% of sales<br><span class="k">${M?esc(M.prior_label):''}</span> ${gp.food_pct}%` },
@@ -296,11 +350,11 @@
     const foodState  = g.food_pct==null?'':g.food_pct<=foodT?'good':'bad';
     const closeState = !P?'':P.closing<C.alarm?'bad':'good';
     h += `<div>
-      <div class="card"><h2>Where cash lands <small>next ${L.window_days} days</small></h2>
+      <div class="card"><h2>Where cash lands <small>${P?`by ${meLab}, the last day of the month, after payroll`:'at month end'}</small></h2>
         ${P?`<div class="walk">
           <div class="wk" data-tip="<b>Cash today</b><br>Snapshot ${esc(C.snapshot_date)}"><span class="wl">Today</span><span class="wv">${gbp(P.opening)}</span></div>
-          <div class="wk" data-tip="<b>Money in</b><br>What actually landed in the bank over the last 30 days across ${P.companies_covered} companies, transfers between our own companies taken out."><span class="wl">Money in, on last month</span><span class="wv pos">+${gbp(P.inflow)}</span></div>
-          <div class="wk" data-tip="<b>Money out</b><br>The calendar's estimate for the next ${L.window_days} days."><span class="wl">Money out</span><span class="wv neg">-${gbp(P.outflow)}</span></div>
+          <div class="wk" data-tip="<b>Money in</b><br>£${Math.round(P.inflow_30d).toLocaleString('en-GB')} actually landed in the bank over the last 30 days across ${P.companies_covered} companies, transfers between our own companies taken out. Carried forward at the same daily rate for the ${P.days_to_month_end} days left in the month."><span class="wl">Money in, ${P.days_to_month_end} days on last month's rate</span><span class="wv pos">+${gbp(P.inflow)}</span></div>
+          <div class="wk" data-tip="<b>Money out</b><br>Everything the calendar expects between today and ${meLab}.${(P.out_by_category||[]).map(c=>`<br><span class='k'>${esc(c.category)}</span> £${Math.round(c.amount).toLocaleString('en-GB')}`).join('')}"><span class="wl">Money out, to ${meLab}</span><span class="wv neg">-${gbp(P.outflow)}</span></div>
           <div class="wk tot"><span class="wl">Lands near</span><span class="wv" style="color:${closeState==='bad'?'var(--bad)':'var(--good)'}">${gbp(P.closing)}</span></div>
         </div>
         <div class="src">${esc(P.basis)}</div>`:'<div class="muted">No projection: the bank feeds did not give enough to work from.</div>'}</div>
@@ -471,10 +525,10 @@
       const rows = B.rows.filter(r=>r.capex).map(r=>({
         label:r.code,
         sub:(r.fully_recovered || (r.profit_to_date||0)>=r.capex) ? 'paid back' : `${gbp(Math.max(0,r.capex-(r.profit_to_date||0)))} to go`,
-        value:Math.max(-100, Math.min(100, r.bep_pct||0)),
+        value:(r.done || r.fully_recovered || (r.profit_to_date||0)>=r.capex) ? 100 : Math.max(-100, Math.min(100, r.bep_pct||0)),
         color:(r.fully_recovered || (r.profit_to_date||0)>=r.capex) ? 'var(--good)' : ((r.bep_pct||0)>=50 ? 'var(--series-1)' : 'var(--series-1-soft)'),
         go:'#bep',
-        tip:`<b>${esc(r.code)}</b><br><span class="k">Build cost</span> £${Math.round(r.capex).toLocaleString('en-GB')}<br><span class="k">Earned back</span> £${Math.round(r.profit_to_date||0).toLocaleString('en-GB')}<br><span class="k">Still to earn</span> £${Math.round(Math.max(0,r.capex-(r.profit_to_date||0))).toLocaleString('en-GB')}<br><span class="k">Opened</span> ${esc(r.start||'not given')}`
+        tip:`<b>${esc(r.code)}</b><br><span class="k">Build cost</span> £${Math.round(r.capex).toLocaleString('en-GB')}<br><span class="k">Earned back</span> £${Math.round(r.profit_to_date||0).toLocaleString('en-GB')}<br><span class="k">Still to earn</span> ${(r.done || r.fully_recovered || (r.profit_to_date||0)>=r.capex)?'nothing, paid back':'£'+Math.round(Math.max(0,r.capex-(r.profit_to_date||0))).toLocaleString('en-GB')}<br><span class="k">Opened</span> ${esc(r.start||'not given')}`
       }));
       const el = document.getElementById('bepbars');
       if(el){
@@ -496,6 +550,7 @@
         tip:`<b>${esc(x.category)}</b><br><span class="k">Next ${L.window_days} days</span> £${Math.round(x.amount).toLocaleString('en-GB')}<br><span class="k">Share</span> ${(x.amount/L.total*100).toFixed(0)}% of everything due out`})),
       {fmt:gbp});
     wireTips(T);
+    fitTiles();
     T.querySelectorAll('[data-go]').forEach(el=>{
       const go = ()=>{ document.querySelector('[data-tab=calendar]').click();
         const sel=document.querySelector('#f-co'); if(sel){ sel.value=el.dataset.go; sel.dispatchEvent(new Event('change')); }
@@ -592,120 +647,331 @@
   })();
 
   // ---------------- MANAGEMENT ACCOUNTS ----------------
+  // Everything on this tab is worked out in the browser from D.mayears, which
+  // carries every site, every month, every line as plain arrays. Nothing is
+  // pre-aggregated, so any selection Michael makes gets a real answer rather
+  // than the handful of cuts a build step happened to anticipate.
   (function(){
-    const M = D.ma, w = document.getElementById('tab-ma');
-    if(!M){ w.innerHTML = '<div class="card muted">No management accounts in this build. Run extract_ma_history.py.</div>'; return; }
-    const g = M.group||{};
-    const pct = v => v==null ? '<span class="muted">–</span>' : v.toFixed(1)+'%';
-    const bars = (series, fmt) => {
-      if(!series||!series.length) return '<div class="muted">Not available.</div>';
-      const mx = Math.max(...series.map(p=>Math.abs(p.value)))||1;
-      return `<div class="bars">` + series.map(p=>{
-        const hgt = Math.max(2, Math.round(Math.abs(p.value)/mx*76));
-        return `<div class="b"><s class="${p.value<0?'bad':''}">${fmt(p.value)}</s><i class="${p.value<0?'neg':''}" style="height:${hgt}%"></i><em>${esc(p.month)}</em></div>`;
-      }).join('') + `</div>`;
-    };
-    const m1 = v => (v<0?'-':'')+'£'+(Math.abs(v)/1e6).toFixed(2)+'m';
-    const k1 = v => (v<0?'-':'')+'£'+Math.round(Math.abs(v)/1e3)+'k';
+    const M = D.ma, Y = D.mayears, w = document.getElementById('tab-ma');
+    if(!M && !Y){ w.innerHTML = '<div class="card muted">No management accounts in this build. Run extract_ma_history.py.</div>'; return; }
+    if(!Y){ w.innerHTML = '<div class="card muted">No multi-year history yet. Click "Fetch MA History (2024-2026).command", then run finance_control_centre/extract_ma_annuals.py and rebuild.</div>'; return; }
 
-    let x = `<div class="card"><h2>${esc(M.latest_label)} <small>group, all sites · ${M.sites.length} sites</small></h2>
-      <div class="row">
-        <div class="kpi"><div class="l">Sales</div><div class="v">${gbp(g.sales)}</div><div class="muted">${g.sales_delta!=null?sgn(g.sales_delta)+' vs '+esc(M.prior_label):''}</div></div>
-        <div class="kpi"><div class="l">Net profit</div><div class="v ${g.np<0?'neg':'pos'}">${gbp(g.np)}</div><div class="muted">${g.np_delta!=null?sgn(g.np_delta)+' vs '+esc(M.prior_label):''}</div></div>
-        <div class="kpi"><div class="l">Net profit %</div><div class="v">${pct(g.np_pct)}</div></div>
-        <div class="kpi"><div class="l">Year to date sales</div><div class="v">${gbp(g.ytd_sales)}</div></div>
-        <div class="kpi"><div class="l">Year to date net profit</div><div class="v">${gbp(g.ytd_np)}</div></div>
-      </div>
-      <div class="row" style="margin-top:8px">
-        <div class="kpi"><div class="l">Wages</div><div class="v">${pct(g.wages_pct)}</div></div>
-        <div class="kpi"><div class="l">Rent</div><div class="v">${pct(g.rent_pct)}</div></div>
-        <div class="kpi"><div class="l">Food <span class="muted">target ${M.food_target}%</span></div><div class="v ${g.food_pct>M.food_target?'neg':'pos'}">${pct(g.food_pct)}</div></div>
-        <div class="kpi"><div class="l">Variable</div><div class="v">${pct(g.variable_pct)}</div></div>
-        <div class="kpi"><div class="l">VAT</div><div class="v">${pct(g.vat_pct)}</div></div>
-
-      </div>
-      <div class="src">Source: ${esc(M.source)}. ${esc((M.notes||[]).filter(Boolean).join(' '))}</div></div>`;
-
-    x += `<div class="card"><h2>Group sales by month <small>2026</small></h2>${bars((M.group_series||{}).sales, m1)}
-      <h2 style="margin-top:14px">Group net profit by month <small>2026</small></h2>${bars((M.group_series||{}).np, k1)}
-      <div class="src">${esc((M.group_series||{}).note||'')}</div></div>`;
-
-    if(M.flags && M.flags.length){
-      x += `<div class="card"><h2>Read this before you act on a number</h2>`;
-      M.flags.forEach(f=>{ x += `<div class="li"><span class="pill ${f.level}">${f.level.toUpperCase()}</span><div class="who">${esc(f.code)}</div><div class="what">${esc(f.text)}</div></div>`; });
-      x += `</div>`;
-    }
-
-    x += `<div class="card"><h2>Movements <small>${esc(M.latest_label)} against ${esc(M.prior_label)}</small></h2><div class="row">
-      <div class="kpi" style="flex:1 1 260px"><div class="l">Biggest improvements in net profit</div>
-        ${M.movers_up.map(r=>`<div class="tst"><span class="tl"><b>${esc(r.code)}</b> ${esc(r.name||'')}</span><span>${sgn(r.np_delta)}</span></div>`).join('')}</div>
-      <div class="kpi" style="flex:1 1 260px"><div class="l">Biggest falls in net profit</div>
-        ${(M.movers_down.length?'':'<div class="muted">No site fell.</div>')}${M.movers_down.map(r=>`<div class="tst"><span class="tl"><b>${esc(r.code)}</b> ${esc(r.name||'')}</span><span>${sgn(r.np_delta)}</span></div>`).join('')}</div>
-      <div class="kpi" style="flex:1 1 260px"><div class="l">Losing money this month</div>
-        ${M.losers.length?M.sites.filter(r=>r.np!=null&&r.np<0).map(r=>`<div class="tst"><span class="tl"><b>${esc(r.code)}</b> ${esc(r.name||'')}</span><span class="bad">${gbp(r.np)}</span></div>`).join('')+`<div class="muted" style="margin-top:4px">Together ${gbp(M.loser_total)}.</div>`:'<div class="muted">None.</div>'}</div>
-      <div class="kpi" style="flex:1 1 260px"><div class="l">Over the ${M.food_target}% food target</div>
-        ${M.over_food.length?M.over_food.map(r=>`<div class="tst"><span class="tl"><b>${esc(r.code)}</b>${r.caution?' <span class="pill amber">check the MA first</span>':''}</span><span class="bad">${pct(r.food_pct)}</span></div>`).join(''):'<div class="muted">None.</div>'}</div>
-    </div></div>`;
-
-    // the annual-workbook layout: management-account lines down, site numbers across
-    const order = M.by_number || M.sites.map(r=>r.code);
-    const byCode = {}; M.sites.forEach(r=>byCode[r.code]=r);
-    const cols = order.map(c=>byCode[c]).filter(Boolean);
+    const S = Y.sites, MONTHS = Y.months;
+    const MN = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+    const foodT = (M && M.food_target) || 25, wageT = (M && M.wage_target) || 27;
+    const pct1 = v => v==null ? '<span class="muted">–</span>' : v.toFixed(1)+'%';
     const money0 = v => v==null ? '<span class="muted">–</span>' : (v<0?'-':'')+'£'+Math.abs(Math.round(v)).toLocaleString('en-GB');
-    const p2 = v => v==null ? '<span class="muted">–</span>' : v.toFixed(2)+'%';
-    const share = (r,key) => (r.pounds && r.pounds[key]!=null && r.sales) ? r.pounds[key]/r.sales*100 : r[key+'_pct'];
-    const LINES = [
-      {k:'sales',   label:'Sales',          get:r=>r.sales,            fmt:money0, cls:'hd'},
-      {k:'wages',   label:'Wages',          get:r=>r.pounds.wages,     fmt:money0},
-      {k:'wagesp',  label:'Wages %',        get:r=>share(r,'wages'),   fmt:p2, pct:true},
-      {k:'rent',    label:'Rent',           get:r=>r.pounds.rent,      fmt:money0},
-      {k:'rentp',   label:'Rent %',         get:r=>share(r,'rent'),    fmt:p2, pct:true},
-      {k:'food',    label:'Food costs',     get:r=>r.pounds.food,      fmt:money0},
-      {k:'foodp',   label:'Food costs %',   get:r=>share(r,'food'),    fmt:p2, pct:true, target:M.food_target},
-      {k:'var',     label:'Variable costs', get:r=>r.pounds.variable,  fmt:money0},
-      {k:'varp',    label:'Variable costs %',get:r=>share(r,'variable'),fmt:p2, pct:true},
-      {k:'vat',     label:'VAT',            get:r=>r.pounds.vat,       fmt:money0},
-      {k:'vatp',    label:'VAT %',          get:r=>share(r,'vat'),     fmt:p2, pct:true},
-      {k:'total',   label:'Total costs',    get:r=>r.total_costs,      fmt:money0, cls:'hd'},
-      {k:'np',      label:'Net profit',     get:r=>r.np,               fmt:money0, cls:'hd', sign:true},
-      {k:'npp',     label:'Net profit %',   get:r=>r.np_pct,           fmt:p2, pct:true, sign:true},
-      {k:'ytd',     label:'Year to date net profit', get:r=>r.ytd_np,  fmt:money0, sign:true, cls:'sub'},
-    ];
-    x += `<div class="card"><h2>${esc(M.latest_label)} by site <small>the workbook layout, site numbers across</small></h2>
-      <div class="wrap"><table class="matrix"><thead><tr><th class="l stick"></th>
-      ${cols.map(r=>`<th class="n">${esc(r.code)}</th>`).join('')}<th class="n tot">Total</th></tr></thead>
-      <tr class="names"><th class="l stick"></th>${cols.map(r=>`<td class="n muted">${esc((r.name||'').slice(0,14))}</td>`).join('')}<td class="n tot muted">group</td></tr>
-      <tbody>`;
-    LINES.forEach(ln=>{
-      const gv = ln.get(g);
-      x += `<tr class="${ln.cls||''}"><th class="l stick">${esc(ln.label)}</th>`;
-      cols.forEach(r=>{
-        const v = ln.get(r);
-        let cls = 'n';
-        if(ln.sign && v!=null && v<0) cls += ' bad';
-        if(ln.target && v!=null && v>ln.target) cls += ' bad';
-        if(ln.target && v!=null && v<=ln.target) cls += ' good';
-        x += `<td class="${cls}" data-tip="<b>${esc(r.code)}</b> ${esc(r.name||'')}<br><span class='k'>${esc(ln.label)}</span> ${ln.fmt(v)}${ln.pct?'':(r.sales&&v!=null&&!ln.sign?`<br><span class='k'>of sales</span> ${(v/r.sales*100).toFixed(1)}%`:'')}">${ln.fmt(v)}</td>`;
-      });
-      x += `<td class="n tot ${ln.sign&&gv!=null&&gv<0?'bad':''}">${ln.fmt(gv)}</td></tr>`;
-    });
-    x += `</tbody></table></div>
-      <div class="src">Pounds ${esc((M.sites[0]||{}).pounds_basis||'as written in the monthly analysis')}. Percentages are of that site's sales. Total is the group column from the same analysis.</div></div>`;
+    const mlab = ym => MN[+ym.slice(5)-1] + ' ' + ym.slice(0,4);
 
-    if(M.first_half_group){
-      const f = M.first_half_group;
-      x += `<div class="card"><h2>The year so far <small>how the two closed months sit against the first half</small></h2><div class="row">
-        <div class="kpi"><div class="l">January to June sales</div><div class="v">${gbp(f.sales)}</div></div>
-        <div class="kpi"><div class="l">January to June net profit</div><div class="v ${f.np<0?'neg':'pos'}">${gbp(f.np)}</div></div>
-        <div class="kpi"><div class="l">${esc(M.prior_label)} net profit</div><div class="v">${M.group_prior?gbp(M.group_prior.np):'<span class="muted">not available</span>'}</div></div>
-        <div class="kpi"><div class="l">${esc(M.latest_label)} net profit</div><div class="v pos">${gbp(g.np)}</div></div>
-      </div><div class="src">${esc(M.first_half_group.basis||'')}</div></div>`;
+    // ---- the selection ----
+    const st = {
+      period: MONTHS[MONTHS.length-1],     // a month, or ytd:YYYY / fy:YYYY / l12
+      compare: 'yoy',                      // yoy | prev | none
+      group: 'site',                       // site | region | cohort
+      lfl: false,
+      picked: null,                        // null = every counted site
+      metric: 'sales',
+      chart: 'season',                     // season (years overlaid) | run (whole timeline)
+    };
+
+    const counted = Y.counted.filter(c=>S[c]);
+    const nameOf = c => (S[c]&&S[c].name) || c;
+    const groupOf = c => st.group==='region' ? (S[c].region||'Unassigned')
+                       : st.group==='cohort' ? (Y.cohort_labels[S[c].cohort]||'Unassigned') : c;
+    const picked = () => (st.picked && st.picked.length ? st.picked : counted);
+
+    function val(code, line, ym){
+      const s = S[code]; if(!s) return null;
+      const y = s.y[ym.slice(0,4)]; if(!y) return null;
+      const a = y[line]; if(!a) return null;
+      const v = a[+ym.slice(5)-1];
+      return v==null ? null : v;
+    }
+    const trading = (code, ym) => val(code,'sales',ym)!=null;
+
+    function monthsOf(sel){
+      if(sel.startsWith('ytd:')){ const y=sel.slice(4); return MONTHS.filter(m=>m.startsWith(y)); }
+      if(sel.startsWith('fy:')){ const y=sel.slice(3); return MONTHS.filter(m=>m.startsWith(y)); }
+      if(sel==='l12'){ return MONTHS.slice(-12); }
+      return [sel];
+    }
+    const shiftYear = (ym,n) => (+ym.slice(0,4)+n) + ym.slice(4);
+    function compareMonths(sel){
+      if(st.compare==='none') return [];
+      const cur = monthsOf(sel);
+      if(st.compare==='yoy') return cur.map(m=>shiftYear(m,-1)).filter(m=>MONTHS.includes(m));
+      const i = MONTHS.indexOf(cur[0]);
+      const n = cur.length, start = i-n;
+      return start<0 ? [] : MONTHS.slice(start, start+n);
     }
 
-    x += `<div class="card"><h2>Not on this tab yet</h2>`;
-    (M.store_gaps||[]).forEach(t=>{ x += `<div class="li"><div class="who">MA</div><div class="what muted">${esc(t)}</div></div>`; });
-    x += `</div>`;
-    w.innerHTML = x;
+    // like-for-like: only sites trading in EVERY month of both windows
+    function eligible(cur, cmp){
+      let codes = picked();
+      if(!st.lfl) return codes;
+      const need = cur.concat(cmp);
+      return codes.filter(c=>need.every(m=>trading(c,m)));
+    }
+    function total(codes, line, months){
+      let v=null;
+      codes.forEach(c=>months.forEach(m=>{ const x=val(c,line,m); if(x!=null) v=(v||0)+x; }));
+      return v;
+    }
+    const rate = (codes, line, months) => {
+      const s = total(codes,'sales',months), v = total(codes,line,months);
+      return (s && v!=null) ? v/s*100 : null;
+    };
+
+    const LINES = [
+      {k:'sales', label:'Sales', hd:true},
+      {k:'wages', label:'Wages', rate:true, target:wageT},
+      {k:'rent',  label:'Rent', rate:true},
+      {k:'food',  label:'Food costs', rate:true, target:foodT},
+      {k:'variable', label:'Variable costs', rate:true},
+      {k:'vat',   label:'VAT', rate:true},
+      {k:'total_costs', label:'Total costs', hd:true},
+      {k:'np',    label:'Net profit', hd:true, sign:true, rate:true},
+    ];
+    const METRICS = [
+      {k:'sales', label:'Sales', fmt:money0},
+      {k:'np', label:'Net profit', fmt:money0, sign:true},
+      {k:'np_pct', label:'Net profit %', fmt:pct1, isRate:true, of:'np'},
+      {k:'wages_pct', label:'Wage cost %', fmt:pct1, isRate:true, of:'wages', target:wageT, lower:true},
+      {k:'food_pct', label:'Food cost %', fmt:pct1, isRate:true, of:'food', target:foodT, lower:true},
+      {k:'wages', label:'Wages', fmt:money0},
+      {k:'food', label:'Food costs', fmt:money0},
+    ];
+    const metric = () => METRICS.find(m=>m.k===st.metric) || METRICS[0];
+    function metricValue(codes, months){
+      const m = metric();
+      return m.isRate ? rate(codes, m.of, months) : total(codes, m.k, months);
+    }
+
+    // ---- a small inline chart, no library ----
+    function lineChart(series, opts){
+      const W=760, H=210, padL=54, padR=12, padT=10, padB=24;
+      const xs = opts.x, n = xs.length;
+      let lo=Infinity, hi=-Infinity;
+      series.forEach(s=>s.v.forEach(v=>{ if(v!=null){ lo=Math.min(lo,v); hi=Math.max(hi,v); }}));
+      if(!isFinite(lo)) return '<div class="muted">Nothing to plot for this selection.</div>';
+      if(opts.zero!==false) lo = Math.min(lo, 0);
+      if(hi===lo) hi = lo + 1;
+      const pad=(hi-lo)*0.08; hi+=pad; lo-= (lo<0?pad:0);
+      const px = i => padL + (n===1?0:i*(W-padL-padR)/(n-1));
+      const py = v => padT + (hi-v)/(hi-lo)*(H-padT-padB);
+      const ticks = 4, tv = [];
+      for(let i=0;i<=ticks;i++) tv.push(lo + (hi-lo)*i/ticks);
+      let g = `<svg viewBox="0 0 ${W} ${H}" class="chart" role="img" aria-label="${esc(opts.title||'chart')}">`;
+      tv.forEach(v=>{ const y=py(v);
+        g += `<line x1="${padL}" x2="${W-padR}" y1="${y.toFixed(1)}" y2="${y.toFixed(1)}" class="gl"/>`
+           + `<text x="${padL-7}" y="${(y+3.5).toFixed(1)}" class="ax" text-anchor="end">${opts.fmtY(v)}</text>`; });
+      if(lo<0){ const y=py(0); g += `<line x1="${padL}" x2="${W-padR}" y1="${y}" y2="${y}" class="zero"/>`; }
+      xs.forEach((lab,i)=>{ if(n>14 && i%Math.ceil(n/12)) return;
+        g += `<text x="${px(i).toFixed(1)}" y="${H-7}" class="ax" text-anchor="middle">${esc(lab)}</text>`; });
+      series.forEach(s=>{
+        let d='', started=false;
+        s.v.forEach((v,i)=>{ if(v==null){ started=false; return; }
+          d += (started?'L':'M') + px(i).toFixed(1) + ' ' + py(v).toFixed(1) + ' '; started=true; });
+        if(d) g += `<path d="${d}" fill="none" stroke="${s.color}" stroke-width="${s.w||2}"${s.dash?` stroke-dasharray="${s.dash}"`:''} stroke-linejoin="round" stroke-linecap="round"/>`;
+        s.v.forEach((v,i)=>{ if(v==null) return;
+          g += `<circle cx="${px(i).toFixed(1)}" cy="${py(v).toFixed(1)}" r="${s.w===3?3.2:2.4}" fill="${s.color}"><title>${esc(s.name)} ${esc(xs[i])}: ${opts.fmtT(v)}</title></circle>`; });
+      });
+      g += `</svg>`;
+      return `<div class="chartwrap">${g}</div><div class="legend">` + series.map(s=>
+        `<span><i style="background:${s.color};${s.dash?'opacity:.85':''}"></i>${esc(s.name)}</span>`).join('') + `</div>`;
+    }
+    const SERIES_COL = ['var(--series-1)','#6f6a5e','#a9a396','#c9c4b8'];
+    const SERIES_DASH = [null, null, '6 4', '2 4'];
+    // a headline delta reads better in millions once it is one
+    const kd = v => Math.abs(v) >= 1e6 ? (v<0?'-':'')+'£'+(Math.abs(v)/1e6).toFixed(2)+'m' : k0(v);
+
+    // ---- render ----
+    function draw(){
+      const cur = monthsOf(st.period), cmp = compareMonths(st.period);
+      const codes = eligible(cur, cmp);
+      const dropped = picked().filter(c=>!codes.includes(c));
+      const periodLab = st.period.startsWith('ytd:') ? `January to ${mlab(cur[cur.length-1]).split(' ')[0]} ${st.period.slice(4)}`
+        : st.period.startsWith('fy:') ? `${st.period.slice(3)}, full year`
+        : st.period==='l12' ? `${mlab(cur[0])} to ${mlab(cur[cur.length-1])}`
+        : mlab(st.period);
+      const cmpLab = !cmp.length ? null
+        : (st.compare==='yoy' ? (cur.length>1 ? `the same months in ${cmp[0].slice(0,4)}` : mlab(cmp[0]))
+                              : (cmp.length>1 ? `${mlab(cmp[0])} to ${mlab(cmp[cmp.length-1])}` : mlab(cmp[0])));
+
+      let x = '<div class="viz">';
+
+      // ---- controls ----
+      const monthOpts = MONTHS.slice().reverse().map(m=>`<option value="${m}"${st.period===m?' selected':''}>${esc(mlab(m))}</option>`).join('');
+      const years = Y.years.slice().reverse();
+      x += `<div class="card ctlcard"><div class="ctls">
+        <label class="ctl"><span>Period</span><select id="mPeriod">
+          <optgroup label="One month">${monthOpts}</optgroup>
+          <optgroup label="Longer">
+            ${years.map(y=>`<option value="ytd:${y}"${st.period==='ytd:'+y?' selected':''}>${y} year to date</option>`).join('')}
+            ${years.map(y=>`<option value="fy:${y}"${st.period==='fy:'+y?' selected':''}>${y} full year</option>`).join('')}
+            <option value="l12"${st.period==='l12'?' selected':''}>Last 12 months</option>
+          </optgroup></select></label>
+        <label class="ctl"><span>Compare with</span><select id="mCompare">
+          <option value="yoy"${st.compare==='yoy'?' selected':''}>Same period last year</option>
+          <option value="prev"${st.compare==='prev'?' selected':''}>The period before</option>
+          <option value="none"${st.compare==='none'?' selected':''}>Nothing</option></select></label>
+        <label class="ctl"><span>Columns</span><select id="mGroup">
+          <option value="site"${st.group==='site'?' selected':''}>One per site</option>
+          <option value="region"${st.group==='region'?' selected':''}>By region</option>
+          <option value="cohort"${st.group==='cohort'?' selected':''}>M1-M10 against the rest</option></select></label>
+        <label class="ctl"><span>Basis</span><select id="mLfl">
+          <option value="0"${!st.lfl?' selected':''}>Every site in the selection</option>
+          <option value="1"${st.lfl?' selected':''}>Like for like only</option></select></label>
+      </div>
+      <div class="filters" style="margin-top:8px">
+        <span class="chip ${!st.picked?'on':''}" data-set="all">All ${counted.length} sites</span>
+        ${Object.keys(Y.cohort_labels||{}).filter(k=>counted.some(c=>S[c].cohort===k)).map(k=>`<span class="chip ${st.picked&&st.picked.join()===counted.filter(c=>S[c].cohort===k).join()?'on':''}" data-set="cohort:${esc(k)}">${esc(Y.cohort_labels[k])}</span>`).join('')}
+        ${Y.regions.map(r=>`<span class="chip ${st.picked&&st.picked.join()===counted.filter(c=>S[c].region===r).join()?'on':''}" data-set="region:${esc(r)}">${esc(r)}</span>`).join('')}
+      </div>
+      <div class="filters sitepick">
+        ${counted.map(c=>`<span class="chip sm ${picked().includes(c)?'on':''}" data-site="${esc(c)}" data-tip="<b>${esc(c)}</b> ${esc(nameOf(c))}<br>${esc(S[c].region||'')}">${esc(c)}</span>`).join('')}
+      </div>
+      <div class="src">Click a site to add or drop it. ${st.lfl?'Like for like counts only sites trading in every month of both periods':'Every selected site counts, so a period with new openings in it grows partly because of them'}.
+        ${dropped.length?`<b>Out of this comparison:</b> ${dropped.map(esc).join(', ')}.`:''}</div></div>`;
+
+      // ---- headline ----
+      const tiles = [
+        {k:'sales', label:'Sales', fmt:money0},
+        {k:'np', label:'Net profit', fmt:money0, sign:true},
+        {k:'np_pct', label:'Net profit %', rate:'np', fmt:pct1},
+        {k:'wages_pct', label:'Wage cost %', rate:'wages', fmt:pct1, target:wageT},
+        {k:'food_pct', label:'Food cost %', rate:'food', fmt:pct1, target:foodT},
+        {k:'rent_pct', label:'Rent %', rate:'rent', fmt:pct1},
+      ];
+      x += `<div class="tiles">` + tiles.map(t=>{
+        const now = t.rate ? rate(codes,t.rate,cur) : total(codes,t.k,cur);
+        const was = cmp.length ? (t.rate ? rate(codes,t.rate,cmp) : total(codes,t.k,cmp)) : null;
+        let sub = '<span class="muted">no comparison</span>';
+        if(was!=null && now!=null){
+          const d = now-was;
+          sub = t.rate ? `${chip(d,false,v=>(v>0?'+':'')+v.toFixed(1)+'pp')} on ${esc(cmpLab)}`
+                       : `${chip(d,true,kd)} ${was?'('+(d>=0?'+':'')+(d/Math.abs(was)*100).toFixed(0)+'%)':''} on ${esc(cmpLab)}`;
+        }
+        const state = t.target!=null && now!=null ? (now<=t.target?'good':'bad')
+                    : (t.sign && now!=null ? (now>=0?'good':'bad') : '');
+        return `<div class="tile ${state?'is-'+state:''}" data-tip="<b>${esc(t.label)}</b><br><span class='k'>${esc(periodLab)}</span> ${t.fmt(now)}${was!=null?`<br><span class='k'>${esc(cmpLab)}</span> ${t.fmt(was)}`:''}${t.target!=null?`<br><span class='k'>Target</span> ${t.target}%`:''}<br><span class='k'>Sites</span> ${codes.length}" tabindex="0">
+          <div class="tl">${esc(t.label)}</div><div class="tv">${t.fmt(now)}</div><div class="ts">${sub}</div></div>`;
+      }).join('') + `</div>`;
+
+      // ---- the chart ----
+      const m = metric();
+      x += `<div class="card"><h2>${esc(m.label)} over time <small>${st.chart==='season'?'each year laid over the same months':'month by month, straight through'}</small></h2>
+        <div class="filters" style="margin-bottom:6px">
+          ${METRICS.map(o=>`<span class="chip sm ${st.metric===o.k?'on':''}" data-metric="${o.k}">${esc(o.label)}</span>`).join('')}
+          <span class="chip sm ${st.chart==='season'?'on':''}" data-chart="season" style="margin-left:10px">Years overlaid</span>
+          <span class="chip sm ${st.chart==='run'?'on':''}" data-chart="run">Straight through</span>
+        </div>`;
+      const fmtY = v => m.isRate ? v.toFixed(0)+'%' : (Math.abs(v)>=1e6 ? '£'+(v/1e6).toFixed(1)+'m' : k0(v));
+      const fmtT = v => m.isRate ? v.toFixed(1)+'%' : money0(v).replace(/<[^>]+>/g,'');
+      if(st.chart==='season'){
+        const series = Y.years.slice().reverse().map((yr,i)=>({
+          name: yr, color: SERIES_COL[i]||'#bbb', dash: SERIES_DASH[i], w: i===0?3:2,
+          v: MN.map((_,mi)=>{
+            const ym = `${yr}-${String(mi+1).padStart(2,'0')}`;
+            return MONTHS.includes(ym) ? metricValue(codes,[ym]) : null;
+          })}));
+        x += lineChart(series, {x:MN, fmtY, fmtT, title:m.label});
+      } else {
+        x += lineChart([{name:m.label, color:'var(--series-1)', w:2.4,
+          v: MONTHS.map(ym=>metricValue(codes,[ym]))}],
+          {x:MONTHS.map(ym=>MN[+ym.slice(5)-1]+(ym.endsWith('-01')?" '"+ym.slice(2,4):'')), fmtY, fmtT, title:m.label});
+      }
+      x += `<div class="src">${codes.length} site${codes.length===1?'':'s'}: ${codes.map(esc).join(', ')}.
+        ${m.isRate?'A rate over several sites is their pounds added up, then divided, not an average of averages.':''}</div></div>`;
+
+      // ---- the matrix ----
+      const groups = [];
+      if(st.group==='site'){ codes.forEach(c=>groups.push({key:c, label:c, sub:nameOf(c).slice(0,16), codes:[c]})); }
+      else {
+        const byG = {};
+        codes.forEach(c=>{ const g=groupOf(c); (byG[g]=byG[g]||[]).push(c); });
+        Object.keys(byG).sort().forEach(g=>groups.push({key:g, label:g, sub:byG[g].length+' sites', codes:byG[g]}));
+      }
+      x += `<div class="card"><h2>${esc(periodLab)}${cmpLab?` against ${esc(cmpLab)}`:''} <small>the workbook layout, ${st.group==='site'?'sites':'groups'} across</small></h2>
+        <div class="wrap"><table class="matrix"><thead><tr><th class="l stick"></th>
+        ${groups.map(g=>`<th class="n">${esc(g.label)}</th>`).join('')}<th class="n tot">Total</th></tr></thead>
+        <tr class="names"><th class="l stick"></th>${groups.map(g=>`<td class="n muted">${esc(g.sub)}</td>`).join('')}<td class="n tot muted">${codes.length} sites</td></tr><tbody>`;
+      LINES.forEach(ln=>{
+        const cells = g2 => {
+          const now = total(g2, ln.k, cur);
+          const was = cmp.length ? total(g2, ln.k, cmp) : null;
+          const r = ln.rate ? rate(g2, ln.k, cur) : null;
+          let cls = 'n';
+          if(ln.sign && now!=null && now<0) cls += ' bad';
+          if(ln.target && r!=null) cls += r>ln.target ? ' bad' : ' good';
+          const dl = (was!=null && now!=null) ? `<br><span class='k'>${esc(cmpLab)}</span> ${money0(was).replace(/<[^>]+>/g,'')}${was?` (${((now-was)/Math.abs(was)*100).toFixed(1)}%)`:''}` : '';
+          return `<td class="${cls}" data-tip="<b>${esc(ln.label)}</b><br><span class='k'>${esc(periodLab)}</span> ${money0(now).replace(/<[^>]+>/g,'')}${r!=null?`<br><span class='k'>of sales</span> ${r.toFixed(2)}%`:''}${dl}">${money0(now)}${r!=null?`<span class="sub2">${r.toFixed(1)}%</span>`:''}</td>`;
+        };
+        x += `<tr class="${ln.hd?'hd':''}"><th class="l stick">${esc(ln.label)}</th>`
+           + groups.map(g=>cells(g.codes)).join('')
+           + `<td class="n tot">${money0(total(codes,ln.k,cur))}${ln.rate?`<span class="sub2">${(rate(codes,ln.k,cur)||0).toFixed(1)}%</span>`:''}</td></tr>`;
+      });
+      x += `</tbody></table></div><div class="src">Percentages under each figure are that column's share of its own sales. ${esc(Y.note)}</div></div>`;
+
+      // ---- site by site against last year ----
+      if(cmp.length){
+        const rows = picked().map(c=>{
+          const now = metricValue([c],cur), was = metricValue([c],cmp);
+          return {c, now, was, d:(now!=null&&was!=null)?now-was:null,
+                  pcChange:(now!=null&&was&&Math.abs(was)>0)?(now-was)/Math.abs(was)*100:null,
+                  lfl: cur.concat(cmp).every(mm=>trading(c,mm))};
+        }).filter(r=>r.now!=null||r.was!=null);
+        rows.sort((a,b)=> (b.d==null?-1e15:b.d) - (a.d==null?-1e15:a.d));
+        const mx = Math.max(1, ...rows.map(r=>Math.abs(r.d==null?0:r.d)));
+        x += `<div class="card"><h2>Every site, ${esc(periodLab)} against ${esc(cmpLab)} <small>${esc(m.label)}</small></h2>`;
+        rows.forEach(r=>{
+          const w2 = r.d==null?0:Math.abs(r.d)/mx*50;
+          x += `<div class="barrow" style="grid-template-columns:150px 1fr 190px" data-tip="<b>${esc(r.c)}</b> ${esc(nameOf(r.c))}<br><span class='k'>${esc(periodLab)}</span> ${r.now==null?'not trading':fmtT(r.now)}<br><span class='k'>${esc(cmpLab)}</span> ${r.was==null?'not trading':fmtT(r.was)}<br><span class='k'>Region</span> ${esc(S[r.c].region||'–')}" tabindex="0">
+            <div class="lb">${esc(r.c)}<small>${esc(nameOf(r.c).slice(0,18))}${r.lfl?'':(r.now==null?' · not trading now':' · not open all of last year')}</small></div>
+            <div class="tr2"><span class="mid"></span>
+              ${r.d!=null?`<span class="fl2" style="left:${r.d>=0?50:50-w2}%;width:${w2}%;background:var(--${r.d>=0?'good':'bad'})"></span>`:''}</div>
+            <div class="rt">${r.now==null?'<span class="muted">not trading</span>':fmtT(r.now)}
+              <small style="display:block;font-weight:400;color:var(--mute);font-size:10.5px">${r.d==null?(r.was==null?'no figure last year':'nothing this period'):(m.isRate?((r.d>0?'+':'')+r.d.toFixed(1)+'pp'):((r.d>=0?'+':'-')+'£'+Math.abs(Math.round(r.d)).toLocaleString('en-GB')+(r.pcChange!=null?` (${r.pcChange>=0?'+':''}${r.pcChange.toFixed(0)}%)`:'')))}</small></div></div>`;
+        });
+        x += `<div class="src">Bars run either side of the middle line: right is up on ${esc(cmpLab)}, left is down. A site that was not trading in one of the two windows has no bar${st.lfl?', and is out of every total above':''}.</div></div>`;
+      }
+
+      // ---- what to know before acting ----
+      x += `<div class="card"><h2>Read this before you act on a number</h2>`;
+      (Y.overrides||[]).forEach(o=>{ x += `<div class="li"><span class="pill amber">CHECK</span><div class="who">${esc(o.code)}</div><div class="what">${esc(mlab(o.month))} ${esc(o.line==='np'?'net profit':o.line)}: the annual workbook says ${money0(o.workbook).replace(/<[^>]+>/g,'')}, Monica's published dashboard says ${money0(o.banked).replace(/<[^>]+>/g,'')}. The dashboard figure is the one shown.</div></div>`; });
+      (M&&M.flags||[]).forEach(f=>{ x += `<div class="li"><span class="pill ${f.level}">${f.level.toUpperCase()}</span><div class="who">${esc(f.code)}</div><div class="what">${esc(f.text)}</div></div>`; });
+      x += `<div class="li"><div class="who">Not counted</div><div class="what muted">${(Y.not_counted||[]).map(c=>`${esc(c)} (${esc((S[c]&&S[c].kind)||'other')})`).join(', ')} sit outside every total here: the factory, the property company, closed sites, and Dubai, which reports in dirhams.</div></div>`;
+      if((Y.rejected||[]).length) x += `<div class="li"><div class="who">No history</div><div class="what muted">These Drive files had no management-account layout inside, so nothing was taken from them: ${(Y.rejected||[]).map(r=>esc(r.split(':')[0])).join(', ')}. The factory, the property master list and Nottingham's savings sheet are not management accounts.</div></div>`;
+      x += `<div class="li"><div class="who">Source</div><div class="what muted">${esc(Y.source)} Built ${esc(Y.built)}. ${esc(Y.note)}</div></div></div>`;
+
+      x += `</div>`;
+      w.innerHTML = x;
+      wireTips(w);
+      fitTiles();
+
+      const on = (id, fn) => { const el = document.getElementById(id); if(el) el.onchange = fn; };
+      on('mPeriod', e=>{ st.period = e.target.value; draw(); });
+      on('mCompare', e=>{ st.compare = e.target.value; draw(); });
+      on('mGroup', e=>{ st.group = e.target.value; draw(); });
+      on('mLfl', e=>{ st.lfl = e.target.value==='1'; draw(); });
+      w.querySelectorAll('[data-metric]').forEach(el=>el.onclick=()=>{ st.metric = el.dataset.metric; draw(); });
+      w.querySelectorAll('[data-chart]').forEach(el=>el.onclick=()=>{ st.chart = el.dataset.chart; draw(); });
+      w.querySelectorAll('[data-set]').forEach(el=>el.onclick=()=>{
+        const s = el.dataset.set;
+        st.picked = s==='all' ? null
+          : s.startsWith('cohort:') ? counted.filter(c=>S[c].cohort===s.slice(7))
+          : counted.filter(c=>S[c].region===s.slice(7));
+        draw();
+      });
+      w.querySelectorAll('[data-site]').forEach(el=>el.onclick=()=>{
+        const c = el.dataset.site, cur2 = picked().slice();
+        const i = cur2.indexOf(c);
+        if(i>=0) cur2.splice(i,1); else cur2.push(c);
+        st.picked = cur2.length ? counted.filter(x2=>cur2.includes(x2)) : null;
+        draw();
+      });
+    }
+    draw();
   })();
 
   // ---------------- BREAK-EVEN ----------------
@@ -726,15 +992,16 @@
     function rowsFor(){
       const rows = B.rows.filter(r=>r.capex).map(r=>{
         const mt = monthsTrading(r.start, r.start_precision);
-        const outstanding = Math.max(0, r.capex - (r.profit_to_date||0));
+        const done = r.done != null ? r.done : ((r.profit_to_date||0) >= r.capex || r.fully_recovered);
+        const outstanding = done ? 0 : Math.max(0, r.capex - (r.profit_to_date||0));
         const run = latestNP[r.code];
         const avg = (mt && r.profit_to_date!=null) ? r.profit_to_date/mt : null;
         const monthsLeftRun = (run && run>0 && outstanding>0) ? outstanding/run : null;
         const monthsLeftAvg = (avg && avg>0 && outstanding>0) ? outstanding/avg : null;
-        const done = (r.profit_to_date||0) >= r.capex || r.fully_recovered;
-        return {...r, months_trading:mt, outstanding, run, avg, monthsLeftRun, monthsLeftAvg, done};
+        return {...r, months_trading:mt, outstanding, run, avg, monthsLeftRun, monthsLeftAvg, done,
+                pct_display: done ? 100 : (r.bep_pct==null?null:r.bep_pct)};
       });
-      rows.sort((a,b2)=> (b2.bep_pct??-1e9) - (a.bep_pct??-1e9));
+      rows.sort((a,b2)=> (b2.pct_display??-1e9) - (a.pct_display??-1e9));
       return rows;
     }
     const R = rowsFor();
@@ -753,7 +1020,7 @@
       x += `<div class="tiles">
         <div class="tile" data-tip="<b>Total build cost</b><br>${B.sites_with_capex} sites with a figure on record.<br>No figure yet for ${esc((B.sites_without_capex||[]).join(', '))}." tabindex="0">
           <div class="tl">Total spent building</div><div class="tv">${gbp(B.total_capex)}</div><div class="ts">${B.sites_with_capex} sites on record</div></div>
-        <div class="tile is-good" data-tip="<b>Earned back</b><br>Cumulative management-accounts profit since each site opened." tabindex="0">
+        <div class="tile is-good" data-tip="<b>Earned back</b><br>Cumulative management-accounts profit since each site opened.${(B.capped_codes||[]).length?`<br>${esc((B.capped_codes||[]).join(', '))} ${(B.capped_codes||[]).length>1?'are':'is'} recorded as fully recovered, so ${(B.capped_codes||[]).length>1?'they count':'it counts'} for the whole build cost: £${Math.round(B.total_profit_on_record).toLocaleString('en-GB')} of profit on record plus £${Math.round(B.capped_amount).toLocaleString('en-GB')}.`:''}" tabindex="0">
           <div class="tl">Earned back</div><div class="tv">${gbp(B.total_recovered)}</div><div class="ts">${B.percent_recovered.toFixed(1)}% of what was spent</div></div>
         <div class="tile" data-tip="<b>Still to earn back</b><br>Build cost less profit made so far." tabindex="0">
           <div class="tl">Still to earn back</div><div class="tv">${gbp(B.outstanding)}</div><div class="ts">across ${R.filter(r=>!r.done).length} sites</div></div>
@@ -773,13 +1040,13 @@
             data-tip="<b>Still to earn back</b> £${Math.round(B.outstanding).toLocaleString('en-GB')}"></span></div>
         <div class="seglab"><span><span class="dot" style="background:var(--series-1)"></span>Earned back ${gbp(B.total_recovered)} (${B.percent_recovered.toFixed(1)}%)</span>
           <span><span class="dot" style="background:var(--neutral)"></span>Still to earn back ${gbp(B.outstanding)}</span></div>
-        <div class="src">${esc(B.note)} Source: ${esc(B.source)}, as at ${esc(B.period)}.</div></div>`;
+        <div class="src">${esc(B.note)}${(B.capped_codes||[]).length?` ${esc((B.capped_codes||[]).join(', '))} ${(B.capped_codes||[]).length>1?'are':'is'} recorded as fully recovered, so ${(B.capped_codes||[]).length>1?'they are':'it is'} counted at the full build cost rather than at the profit figure on record.`:''} Source: ${esc(B.source)}, as at ${esc(B.period)}.</div></div>`;
 
       x += `<div class="card"><div class="filters">
         ${['all','done','over','under','behind'].map(k=>`<span class="chip ${bf.show===k?'on':''}" data-show="${k}">${k==='all'?`All ${R.length}`:bandLab[k]+' '+counts[k]}</span>`).join('')}
       </div><h2 style="margin-top:4px">By site <small>how much of the build cost each one has earned back</small></h2>`;
       shown.forEach(r=>{
-        const p = Math.max(-100, Math.min(100, r.bep_pct||0));
+        const p = r.done ? 100 : Math.max(-100, Math.min(100, r.bep_pct||0));
         const col = bandCol[band(r)];
         // prefer the site's own monthly average; fall back to the latest month when the
         // start date is too vague to average over; say plainly when neither applies
@@ -788,7 +1055,7 @@
         else if(r.monthsLeftAvg!=null) eta = r.monthsLeftAvg<=120 ? `about ${Math.ceil(r.monthsLeftAvg)} more months at its own average` : 'more than 10 years at its average so far';
         else if(r.monthsLeftRun!=null) eta = r.monthsLeftRun<=120 ? `about ${Math.ceil(r.monthsLeftRun)} more months at ${(M&&M.latest_label)||'this month'}'s profit` : `more than 10 years at ${(M&&M.latest_label)||'this month'}'s profit`;
         else eta = (r.run!=null && r.run<=0) ? 'losing money, so not paying itself back yet' : 'no profit figure to project from';
-        x += `<div class="barrow" style="grid-template-columns:104px 1fr 150px" data-tip="<b>${esc(r.code)}</b><br><span class='k'>Build cost</span> £${Math.round(r.capex).toLocaleString('en-GB')}<br><span class='k'>Profit since opening</span> £${Math.round(r.profit_to_date||0).toLocaleString('en-GB')}<br><span class='k'>Still to earn</span> £${Math.round(r.outstanding).toLocaleString('en-GB')}<br><span class='k'>Trading</span> ${r.months_trading?r.months_trading+' months from '+esc(r.start):(r.start_precision==='year'?'since '+esc(r.start.slice(0,4))+', exact date not given':'start date not given')}<br><span class='k'>${esc((M&&M.latest_label)||'Latest month')}</span> ${r.run==null?'no figure':'£'+Math.round(r.run).toLocaleString('en-GB')}" tabindex="0">
+        x += `<div class="barrow" style="grid-template-columns:104px 1fr 150px" data-tip="<b>${esc(r.code)}</b><br><span class='k'>Build cost</span> £${Math.round(r.capex).toLocaleString('en-GB')}<br><span class='k'>Profit since opening</span> £${Math.round(r.profit_to_date||0).toLocaleString('en-GB')}<br><span class='k'>Still to earn</span> ${r.done?'nothing, paid back':'£'+Math.round(r.outstanding).toLocaleString('en-GB')}<br><span class='k'>Trading</span> ${r.months_trading?r.months_trading+' months from '+esc(r.start):(r.start_precision==='year'?'since '+esc(r.start.slice(0,4))+', exact date not given':'start date not given')}<br><span class='k'>${esc((M&&M.latest_label)||'Latest month')}</span> ${r.run==null?'no figure':'£'+Math.round(r.run).toLocaleString('en-GB')}" tabindex="0">
           <div class="lb">${esc(r.code)}<small>${r.months_trading?r.months_trading+' month'+(r.months_trading===1?'':'s')+' trading':(r.start_precision==='year'?'trading since '+esc(r.start.slice(0,4)):'start date unknown')}</small></div>
           <div class="tr" style="height:18px">${p>=0
             ? `<span class="fl" style="width:${p}%;background:${col}"></span>`
@@ -813,7 +1080,7 @@
           <td class="n">${r.run==null?'<span class="muted">–</span>':gbp(r.run)}</td>
           <td class="muted">${r.done?'paid back':(r.monthsLeftRun==null?'not earning yet':r.monthsLeftRun>120?`more than 10 years at ${(M&&M.latest_label)||'this month'}'s profit`:`${Math.ceil(r.monthsLeftRun)} months on ${(M&&M.latest_label)||'the latest month'}`)}</td></tr>`;
       });
-      x += `<tr><th>Total</th><th></th><th></th><th class="n">${gbp(B.total_capex)}</th><th class="n">${gbp(B.total_recovered)}</th><th class="n">${gbp(B.outstanding)}</th><th class="n">${B.percent_recovered.toFixed(1)}%</th><th></th><th></th></tr>`;
+      x += `<tr><th>Total</th><th></th><th></th><th class="n">${gbp(B.total_capex)}</th><th class="n"${(B.capped_codes||[]).length?` data-tip="£${Math.round(B.total_profit_on_record).toLocaleString('en-GB')} of profit on record, plus £${Math.round(B.capped_amount).toLocaleString('en-GB')} for ${esc((B.capped_codes||[]).join(', '))}, recorded as fully recovered."`:''}>${gbp(B.total_recovered)}</th><th class="n">${gbp(B.outstanding)}</th><th class="n">${B.percent_recovered.toFixed(1)}%</th><th></th><th></th></tr>`;
       x += `</tbody></table></div>
         <div class="src">"At this rate" divides what is left by that site's profit in ${esc((M&&M.latest_label)||'the latest month')}. That month is the Edinburgh Fringe, so for the Scottish sites it flatters the answer. The bar chart above uses each site's own monthly average instead, which is the steadier number.</div></div>`;
 
@@ -825,6 +1092,7 @@
       x += `</div>`;
       w.innerHTML = x;
       wireTips(w);
+      fitTiles();
       w.querySelectorAll('.chip[data-show]').forEach(ch=>ch.onclick=()=>{ bf.show=ch.dataset.show; draw(); });
     }
     draw();

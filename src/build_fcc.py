@@ -294,15 +294,147 @@ def load_bep(cfg: dict):
         if code not in by_code:
             b["rows"].append(r)
             by_code[code] = r
-    b["rows"].sort(key=lambda r: (r["bep_pct"] is None, -(r["bep_pct"] or -1e9)))
+    # A site Monica records as fully recovered counts as having earned its whole build cost back,
+    # even where the cumulative profit on record falls short of it (M9: her recovery note against
+    # her own two figures). Without this the bar, the percentage and the totals tell three
+    # different stories for the same site. The raw profit is kept alongside.
+    for r in b["rows"]:
+        cap, prof = r.get("capex"), (r.get("profit_to_date") or 0)
+        r["done"] = bool(r.get("fully_recovered")) or (cap is not None and prof >= cap)
+        r["recovered_counted"] = float(cap) if (r["done"] and cap) else float(prof)
+        r["outstanding"] = 0.0 if r["done"] else (round(cap - prof, 2) if cap else None)
+        r["bep_pct_display"] = 100.0 if r["done"] else r.get("bep_pct")
+        r["counted_uplift"] = round(r["recovered_counted"] - prof, 2)
+    b["rows"].sort(key=lambda r: (r["bep_pct_display"] is None, -(r["bep_pct_display"] or -1e9)))
     known = [r for r in b["rows"] if r.get("capex")]
     b["total_capex"] = round(sum(r["capex"] for r in known), 2)
-    b["total_recovered"] = round(sum(r.get("profit_to_date") or 0 for r in known), 2)
+    b["total_recovered"] = round(sum(r["recovered_counted"] for r in known), 2)
+    b["total_profit_on_record"] = round(sum(r.get("profit_to_date") or 0 for r in known), 2)
+    b["capped_codes"] = [r["code"] for r in known if r["counted_uplift"] > 0]
+    b["capped_amount"] = round(b["total_recovered"] - b["total_profit_on_record"], 2)
     b["sites_with_capex"] = len(known)
     b["sites_without_capex"] = [r["code"] for r in b["rows"] if not r.get("capex")]
     b["percent_recovered"] = round(b["total_recovered"] / b["total_capex"] * 100, 2) if b["total_capex"] else None
     b["outstanding"] = round(b["total_capex"] - b["total_recovered"], 2)
     return b
+
+
+def load_ma_years(cfg: dict, store: dict | None, alias: dict, gaps: list):
+    """The multi-year MA store (ma_years.json) shaped for the board.
+
+    Columnar on purpose: one array of twelve numbers per line per year per site,
+    so three years of every P&L line for the whole estate costs about 90 KB on the
+    page instead of a megabyte of repeated keys. Percentages are NOT shipped, they
+    are derived from the pounds in the browser, so a rate can never disagree with
+    the two figures it sits between.
+
+    Where the banked monthly store (ma_history.json, Monica's published dashboard)
+    covers the same site-month, THAT figure wins and the disagreement is recorded,
+    so this tab and the Today tab can never show two different numbers for the
+    same month.
+    """
+    fp = HERE / "ma_years.json"
+    if not fp.exists():
+        gaps.append(dict(company="Group", text="ma_years.json not built yet: click "
+                         "'Fetch MA History (2024-2026).command' then run "
+                         "finance_control_centre/extract_ma_annuals.py. The Management "
+                         "Accounts tab shows the latest two months only without it."))
+        return None
+    raw = json.loads(fp.read_text())
+    amap = {k: v for k, v in (cfg.get("ma_annual_code_aliases") or {}).items()
+            if not k.startswith("_")}
+    meta_all = {k: v for k, v in (cfg.get("site_meta") or {}).items() if not k.startswith("_")}
+    LINES = ["sales", "tips", "net_sales", "wages", "rent", "food", "variable",
+             "vat", "total_costs", "np"]
+
+    sites: dict[str, dict] = {}
+    for code0, srec in raw.get("sites", {}).items():
+        code = amap.get(code0, code0)
+        meta = meta_all.get(code, {})
+        entry = sites.setdefault(code, dict(
+            code=code, name=meta.get("name") or code,
+            region=meta.get("region"), cohort=meta.get("cohort"),
+            kind=meta.get("kind") or "unknown", note=meta.get("note"),
+            y={}, sources={}))
+        for yr, y in (srec.get("years") or {}).items():
+            cols = {ln: [None] * 12 for ln in LINES}
+            for mn, rec in (y.get("months") or {}).items():
+                i = int(mn) - 1
+                if not 0 <= i < 12:
+                    continue
+                for ln in LINES:
+                    if rec.get(ln) is not None:
+                        cols[ln][i] = rec[ln]
+            entry["y"][yr] = cols
+            entry["sources"][yr] = y.get("source")
+
+    # the banked dashboard months override the workbook, and the gap is recorded
+    overrides = []
+    if store:
+        for mkey, mrec in (store.get("months") or {}).items():
+            yr, mn = mkey.split("-")
+            i = int(mn) - 1
+            for c0, row in (mrec.get("sites") or {}).items():
+                code = alias.get(c0, c0)
+                if code == "ALL" or code not in sites:
+                    continue
+                cols = sites[code]["y"].get(yr)
+                if cols is None:
+                    continue
+                for ln, key in (("sales", "sales"), ("np", "np")):
+                    banked = row.get(key)
+                    if banked is None:
+                        continue
+                    was = cols[ln][i]
+                    if was is not None and abs(was - banked) > max(50.0, abs(banked) * 0.005):
+                        overrides.append(dict(code=code, month=mkey, line=ln,
+                                              workbook=round(was, 2), banked=round(banked, 2)))
+                    cols[ln][i] = round(float(banked), 2)
+                pounds = row.get("pounds") or {}
+                for ln in ("wages", "rent", "food", "variable", "vat"):
+                    if pounds.get(ln) is not None:
+                        cols[ln][i] = round(float(pounds[ln]), 2)
+                # total costs must stay sales less net profit for the month it was
+                # overridden in, or the table stops adding up in front of the reader
+                if row.get("total_costs") is not None:
+                    cols["total_costs"][i] = round(float(row["total_costs"]), 2)
+                elif cols["sales"][i] is not None and cols["np"][i] is not None:
+                    cols["total_costs"][i] = round(cols["sales"][i] - cols["np"][i], 2)
+
+    years = sorted({y for s in sites.values() for y in s["y"]})
+    months = []
+    for yr in years:
+        for i in range(12):
+            if any((s["y"].get(yr, {}).get("sales") or [None] * 12)[i] is not None
+                   for s in sites.values()):
+                months.append(f"{yr}-{i + 1:02d}")
+    regions, cohorts = [], []
+    for s in sites.values():
+        if s["kind"] != "restaurant":
+            continue
+        if s["region"] and s["region"] not in regions:
+            regions.append(s["region"])
+        if s["cohort"] and s["cohort"] not in cohorts:
+            cohorts.append(s["cohort"])
+    counted = [c for c, s in sites.items() if s["kind"] == "restaurant"]
+    not_counted = sorted(c for c, s in sites.items() if s["kind"] != "restaurant")
+
+    return dict(
+        schema=raw.get("schema"), built=raw.get("built"), lines=LINES,
+        years=years, months=months, sites=sites,
+        regions=sorted(regions), cohorts=cohorts,
+        cohort_labels={"first_ten": "M1 to M10", "new": "M11 onwards",
+                       "brands": "Ikigai and Nori"},
+        counted=sorted(counted, key=lambda c: (len(c), c)), not_counted=not_counted,
+        overrides=overrides,
+        conflicts=raw.get("conflicts") or [], rejected=raw.get("rejected") or [],
+        warnings=raw.get("warnings") or [],
+        source=raw.get("source", ""),
+        note=("Monica's per-site annual workbooks, one file per site per year. Where her "
+              "published monthly dashboard covers the same month, that figure is the one "
+              "shown. Rates are worked out from the pounds beside them. Dubai is reported "
+              "in dirhams and is never inside a UK total."),
+    )
 
 
 def load_pl_prior(cfg: dict):
@@ -545,6 +677,8 @@ def ma_block(cfg, store, alias, gaps, analysis=None):
     P = store["months"][prior]["sites"]
     H1 = store.get("first_half", {}).get("sites", {})
     target = store.get("targets", {}).get("food_pct", 25.0)
+    wage_target = (cfg.get("targets") or {}).get("wages_pct",
+                   store.get("targets", {}).get("wages_pct", 27.0))
 
     def site_row(k, v):
         code = alias.get(k, k)
@@ -593,6 +727,7 @@ def ma_block(cfg, store, alias, gaps, analysis=None):
     group = site_row("ALL", L["ALL"]) if "ALL" in L else None
     losers = [r for r in sites if r["np"] is not None and r["np"] < 0]
     over_food = [r for r in sites if r["food_pct"] is not None and r["food_pct"] > target]
+    over_wages = [r for r in sites if r["wages_pct"] is not None and r["wages_pct"] > wage_target]
     movers_up = sorted([r for r in sites if r["np_delta"] is not None], key=lambda r: -r["np_delta"])[:5]
     movers_dn = sorted([r for r in sites if r["np_delta"] is not None and r["np_delta"] < 0], key=lambda r: r["np_delta"])[:5]
 
@@ -609,7 +744,10 @@ def ma_block(cfg, store, alias, gaps, analysis=None):
                         caution=next((f["text"] for f in (store.get("flags") or [])
                                       if alias.get(f["code"], f["code"]) == r["code"] and f["level"] == "red"), None))
                    for r in sorted(over_food, key=lambda r: -r["food_pct"])],
-        food_target=target, movers_up=movers_up, movers_down=movers_dn,
+        food_target=target, wage_target=wage_target,
+        over_wages=[dict(code=r["code"], wages_pct=r["wages_pct"])
+                    for r in sorted(over_wages, key=lambda r: -r["wages_pct"])],
+        movers_up=movers_up, movers_down=movers_dn,
         group_series=store.get("group_series", {}), first_half_group=H1.get("ALL"),
         flags=store.get("flags", []), store_gaps=store.get("gaps", []),
         closing_notes=(analysis or {}).get("closing_notes", []),
@@ -876,24 +1014,52 @@ def build(root: Path, today: date) -> dict:
         kept.append(dict(company=code, text=f"No {joined} payment found in the 2026 bank feed, so none is projected on the calendar."))
     gaps[:] = kept
 
-    # ---- projected closing cash -------------------------------------------
+    # ---- projected closing cash, to the end of the month --------------------
+    # Payroll leaves on the last day of the month, so a rolling 30-day window lands mid-month
+    # and answers nothing anyone asks. The projection runs to month end instead, which always
+    # has that month's payroll inside it. Within five days of month end it rolls to the next
+    # one, so the horizon never shrinks to a day or two.
+    def month_end(dt: date) -> date:
+        return date(dt.year + (dt.month == 12), (dt.month % 12) + 1, 1) - timedelta(days=1)
+
+    # 28-Sep-2026 (Michael): the headline is what is LEFT at the end of THIS month, never rolled
+    # forward; the following month end is shown alongside as its own number.
     covered = [c["code"] for c in companies if c["code"] in inflow30]
     in_total = money(sum(inflow30.values()))
-    projection = dict(
-        window_days=window,
-        opening=cash_block["group_total"],
-        inflow=in_total,
-        outflow=leaving_block["total"],
-        closing=money(cash_block["group_total"] + in_total - leaving_block["total"]),
-        by_company=[dict(code=k, inflow=v) for k, v in sorted(inflow30.items(), key=lambda kv: -kv[1])],
-        companies_covered=len(covered), companies_total=len(companies),
-        basis=(f"Money in is what actually landed in the bank over the last {30} days across {len(covered)} companies, "
-               "with transfers between our own companies taken out. Money out is the calendar's estimate for the next "
-               f"{window} days. Neither is a forecast of trading: it is last month's takings carried forward."),
-    )
+
+    def project(me: date) -> dict:
+        me_days = (me - today).days
+        me_items = [i for i in calendar if i["status"] in ("due", "overdue") and 0 <= i["days"] <= me_days]
+        me_by_cat = Counter()
+        for i in me_items:
+            me_by_cat[i["category"]] += i["amount"]
+        me_out = money(sum(me_by_cat.values()))
+        me_in = money(in_total / 30 * me_days)
+        return dict(
+            window_days=window,
+            month_end=me.isoformat(), days_to_month_end=me_days,
+            opening=cash_block["group_total"],
+            inflow=me_in, inflow_30d=in_total,
+            outflow=me_out,
+            closing=money(cash_block["group_total"] + me_in - me_out),
+            out_by_category=[dict(category=k, amount=money(v)) for k, v in me_by_cat.most_common()],
+            payroll_in_window=any("payroll" in (i["category"] or "").lower() or "wage" in (i["category"] or "").lower()
+                                  for i in me_items),
+            by_company=[dict(code=k, inflow=money(v / 30 * me_days)) for k, v in sorted(inflow30.items(), key=lambda kv: -kv[1])],
+            companies_covered=len(covered), companies_total=len(companies),
+            basis=(f"Runs to {me.strftime('%-d %B %Y')}, the last day of the month, so the month's payroll is inside it. "
+                   f"Money in is what actually landed in the bank over the last 30 days across {len(covered)} companies "
+                   f"(£{in_total:,.0f}, transfers between our own companies taken out), carried forward at the same daily "
+                   f"rate for the {me_days} days left. Money out is everything the calendar expects between now and then. "
+                   "Neither is a forecast of trading."),
+        )
+
+    me = month_end(today)
+    projection = project(me)
+    projection["next"] = project(month_end(me + timedelta(days=1)))
     if projection["closing"] < cfg["cash_alarm_gbp"]:
         attention.append(dict(level="amber", company="Group",
-                              text=f"On last month's takings, cash at the end of the next {window} days lands near "
+                              text=f"On last month's takings, cash at {me.strftime('%-d %B')} after payroll lands near "
                                    f"{projection['closing']:,.0f}, under the {cfg['cash_alarm_gbp']:,.0f} alarm.", tab="today"))
 
     # attention ordering: reds first, then ambers; dedupe
@@ -920,6 +1086,7 @@ def build(root: Path, today: date) -> dict:
                                                "after the monthly Financial Analysis document lands in the project folder."))
     health = health_block(cfg, companies, cash_block, calendar, feed_as_at, today, root, store, alias, gaps)
     ma = ma_block(cfg, store, alias, gaps, analysis)
+    mayears = load_ma_years(cfg, store, alias, gaps)
 
     # health reds and the MA red flags join the Today attention list, once each
     for r in health["rows"]:
@@ -951,6 +1118,7 @@ def build(root: Path, today: date) -> dict:
         feed_as_at=feed_as_at,
         health=health,
         ma=ma,
+        mayears=mayears,
         bep=bep,
         prior_year=prior_pl,
         target=revenue_target(cfg, store, prior_pl, gaps),
@@ -1004,13 +1172,20 @@ def main() -> int:
         g = mm["group"] or {}
         print(f"MA {mm['latest_label']}: group sales {g.get('sales'):,.0f} net profit {g.get('np'):,.0f} ({g.get('np_pct')}%), "
               f"{len(mm['sites'])} sites, {len(mm['losers'])} loss-making, {len(mm['over_food'])} over the {mm['food_target']}% food target")
+    my = payload.get("mayears")
+    if my:
+        print(f"MA history: {len(my['sites'])} sites, {len(my['months'])} months "
+              f"{my['months'][0]} to {my['months'][-1]}, {len(my['counted'])} counted as restaurants"
+              + (f", {len(my['overrides'])} workbook figures overridden by the published dashboard"
+                 if my['overrides'] else ""))
     bb = payload.get("bep")
     if bb:
         print(f"break-even: {bb['sites_with_capex']} sites, capex {bb['total_capex']:,.0f}, "
               f"recovered {bb['total_recovered']:,.0f} ({bb['percent_recovered']}%), outstanding {bb['outstanding']:,.0f}")
     pr = payload.get("projection") or {}
     if pr:
-        print(f"30-day projection: opening {pr['opening']:,.0f} + in {pr['inflow']:,.0f} - out {pr['outflow']:,.0f} = {pr['closing']:,.0f}")
+        print(f"projection to {pr['month_end']} ({pr['days_to_month_end']}d): opening {pr['opening']:,.0f} "
+              f"+ in {pr['inflow']:,.0f} - out {pr['outflow']:,.0f} = {pr['closing']:,.0f}")
     tg = payload.get("target") or {}
     if tg:
         print(f"target {tg['target']:,.0f}: {tg['ytd']:,.0f} to {tg['through']} ({tg['pct']}%), "

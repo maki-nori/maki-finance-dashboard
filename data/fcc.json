@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-02T14:07:12+04:00",
+ "generated_at": "2026-10-02T15:55:08+04:00",
  "as_of": "2026-10-02",
  "companies": [
   {
@@ -1270,13 +1270,13 @@
   {
    "level": "red",
    "company": "IKI 2",
-   "text": "No cash lodgement in the Xero bank feed this year, against 37,399 of Kobas cash. Either the cash is banked somewhere Xero does not see, or it is not being banked.",
+   "text": "No cash lodgement reconciled in Xero this year, against 37,399 of Kobas cash. Not on the G4S round: ask how this site banks its cash.",
    "tab": "cash"
   },
   {
    "level": "red",
    "company": "M1",
-   "text": "No cash lodgement in the Xero bank feed this year, against 31,024 of Kobas cash. Either the cash is banked somewhere Xero does not see, or it is not being banked.",
+   "text": "No cash lodgement reconciled in Xero this year, against 31,024 of Kobas cash. Not on the G4S round: ask how this site banks its cash.",
    "tab": "cash"
   },
   {
@@ -1287,6 +1287,12 @@
   },
   {
    "level": "red",
+   "company": "M15",
+   "text": "Last G4S (WOOLSTON C C on the statement) reconciled in Xero was 2026-07-28, 66 days ago, with 52,400 not banked this year. Either G4S has not collected or the lines are sitting unreconciled.",
+   "tab": "cash"
+  },
+  {
+   "level": "red",
    "company": "M19",
    "text": "PAYE to HMRC expected 2026-09-17 (1,855) not seen in the bank feed.",
    "tab": "calendar"
@@ -1294,7 +1300,7 @@
   {
    "level": "red",
    "company": "M6",
-   "text": "No cash lodgement in the Xero bank feed this year, against 61,070 of Kobas cash. Either the cash is banked somewhere Xero does not see, or it is not being banked.",
+   "text": "No cash lodgement reconciled in Xero this year, against 61,070 of Kobas cash. Not on the G4S round: ask how this site banks its cash.",
    "tab": "cash"
   },
   {
@@ -30389,6 +30395,7 @@
    {
     "code": "M1",
     "has_cashup": true,
+    "g4s": null,
     "per": {
      "2026-01": {
       "kobas": 2751.26,
@@ -30930,6 +30937,7 @@
    {
     "code": "M3",
     "has_cashup": true,
+    "g4s": null,
     "per": {
      "2026-01": {
       "kobas": 7572.35,
@@ -31499,6 +31507,7 @@
    {
     "code": "IKI 2",
     "has_cashup": true,
+    "g4s": null,
     "per": {
      "2026-01": {
       "kobas": 3591.56,
@@ -32052,6 +32061,7 @@
    {
     "code": "M6",
     "has_cashup": true,
+    "g4s": null,
     "per": {
      "2026-01": {
       "kobas": 6217.26,
@@ -32605,6 +32615,7 @@
    {
     "code": "M7",
     "has_cashup": true,
+    "g4s": "KILMARNOCK C C",
     "per": {
      "2026-01": {
       "kobas": 21095.88,
@@ -33224,6 +33235,7 @@
    {
     "code": "M8",
     "has_cashup": true,
+    "g4s": "CASH IN AT 404796",
     "per": {
      "2026-01": {
       "kobas": 15349.27,
@@ -33813,6 +33825,7 @@
    {
     "code": "M9",
     "has_cashup": true,
+    "g4s": "CASH IN AT 404794",
     "per": {
      "2026-01": {
       "kobas": 17639.82,
@@ -34407,6 +34420,7 @@
    {
     "code": "M10",
     "has_cashup": true,
+    "g4s": "CASH IN AT 404794",
     "per": {
      "2026-01": {
       "kobas": 5128.41,
@@ -34996,6 +35010,7 @@
    {
     "code": "M11",
     "has_cashup": true,
+    "g4s": null,
     "per": {
      "2026-01": {
       "kobas": 9197.34,
@@ -35624,6 +35639,7 @@
    {
     "code": "M12",
     "has_cashup": true,
+    "g4s": null,
     "per": {
      "2026-01": {
       "kobas": 10305.37,
@@ -36228,6 +36244,7 @@
    {
     "code": "M13",
     "has_cashup": true,
+    "g4s": null,
     "per": {
      "2026-01": {
       "kobas": 7932.54,
@@ -36967,6 +36984,7 @@
    {
     "code": "M14",
     "has_cashup": true,
+    "g4s": null,
     "per": {
      "2026-01": {
       "kobas": 22741.1,
@@ -37606,6 +37624,7 @@
    {
     "code": "M15",
     "has_cashup": true,
+    "g4s": "WOOLSTON C C",
     "per": {
      "2026-01": {
       "kobas": 31188.04,
@@ -38165,6 +38184,7 @@
    {
     "code": "M16",
     "has_cashup": true,
+    "g4s": "WOOLSTON C C",
     "per": {
      "2026-01": {
       "kobas": 10287.72,
@@ -38748,6 +38768,7 @@
    {
     "code": "M17",
     "has_cashup": true,
+    "g4s": "KINGS CROSS C C",
     "per": {
      "2026-01": {
       "kobas": 0.0,
@@ -39322,6 +39343,7 @@
    {
     "code": "M18",
     "has_cashup": false,
+    "g4s": "KINGS CROSS C C",
     "per": {
      "2026-01": {
       "kobas": 0.0,
@@ -39688,6 +39710,7 @@
    {
     "code": "M19",
     "has_cashup": false,
+    "g4s": null,
     "per": {
      "2026-01": {
       "kobas": 0.0,
@@ -40037,6 +40060,7 @@
    {
     "code": "M20",
     "has_cashup": false,
+    "g4s": "CASH IN AT",
     "per": {
      "2026-01": {
       "kobas": 0.0,
@@ -40403,6 +40427,7 @@
    {
     "code": "M21",
     "has_cashup": false,
+    "g4s": null,
     "per": {
      "2026-01": {
       "kobas": 0.0,
@@ -40796,6 +40821,7 @@
    {
     "code": "NORI",
     "has_cashup": false,
+    "g4s": "KINGS CROSS C C",
     "per": {
      "2026-01": {
       "kobas": 0.0,
@@ -41116,17 +41142,22 @@
    {
     "level": "red",
     "code": "IKI 2",
-    "text": "No cash lodgement in the Xero bank feed this year, against 37,399 of Kobas cash. Either the cash is banked somewhere Xero does not see, or it is not being banked."
+    "text": "No cash lodgement reconciled in Xero this year, against 37,399 of Kobas cash. Not on the G4S round: ask how this site banks its cash."
    },
    {
     "level": "red",
     "code": "M1",
-    "text": "No cash lodgement in the Xero bank feed this year, against 31,024 of Kobas cash. Either the cash is banked somewhere Xero does not see, or it is not being banked."
+    "text": "No cash lodgement reconciled in Xero this year, against 31,024 of Kobas cash. Not on the G4S round: ask how this site banks its cash."
+   },
+   {
+    "level": "red",
+    "code": "M15",
+    "text": "Last G4S (WOOLSTON C C on the statement) reconciled in Xero was 2026-07-28, 66 days ago, with 52,400 not banked this year. Either G4S has not collected or the lines are sitting unreconciled."
    },
    {
     "level": "red",
     "code": "M6",
-    "text": "No cash lodgement in the Xero bank feed this year, against 61,070 of Kobas cash. Either the cash is banked somewhere Xero does not see, or it is not being banked."
+    "text": "No cash lodgement reconciled in Xero this year, against 61,070 of Kobas cash. Not on the G4S round: ask how this site banks its cash."
    },
    {
     "level": "amber",
@@ -41166,11 +41197,6 @@
    {
     "level": "amber",
     "code": "M15",
-    "text": "Last cash lodgement in Xero was 2026-07-28, 66 days ago."
-   },
-   {
-    "level": "amber",
-    "code": "M15",
     "text": "Cash is counted up to 2026-08-15 but the cash-up runs to 2026-09-27: 43 days not counted yet."
    },
    {
@@ -41196,7 +41222,7 @@
    {
     "level": "amber",
     "code": "M17",
-    "text": "Last cash lodgement in Xero was 2026-09-07, 25 days ago."
+    "text": "Last G4S (KINGS CROSS C C on the statement) reconciled in Xero was 2026-09-07, 25 days ago, with 60,276 not banked this year. Either G4S has not collected or the lines are sitting unreconciled."
    },
    {
     "level": "amber",
@@ -41206,7 +41232,7 @@
    {
     "level": "amber",
     "code": "M18",
-    "text": "Last cash lodgement in Xero was 2026-08-25, 38 days ago."
+    "text": "Last G4S (KINGS CROSS C C on the statement) reconciled in Xero was 2026-08-25, 38 days ago, with 15,339 not banked this year. Either G4S has not collected or the lines are sitting unreconciled."
    },
    {
     "level": "amber",
@@ -41226,7 +41252,7 @@
    {
     "level": "amber",
     "code": "M3",
-    "text": "Last cash lodgement in Xero was 2026-08-20, 43 days ago."
+    "text": "Last cash lodgement reconciled in Xero was 2026-08-20, 43 days ago."
    },
    {
     "level": "amber",
@@ -41246,10 +41272,10 @@
    {
     "level": "amber",
     "code": "NORI",
-    "text": "Last cash lodgement in Xero was 2026-08-20, 43 days ago."
+    "text": "Last G4S (KINGS CROSS C C on the statement) reconciled in Xero was 2026-08-20, 43 days ago, with 4,085 not banked this year. Either G4S has not collected or the lines are sitting unreconciled."
    }
   ],
-  "built": "2026-10-02T10:04:23",
+  "built": "2026-10-02T11:55:07",
   "sources": {
    "kobas": "data/sources/kobas_cashlog_daily_2026.csv (Kobas Cash Log, cash_declared)",
    "cashup": "'Maki 1-10' and 'Maki 11-17 New 2025 Cash UP' workbooks, per-site tab, columns A-J",

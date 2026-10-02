@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-02T15:55:08+04:00",
+ "generated_at": "2026-10-02T16:09:48+04:00",
  "as_of": "2026-10-02",
  "companies": [
   {
@@ -1275,8 +1275,26 @@
   },
   {
    "level": "red",
+   "company": "IKI 2",
+   "text": "37,010 of cash this year has not reached the bank in Xero.",
+   "tab": "cash"
+  },
+  {
+   "level": "red",
    "company": "M1",
    "text": "No cash lodgement reconciled in Xero this year, against 31,024 of Kobas cash. Not on the G4S round: ask how this site banks its cash.",
+   "tab": "cash"
+  },
+  {
+   "level": "red",
+   "company": "M1",
+   "text": "30,369 of cash this year has not reached the bank in Xero.",
+   "tab": "cash"
+  },
+  {
+   "level": "red",
+   "company": "M10",
+   "text": "18,498 more was banked as cash in Xero this year than the cash-up says was taken. Find what else is coded to the contact Cash, or what the cash-up is missing.",
    "tab": "cash"
   },
   {
@@ -1287,8 +1305,44 @@
   },
   {
    "level": "red",
+   "company": "M11",
+   "text": "13,401 more was banked as cash in Xero this year than the cash-up says was taken. Find what else is coded to the contact Cash, or what the cash-up is missing.",
+   "tab": "cash"
+  },
+  {
+   "level": "red",
+   "company": "M12",
+   "text": "76,942 more was banked as cash in Xero this year than the cash-up says was taken. Find what else is coded to the contact Cash, or what the cash-up is missing.",
+   "tab": "cash"
+  },
+  {
+   "level": "red",
+   "company": "M14",
+   "text": "12,832 more was banked as cash in Xero this year than the cash-up says was taken. Find what else is coded to the contact Cash, or what the cash-up is missing.",
+   "tab": "cash"
+  },
+  {
+   "level": "red",
    "company": "M15",
    "text": "Last G4S (WOOLSTON C C on the statement) reconciled in Xero was 2026-07-28, 66 days ago, with 52,400 not banked this year. Either G4S has not collected or the lines are sitting unreconciled.",
+   "tab": "cash"
+  },
+  {
+   "level": "red",
+   "company": "M15",
+   "text": "52,400 of cash this year has not reached the bank in Xero.",
+   "tab": "cash"
+  },
+  {
+   "level": "red",
+   "company": "M17",
+   "text": "60,276 of cash this year has not reached the bank in Xero.",
+   "tab": "cash"
+  },
+  {
+   "level": "red",
+   "company": "M18",
+   "text": "15,339 of cash this year has not reached the bank in Xero.",
    "tab": "cash"
   },
   {
@@ -1301,6 +1355,30 @@
    "level": "red",
    "company": "M6",
    "text": "No cash lodgement reconciled in Xero this year, against 61,070 of Kobas cash. Not on the G4S round: ask how this site banks its cash.",
+   "tab": "cash"
+  },
+  {
+   "level": "red",
+   "company": "M6",
+   "text": "59,613 of cash this year has not reached the bank in Xero.",
+   "tab": "cash"
+  },
+  {
+   "level": "red",
+   "company": "M7",
+   "text": "113,761 of cash this year has not reached the bank in Xero.",
+   "tab": "cash"
+  },
+  {
+   "level": "red",
+   "company": "M8",
+   "text": "29,957 of cash this year has not reached the bank in Xero.",
+   "tab": "cash"
+  },
+  {
+   "level": "red",
+   "company": "M9",
+   "text": "11,360 more was banked as cash in Xero this year than the cash-up says was taken. Find what else is coded to the contact Cash, or what the cash-up is missing.",
    "tab": "cash"
   },
   {
@@ -41146,8 +41224,44 @@
    },
    {
     "level": "red",
+    "code": "IKI 2",
+    "text": "37,010 of cash this year has not reached the bank in Xero.",
+    "kind": "mismatch"
+   },
+   {
+    "level": "red",
     "code": "M1",
     "text": "No cash lodgement reconciled in Xero this year, against 31,024 of Kobas cash. Not on the G4S round: ask how this site banks its cash."
+   },
+   {
+    "level": "red",
+    "code": "M1",
+    "text": "30,369 of cash this year has not reached the bank in Xero.",
+    "kind": "mismatch"
+   },
+   {
+    "level": "red",
+    "code": "M10",
+    "text": "18,498 more was banked as cash in Xero this year than the cash-up says was taken. Find what else is coded to the contact Cash, or what the cash-up is missing.",
+    "kind": "mismatch"
+   },
+   {
+    "level": "red",
+    "code": "M11",
+    "text": "13,401 more was banked as cash in Xero this year than the cash-up says was taken. Find what else is coded to the contact Cash, or what the cash-up is missing.",
+    "kind": "mismatch"
+   },
+   {
+    "level": "red",
+    "code": "M12",
+    "text": "76,942 more was banked as cash in Xero this year than the cash-up says was taken. Find what else is coded to the contact Cash, or what the cash-up is missing.",
+    "kind": "mismatch"
+   },
+   {
+    "level": "red",
+    "code": "M14",
+    "text": "12,832 more was banked as cash in Xero this year than the cash-up says was taken. Find what else is coded to the contact Cash, or what the cash-up is missing.",
+    "kind": "mismatch"
    },
    {
     "level": "red",
@@ -41156,8 +41270,50 @@
    },
    {
     "level": "red",
+    "code": "M15",
+    "text": "52,400 of cash this year has not reached the bank in Xero.",
+    "kind": "mismatch"
+   },
+   {
+    "level": "red",
+    "code": "M17",
+    "text": "60,276 of cash this year has not reached the bank in Xero.",
+    "kind": "mismatch"
+   },
+   {
+    "level": "red",
+    "code": "M18",
+    "text": "15,339 of cash this year has not reached the bank in Xero.",
+    "kind": "mismatch"
+   },
+   {
+    "level": "red",
     "code": "M6",
     "text": "No cash lodgement reconciled in Xero this year, against 61,070 of Kobas cash. Not on the G4S round: ask how this site banks its cash."
+   },
+   {
+    "level": "red",
+    "code": "M6",
+    "text": "59,613 of cash this year has not reached the bank in Xero.",
+    "kind": "mismatch"
+   },
+   {
+    "level": "red",
+    "code": "M7",
+    "text": "113,761 of cash this year has not reached the bank in Xero.",
+    "kind": "mismatch"
+   },
+   {
+    "level": "red",
+    "code": "M8",
+    "text": "29,957 of cash this year has not reached the bank in Xero.",
+    "kind": "mismatch"
+   },
+   {
+    "level": "red",
+    "code": "M9",
+    "text": "11,360 more was banked as cash in Xero this year than the cash-up says was taken. Find what else is coded to the contact Cash, or what the cash-up is missing.",
+    "kind": "mismatch"
    },
    {
     "level": "amber",
@@ -41178,6 +41334,12 @@
     "level": "amber",
     "code": "M12",
     "text": "Kobas cash 70,064 against cash-up Z cash 64,766 this year (-7.6%)."
+   },
+   {
+    "level": "amber",
+    "code": "M13",
+    "text": "3,019 more was banked as cash in Xero this year than the cash-up says was taken. Find what else is coded to the contact Cash, or what the cash-up is missing.",
+    "kind": "mismatch"
    },
    {
     "level": "amber",
@@ -41241,8 +41403,20 @@
    },
    {
     "level": "amber",
+    "code": "M19",
+    "text": "5,790 of cash this year has not reached the bank in Xero.",
+    "kind": "mismatch"
+   },
+   {
+    "level": "amber",
     "code": "M20",
     "text": "No cash-up tab for M20 in either Cash UP workbook, so only Kobas and the bank can be compared."
+   },
+   {
+    "level": "amber",
+    "code": "M20",
+    "text": "4,589 of cash this year has not reached the bank in Xero.",
+    "kind": "mismatch"
    },
    {
     "level": "amber",
@@ -41251,8 +41425,20 @@
    },
    {
     "level": "amber",
+    "code": "M21",
+    "text": "2,565 of cash this year has not reached the bank in Xero.",
+    "kind": "mismatch"
+   },
+   {
+    "level": "amber",
     "code": "M3",
     "text": "Last cash lodgement reconciled in Xero was 2026-08-20, 43 days ago."
+   },
+   {
+    "level": "amber",
+    "code": "M3",
+    "text": "5,942 more was banked as cash in Xero this year than the cash-up says was taken. Find what else is coded to the contact Cash, or what the cash-up is missing.",
+    "kind": "mismatch"
    },
    {
     "level": "amber",
@@ -41273,6 +41459,12 @@
     "level": "amber",
     "code": "NORI",
     "text": "Last G4S (KINGS CROSS C C on the statement) reconciled in Xero was 2026-08-20, 43 days ago, with 4,085 not banked this year. Either G4S has not collected or the lines are sitting unreconciled."
+   },
+   {
+    "level": "amber",
+    "code": "NORI",
+    "text": "4,085 of cash this year has not reached the bank in Xero.",
+    "kind": "mismatch"
    }
   ],
   "built": "2026-10-02T11:55:07",

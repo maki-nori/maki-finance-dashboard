@@ -76,16 +76,16 @@
 
   <div class="hero">
     <div class="label">Group cash on hand</div>
-    <div class="amount">£1,859,674.53</div>
+    <div class="amount">£1,700,657.59</div>
     <div>
-      <span class="delta-pill down">−£91,576 vs yesterday</span>
+      <span class="delta-pill down">−£159,017 vs yesterday</span>
       <span class="delta-pill flat cover-pill">Same 22 entities as yesterday &mdash; like-for-like</span>
     </div>
     <div class="meta">
       Sum of Xero balance across <strong>operational accounts</strong> (main retail bank + any AP-only) per connected entity. Tide, regular Modulr, Revolut and dormants are excluded. Reconciliation backlog shown below — Xero numbers lag the bank by roughly that amount.
     </div>
-    <div class="coverage-note"><strong>Coverage unchanged</strong> &mdash; the same 22 entities were visible in 2026-10-02.json, and no account changed operational status, so today's &minus;£91,576 is real movement, not new visibility. 8 rose, 11 fell (worst: Birmingham &minus;£46,780), and <strong>3 were byte-identical to yesterday</strong> (Fountain Good Food, Property, South Ikigai). Daily card revenue makes an exactly-flat entity unlikely, so treat those as <em>possible Xero bank-feed lag</em> rather than confirmed no-movement.</div>
-    <div class="lag-pill">Reconciliation lag: +£62,421 across 112 unmatched items group-wide (as of 3 October)</div>
+    <div class="coverage-note"><strong>Coverage unchanged</strong> &mdash; the same 22 entities were visible in 2026-10-03.json, and no account changed operational status, so today's &minus;£159,017 is real movement, not new visibility. 2 rose, 1 fell (worst: Property &minus;£166,426), and <strong>19 were byte-identical to yesterday</strong> (AAHQ, Fountain Good Food, M1TOO, 1HW, Aberdeen, Birmingham, Leeds, Leicester, Manchester, Metro, Newcastle, Nori, SJQ, Shoreditch, Soho, Southampton, Yorkshire, Renfield Delight, South Ikigai). Daily card revenue makes an exactly-flat entity unlikely, so treat those as <em>possible Xero bank-feed lag</em> rather than confirmed no-movement.</div>
+    <div class="lag-pill">Reconciliation lag: +£62,421 across 112 unmatched items group-wide (as of 4 October)</div>
   </div>
 
   <div class="section-title">By entity</div>
@@ -94,7 +94,7 @@
   <footer>
     <div class="row">
       <span>Source: Xero <code>/Reports/BalanceSheet</code> (reconciled balances).</span>
-      <span>Last sync 3 October 2026 09:00 +04 Dubai</span>
+      <span>Last sync 4 October 2026 09:00 +04 Dubai</span>
     </div>
     <p>
       Headline excludes 4 entities not yet connected. Cash = Xero balance summed across main bank + AP-only accounts only — Tide, regular Modulr, Revolut and zero-balance dormants are ignored. <strong>Reconciliation backlog</strong> is the signed sum of Xero-side entries waiting for a bank-feed match (snapshot from 26 May; not refreshed daily) — a high backlog means the cash number is conservative by roughly that amount until the finance team catches up. Click any entity to see its full account breakdown.
@@ -106,7 +106,7 @@
 const TENANTS = [
   {
     name: "Maki Property Ltd",
-    cash: 366530.67,
+    cash: 200105.11,
     opNames: "MAKI PROPERTY LTD + Cash account  + Saving MAKI PROPERTY LTD",
     reconTotal: 0.00,
     reconCount: 0,
@@ -116,7 +116,7 @@ const TENANTS = [
       { name: "Saving MAKI PROPERTY LTD", balance: 10181.43, operational: true },
       { name: "Business Platinum Supplementary Car - 1041", balance: 0.00, operational: false },
       { name: "American Express Business Platinum  - 1009", balance: 0.00, operational: false },
-      { name: "MAKI PROPERTY LTD", balance: 333849.24, operational: true },
+      { name: "MAKI PROPERTY LTD", balance: 167423.68, operational: true },
       { name: "Business Gold Supplementary Card - 1025", balance: 0.00, operational: false },
       { name: "Business Gold Supplementary Card - 1017", balance: 0.00, operational: false },
       { name: "Pleo account", balance: -17538.37, operational: false },
@@ -205,14 +205,14 @@ const TENANTS = [
   },
   {
     name: "Maki Nottingham Ltd",
-    cash: 98369.42,
+    cash: 103131.68,
     opNames: "Barclays - Nottingham + Modulr AP Only",
     reconTotal: -6185.42,
     reconCount: 2,
     accounts: [
       { name: "Modulr GBP -  do not edit transactions here", balance: 0.00, operational: false },
       { name: "Revolut GBP Saving 2.25%", balance: 0.00, operational: false },
-      { name: "Barclays - Nottingham", balance: 98369.42, operational: true },
+      { name: "Barclays - Nottingham", balance: 103131.68, operational: true },
       { name: "Revolut - Maki Nottingham", balance: 0.00, operational: false },
       { name: "Modulr AP Only", balance: 0.00, operational: true }
     ]
@@ -244,14 +244,14 @@ const TENANTS = [
   },
   {
     name: "Maki Lakeside Ltd",
-    cash: 85606.83,
+    cash: 88253.19,
     opNames: "Barclays - Lakeside + AP Only",
     reconTotal: 0.00,
     reconCount: 4,
     accounts: [
       { name: "Modulr GBP -  do not edit transactions here", balance: 0.00, operational: false },
       { name: "Revolut GBP Maki Lakeside - Sa", balance: 0.00, operational: false },
-      { name: "Barclays - Lakeside", balance: 76450.49, operational: true },
+      { name: "Barclays - Lakeside", balance: 79096.85, operational: true },
       { name: "AP Only", balance: 9156.34, operational: true },
       { name: "Revolut - Lakeside", balance: 2067.45, operational: false },
       { name: "Revolut GBP", balance: 0.00, operational: false }
@@ -407,7 +407,7 @@ const TENANTS = [
   }
 ];
 
-const TENANT_DELTAS = {"Maki Property Ltd": 0.00, "Maki SJQ": 8140.66, "Maki Metro Ltd": -6812.26, "South Ikigai Ltd": 0.00, "Maki Aberdeen Ltd": 965.16, "Maki Soho Ltd": -5011.21, "Maki Leeds Limited": -3018.18, "Maki Nottingham Ltd": 27.16, "Maki Manchester Ltd": -6231.88, "Maki 1HW Ltd": 2901.49, "Maki Lakeside Ltd": 3142.72, "Maki Yorkshire Ltd": -3245.07, "M1TOO Ltd": 162.60, "Renfield Delight Ltd": -81.54, "Fountain Good Food Ltd": 0.00, "Maki Birmingham Ltd": -46779.86, "Maki Newcastle Ltd": 2050.96, "AAHQ Ltd": -10852.69, "Maki Shoreditch Ltd": -3746.88, "Maki Southampton Ltd": -26088.56, "Maki Nori Ltd": -5563.12, "Maki Leicester Ltd": 8464.98};
+const TENANT_DELTAS = {"Maki Property Ltd": -166425.56, "Maki SJQ": 0.00, "Maki Metro Ltd": 0.00, "South Ikigai Ltd": 0.00, "Maki Aberdeen Ltd": 0.00, "Maki Soho Ltd": 0.00, "Maki Leeds Limited": 0.00, "Maki Nottingham Ltd": 4762.26, "Maki Manchester Ltd": 0.00, "Maki 1HW Ltd": 0.00, "Maki Lakeside Ltd": 2646.36, "Maki Yorkshire Ltd": 0.00, "M1TOO Ltd": 0.00, "Renfield Delight Ltd": 0.00, "Fountain Good Food Ltd": 0.00, "Maki Birmingham Ltd": 0.00, "Maki Newcastle Ltd": 0.00, "AAHQ Ltd": 0.00, "Maki Shoreditch Ltd": 0.00, "Maki Southampton Ltd": 0.00, "Maki Nori Ltd": 0.00, "Maki Leicester Ltd": 0.00};
 
 const gbp = n => "£" + n.toLocaleString("en-GB", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
 const negGbp = n => (n < 0 ? "−" : "") + "£" + Math.abs(n).toLocaleString("en-GB", { minimumFractionDigits: 2, maximumFractionDigits: 2 });

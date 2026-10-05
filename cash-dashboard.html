@@ -78,13 +78,13 @@
     <div class="label">Group cash on hand</div>
     <div class="amount">£1,700,657.59</div>
     <div>
-      <span class="delta-pill down">−£159,017 vs yesterday</span>
+      <span class="delta-pill flat">flat vs yesterday</span>
       <span class="delta-pill flat cover-pill">Same 22 entities as yesterday &mdash; like-for-like</span>
     </div>
     <div class="meta">
       Sum of Xero balance across <strong>operational accounts</strong> (main retail bank + any AP-only) per connected entity. Tide, regular Modulr, Revolut and dormants are excluded. Reconciliation backlog shown below — Xero numbers lag the bank by roughly that amount.
     </div>
-    <div class="coverage-note"><strong>Coverage unchanged</strong> &mdash; the same 22 entities were visible in 2026-10-03.json, and no account changed operational status, so today's &minus;£159,017 is real movement, not new visibility. 2 rose, 1 fell (worst: Property &minus;£166,426), and <strong>19 were byte-identical to yesterday</strong> (AAHQ, Fountain Good Food, M1TOO, 1HW, Aberdeen, Birmingham, Leeds, Leicester, Manchester, Metro, Newcastle, Nori, SJQ, Shoreditch, Soho, Southampton, Yorkshire, Renfield Delight, South Ikigai). Daily card revenue makes an exactly-flat entity unlikely, so treat those as <em>possible Xero bank-feed lag</em> rather than confirmed no-movement.</div>
+    <div class="coverage-note"><strong>Coverage unchanged</strong> &mdash; the same 22 entities were visible in 2026-10-04.json, and no account changed operational status, so today's +£0 is real movement, not new visibility. 0 rose, 0 fell, and <strong>22 were byte-identical to yesterday</strong> (AAHQ, Fountain Good Food, M1TOO, 1HW, Aberdeen, Birmingham, Lakeside, Leeds, Leicester, Manchester, Metro, Newcastle, Nori, Nottingham, Property, SJQ, Shoreditch, Soho, Southampton, Yorkshire, Renfield Delight, South Ikigai). Daily card revenue makes an exactly-flat entity unlikely, so treat those as <em>possible Xero bank-feed lag</em> rather than confirmed no-movement.</div>
     <div class="lag-pill">Reconciliation lag: +£62,421 across 112 unmatched items group-wide (as of 4 October)</div>
   </div>
 
@@ -407,7 +407,7 @@ const TENANTS = [
   }
 ];
 
-const TENANT_DELTAS = {"Maki Property Ltd": -166425.56, "Maki SJQ": 0.00, "Maki Metro Ltd": 0.00, "South Ikigai Ltd": 0.00, "Maki Aberdeen Ltd": 0.00, "Maki Soho Ltd": 0.00, "Maki Leeds Limited": 0.00, "Maki Nottingham Ltd": 4762.26, "Maki Manchester Ltd": 0.00, "Maki 1HW Ltd": 0.00, "Maki Lakeside Ltd": 2646.36, "Maki Yorkshire Ltd": 0.00, "M1TOO Ltd": 0.00, "Renfield Delight Ltd": 0.00, "Fountain Good Food Ltd": 0.00, "Maki Birmingham Ltd": 0.00, "Maki Newcastle Ltd": 0.00, "AAHQ Ltd": 0.00, "Maki Shoreditch Ltd": 0.00, "Maki Southampton Ltd": 0.00, "Maki Nori Ltd": 0.00, "Maki Leicester Ltd": 0.00};
+const TENANT_DELTAS = {"Maki Property Ltd": 0.00, "Maki SJQ": 0.00, "Maki Metro Ltd": 0.00, "South Ikigai Ltd": 0.00, "Maki Aberdeen Ltd": 0.00, "Maki Soho Ltd": 0.00, "Maki Leeds Limited": 0.00, "Maki Nottingham Ltd": 0.00, "Maki Manchester Ltd": 0.00, "Maki 1HW Ltd": 0.00, "Maki Lakeside Ltd": 0.00, "Maki Yorkshire Ltd": 0.00, "M1TOO Ltd": 0.00, "Renfield Delight Ltd": 0.00, "Fountain Good Food Ltd": 0.00, "Maki Birmingham Ltd": 0.00, "Maki Newcastle Ltd": 0.00, "AAHQ Ltd": 0.00, "Maki Shoreditch Ltd": 0.00, "Maki Southampton Ltd": 0.00, "Maki Nori Ltd": 0.00, "Maki Leicester Ltd": 0.00};
 
 const gbp = n => "£" + n.toLocaleString("en-GB", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
 const negGbp = n => (n < 0 ? "−" : "") + "£" + Math.abs(n).toLocaleString("en-GB", { minimumFractionDigits: 2, maximumFractionDigits: 2 });

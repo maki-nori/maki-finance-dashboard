@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-05T10:42:22+04:00",
+ "generated_at": "2026-10-05T10:54:04+04:00",
  "as_of": "2026-10-05",
  "companies": [
   {
@@ -23199,7 +23199,7 @@
      },
      {
       "state": "amber",
-      "text": "Financial analysis last ran 2026-10-04: ok, 823 lines that do not tie and 268 unallocated."
+      "text": "Financial analysis last ran 2026-10-05: ok, 823 lines that do not tie and 268 unallocated."
      }
     ],
     "unchecked": [
@@ -42213,7 +42213,7 @@
     "last_counted": "2026-09-14",
     "last_banked": "2026-10-02",
     "unbanked_ytd": 36.0,
-    "source": "_cashup_m18plus.xlsx tab 'Maki Soho' (downloaded 2026-10-05 10:42)",
+    "source": "_cashup_m18plus.xlsx tab 'Maki Soho' (downloaded 2026-10-05 10:53)",
     "daily": [
      {
       "date": "2026-08-31",
@@ -42758,7 +42758,7 @@
     "last_counted": "2026-09-14",
     "last_banked": "2026-09-16",
     "unbanked_ytd": 5444.22,
-    "source": "_cashup_m18plus.xlsx tab 'Maki Shoreditch' (downloaded 2026-10-05 10:42)",
+    "source": "_cashup_m18plus.xlsx tab 'Maki Shoreditch' (downloaded 2026-10-05 10:53)",
     "daily": [
      {
       "date": "2026-09-01",
@@ -43264,7 +43264,7 @@
     "last_counted": "2026-08-24",
     "last_banked": "2026-09-24",
     "unbanked_ytd": 8498.61,
-    "source": "_cashup_m18plus.xlsx tab 'Maki Southampton' (downloaded 2026-10-05 10:42)",
+    "source": "_cashup_m18plus.xlsx tab 'Maki Southampton' (downloaded 2026-10-05 10:53)",
     "daily": [
      {
       "date": "2026-08-31",
@@ -43811,7 +43811,7 @@
     "last_counted": "2026-09-20",
     "last_banked": "2026-09-29",
     "unbanked_ytd": 624.87,
-    "source": "_cashup_m18plus.xlsx tab 'Maki Birmingham' (downloaded 2026-10-05 10:42)",
+    "source": "_cashup_m18plus.xlsx tab 'Maki Birmingham' (downloaded 2026-10-05 10:53)",
     "daily": [
      {
       "date": "2026-08-31",
@@ -44373,7 +44373,7 @@
     "last_counted": "2026-06-28",
     "last_banked": "2026-08-20",
     "unbanked_ytd": 3923.49,
-    "source": "_cashup_m18plus.xlsx tab 'Maki NORI' (downloaded 2026-10-05 10:42)",
+    "source": "_cashup_m18plus.xlsx tab 'Maki NORI' (downloaded 2026-10-05 10:53)",
     "daily": [
      {
       "date": "2026-08-31",
@@ -44942,7 +44942,7 @@
     "text": "Cash is counted up to 2026-06-28 but the cash-up runs to 2026-09-27: 91 days not counted yet."
    }
   ],
-  "built": "2026-10-05T10:42:21",
+  "built": "2026-10-05T10:54:04",
   "sources": {
    "kobas": "data/sources/kobas_cashlog_daily_2026.csv (Kobas Cash Log, cash_declared)",
    "cashup": "'Maki 1-10', 'Maki 11-17' and 'Maki 18+ New 2025 Cash UP' workbooks, per-site tab, columns A-J",

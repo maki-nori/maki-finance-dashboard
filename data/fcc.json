@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-05T10:39:30+04:00",
+ "generated_at": "2026-10-05T10:40:23+04:00",
  "as_of": "2026-10-05",
  "companies": [
   {
@@ -1396,7 +1396,7 @@
   {
    "level": "red",
    "company": "NORI",
-   "text": "Last G4S (KINGS CROSS C C on the statement) reconciled in Xero was 2026-08-20, 46 days ago, with 4,335 not banked this year. Either G4S has not collected or the lines are sitting unreconciled.",
+   "text": "Last G4S (KINGS CROSS C C on the statement) reconciled in Xero was 2026-08-20, 46 days ago, with 3,923 not banked this year. Either G4S has not collected or the lines are sitting unreconciled.",
    "tab": "cash"
   },
   {
@@ -42062,7 +42062,7 @@
    },
    {
     "code": "M18",
-    "has_cashup": false,
+    "has_cashup": true,
     "g4s": "KINGS CROSS C C",
     "per": {
      "2026-01": {
@@ -42093,92 +42093,92 @@
      },
      "2026-03": {
       "kobas": 3349.54,
-      "z": 0.0,
-      "petty": 0.0,
-      "to_bank": 0.0,
-      "counted": 0.0,
-      "counted_days": 0,
+      "z": 3581.03,
+      "petty": 825.41,
+      "to_bank": 2755.62,
+      "counted": 3151.21,
+      "counted_days": 23,
       "traded_days": 23,
-      "count_var": 0.0,
-      "to_bank_on_counted": 0.0,
+      "count_var": 395.59,
+      "to_bank_on_counted": 2755.62,
       "banked": 0.0,
       "lodgements": 0
      },
      "2026-04": {
       "kobas": 5814.97,
-      "z": 0.0,
-      "petty": 0.0,
-      "to_bank": 0.0,
-      "counted": 0.0,
-      "counted_days": 0,
+      "z": 5967.41,
+      "petty": 181.33,
+      "to_bank": 5786.08,
+      "counted": 5838.96,
+      "counted_days": 29,
       "traded_days": 29,
-      "count_var": 0.0,
-      "to_bank_on_counted": 0.0,
+      "count_var": 52.88,
+      "to_bank_on_counted": 5786.08,
       "banked": 7083.1,
       "lodgements": 1
      },
      "2026-05": {
       "kobas": 5953.15,
-      "z": 0.0,
-      "petty": 0.0,
-      "to_bank": 0.0,
-      "counted": 0.0,
-      "counted_days": 0,
-      "traded_days": 30,
-      "count_var": 0.0,
-      "to_bank_on_counted": 0.0,
+      "z": 6304.01,
+      "petty": 31.64,
+      "to_bank": 6272.37,
+      "counted": 5733.84,
+      "counted_days": 30,
+      "traded_days": 31,
+      "count_var": -399.08,
+      "to_bank_on_counted": 6132.92,
       "banked": 6657.77,
       "lodgements": 1
      },
      "2026-06": {
       "kobas": 5829.58,
-      "z": 0.0,
-      "petty": 0.0,
-      "to_bank": 0.0,
-      "counted": 0.0,
-      "counted_days": 0,
+      "z": 6186.72,
+      "petty": 107.5,
+      "to_bank": 6079.22,
+      "counted": 5630.63,
+      "counted_days": 30,
       "traded_days": 30,
-      "count_var": 0.0,
-      "to_bank_on_counted": 0.0,
+      "count_var": -448.59,
+      "to_bank_on_counted": 6079.22,
       "banked": 0.0,
       "lodgements": 0
      },
      "2026-07": {
       "kobas": 6934.45,
-      "z": 0.0,
-      "petty": 0.0,
-      "to_bank": 0.0,
-      "counted": 0.0,
-      "counted_days": 0,
+      "z": 7126.77,
+      "petty": 236.32,
+      "to_bank": 6908.65,
+      "counted": 6691.79,
+      "counted_days": 30,
       "traded_days": 30,
-      "count_var": 0.0,
-      "to_bank_on_counted": 0.0,
+      "count_var": 44.25,
+      "to_bank_on_counted": 6647.54,
       "banked": 0.0,
       "lodgements": 0
      },
      "2026-08": {
       "kobas": 7164.17,
-      "z": 0.0,
-      "petty": 0.0,
-      "to_bank": 0.0,
-      "counted": 0.0,
-      "counted_days": 0,
+      "z": 7209.7,
+      "petty": 89.23,
+      "to_bank": 7176.54,
+      "counted": 6690.24,
+      "counted_days": 31,
       "traded_days": 31,
-      "count_var": 0.0,
-      "to_bank_on_counted": 0.0,
+      "count_var": -486.3,
+      "to_bank_on_counted": 7176.54,
       "banked": 13079.97,
       "lodgements": 2
      },
      "2026-09": {
       "kobas": 6958.7,
-      "z": 0.0,
-      "petty": 0.0,
-      "to_bank": 0.0,
-      "counted": 0.0,
-      "counted_days": 0,
+      "z": 6426.15,
+      "petty": 111.87,
+      "to_bank": 6375.08,
+      "counted": 3188.49,
+      "counted_days": 14,
       "traded_days": 28,
-      "count_var": 0.0,
-      "to_bank_on_counted": 0.0,
+      "count_var": -78.56,
+      "to_bank_on_counted": 3267.05,
       "banked": 0.0,
       "lodgements": 0
      },
@@ -42197,179 +42197,347 @@
      },
      "YTD": {
       "kobas": 42751.96,
-      "z": 0.0,
-      "petty": 0.0,
-      "to_bank": 0.0,
-      "counted": 0.0,
-      "counted_days": 0,
-      "traded_days": 205,
-      "count_var": 0.0,
-      "to_bank_on_counted": 0.0,
+      "z": 42801.79,
+      "petty": 1583.3,
+      "to_bank": 41353.56,
+      "counted": 36925.16,
+      "counted_days": 187,
+      "traded_days": 206,
+      "count_var": -919.81,
+      "to_bank_on_counted": 37844.97,
       "banked": 41317.56,
       "lodgements": 6
      }
     },
-    "last_cashup": null,
-    "last_counted": null,
+    "last_cashup": "2026-09-27",
+    "last_counted": "2026-09-14",
     "last_banked": "2026-10-02",
-    "unbanked_ytd": 1434.4,
-    "source": null,
+    "unbanked_ytd": 36.0,
+    "source": "_cashup_m18plus.xlsx tab 'Maki Soho' (downloaded 2026-10-05 10:40)",
     "daily": [
      {
       "date": "2026-08-31",
       "kobas_cash": 620.0,
       "kobas_gross": 6422.96,
-      "kobas_cash_var": 1.33
+      "kobas_cash_var": 1.33,
+      "z_cash": 618.67,
+      "cash_tips": 56.42,
+      "petty": 0.0,
+      "to_bank": 618.67,
+      "counted": 562.25,
+      "sheet_var": -56.42
      },
      {
       "date": "2026-09-01",
       "kobas_cash": 239.5,
       "kobas_gross": 4702.85,
-      "kobas_cash_var": 14.36
+      "kobas_cash_var": 14.36,
+      "z_cash": 239.43,
+      "cash_tips": 23.83,
+      "petty": 14.29,
+      "to_bank": 225.14,
+      "counted": 239.5,
+      "sheet_var": 14.36
      },
      {
       "date": "2026-09-02",
       "kobas_cash": 370.0,
       "kobas_gross": 4629.27,
-      "kobas_cash_var": 0.45
+      "kobas_cash_var": 0.45,
+      "z_cash": 369.55,
+      "cash_tips": 27.61,
+      "petty": 0.0,
+      "to_bank": 369.55,
+      "counted": 341.94,
+      "sheet_var": -27.61
      },
      {
       "date": "2026-09-03",
       "kobas_cash": 180.0,
       "kobas_gross": 4484.88,
-      "kobas_cash_var": 20.02
+      "kobas_cash_var": 20.02,
+      "z_cash": 159.98,
+      "cash_tips": 17.78,
+      "petty": 0.0,
+      "to_bank": 159.98,
+      "counted": 142.2,
+      "sheet_var": -17.78
      },
      {
       "date": "2026-09-04",
       "kobas_cash": 210.0,
       "kobas_gross": 6562.63,
-      "kobas_cash_var": -0.68
+      "kobas_cash_var": -0.68,
+      "z_cash": 247.46,
+      "cash_tips": 16.46,
+      "petty": 36.78,
+      "to_bank": 210.68,
+      "counted": 231.0,
+      "sheet_var": 20.32
      },
      {
       "date": "2026-09-05",
       "kobas_cash": 412.0,
       "kobas_gross": 6363.81,
-      "kobas_cash_var": -0.16
+      "kobas_cash_var": -0.16,
+      "z_cash": 412.16,
+      "cash_tips": 31.67,
+      "petty": 0.0,
+      "to_bank": 412.16,
+      "counted": 380.49,
+      "sheet_var": -31.67
      },
      {
       "date": "2026-09-06",
       "kobas_cash": 232.68,
       "kobas_gross": 4063.38,
-      "kobas_cash_var": 0.0
+      "kobas_cash_var": 0.0,
+      "z_cash": 232.68,
+      "cash_tips": 24.38,
+      "petty": 0.0,
+      "to_bank": 232.68,
+      "counted": 232.68,
+      "sheet_var": 0.0
+     },
+     {
+      "date": "2026-09-07",
+      "kobas_cash": 0.0,
+      "kobas_gross": 3558.11,
+      "kobas_cash_var": 0.0,
+      "z_cash": 0.0,
+      "cash_tips": 0.0,
+      "petty": 0.0,
+      "to_bank": 0.0,
+      "counted": 1.0,
+      "sheet_var": 1.0
      },
      {
       "date": "2026-09-08",
       "kobas_cash": 69.21,
       "kobas_gross": 4798.23,
-      "kobas_cash_var": 0.0
+      "kobas_cash_var": 0.0,
+      "z_cash": 69.21,
+      "cash_tips": 3.73,
+      "petty": 0.0,
+      "to_bank": 69.21,
+      "counted": 69.71,
+      "sheet_var": 0.5
      },
      {
       "date": "2026-09-09",
       "kobas_cash": 197.05,
       "kobas_gross": 4557.94,
-      "kobas_cash_var": 0.0
+      "kobas_cash_var": 0.0,
+      "z_cash": 197.05,
+      "cash_tips": 10.62,
+      "petty": 0.0,
+      "to_bank": 197.05,
+      "counted": 197.05,
+      "sheet_var": 0.0
      },
      {
       "date": "2026-09-10",
       "kobas_cash": 285.0,
       "kobas_gross": 4913.56,
-      "kobas_cash_var": 60.04
+      "kobas_cash_var": 60.04,
+      "z_cash": 224.96,
+      "cash_tips": 20.59,
+      "petty": 0.0,
+      "to_bank": 224.96,
+      "counted": 204.37,
+      "sheet_var": -20.59
      },
      {
       "date": "2026-09-11",
       "kobas_cash": 264.45,
       "kobas_gross": 5616.7,
-      "kobas_cash_var": 0.0
+      "kobas_cash_var": 0.0,
+      "z_cash": 272.25,
+      "cash_tips": 23.05,
+      "petty": 7.8,
+      "to_bank": 272.25,
+      "counted": 264.45,
+      "sheet_var": -7.8
      },
      {
       "date": "2026-09-12",
       "kobas_cash": 421.5,
       "kobas_gross": 7859.04,
-      "kobas_cash_var": 8.39
+      "kobas_cash_var": 8.39,
+      "z_cash": 413.11,
+      "cash_tips": 34.77,
+      "petty": 0.0,
+      "to_bank": 413.11,
+      "counted": 421.5,
+      "sheet_var": 8.39
      },
      {
       "date": "2026-09-13",
       "kobas_cash": 321.2,
       "kobas_gross": 5748.79,
-      "kobas_cash_var": 0.0
+      "kobas_cash_var": 0.0,
+      "z_cash": 321.2,
+      "cash_tips": 26.75,
+      "petty": 0.0,
+      "to_bank": 321.2,
+      "counted": 321.2,
+      "sheet_var": 0.0
      },
      {
       "date": "2026-09-14",
       "kobas_cash": 160.0,
       "kobas_gross": 3181.92,
-      "kobas_cash_var": 0.92
+      "kobas_cash_var": 0.92,
+      "z_cash": 159.08,
+      "cash_tips": 17.68,
+      "petty": 0.0,
+      "to_bank": 159.08,
+      "counted": 141.4,
+      "sheet_var": -17.68
      },
      {
       "date": "2026-09-15",
       "kobas_cash": 129.0,
       "kobas_gross": 3916.33,
-      "kobas_cash_var": 0.26
+      "kobas_cash_var": 0.26,
+      "z_cash": 128.74,
+      "cash_tips": 11.64,
+      "petty": 0.0,
+      "to_bank": 128.74,
+      "counted": null,
+      "sheet_var": null
      },
      {
       "date": "2026-09-16",
       "kobas_cash": 51.25,
       "kobas_gross": 4487.71,
-      "kobas_cash_var": 0.01
+      "kobas_cash_var": 0.01,
+      "z_cash": 51.24,
+      "cash_tips": 3.0,
+      "petty": 0.0,
+      "to_bank": 51.24,
+      "counted": null,
+      "sheet_var": null
      },
      {
       "date": "2026-09-17",
       "kobas_cash": 188.0,
       "kobas_gross": 4535.85,
-      "kobas_cash_var": 0.26
+      "kobas_cash_var": 0.26,
+      "z_cash": 187.74,
+      "cash_tips": 15.64,
+      "petty": 0.0,
+      "to_bank": 187.74,
+      "counted": null,
+      "sheet_var": null
      },
      {
       "date": "2026-09-18",
       "kobas_cash": 272.0,
       "kobas_gross": 7006.42,
-      "kobas_cash_var": -9.03
+      "kobas_cash_var": -9.03,
+      "z_cash": 281.03,
+      "cash_tips": 31.23,
+      "petty": 0.0,
+      "to_bank": 281.03,
+      "counted": null,
+      "sheet_var": null
      },
      {
       "date": "2026-09-19",
       "kobas_cash": 484.2,
       "kobas_gross": 6843.69,
-      "kobas_cash_var": 0.05
+      "kobas_cash_var": 0.05,
+      "z_cash": 484.15,
+      "cash_tips": 37.15,
+      "petty": 0.0,
+      "to_bank": 484.15,
+      "counted": null,
+      "sheet_var": null
      },
      {
       "date": "2026-09-20",
       "kobas_cash": 268.0,
       "kobas_gross": 5534.56,
-      "kobas_cash_var": 0.04
+      "kobas_cash_var": 0.04,
+      "z_cash": 267.96,
+      "cash_tips": 18.36,
+      "petty": 0.0,
+      "to_bank": 267.96,
+      "counted": null,
+      "sheet_var": null
      },
      {
       "date": "2026-09-21",
       "kobas_cash": 63.06,
       "kobas_gross": 3498.43,
-      "kobas_cash_var": 0.0
+      "kobas_cash_var": 0.0,
+      "z_cash": 63.06,
+      "cash_tips": 6.56,
+      "petty": 0.0,
+      "to_bank": 63.06,
+      "counted": null,
+      "sheet_var": null
      },
      {
       "date": "2026-09-22",
       "kobas_cash": 57.9,
       "kobas_gross": 2793.83,
-      "kobas_cash_var": 0.12
+      "kobas_cash_var": 0.12,
+      "z_cash": 57.78,
+      "cash_tips": 4.33,
+      "petty": 0.0,
+      "to_bank": 57.78,
+      "counted": null,
+      "sheet_var": null
      },
      {
       "date": "2026-09-24",
       "kobas_cash": 85.0,
       "kobas_gross": 4408.58,
-      "kobas_cash_var": 0.2
+      "kobas_cash_var": 0.2,
+      "z_cash": 84.8,
+      "cash_tips": 0.0,
+      "petty": 0.0,
+      "to_bank": 84.8,
+      "counted": null,
+      "sheet_var": null
      },
      {
       "date": "2026-09-25",
       "kobas_cash": 473.0,
       "kobas_gross": 7238.93,
-      "kobas_cash_var": 0.22
+      "kobas_cash_var": 0.22,
+      "z_cash": 472.78,
+      "cash_tips": 38.28,
+      "petty": 0.0,
+      "to_bank": 472.78,
+      "counted": null,
+      "sheet_var": null
      },
      {
       "date": "2026-09-26",
       "kobas_cash": 673.2,
       "kobas_gross": 10000.92,
-      "kobas_cash_var": 0.06
+      "kobas_cash_var": 0.06,
+      "z_cash": 726.14,
+      "cash_tips": 69.74,
+      "petty": 53.0,
+      "to_bank": 726.14,
+      "counted": null,
+      "sheet_var": null
      },
      {
       "date": "2026-09-27",
       "kobas_cash": 303.0,
       "kobas_gross": 6367.48,
-      "kobas_cash_var": 0.39
+      "kobas_cash_var": 0.39,
+      "z_cash": 302.61,
+      "cash_tips": 25.81,
+      "petty": 0.0,
+      "to_bank": 302.61,
+      "counted": null,
+      "sheet_var": null
      },
      {
       "date": "2026-09-28",
@@ -42439,7 +42607,7 @@
    },
    {
     "code": "M19",
-    "has_cashup": false,
+    "has_cashup": true,
     "g4s": null,
     "per": {
      "2026-01": {
@@ -42509,53 +42677,53 @@
      },
      "2026-06": {
       "kobas": 119.19,
-      "z": 0.0,
-      "petty": 0.0,
-      "to_bank": 0.0,
-      "counted": 0.0,
-      "counted_days": 0,
+      "z": 127.21,
+      "petty": 15.42,
+      "to_bank": 111.79,
+      "counted": 57.49,
+      "counted_days": 2,
       "traded_days": 3,
-      "count_var": 0.0,
-      "to_bank_on_counted": 0.0,
+      "count_var": 27.37,
+      "to_bank_on_counted": 30.12,
       "banked": 0.0,
       "lodgements": 0
      },
      "2026-07": {
       "kobas": 2864.78,
-      "z": 0.0,
-      "petty": 0.0,
-      "to_bank": 0.0,
-      "counted": 0.0,
-      "counted_days": 0,
-      "traded_days": 26,
-      "count_var": 0.0,
-      "to_bank_on_counted": 0.0,
+      "z": 2982.26,
+      "petty": 75.45,
+      "to_bank": 2906.81,
+      "counted": 841.71,
+      "counted_days": 9,
+      "traded_days": 27,
+      "count_var": 295.34,
+      "to_bank_on_counted": 546.37,
       "banked": 0.0,
       "lodgements": 0
      },
      "2026-08": {
       "kobas": 2699.81,
-      "z": 0.0,
-      "petty": 0.0,
-      "to_bank": 0.0,
-      "counted": 0.0,
-      "counted_days": 0,
+      "z": 2641.29,
+      "petty": 62.01,
+      "to_bank": 2579.28,
+      "counted": 1718.94,
+      "counted_days": 16,
       "traded_days": 25,
-      "count_var": 0.0,
-      "to_bank_on_counted": 0.0,
+      "count_var": 8.35,
+      "to_bank_on_counted": 1710.59,
       "banked": 0.0,
       "lodgements": 0
      },
      "2026-09": {
       "kobas": 2919.29,
-      "z": 0.0,
-      "petty": 0.0,
-      "to_bank": 0.0,
-      "counted": 0.0,
-      "counted_days": 0,
-      "traded_days": 27,
-      "count_var": 0.0,
-      "to_bank_on_counted": 0.0,
+      "z": 2871.46,
+      "petty": 244.92,
+      "to_bank": 2703.09,
+      "counted": 1203.66,
+      "counted_days": 13,
+      "traded_days": 28,
+      "count_var": 20.54,
+      "to_bank_on_counted": 1183.12,
       "banked": 2856.75,
       "lodgements": 1
      },
@@ -42574,167 +42742,323 @@
      },
      "YTD": {
       "kobas": 8900.56,
-      "z": 0.0,
-      "petty": 0.0,
-      "to_bank": 0.0,
-      "counted": 0.0,
-      "counted_days": 0,
-      "traded_days": 85,
-      "count_var": 0.0,
-      "to_bank_on_counted": 0.0,
+      "z": 8622.22,
+      "petty": 397.8,
+      "to_bank": 8300.97,
+      "counted": 3821.8,
+      "counted_days": 40,
+      "traded_days": 87,
+      "count_var": 351.6,
+      "to_bank_on_counted": 3470.2,
       "banked": 2856.75,
       "lodgements": 1
      }
     },
-    "last_cashup": null,
-    "last_counted": null,
+    "last_cashup": "2026-09-27",
+    "last_counted": "2026-09-14",
     "last_banked": "2026-09-16",
-    "unbanked_ytd": 6043.81,
-    "source": null,
+    "unbanked_ytd": 5444.22,
+    "source": "_cashup_m18plus.xlsx tab 'Maki Shoreditch' (downloaded 2026-10-05 10:40)",
     "daily": [
      {
       "date": "2026-09-01",
       "kobas_cash": 83.93,
       "kobas_gross": 2300.16,
-      "kobas_cash_var": 0.0
+      "kobas_cash_var": 0.0,
+      "z_cash": 131.67,
+      "cash_tips": 11.97,
+      "petty": 47.74,
+      "to_bank": 83.93,
+      "counted": 83.93,
+      "sheet_var": 0.0
      },
      {
       "date": "2026-09-02",
       "kobas_cash": 18.59,
       "kobas_gross": 3183.5,
-      "kobas_cash_var": 0.0
+      "kobas_cash_var": 0.0,
+      "z_cash": 18.59,
+      "cash_tips": 1.69,
+      "petty": 0.0,
+      "to_bank": 18.59,
+      "counted": 18.59,
+      "sheet_var": 0.0
      },
      {
       "date": "2026-09-03",
       "kobas_cash": 170.85,
       "kobas_gross": 4590.42,
-      "kobas_cash_var": 0.0
+      "kobas_cash_var": 0.0,
+      "z_cash": 170.85,
+      "cash_tips": 6.25,
+      "petty": 0.0,
+      "to_bank": 170.85,
+      "counted": 170.85,
+      "sheet_var": 0.0
      },
      {
       "date": "2026-09-04",
       "kobas_cash": 136.51,
       "kobas_gross": 4045.87,
-      "kobas_cash_var": 0.0
+      "kobas_cash_var": 0.0,
+      "z_cash": 136.51,
+      "cash_tips": 12.41,
+      "petty": 0.0,
+      "to_bank": 136.51,
+      "counted": 136.51,
+      "sheet_var": 0.0
      },
      {
       "date": "2026-09-05",
       "kobas_cash": 82.83,
       "kobas_gross": 2714.88,
-      "kobas_cash_var": 0.0
+      "kobas_cash_var": 0.0,
+      "z_cash": 82.83,
+      "cash_tips": 4.63,
+      "petty": 0.0,
+      "to_bank": 82.83,
+      "counted": 82.83,
+      "sheet_var": 0.0
      },
      {
       "date": "2026-09-06",
       "kobas_cash": 87.12,
       "kobas_gross": 2840.94,
-      "kobas_cash_var": 19.65
+      "kobas_cash_var": 19.65,
+      "z_cash": 87.12,
+      "cash_tips": 7.92,
+      "petty": 19.65,
+      "to_bank": 67.47,
+      "counted": 87.12,
+      "sheet_var": 19.65
      },
      {
       "date": "2026-09-07",
       "kobas_cash": 288.42,
       "kobas_gross": 3177.98,
-      "kobas_cash_var": 0.0
+      "kobas_cash_var": 0.0,
+      "z_cash": 288.42,
+      "cash_tips": 26.22,
+      "petty": 0.0,
+      "to_bank": 288.42,
+      "counted": 288.42,
+      "sheet_var": 0.0
      },
      {
       "date": "2026-09-08",
       "kobas_cash": 109.01,
       "kobas_gross": 3644.85,
-      "kobas_cash_var": 0.0
+      "kobas_cash_var": 0.0,
+      "z_cash": 109.01,
+      "cash_tips": 6.66,
+      "petty": 0.0,
+      "to_bank": 109.01,
+      "counted": 109.9,
+      "sheet_var": 0.89
      },
      {
       "date": "2026-09-09",
       "kobas_cash": 9.76,
       "kobas_gross": 2896.86,
-      "kobas_cash_var": -0.1
+      "kobas_cash_var": -0.1,
+      "z_cash": 75.9,
+      "cash_tips": 6.9,
+      "petty": 66.04,
+      "to_bank": 9.86,
+      "counted": 9.86,
+      "sheet_var": 0.0
      },
      {
       "date": "2026-09-10",
       "kobas_cash": 30.0,
       "kobas_gross": 4471.45,
-      "kobas_cash_var": 0.0
+      "kobas_cash_var": 0.0,
+      "z_cash": 30.0,
+      "cash_tips": 0.0,
+      "petty": 0.0,
+      "to_bank": 30.0,
+      "counted": 30.0,
+      "sheet_var": 0.0
      },
      {
       "date": "2026-09-12",
       "kobas_cash": 48.0,
       "kobas_gross": 2366.45,
-      "kobas_cash_var": 0.04
+      "kobas_cash_var": 0.04,
+      "z_cash": 47.96,
+      "cash_tips": 4.36,
+      "petty": 0.0,
+      "to_bank": 47.96,
+      "counted": 47.96,
+      "sheet_var": 0.0
      },
      {
       "date": "2026-09-13",
       "kobas_cash": 63.29,
       "kobas_gross": 3575.8,
-      "kobas_cash_var": 0.0
+      "kobas_cash_var": 0.0,
+      "z_cash": 63.29,
+      "cash_tips": 3.94,
+      "petty": 0.0,
+      "to_bank": 63.29,
+      "counted": 63.29,
+      "sheet_var": 0.0
      },
      {
       "date": "2026-09-14",
       "kobas_cash": 74.4,
       "kobas_gross": 2951.68,
-      "kobas_cash_var": 0.0
+      "kobas_cash_var": 0.0,
+      "z_cash": 109.34,
+      "cash_tips": 9.94,
+      "petty": 34.94,
+      "to_bank": 74.4,
+      "counted": 74.4,
+      "sheet_var": 0.0
      },
      {
       "date": "2026-09-15",
       "kobas_cash": 188.53,
       "kobas_gross": 4096.33,
-      "kobas_cash_var": 0.0
+      "kobas_cash_var": 0.0,
+      "z_cash": 196.68,
+      "cash_tips": 17.88,
+      "petty": 8.15,
+      "to_bank": 196.68,
+      "counted": null,
+      "sheet_var": null
      },
      {
       "date": "2026-09-16",
       "kobas_cash": 193.62,
       "kobas_gross": 4203.36,
-      "kobas_cash_var": 0.0
+      "kobas_cash_var": 0.0,
+      "z_cash": 193.62,
+      "cash_tips": 13.06,
+      "petty": 0.0,
+      "to_bank": 193.62,
+      "counted": null,
+      "sheet_var": null
      },
      {
       "date": "2026-09-17",
       "kobas_cash": 106.23,
       "kobas_gross": 5154.03,
-      "kobas_cash_var": 0.0
+      "kobas_cash_var": 0.0,
+      "z_cash": 145.23,
+      "cash_tips": 6.03,
+      "petty": 39.0,
+      "to_bank": 145.23,
+      "counted": null,
+      "sheet_var": null
      },
      {
       "date": "2026-09-18",
       "kobas_cash": 47.9,
       "kobas_gross": 3429.98,
-      "kobas_cash_var": 0.03
+      "kobas_cash_var": 0.03,
+      "z_cash": 47.87,
+      "cash_tips": 1.8,
+      "petty": 0.0,
+      "to_bank": 47.87,
+      "counted": null,
+      "sheet_var": null
      },
      {
       "date": "2026-09-19",
       "kobas_cash": 224.57,
       "kobas_gross": 2669.97,
-      "kobas_cash_var": 0.0
+      "kobas_cash_var": 0.0,
+      "z_cash": 249.02,
+      "cash_tips": 19.72,
+      "petty": 24.45,
+      "to_bank": 249.02,
+      "counted": null,
+      "sheet_var": null
      },
      {
       "date": "2026-09-20",
       "kobas_cash": 56.1,
       "kobas_gross": 2010.98,
-      "kobas_cash_var": -3.61
+      "kobas_cash_var": -3.61,
+      "z_cash": 59.71,
+      "cash_tips": 3.61,
+      "petty": 0.0,
+      "to_bank": 59.71,
+      "counted": null,
+      "sheet_var": null
      },
      {
       "date": "2026-09-21",
       "kobas_cash": 76.67,
       "kobas_gross": 2510.55,
-      "kobas_cash_var": 0.0
+      "kobas_cash_var": 0.0,
+      "z_cash": 76.67,
+      "cash_tips": 6.97,
+      "petty": 0.0,
+      "to_bank": 76.67,
+      "counted": null,
+      "sheet_var": null
      },
      {
       "date": "2026-09-22",
       "kobas_cash": 180.62,
       "kobas_gross": 3735.18,
-      "kobas_cash_var": 0.0
+      "kobas_cash_var": 0.0,
+      "z_cash": 180.62,
+      "cash_tips": 16.42,
+      "petty": 0.0,
+      "to_bank": 180.62,
+      "counted": null,
+      "sheet_var": null
      },
      {
       "date": "2026-09-23",
       "kobas_cash": 142.36,
       "kobas_gross": 3615.38,
-      "kobas_cash_var": 0.0
+      "kobas_cash_var": 0.0,
+      "z_cash": 142.36,
+      "cash_tips": 6.16,
+      "petty": 0.0,
+      "to_bank": 142.36,
+      "counted": null,
+      "sheet_var": null
      },
      {
       "date": "2026-09-24",
       "kobas_cash": 176.44,
       "kobas_gross": 4008.96,
-      "kobas_cash_var": 0.0
+      "kobas_cash_var": 0.0,
+      "z_cash": 176.44,
+      "cash_tips": 16.04,
+      "petty": 0.0,
+      "to_bank": 176.44,
+      "counted": null,
+      "sheet_var": null
+     },
+     {
+      "date": "2026-09-26",
+      "kobas_cash": 0.0,
+      "kobas_gross": 4420.42,
+      "kobas_cash_var": -16.22,
+      "z_cash": 16.22,
+      "cash_tips": 0.0,
+      "petty": 0.0,
+      "to_bank": 16.22,
+      "counted": null,
+      "sheet_var": null
      },
      {
       "date": "2026-09-27",
       "kobas_cash": 29.08,
       "kobas_gross": 3294.6,
-      "kobas_cash_var": -1.5
+      "kobas_cash_var": -1.5,
+      "z_cash": 35.53,
+      "cash_tips": 1.0,
+      "petty": 4.95,
+      "to_bank": 35.53,
+      "counted": null,
+      "sheet_var": null
      },
      {
       "date": "2026-09-28",
@@ -42789,7 +43113,7 @@
    },
    {
     "code": "M20",
-    "has_cashup": false,
+    "has_cashup": true,
     "g4s": "CASH IN AT",
     "per": {
      "2026-01": {
@@ -42872,38 +43196,38 @@
      },
      "2026-07": {
       "kobas": 7420.67,
-      "z": 0.0,
-      "petty": 0.0,
-      "to_bank": 0.0,
-      "counted": 0.0,
-      "counted_days": 0,
-      "traded_days": 18,
-      "count_var": 0.0,
-      "to_bank_on_counted": 0.0,
+      "z": 13036.69,
+      "petty": 601.67,
+      "to_bank": 12435.02,
+      "counted": 12553.79,
+      "counted_days": 29,
+      "traded_days": 29,
+      "count_var": 118.77,
+      "to_bank_on_counted": 12435.02,
       "banked": 0.0,
       "lodgements": 0
      },
      "2026-08": {
       "kobas": 10315.62,
-      "z": 0.0,
-      "petty": 0.0,
-      "to_bank": 0.0,
-      "counted": 0.0,
-      "counted_days": 0,
+      "z": 10589.98,
+      "petty": 374.3,
+      "to_bank": 10356.68,
+      "counted": 7495.44,
+      "counted_days": 24,
       "traded_days": 31,
-      "count_var": 0.0,
-      "to_bank_on_counted": 0.0,
+      "count_var": 82.15,
+      "to_bank_on_counted": 7413.29,
       "banked": 16168.7,
       "lodgements": 1
      },
      "2026-09": {
       "kobas": 10219.48,
-      "z": 0.0,
-      "petty": 0.0,
-      "to_bank": 0.0,
+      "z": 9375.61,
+      "petty": 323.55,
+      "to_bank": 9375.61,
       "counted": 0.0,
       "counted_days": 0,
-      "traded_days": 28,
+      "traded_days": 30,
       "count_var": 0.0,
       "to_bank_on_counted": 0.0,
       "banked": 7500.0,
@@ -42924,179 +43248,359 @@
      },
      "YTD": {
       "kobas": 29737.04,
-      "z": 0.0,
-      "petty": 0.0,
-      "to_bank": 0.0,
-      "counted": 0.0,
-      "counted_days": 0,
-      "traded_days": 81,
-      "count_var": 0.0,
-      "to_bank_on_counted": 0.0,
+      "z": 33002.28,
+      "petty": 1299.52,
+      "to_bank": 32167.31,
+      "counted": 20049.23,
+      "counted_days": 53,
+      "traded_days": 94,
+      "count_var": 200.92,
+      "to_bank_on_counted": 19848.31,
       "banked": 23668.7,
       "lodgements": 2
      }
     },
-    "last_cashup": null,
-    "last_counted": null,
+    "last_cashup": "2026-09-27",
+    "last_counted": "2026-08-24",
     "last_banked": "2026-09-24",
-    "unbanked_ytd": 6068.34,
-    "source": null,
+    "unbanked_ytd": 8498.61,
+    "source": "_cashup_m18plus.xlsx tab 'Maki Southampton' (downloaded 2026-10-05 10:40)",
     "daily": [
      {
       "date": "2026-08-31",
       "kobas_cash": 625.1,
       "kobas_gross": 7359.48,
-      "kobas_cash_var": 2.89
+      "kobas_cash_var": 2.89,
+      "z_cash": 643.21,
+      "cash_tips": 37.62,
+      "petty": 21.0,
+      "to_bank": 643.21,
+      "counted": null,
+      "sheet_var": null
      },
      {
       "date": "2026-09-01",
       "kobas_cash": 544.6,
       "kobas_gross": 4509.41,
-      "kobas_cash_var": 6.92
+      "kobas_cash_var": 6.92,
+      "z_cash": 537.68,
+      "cash_tips": 48.88,
+      "petty": 0.0,
+      "to_bank": 537.68,
+      "counted": null,
+      "sheet_var": null
      },
      {
       "date": "2026-09-02",
       "kobas_cash": 193.8,
       "kobas_gross": 4463.94,
-      "kobas_cash_var": 6.77
+      "kobas_cash_var": 6.77,
+      "z_cash": 187.03,
+      "cash_tips": 13.73,
+      "petty": 0.0,
+      "to_bank": 187.03,
+      "counted": null,
+      "sheet_var": null
+     },
+     {
+      "date": "2026-09-03",
+      "kobas_cash": 0.0,
+      "kobas_gross": 3951.82,
+      "kobas_cash_var": 9.67,
+      "z_cash": 103.1,
+      "cash_tips": 6.1,
+      "petty": 112.77,
+      "to_bank": 103.1,
+      "counted": null,
+      "sheet_var": null
+     },
+     {
+      "date": "2026-09-04",
+      "kobas_cash": 0.0,
+      "kobas_gross": 4830.1,
+      "kobas_cash_var": -81.49,
+      "z_cash": 81.49,
+      "cash_tips": 3.59,
+      "petty": 0.0,
+      "to_bank": 81.49,
+      "counted": null,
+      "sheet_var": null
      },
      {
       "date": "2026-09-05",
       "kobas_cash": 471.8,
       "kobas_gross": 9136.22,
-      "kobas_cash_var": -28.32
+      "kobas_cash_var": -28.32,
+      "z_cash": 504.1,
+      "cash_tips": 39.08,
+      "petty": 3.98,
+      "to_bank": 504.1,
+      "counted": null,
+      "sheet_var": null
      },
      {
       "date": "2026-09-06",
       "kobas_cash": 305.46,
       "kobas_gross": 4676.67,
-      "kobas_cash_var": 0.0
+      "kobas_cash_var": 0.0,
+      "z_cash": 319.94,
+      "cash_tips": 19.12,
+      "petty": 14.48,
+      "to_bank": 319.94,
+      "counted": null,
+      "sheet_var": null
      },
      {
       "date": "2026-09-07",
       "kobas_cash": 147.87,
       "kobas_gross": 3738.05,
-      "kobas_cash_var": 0.04
+      "kobas_cash_var": 0.04,
+      "z_cash": 147.83,
+      "cash_tips": 11.38,
+      "petty": 0.0,
+      "to_bank": 147.83,
+      "counted": null,
+      "sheet_var": null
      },
      {
       "date": "2026-09-08",
       "kobas_cash": 190.55,
       "kobas_gross": 2858.46,
-      "kobas_cash_var": -0.63
+      "kobas_cash_var": -0.63,
+      "z_cash": 191.18,
+      "cash_tips": 17.38,
+      "petty": 0.0,
+      "to_bank": 191.18,
+      "counted": null,
+      "sheet_var": null
      },
      {
       "date": "2026-09-09",
       "kobas_cash": 461.05,
       "kobas_gross": 3891.74,
-      "kobas_cash_var": 3.44
+      "kobas_cash_var": 3.44,
+      "z_cash": 457.61,
+      "cash_tips": 27.01,
+      "petty": 0.0,
+      "to_bank": 457.61,
+      "counted": null,
+      "sheet_var": null
      },
      {
       "date": "2026-09-10",
       "kobas_cash": 105.71,
       "kobas_gross": 3677.92,
-      "kobas_cash_var": -0.01
+      "kobas_cash_var": -0.01,
+      "z_cash": 113.02,
+      "cash_tips": 4.82,
+      "petty": 7.3,
+      "to_bank": 113.02,
+      "counted": null,
+      "sheet_var": null
      },
      {
       "date": "2026-09-11",
       "kobas_cash": 140.35,
       "kobas_gross": 4320.46,
-      "kobas_cash_var": 5.59
+      "kobas_cash_var": 5.59,
+      "z_cash": 134.76,
+      "cash_tips": 10.46,
+      "petty": 0.0,
+      "to_bank": 134.76,
+      "counted": null,
+      "sheet_var": null
      },
      {
       "date": "2026-09-12",
       "kobas_cash": 541.67,
       "kobas_gross": 11503.54,
-      "kobas_cash_var": -6.92
+      "kobas_cash_var": -6.92,
+      "z_cash": 560.67,
+      "cash_tips": 50.97,
+      "petty": 12.08,
+      "to_bank": 560.67,
+      "counted": null,
+      "sheet_var": null
      },
      {
       "date": "2026-09-13",
       "kobas_cash": 547.78,
       "kobas_gross": 5770.65,
-      "kobas_cash_var": 0.01
+      "kobas_cash_var": 0.01,
+      "z_cash": 547.77,
+      "cash_tips": 33.41,
+      "petty": 0.0,
+      "to_bank": 547.77,
+      "counted": null,
+      "sheet_var": null
      },
      {
       "date": "2026-09-14",
       "kobas_cash": 226.1,
       "kobas_gross": 4190.96,
-      "kobas_cash_var": 4.01
+      "kobas_cash_var": 4.01,
+      "z_cash": 226.29,
+      "cash_tips": 18.87,
+      "petty": 4.2,
+      "to_bank": 226.29,
+      "counted": null,
+      "sheet_var": null
      },
      {
       "date": "2026-09-15",
       "kobas_cash": 150.8,
       "kobas_gross": 3304.66,
-      "kobas_cash_var": 0.87
+      "kobas_cash_var": 0.87,
+      "z_cash": 193.12,
+      "cash_tips": 10.2,
+      "petty": 43.19,
+      "to_bank": 193.12,
+      "counted": null,
+      "sheet_var": null
      },
      {
       "date": "2026-09-16",
       "kobas_cash": 420.66,
       "kobas_gross": 3743.57,
-      "kobas_cash_var": 4.96
+      "kobas_cash_var": 4.96,
+      "z_cash": 415.7,
+      "cash_tips": 24.2,
+      "petty": 0.0,
+      "to_bank": 415.7,
+      "counted": null,
+      "sheet_var": null
      },
      {
       "date": "2026-09-17",
       "kobas_cash": 120.63,
       "kobas_gross": 5232.46,
-      "kobas_cash_var": 0.11
+      "kobas_cash_var": 0.11,
+      "z_cash": 177.54,
+      "cash_tips": 10.37,
+      "petty": 57.02,
+      "to_bank": 177.54,
+      "counted": null,
+      "sheet_var": null
      },
      {
       "date": "2026-09-18",
       "kobas_cash": 596.64,
       "kobas_gross": 6063.41,
-      "kobas_cash_var": 7.86
+      "kobas_cash_var": 7.86,
+      "z_cash": 588.78,
+      "cash_tips": 50.58,
+      "petty": 0.0,
+      "to_bank": 588.78,
+      "counted": null,
+      "sheet_var": null
      },
      {
       "date": "2026-09-19",
       "kobas_cash": 765.13,
       "kobas_gross": 10160.83,
-      "kobas_cash_var": 3.73
+      "kobas_cash_var": 3.73,
+      "z_cash": 789.0,
+      "cash_tips": 65.1,
+      "petty": 27.6,
+      "to_bank": 789.0,
+      "counted": null,
+      "sheet_var": null
      },
      {
       "date": "2026-09-20",
       "kobas_cash": 339.8,
       "kobas_gross": 6419.89,
-      "kobas_cash_var": -5.33
+      "kobas_cash_var": -5.33,
+      "z_cash": 345.13,
+      "cash_tips": 24.57,
+      "petty": 0.0,
+      "to_bank": 345.13,
+      "counted": null,
+      "sheet_var": null
      },
      {
       "date": "2026-09-21",
       "kobas_cash": 169.05,
       "kobas_gross": 3991.33,
-      "kobas_cash_var": 0.42
+      "kobas_cash_var": 0.42,
+      "z_cash": 168.63,
+      "cash_tips": 15.33,
+      "petty": 0.0,
+      "to_bank": 168.63,
+      "counted": null,
+      "sheet_var": null
      },
      {
       "date": "2026-09-22",
       "kobas_cash": 402.92,
       "kobas_gross": 3568.55,
-      "kobas_cash_var": 0.0
+      "kobas_cash_var": 0.0,
+      "z_cash": 437.87,
+      "cash_tips": 35.17,
+      "petty": 34.95,
+      "to_bank": 437.87,
+      "counted": null,
+      "sheet_var": null
      },
      {
       "date": "2026-09-23",
       "kobas_cash": 190.15,
       "kobas_gross": 4096.96,
-      "kobas_cash_var": 0.2
+      "kobas_cash_var": 0.2,
+      "z_cash": 189.95,
+      "cash_tips": 15.95,
+      "petty": 0.0,
+      "to_bank": 189.95,
+      "counted": null,
+      "sheet_var": null
      },
      {
       "date": "2026-09-24",
       "kobas_cash": 212.79,
       "kobas_gross": 4531.88,
-      "kobas_cash_var": 0.0
+      "kobas_cash_var": 0.0,
+      "z_cash": 212.79,
+      "cash_tips": 13.59,
+      "petty": 0.0,
+      "to_bank": 212.79,
+      "counted": null,
+      "sheet_var": null
      },
      {
       "date": "2026-09-25",
       "kobas_cash": 522.34,
       "kobas_gross": 5476.6,
-      "kobas_cash_var": 2.54
+      "kobas_cash_var": 2.54,
+      "z_cash": 519.8,
+      "cash_tips": 44.9,
+      "petty": 0.0,
+      "to_bank": 519.8,
+      "counted": null,
+      "sheet_var": null
      },
      {
       "date": "2026-09-26",
       "kobas_cash": 820.44,
       "kobas_gross": 12393.54,
-      "kobas_cash_var": 8.29
+      "kobas_cash_var": 8.29,
+      "z_cash": 815.14,
+      "cash_tips": 65.8,
+      "petty": 2.99,
+      "to_bank": 815.14,
+      "counted": null,
+      "sheet_var": null
      },
      {
       "date": "2026-09-27",
       "kobas_cash": 407.65,
       "kobas_gross": 5248.47,
-      "kobas_cash_var": 0.95
+      "kobas_cash_var": 0.95,
+      "z_cash": 409.69,
+      "cash_tips": 35.89,
+      "petty": 2.99,
+      "to_bank": 409.69,
+      "counted": null,
+      "sheet_var": null
      },
      {
       "date": "2026-09-28",
@@ -43156,7 +43660,7 @@
    },
    {
     "code": "M21",
-    "has_cashup": false,
+    "has_cashup": true,
     "g4s": null,
     "per": {
      "2026-01": {
@@ -43252,27 +43756,27 @@
      },
      "2026-08": {
       "kobas": 5361.47,
-      "z": 0.0,
-      "petty": 0.0,
-      "to_bank": 0.0,
-      "counted": 0.0,
-      "counted_days": 0,
-      "traded_days": 11,
-      "count_var": 0.0,
-      "to_bank_on_counted": 0.0,
+      "z": 5979.42,
+      "petty": 795.04,
+      "to_bank": 5184.38,
+      "counted": 5192.61,
+      "counted_days": 11,
+      "traded_days": 12,
+      "count_var": 8.27,
+      "to_bank_on_counted": 5184.34,
       "banked": 0.0,
       "lodgements": 0
      },
      "2026-09": {
       "kobas": 16585.74,
-      "z": 0.0,
-      "petty": 0.0,
-      "to_bank": 0.0,
-      "counted": 0.0,
-      "counted_days": 0,
+      "z": 16896.85,
+      "petty": 2002.91,
+      "to_bank": 15175.49,
+      "counted": 11373.08,
+      "counted_days": 20,
       "traded_days": 30,
-      "count_var": 0.0,
-      "to_bank_on_counted": 0.0,
+      "count_var": -250.23,
+      "to_bank_on_counted": 11623.31,
       "banked": 19735.0,
       "lodgements": 5
      },
@@ -43291,191 +43795,359 @@
      },
      "YTD": {
       "kobas": 23951.49,
-      "z": 0.0,
-      "petty": 0.0,
-      "to_bank": 0.0,
-      "counted": 0.0,
-      "counted_days": 0,
-      "traded_days": 45,
-      "count_var": 0.0,
-      "to_bank_on_counted": 0.0,
+      "z": 22876.27,
+      "petty": 2797.95,
+      "to_bank": 20359.87,
+      "counted": 16565.69,
+      "counted_days": 31,
+      "traded_days": 46,
+      "count_var": -241.96,
+      "to_bank_on_counted": 16807.65,
       "banked": 19735.0,
       "lodgements": 5
      }
     },
-    "last_cashup": null,
-    "last_counted": null,
+    "last_cashup": "2026-09-27",
+    "last_counted": "2026-09-20",
     "last_banked": "2026-09-29",
-    "unbanked_ytd": 4216.49,
-    "source": null,
+    "unbanked_ytd": 624.87,
+    "source": "_cashup_m18plus.xlsx tab 'Maki Birmingham' (downloaded 2026-10-05 10:40)",
     "daily": [
      {
       "date": "2026-08-31",
       "kobas_cash": 494.8,
       "kobas_gross": 10819.27,
-      "kobas_cash_var": 89.64
+      "kobas_cash_var": 89.64,
+      "z_cash": 488.22,
+      "cash_tips": 28.4,
+      "petty": 67.78,
+      "to_bank": 420.44,
+      "counted": 468.8,
+      "sheet_var": 48.36
      },
      {
       "date": "2026-09-01",
       "kobas_cash": 837.0,
       "kobas_gross": 7566.71,
-      "kobas_cash_var": -98.62
+      "kobas_cash_var": -98.62,
+      "z_cash": 973.57,
+      "cash_tips": 43.07,
+      "petty": 125.26,
+      "to_bank": 848.31,
+      "counted": 847.0,
+      "sheet_var": -1.31
      },
      {
       "date": "2026-09-02",
       "kobas_cash": 325.55,
       "kobas_gross": 6960.57,
-      "kobas_cash_var": -74.92
+      "kobas_cash_var": -74.92,
+      "z_cash": 550.69,
+      "cash_tips": 38.78,
+      "petty": 230.53,
+      "to_bank": 320.16,
+      "counted": 325.55,
+      "sheet_var": 5.39
      },
      {
       "date": "2026-09-03",
       "kobas_cash": 209.2,
       "kobas_gross": 7897.71,
-      "kobas_cash_var": -46.78
+      "kobas_cash_var": -46.78,
+      "z_cash": 352.83,
+      "cash_tips": 18.83,
+      "petty": 141.65,
+      "to_bank": 211.18,
+      "counted": 209.2,
+      "sheet_var": -1.98
      },
      {
       "date": "2026-09-04",
       "kobas_cash": 66.3,
       "kobas_gross": 4156.0,
-      "kobas_cash_var": -83.73
+      "kobas_cash_var": -83.73,
+      "z_cash": 432.54,
+      "cash_tips": 31.86,
+      "petty": 359.91,
+      "to_bank": 72.63,
+      "counted": 66.3,
+      "sheet_var": -6.33
      },
      {
       "date": "2026-09-05",
       "kobas_cash": 552.8,
       "kobas_gross": 11191.57,
-      "kobas_cash_var": -7.94
+      "kobas_cash_var": -7.94,
+      "z_cash": 634.37,
+      "cash_tips": 30.79,
+      "petty": 73.63,
+      "to_bank": 560.74,
+      "counted": 552.8,
+      "sheet_var": -7.94
      },
      {
       "date": "2026-09-06",
       "kobas_cash": 1012.9,
       "kobas_gross": 8396.07,
-      "kobas_cash_var": 198.49
+      "kobas_cash_var": 198.49,
+      "z_cash": 866.31,
+      "cash_tips": 52.15,
+      "petty": 18.4,
+      "to_bank": 847.91,
+      "counted": 802.9,
+      "sheet_var": -45.01
      },
      {
       "date": "2026-09-07",
       "kobas_cash": 991.4,
       "kobas_gross": 6963.76,
-      "kobas_cash_var": 0.76
+      "kobas_cash_var": 0.76,
+      "z_cash": 1024.94,
+      "cash_tips": 26.13,
+      "petty": 34.3,
+      "to_bank": 990.64,
+      "counted": 991.4,
+      "sheet_var": 0.76
      },
      {
       "date": "2026-09-08",
       "kobas_cash": 443.65,
       "kobas_gross": 7073.09,
-      "kobas_cash_var": -30.89
+      "kobas_cash_var": -30.89,
+      "z_cash": 582.71,
+      "cash_tips": 35.81,
+      "petty": 114.74,
+      "to_bank": 467.97,
+      "counted": 473.65,
+      "sheet_var": 5.68
      },
      {
       "date": "2026-09-09",
       "kobas_cash": 683.75,
       "kobas_gross": 6753.07,
-      "kobas_cash_var": -88.55
+      "kobas_cash_var": -88.55,
+      "z_cash": 789.65,
+      "cash_tips": 37.0,
+      "petty": 17.35,
+      "to_bank": 772.3,
+      "counted": 683.75,
+      "sheet_var": -88.55
      },
      {
       "date": "2026-09-10",
       "kobas_cash": 692.9,
       "kobas_gross": 7564.75,
-      "kobas_cash_var": 105.9
+      "kobas_cash_var": 105.9,
+      "z_cash": 590.0,
+      "cash_tips": 33.7,
+      "petty": 3.0,
+      "to_bank": 587.0,
+      "counted": 692.9,
+      "sheet_var": 105.9
      },
      {
       "date": "2026-09-11",
       "kobas_cash": 383.3,
       "kobas_gross": 8477.19,
-      "kobas_cash_var": -37.91
+      "kobas_cash_var": -37.91,
+      "z_cash": 470.45,
+      "cash_tips": 19.85,
+      "petty": 49.24,
+      "to_bank": 421.21,
+      "counted": 401.36,
+      "sheet_var": -19.85
      },
      {
       "date": "2026-09-12",
       "kobas_cash": 567.3,
       "kobas_gross": 11517.36,
-      "kobas_cash_var": 65.02
+      "kobas_cash_var": 65.02,
+      "z_cash": 602.42,
+      "cash_tips": 17.18,
+      "petty": 64.64,
+      "to_bank": 537.78,
+      "counted": 502.28,
+      "sheet_var": -35.5
      },
      {
       "date": "2026-09-13",
       "kobas_cash": 596.4,
       "kobas_gross": 7795.18,
-      "kobas_cash_var": 24.56
+      "kobas_cash_var": 24.56,
+      "z_cash": 751.45,
+      "cash_tips": 38.55,
+      "petty": 179.61,
+      "to_bank": 571.84,
+      "counted": 571.49,
+      "sheet_var": -0.35
      },
      {
       "date": "2026-09-14",
       "kobas_cash": 416.75,
       "kobas_gross": 6872.15,
-      "kobas_cash_var": 0.02
+      "kobas_cash_var": 0.02,
+      "z_cash": 497.18,
+      "cash_tips": 34.58,
+      "petty": 80.45,
+      "to_bank": 416.73,
+      "counted": 416.73,
+      "sheet_var": 0.0
      },
      {
       "date": "2026-09-15",
       "kobas_cash": 713.6,
       "kobas_gross": 7141.59,
-      "kobas_cash_var": 2.83
+      "kobas_cash_var": 2.83,
+      "z_cash": 776.45,
+      "cash_tips": 43.29,
+      "petty": 65.68,
+      "to_bank": 710.77,
+      "counted": 713.6,
+      "sheet_var": 2.83
      },
      {
       "date": "2026-09-16",
       "kobas_cash": 560.06,
       "kobas_gross": 6335.35,
-      "kobas_cash_var": 0.0
+      "kobas_cash_var": 0.0,
+      "z_cash": 609.2,
+      "cash_tips": 29.49,
+      "petty": 49.14,
+      "to_bank": 560.06,
+      "counted": 560.06,
+      "sheet_var": 0.0
      },
      {
       "date": "2026-09-17",
       "kobas_cash": 280.5,
       "kobas_gross": 7510.43,
-      "kobas_cash_var": 8.38
+      "kobas_cash_var": 8.38,
+      "z_cash": 272.12,
+      "cash_tips": 13.54,
+      "petty": 0.0,
+      "to_bank": 272.12,
+      "counted": 280.5,
+      "sheet_var": 8.38
      },
      {
       "date": "2026-09-18",
       "kobas_cash": 688.0,
       "kobas_gross": 9328.36,
-      "kobas_cash_var": -2.12
+      "kobas_cash_var": -2.12,
+      "z_cash": 690.12,
+      "cash_tips": 44.26,
+      "petty": 0.0,
+      "to_bank": 690.12,
+      "counted": 601.6,
+      "sheet_var": -88.52
      },
      {
       "date": "2026-09-19",
       "kobas_cash": 925.0,
       "kobas_gross": 12431.13,
-      "kobas_cash_var": -8.96
+      "kobas_cash_var": -8.96,
+      "z_cash": 989.74,
+      "cash_tips": 44.07,
+      "petty": 65.78,
+      "to_bank": 923.96,
+      "counted": 879.89,
+      "sheet_var": -44.07
      },
      {
       "date": "2026-09-20",
       "kobas_cash": 838.3,
       "kobas_gross": 9331.0,
-      "kobas_cash_var": -1.58
+      "kobas_cash_var": -1.58,
+      "z_cash": 887.93,
+      "cash_tips": 39.76,
+      "petty": 48.05,
+      "to_bank": 839.88,
+      "counted": 800.12,
+      "sheet_var": -39.76
      },
      {
       "date": "2026-09-21",
       "kobas_cash": 591.6,
       "kobas_gross": 7410.06,
-      "kobas_cash_var": 79.55
+      "kobas_cash_var": 79.55,
+      "z_cash": 513.6,
+      "cash_tips": 9.25,
+      "petty": 1.55,
+      "to_bank": 513.6,
+      "counted": null,
+      "sheet_var": null
      },
      {
       "date": "2026-09-22",
       "kobas_cash": 134.35,
       "kobas_gross": 7641.56,
-      "kobas_cash_var": -0.48
+      "kobas_cash_var": -0.48,
+      "z_cash": 237.23,
+      "cash_tips": 9.54,
+      "petty": 102.4,
+      "to_bank": 237.23,
+      "counted": null,
+      "sheet_var": null
      },
      {
       "date": "2026-09-23",
       "kobas_cash": 511.83,
       "kobas_gross": 7230.6,
-      "kobas_cash_var": 0.0
+      "kobas_cash_var": 0.0,
+      "z_cash": 525.39,
+      "cash_tips": 21.73,
+      "petty": 13.56,
+      "to_bank": 525.39,
+      "counted": null,
+      "sheet_var": null
      },
      {
       "date": "2026-09-24",
       "kobas_cash": 713.48,
       "kobas_gross": 6801.2,
-      "kobas_cash_var": 28.56
+      "kobas_cash_var": 28.56,
+      "z_cash": 684.92,
+      "cash_tips": 6.76,
+      "petty": 0.0,
+      "to_bank": 684.92,
+      "counted": null,
+      "sheet_var": null
      },
      {
       "date": "2026-09-25",
       "kobas_cash": 526.2,
       "kobas_gross": 8868.73,
-      "kobas_cash_var": -1.03
+      "kobas_cash_var": -1.03,
+      "z_cash": 573.22,
+      "cash_tips": 16.8,
+      "petty": 45.99,
+      "to_bank": 573.22,
+      "counted": null,
+      "sheet_var": null
      },
      {
       "date": "2026-09-26",
       "kobas_cash": 612.03,
       "kobas_gross": 12943.28,
-      "kobas_cash_var": -83.25
+      "kobas_cash_var": -83.25,
+      "z_cash": 695.28,
+      "cash_tips": 34.98,
+      "petty": 0.0,
+      "to_bank": 695.28,
+      "counted": null,
+      "sheet_var": null
      },
      {
       "date": "2026-09-27",
       "kobas_cash": 176.35,
       "kobas_gross": 8544.99,
-      "kobas_cash_var": -28.14
+      "kobas_cash_var": -28.14,
+      "z_cash": 322.54,
+      "cash_tips": 8.9,
+      "petty": 118.05,
+      "to_bank": 322.54,
+      "counted": null,
+      "sheet_var": null
      },
      {
       "date": "2026-09-28",
@@ -43550,7 +44222,7 @@
    },
    {
     "code": "NORI",
-    "has_cashup": false,
+    "has_cashup": true,
     "g4s": "KINGS CROSS C C",
     "per": {
      "2026-01": {
@@ -43594,51 +44266,51 @@
      },
      "2026-04": {
       "kobas": 855.04,
-      "z": 0.0,
-      "petty": 0.0,
-      "to_bank": 0.0,
-      "counted": 0.0,
-      "counted_days": 0,
-      "traded_days": 11,
-      "count_var": 0.0,
-      "to_bank_on_counted": 0.0,
+      "z": 857.17,
+      "petty": 160.98,
+      "to_bank": 748.69,
+      "counted": 1084.0,
+      "counted_days": 14,
+      "traded_days": 13,
+      "count_var": 335.31,
+      "to_bank_on_counted": 748.69,
       "banked": 659.94,
       "lodgements": 1
      },
      "2026-05": {
       "kobas": 1753.59,
-      "z": 0.0,
-      "petty": 0.0,
-      "to_bank": 0.0,
-      "counted": 0.0,
-      "counted_days": 0,
-      "traded_days": 21,
-      "count_var": 0.0,
-      "to_bank_on_counted": 0.0,
+      "z": 1762.18,
+      "petty": 474.41,
+      "to_bank": 1504.15,
+      "counted": 1655.29,
+      "counted_days": 21,
+      "traded_days": 23,
+      "count_var": 141.95,
+      "to_bank_on_counted": 1513.34,
       "banked": 1910.07,
       "lodgements": 1
      },
      "2026-06": {
       "kobas": 2699.91,
-      "z": 0.0,
-      "petty": 0.0,
-      "to_bank": 0.0,
-      "counted": 0.0,
-      "counted_days": 0,
+      "z": 2726.11,
+      "petty": 118.89,
+      "to_bank": 2607.22,
+      "counted": 2587.61,
+      "counted_days": 18,
       "traded_days": 20,
-      "count_var": 0.0,
-      "to_bank_on_counted": 0.0,
+      "count_var": 92.7,
+      "to_bank_on_counted": 2494.91,
       "banked": 2832.71,
       "lodgements": 1
      },
      "2026-07": {
       "kobas": 2642.93,
-      "z": 0.0,
-      "petty": 0.0,
-      "to_bank": 0.0,
+      "z": 2894.05,
+      "petty": 86.07,
+      "to_bank": 2894.05,
       "counted": 0.0,
       "counted_days": 0,
-      "traded_days": 21,
+      "traded_days": 23,
       "count_var": 0.0,
       "to_bank_on_counted": 0.0,
       "banked": 0.0,
@@ -43646,9 +44318,9 @@
      },
      "2026-08": {
       "kobas": 2141.41,
-      "z": 0.0,
-      "petty": 0.0,
-      "to_bank": 0.0,
+      "z": 2081.26,
+      "petty": 156.22,
+      "to_bank": 2081.26,
       "counted": 0.0,
       "counted_days": 0,
       "traded_days": 21,
@@ -43659,12 +44331,12 @@
      },
      "2026-09": {
       "kobas": 2952.82,
-      "z": 0.0,
-      "petty": 0.0,
-      "to_bank": 0.0,
+      "z": 3330.18,
+      "petty": 464.7,
+      "to_bank": 3330.18,
       "counted": 0.0,
       "counted_days": 0,
-      "traded_days": 22,
+      "traded_days": 25,
       "count_var": 0.0,
       "to_bank_on_counted": 0.0,
       "banked": 0.0,
@@ -43685,35 +44357,71 @@
      },
      "YTD": {
       "kobas": 13577.26,
-      "z": 0.0,
-      "petty": 0.0,
-      "to_bank": 0.0,
-      "counted": 0.0,
-      "counted_days": 0,
-      "traded_days": 119,
-      "count_var": 0.0,
-      "to_bank_on_counted": 0.0,
+      "z": 13650.95,
+      "petty": 1461.27,
+      "to_bank": 13165.55,
+      "counted": 5326.9,
+      "counted_days": 53,
+      "traded_days": 128,
+      "count_var": 569.96,
+      "to_bank_on_counted": 4756.94,
       "banked": 9242.06,
       "lodgements": 4
      }
     },
-    "last_cashup": null,
-    "last_counted": null,
+    "last_cashup": "2026-09-27",
+    "last_counted": "2026-06-28",
     "last_banked": "2026-08-20",
-    "unbanked_ytd": 4335.2,
-    "source": null,
+    "unbanked_ytd": 3923.49,
+    "source": "_cashup_m18plus.xlsx tab 'Maki NORI' (downloaded 2026-10-05 10:40)",
     "daily": [
      {
       "date": "2026-08-31",
       "kobas_cash": 70.0,
       "kobas_gross": 2636.7,
-      "kobas_cash_var": 0.25
+      "kobas_cash_var": 0.25,
+      "z_cash": 69.75,
+      "cash_tips": 7.75,
+      "petty": 0.0,
+      "to_bank": 69.75,
+      "counted": null,
+      "sheet_var": null
+     },
+     {
+      "date": "2026-09-02",
+      "kobas_cash": 0.0,
+      "kobas_gross": 1897.7,
+      "kobas_cash_var": 26.94,
+      "z_cash": 41.06,
+      "cash_tips": 4.56,
+      "petty": 68.0,
+      "to_bank": 41.06,
+      "counted": null,
+      "sheet_var": null
      },
      {
       "date": "2026-09-03",
       "kobas_cash": 70.0,
       "kobas_gross": 2665.75,
-      "kobas_cash_var": -92.19
+      "kobas_cash_var": -92.19,
+      "z_cash": 162.19,
+      "cash_tips": 4.69,
+      "petty": 0.0,
+      "to_bank": 162.19,
+      "counted": null,
+      "sheet_var": null
+     },
+     {
+      "date": "2026-09-04",
+      "kobas_cash": 0.0,
+      "kobas_gross": 1761.35,
+      "kobas_cash_var": 47.95,
+      "z_cash": 14.0,
+      "cash_tips": 0.0,
+      "petty": 61.95,
+      "to_bank": 14.0,
+      "counted": null,
+      "sheet_var": null
      },
      {
       "date": "2026-09-05",
@@ -43722,112 +44430,232 @@
       "kobas_cash_var": 0.0
      },
      {
+      "date": "2026-09-06",
+      "kobas_cash": 0.0,
+      "kobas_gross": 2799.5,
+      "kobas_cash_var": -160.47,
+      "z_cash": 206.72,
+      "cash_tips": 12.75,
+      "petty": 46.25,
+      "to_bank": 206.72,
+      "counted": null,
+      "sheet_var": null
+     },
+     {
       "date": "2026-09-07",
       "kobas_cash": 100.0,
       "kobas_gross": 2036.45,
-      "kobas_cash_var": -9.71
+      "kobas_cash_var": -9.71,
+      "z_cash": 137.81,
+      "cash_tips": 15.31,
+      "petty": 28.1,
+      "to_bank": 137.81,
+      "counted": null,
+      "sheet_var": null
      },
      {
       "date": "2026-09-08",
       "kobas_cash": 43.75,
       "kobas_gross": 2211.25,
-      "kobas_cash_var": -1.53
+      "kobas_cash_var": -1.53,
+      "z_cash": 45.28,
+      "cash_tips": 0.0,
+      "petty": 0.0,
+      "to_bank": 45.28,
+      "counted": null,
+      "sheet_var": null
      },
      {
       "date": "2026-09-09",
       "kobas_cash": 195.0,
       "kobas_gross": 2117.0,
-      "kobas_cash_var": 1.49
+      "kobas_cash_var": 1.49,
+      "z_cash": 193.51,
+      "cash_tips": 10.26,
+      "petty": 0.0,
+      "to_bank": 193.51,
+      "counted": null,
+      "sheet_var": null
      },
      {
       "date": "2026-09-10",
       "kobas_cash": 180.0,
       "kobas_gross": 1906.37,
-      "kobas_cash_var": 1.68
+      "kobas_cash_var": 1.68,
+      "z_cash": 178.32,
+      "cash_tips": 19.82,
+      "petty": 0.0,
+      "to_bank": 178.32,
+      "counted": null,
+      "sheet_var": null
      },
      {
       "date": "2026-09-11",
       "kobas_cash": 4.0,
       "kobas_gross": 3009.75,
-      "kobas_cash_var": -0.95
+      "kobas_cash_var": -0.95,
+      "z_cash": 46.69,
+      "cash_tips": 5.19,
+      "petty": 41.74,
+      "to_bank": 46.69,
+      "counted": null,
+      "sheet_var": null
      },
      {
       "date": "2026-09-12",
       "kobas_cash": 280.0,
       "kobas_gross": 4324.0,
-      "kobas_cash_var": 1.63
+      "kobas_cash_var": 1.63,
+      "z_cash": 278.37,
+      "cash_tips": 25.37,
+      "petty": 0.0,
+      "to_bank": 278.37,
+      "counted": null,
+      "sheet_var": null
      },
      {
       "date": "2026-09-13",
       "kobas_cash": 164.0,
       "kobas_gross": 2690.5,
-      "kobas_cash_var": 2.56
+      "kobas_cash_var": 2.56,
+      "z_cash": 161.44,
+      "cash_tips": 17.94,
+      "petty": 0.0,
+      "to_bank": 161.44,
+      "counted": null,
+      "sheet_var": null
      },
      {
       "date": "2026-09-14",
       "kobas_cash": 38.0,
       "kobas_gross": 1033.82,
-      "kobas_cash_var": 0.24
+      "kobas_cash_var": 0.24,
+      "z_cash": 61.88,
+      "cash_tips": 6.88,
+      "petty": 24.12,
+      "to_bank": 61.88,
+      "counted": null,
+      "sheet_var": null
      },
      {
       "date": "2026-09-15",
       "kobas_cash": 131.75,
       "kobas_gross": 3021.44,
-      "kobas_cash_var": 0.07
+      "kobas_cash_var": 0.07,
+      "z_cash": 142.63,
+      "cash_tips": 13.63,
+      "petty": 10.95,
+      "to_bank": 142.63,
+      "counted": null,
+      "sheet_var": null
      },
      {
       "date": "2026-09-16",
       "kobas_cash": 112.0,
       "kobas_gross": 3219.7,
-      "kobas_cash_var": 0.06
+      "kobas_cash_var": 0.06,
+      "z_cash": 111.94,
+      "cash_tips": 12.44,
+      "petty": 0.0,
+      "to_bank": 111.94,
+      "counted": null,
+      "sheet_var": null
      },
      {
       "date": "2026-09-18",
       "kobas_cash": 300.0,
       "kobas_gross": 4349.9,
-      "kobas_cash_var": 1.74
+      "kobas_cash_var": 1.74,
+      "z_cash": 348.76,
+      "cash_tips": 38.76,
+      "petty": 50.5,
+      "to_bank": 348.76,
+      "counted": null,
+      "sheet_var": null
      },
      {
       "date": "2026-09-19",
       "kobas_cash": 181.2,
       "kobas_gross": 4645.35,
-      "kobas_cash_var": 16.21
+      "kobas_cash_var": 16.21,
+      "z_cash": 181.19,
+      "cash_tips": 15.69,
+      "petty": 16.2,
+      "to_bank": 181.19,
+      "counted": null,
+      "sheet_var": null
      },
      {
       "date": "2026-09-21",
       "kobas_cash": 226.0,
       "kobas_gross": 2662.65,
-      "kobas_cash_var": -2.0
+      "kobas_cash_var": -2.0,
+      "z_cash": 228.0,
+      "cash_tips": 6.0,
+      "petty": 0.0,
+      "to_bank": 228.0,
+      "counted": null,
+      "sheet_var": null
      },
      {
       "date": "2026-09-23",
       "kobas_cash": 86.1,
       "kobas_gross": 2700.9,
-      "kobas_cash_var": -37.4
+      "kobas_cash_var": -37.4,
+      "z_cash": 127.69,
+      "cash_tips": 14.19,
+      "petty": 4.19,
+      "to_bank": 127.69,
+      "counted": null,
+      "sheet_var": null
      },
      {
       "date": "2026-09-24",
       "kobas_cash": 114.15,
       "kobas_gross": 3764.94,
-      "kobas_cash_var": -0.18
+      "kobas_cash_var": -0.18,
+      "z_cash": 149.63,
+      "cash_tips": 16.63,
+      "petty": 35.3,
+      "to_bank": 149.63,
+      "counted": null,
+      "sheet_var": null
      },
      {
       "date": "2026-09-25",
       "kobas_cash": 211.73,
       "kobas_gross": 3986.55,
-      "kobas_cash_var": 0.0
+      "kobas_cash_var": 0.0,
+      "z_cash": 241.03,
+      "cash_tips": 26.78,
+      "petty": 29.3,
+      "to_bank": 241.03,
+      "counted": null,
+      "sheet_var": null
      },
      {
       "date": "2026-09-26",
       "kobas_cash": 194.1,
       "kobas_gross": 4990.55,
-      "kobas_cash_var": 0.0
+      "kobas_cash_var": 0.0,
+      "z_cash": 214.1,
+      "cash_tips": 23.8,
+      "petty": 20.0,
+      "to_bank": 214.1,
+      "counted": null,
+      "sheet_var": null
      },
      {
       "date": "2026-09-27",
       "kobas_cash": 29.84,
       "kobas_gross": 3032.25,
-      "kobas_cash_var": 0.0
+      "kobas_cash_var": 0.0,
+      "z_cash": 57.94,
+      "cash_tips": 0.0,
+      "petty": 28.1,
+      "to_bank": 57.94,
+      "counted": null,
+      "sheet_var": null
      },
      {
       "date": "2026-09-28",
@@ -43965,7 +44793,7 @@
    {
     "level": "red",
     "code": "NORI",
-    "text": "Last G4S (KINGS CROSS C C on the statement) reconciled in Xero was 2026-08-20, 46 days ago, with 4,335 not banked this year. Either G4S has not collected or the lines are sitting unreconciled."
+    "text": "Last G4S (KINGS CROSS C C on the statement) reconciled in Xero was 2026-08-20, 46 days ago, with 3,923 not banked this year. Either G4S has not collected or the lines are sitting unreconciled."
    },
    {
     "level": "amber",
@@ -44046,45 +44874,39 @@
    {
     "level": "amber",
     "code": "M18",
-    "text": "No cash-up tab for M18 in any of the three Cash UP workbooks, so only Kobas and the bank can be compared."
+    "text": "Cash is counted up to 2026-09-14 but the cash-up runs to 2026-09-27: 13 days not counted yet."
    },
    {
     "level": "amber",
-    "code": "M18",
-    "text": "1,434 of cash this year has not reached the bank in Xero.",
+    "code": "M19",
+    "text": "5,444 of cash this year has not reached the bank in Xero.",
     "kind": "mismatch"
    },
    {
     "level": "amber",
     "code": "M19",
-    "text": "No cash-up tab for M19 in any of the three Cash UP workbooks, so only Kobas and the bank can be compared."
+    "text": "Cash is counted up to 2026-09-14 but the cash-up runs to 2026-09-27: 13 days not counted yet."
    },
    {
     "level": "amber",
-    "code": "M19",
-    "text": "6,044 of cash this year has not reached the bank in Xero.",
+    "code": "M20",
+    "text": "8,499 of cash this year has not reached the bank in Xero.",
     "kind": "mismatch"
    },
    {
     "level": "amber",
     "code": "M20",
-    "text": "No cash-up tab for M20 in any of the three Cash UP workbooks, so only Kobas and the bank can be compared."
+    "text": "Cash is counted up to 2026-08-24 but the cash-up runs to 2026-09-27: 34 days not counted yet."
    },
    {
     "level": "amber",
     "code": "M20",
-    "text": "6,068 of cash this year has not reached the bank in Xero.",
-    "kind": "mismatch"
+    "text": "Kobas cash 29,737 against cash-up Z cash 33,002 this year (+11.0%)."
    },
    {
     "level": "amber",
     "code": "M21",
-    "text": "No cash-up tab for M21 in any of the three Cash UP workbooks, so only Kobas and the bank can be compared."
-   },
-   {
-    "level": "amber",
-    "code": "M21",
-    "text": "4,216 of cash this year has not reached the bank in Xero.",
+    "text": "625 of cash this year has not reached the bank in Xero.",
     "kind": "mismatch"
    },
    {
@@ -44111,16 +44933,16 @@
    {
     "level": "amber",
     "code": "NORI",
-    "text": "No cash-up tab for NORI in any of the three Cash UP workbooks, so only Kobas and the bank can be compared."
+    "text": "3,923 of cash this year has not reached the bank in Xero.",
+    "kind": "mismatch"
    },
    {
     "level": "amber",
     "code": "NORI",
-    "text": "4,335 of cash this year has not reached the bank in Xero.",
-    "kind": "mismatch"
+    "text": "Cash is counted up to 2026-06-28 but the cash-up runs to 2026-09-27: 91 days not counted yet."
    }
   ],
-  "built": "2026-10-05T10:39:29",
+  "built": "2026-10-05T10:40:22",
   "sources": {
    "kobas": "data/sources/kobas_cashlog_daily_2026.csv (Kobas Cash Log, cash_declared)",
    "cashup": "'Maki 1-10', 'Maki 11-17' and 'Maki 18+ New 2025 Cash UP' workbooks, per-site tab, columns A-J",

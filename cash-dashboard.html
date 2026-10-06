@@ -76,16 +76,16 @@
 
   <div class="hero">
     <div class="label">Group cash on hand</div>
-    <div class="amount">£1,700,657.59</div>
+    <div class="amount">£1,819,968.05</div>
     <div>
-      <span class="delta-pill flat">flat vs yesterday</span>
+      <span class="delta-pill up">+£119,310 vs yesterday</span>
       <span class="delta-pill flat cover-pill">Same 22 entities as yesterday &mdash; like-for-like</span>
     </div>
     <div class="meta">
       Sum of Xero balance across <strong>operational accounts</strong> (main retail bank + any AP-only) per connected entity. Tide, regular Modulr, Revolut and dormants are excluded. Reconciliation backlog shown below — Xero numbers lag the bank by roughly that amount.
     </div>
-    <div class="coverage-note"><strong>Coverage unchanged</strong> &mdash; the same 22 entities were visible in 2026-10-04.json, and no account changed operational status, so today's +£0 is real movement, not new visibility. 0 rose, 0 fell, and <strong>22 were byte-identical to yesterday</strong> (AAHQ, Fountain Good Food, M1TOO, 1HW, Aberdeen, Birmingham, Lakeside, Leeds, Leicester, Manchester, Metro, Newcastle, Nori, Nottingham, Property, SJQ, Shoreditch, Soho, Southampton, Yorkshire, Renfield Delight, South Ikigai). Daily card revenue makes an exactly-flat entity unlikely, so treat those as <em>possible Xero bank-feed lag</em> rather than confirmed no-movement.</div>
-    <div class="lag-pill">Reconciliation lag: +£62,421 across 112 unmatched items group-wide (as of 4 October)</div>
+    <div class="coverage-note"><strong>Coverage unchanged</strong> &mdash; the same 22 entities were visible in 2026-10-05.json, and no account changed operational status, so today's +£119,310 is real movement, not new visibility. 13 rose, 4 fell (worst: SJQ &minus;£21,651), and <strong>5 were byte-identical to yesterday</strong> (1HW, Lakeside, Newcastle, Nottingham, South Ikigai). Daily card revenue makes an exactly-flat entity unlikely, so treat those as <em>possible Xero bank-feed lag</em> rather than confirmed no-movement.</div>
+    <div class="lag-pill">Reconciliation lag: +£62,421 across 112 unmatched items group-wide (as of 6 October)</div>
   </div>
 
   <div class="section-title">By entity</div>
@@ -94,7 +94,7 @@
   <footer>
     <div class="row">
       <span>Source: Xero <code>/Reports/BalanceSheet</code> (reconciled balances).</span>
-      <span>Last sync 4 October 2026 09:00 +04 Dubai</span>
+      <span>Last sync 6 October 2026 09:35 +04 Dubai</span>
     </div>
     <p>
       Headline excludes 4 entities not yet connected. Cash = Xero balance summed across main bank + AP-only accounts only — Tide, regular Modulr, Revolut and zero-balance dormants are ignored. <strong>Reconciliation backlog</strong> is the signed sum of Xero-side entries waiting for a bank-feed match (snapshot from 26 May; not refreshed daily) — a high backlog means the cash number is conservative by roughly that amount until the finance team catches up. Click any entity to see its full account breakdown.
@@ -106,7 +106,7 @@
 const TENANTS = [
   {
     name: "Maki Property Ltd",
-    cash: 200105.11,
+    cash: 292735.60,
     opNames: "MAKI PROPERTY LTD + Cash account  + Saving MAKI PROPERTY LTD",
     reconTotal: 0.00,
     reconCount: 0,
@@ -116,39 +116,11 @@ const TENANTS = [
       { name: "Saving MAKI PROPERTY LTD", balance: 10181.43, operational: true },
       { name: "Business Platinum Supplementary Car - 1041", balance: 0.00, operational: false },
       { name: "American Express Business Platinum  - 1009", balance: 0.00, operational: false },
-      { name: "MAKI PROPERTY LTD", balance: 167423.68, operational: true },
+      { name: "MAKI PROPERTY LTD", balance: 260054.17, operational: true },
       { name: "Business Gold Supplementary Card - 1025", balance: 0.00, operational: false },
       { name: "Business Gold Supplementary Card - 1017", balance: 0.00, operational: false },
       { name: "Pleo account", balance: -17538.37, operational: false },
       { name: "Pleo Pocket account", balance: 0.00, operational: false }
-    ]
-  },
-  {
-    name: "Maki SJQ",
-    cash: 145721.24,
-    opNames: "Barclays + Modulr AP Only",
-    reconTotal: 8664.46,
-    reconCount: 7,
-    accounts: [
-      { name: "Barclays", balance: 134029.64, operational: true },
-      { name: "Modulr GBP -  do not edit transactions here", balance: -10494.43, operational: false },
-      { name: "Modulr AP Only", balance: 11691.60, operational: true }
-    ]
-  },
-  {
-    name: "Maki Metro Ltd",
-    cash: 144304.90,
-    opNames: "Barclays - Maki Metro + Modulr - AP Only",
-    reconTotal: 2555.43,
-    reconCount: 24,
-    accounts: [
-      { name: "Modulr - AP Only", balance: 0.00, operational: true },
-      { name: "Revolut GBP", balance: 0.00, operational: false },
-      { name: "Modulr GBP -  do not edit transactions here", balance: 0.00, operational: false },
-      { name: "Revolut GBP 2.25% saving", balance: 0.00, operational: false },
-      { name: "Modulr GBP -  do not edit transactions here", balance: -40247.99, operational: false },
-      { name: "Revolut - Maki Metro", balance: 135.28, operational: false },
-      { name: "Barclays - Maki Metro", balance: 144304.90, operational: true }
     ]
   },
   {
@@ -165,21 +137,8 @@ const TENANTS = [
     ]
   },
   {
-    name: "Maki Aberdeen Ltd",
-    cash: 123785.30,
-    opNames: "Lloyds - Aberdeen + Modulr - AP Only",
-    reconTotal: 39128.74,
-    reconCount: 3,
-    accounts: [
-      { name: "Monzo - Aberdeen", balance: -521.78, operational: false },
-      { name: "Modulr - AP Only", balance: 0.00, operational: true },
-      { name: "Lloyds - Aberdeen", balance: 123785.30, operational: true },
-      { name: "Modulr GBP -  do not edit transactions here", balance: -163260.23, operational: false }
-    ]
-  },
-  {
     name: "Maki Soho Ltd",
-    cash: 117151.46,
+    cash: 131602.94,
     opNames: "Barclays - Maki Soho + AP Only",
     reconTotal: 5800.68,
     reconCount: 8,
@@ -187,20 +146,74 @@ const TENANTS = [
       { name: "Modulr GBP -  do not edit transactions here", balance: 0.00, operational: false },
       { name: "Revolut GBP", balance: 0.00, operational: false },
       { name: "Revolut - Maki Soho", balance: 671.36, operational: false },
-      { name: "Barclays - Maki Soho", balance: 117149.46, operational: true },
+      { name: "Barclays - Maki Soho", balance: 131600.94, operational: true },
       { name: "AP Only", balance: 2.00, operational: true }
     ]
   },
   {
+    name: "Maki Aberdeen Ltd",
+    cash: 124073.64,
+    opNames: "Lloyds - Aberdeen + Modulr - AP Only",
+    reconTotal: 39128.74,
+    reconCount: 3,
+    accounts: [
+      { name: "Monzo - Aberdeen", balance: -521.78, operational: false },
+      { name: "Modulr - AP Only", balance: 0.00, operational: true },
+      { name: "Lloyds - Aberdeen", balance: 124073.64, operational: true },
+      { name: "Modulr GBP -  do not edit transactions here", balance: -163260.23, operational: false }
+    ]
+  },
+  {
+    name: "Maki SJQ",
+    cash: 124070.44,
+    opNames: "Barclays + Modulr AP Only",
+    reconTotal: 8664.46,
+    reconCount: 7,
+    accounts: [
+      { name: "Barclays", balance: 112378.84, operational: true },
+      { name: "Modulr GBP -  do not edit transactions here", balance: -10494.43, operational: false },
+      { name: "Modulr AP Only", balance: 11691.60, operational: true }
+    ]
+  },
+  {
+    name: "Maki Metro Ltd",
+    cash: 122826.78,
+    opNames: "Barclays - Maki Metro + Modulr - AP Only",
+    reconTotal: 2555.43,
+    reconCount: 24,
+    accounts: [
+      { name: "Modulr - AP Only", balance: 0.00, operational: true },
+      { name: "Revolut GBP", balance: 0.00, operational: false },
+      { name: "Modulr GBP -  do not edit transactions here", balance: 0.00, operational: false },
+      { name: "Revolut GBP 2.25% saving", balance: 0.00, operational: false },
+      { name: "Modulr GBP -  do not edit transactions here", balance: -40247.99, operational: false },
+      { name: "Revolut - Maki Metro", balance: 135.28, operational: false },
+      { name: "Barclays - Maki Metro", balance: 122826.78, operational: true }
+    ]
+  },
+  {
     name: "Maki Leeds Limited",
-    cash: 103858.16,
+    cash: 107229.47,
     opNames: "HSBC Business + Modulr AP Only",
     reconTotal: 16746.39,
     reconCount: 4,
     accounts: [
-      { name: "HSBC Business", balance: 90460.77, operational: true },
+      { name: "HSBC Business", balance: 93832.08, operational: true },
       { name: "Modulr GBP -  do not edit transactions here", balance: -13397.39, operational: false },
       { name: "Modulr AP Only", balance: 13397.39, operational: true }
+    ]
+  },
+  {
+    name: "Maki Manchester Ltd",
+    cash: 103268.84,
+    opNames: "HSBC - Manchester + AP only",
+    reconTotal: -40065.61,
+    reconCount: 10,
+    accounts: [
+      { name: "Maki Manchester LTD", balance: 0.00, operational: false },
+      { name: "AP only", balance: 0.00, operational: true },
+      { name: "Modulr AP GBP - create & delete payments in Modulr only!", balance: -151177.09, operational: false },
+      { name: "HSBC - Manchester", balance: 103268.84, operational: true }
     ]
   },
   {
@@ -215,19 +228,6 @@ const TENANTS = [
       { name: "Barclays - Nottingham", balance: 103131.68, operational: true },
       { name: "Revolut - Maki Nottingham", balance: 0.00, operational: false },
       { name: "Modulr AP Only", balance: 0.00, operational: true }
-    ]
-  },
-  {
-    name: "Maki Manchester Ltd",
-    cash: 98066.17,
-    opNames: "HSBC - Manchester + AP only",
-    reconTotal: -40065.61,
-    reconCount: 10,
-    accounts: [
-      { name: "Maki Manchester LTD", balance: 0.00, operational: false },
-      { name: "AP only", balance: 0.00, operational: true },
-      { name: "Modulr AP GBP - create & delete payments in Modulr only!", balance: -151177.09, operational: false },
-      { name: "HSBC - Manchester", balance: 98066.17, operational: true }
     ]
   },
   {
@@ -259,7 +259,7 @@ const TENANTS = [
   },
   {
     name: "Maki Yorkshire Ltd",
-    cash: 78508.72,
+    cash: 83095.22,
     opNames: "HSBC Business - Yorkshire + AP Only",
     reconTotal: 0.00,
     reconCount: 0,
@@ -267,60 +267,60 @@ const TENANTS = [
       { name: "Revolut GBP 2.25% saving", balance: 0.00, operational: false },
       { name: "Maki Yorkshire LTD - Payroll", balance: 175435.96, operational: false },
       { name: "Revolut - Yorkshire", balance: 319.36, operational: false },
-      { name: "HSBC Business - Yorkshire", balance: 78508.69, operational: true },
+      { name: "HSBC Business - Yorkshire", balance: 83095.19, operational: true },
       { name: "AP Only", balance: 0.03, operational: true },
       { name: "2.25% Savings", balance: 0.00, operational: false },
       { name: "Modulr GBP -  do not edit transactions here", balance: -33422.65, operational: false }
     ]
   },
   {
-    name: "M1TOO Ltd",
-    cash: 60036.75,
-    opNames: "Bank of Scotland - M1TOO + AP Only",
-    reconTotal: 1552.34,
-    reconCount: 17,
-    accounts: [
-      { name: "AP Only", balance: 526.27, operational: true },
-      { name: "Modulr GBP -  do not edit transactions here", balance: -61939.85, operational: false },
-      { name: "Bank of Scotland - M1TOO", balance: 59510.48, operational: true }
-    ]
-  },
-  {
     name: "Renfield Delight Ltd",
-    cash: 43764.09,
+    cash: 59257.68,
     opNames: "HSBC - Renfield Delight + Modulr AP Only",
     reconTotal: 6124.58,
     reconCount: 4,
     accounts: [
       { name: "Modulr AP Only", balance: 12375.46, operational: true },
       { name: "Modulr GBP -  do not edit transactions here", balance: -12293.86, operational: false },
-      { name: "HSBC - Renfield Delight", balance: 31388.63, operational: true }
+      { name: "HSBC - Renfield Delight", balance: 46882.22, operational: true }
     ]
   },
   {
-    name: "Fountain Good Food Ltd",
-    cash: 39305.93,
-    opNames: "HSBC - FGF + AP Only",
-    reconTotal: -5164.65,
-    reconCount: 10,
+    name: "M1TOO Ltd",
+    cash: 57828.26,
+    opNames: "Bank of Scotland - M1TOO + AP Only",
+    reconTotal: 1552.34,
+    reconCount: 17,
     accounts: [
-      { name: "HSBC - FGF", balance: 39305.93, operational: true },
-      { name: "Modulr GBP -  do not edit transactions here", balance: 0.00, operational: false },
-      { name: "AP Only", balance: 0.00, operational: true },
-      { name: "Modulr GBP -  do not edit transactions here", balance: -81995.96, operational: false }
+      { name: "AP Only", balance: 526.27, operational: true },
+      { name: "Modulr GBP -  do not edit transactions here", balance: -61939.85, operational: false },
+      { name: "Bank of Scotland - M1TOO", balance: 57301.99, operational: true }
     ]
   },
   {
     name: "Maki Birmingham Ltd",
-    cash: 35564.45,
+    cash: 48731.19,
     opNames: "Lloyds - Birmingham + AP Only",
     reconTotal: 0.00,
     reconCount: 0,
     accounts: [
       { name: "Savings", balance: -1212.01, operational: false },
-      { name: "Lloyds - Birmingham", balance: 35564.45, operational: true },
+      { name: "Lloyds - Birmingham", balance: 48731.19, operational: true },
       { name: "AP Only", balance: 0.00, operational: true },
       { name: "Modulr GBP - do not edit transactions here", balance: 0.00, operational: false }
+    ]
+  },
+  {
+    name: "Fountain Good Food Ltd",
+    cash: 42449.71,
+    opNames: "HSBC - FGF + AP Only",
+    reconTotal: -5164.65,
+    reconCount: 10,
+    accounts: [
+      { name: "HSBC - FGF", balance: 42449.71, operational: true },
+      { name: "Modulr GBP -  do not edit transactions here", balance: 0.00, operational: false },
+      { name: "AP Only", balance: 0.00, operational: true },
+      { name: "Modulr GBP -  do not edit transactions here", balance: -81995.96, operational: false }
     ]
   },
   {
@@ -339,7 +339,7 @@ const TENANTS = [
   },
   {
     name: "AAHQ Ltd",
-    cash: 27524.38,
+    cash: 28061.14,
     opNames: "Barclays - AAHQ Frozen Ramen + AP Only",
     reconTotal: 0.00,
     reconCount: 0,
@@ -347,39 +347,39 @@ const TENANTS = [
       { name: "Revolut GBP", balance: 0.00, operational: false },
       { name: "AP Only", balance: 0.00, operational: true },
       { name: "Modulr GBP - do not edit transactions here", balance: 0.00, operational: false },
-      { name: "Barclays - AAHQ Frozen Ramen", balance: 27524.38, operational: true },
-      { name: "Revolut - AAHQ Factory", balance: 45575.68, operational: false }
+      { name: "Barclays - AAHQ Frozen Ramen", balance: 28061.14, operational: true },
+      { name: "Revolut - AAHQ Factory", balance: 34075.68, operational: false }
     ]
   },
   {
     name: "Maki Shoreditch Ltd",
-    cash: 18442.52,
+    cash: 21040.30,
     opNames: "HSBC - Shoreditch + AP Only",
     reconTotal: 0.00,
     reconCount: 0,
     accounts: [
       { name: "Modulr GBP - do not edit transactions here", balance: 0.00, operational: false },
       { name: "AP Only", balance: 0.00, operational: true },
-      { name: "HSBC - Shoreditch", balance: 18442.52, operational: true }
+      { name: "HSBC - Shoreditch", balance: 21040.30, operational: true }
     ]
   },
   {
     name: "Maki Southampton Ltd",
-    cash: 10282.58,
+    cash: 17013.97,
     opNames: "HSBC - Southampton + AP Only",
     reconTotal: 0.00,
     reconCount: 0,
     accounts: [
       { name: "Revolut GBP", balance: 0.00, operational: false },
-      { name: "HSBC - Southampton", balance: 10282.58, operational: true },
-      { name: "Revolut - Southampton", balance: 4876.66, operational: false },
+      { name: "HSBC - Southampton", balance: 17013.97, operational: true },
+      { name: "Revolut - Southampton", balance: 4818.09, operational: false },
       { name: "Modulr GBP - do not edit transactions here", balance: 0.00, operational: false },
       { name: "AP Only", balance: 0.00, operational: true }
     ]
   },
   {
     name: "Maki Nori Ltd",
-    cash: 4440.55,
+    cash: 6937.59,
     opNames: "Barclays - Maki Nori + AP Only",
     reconTotal: 0.00,
     reconCount: 0,
@@ -389,25 +389,25 @@ const TENANTS = [
       { name: "Modulr GBP - do not edit transactions here", balance: 0.00, operational: false },
       { name: "Revolut - Nori", balance: 149.55, operational: false },
       { name: "AP Only", balance: 0.00, operational: true },
-      { name: "Barclays - Maki Nori", balance: 4440.55, operational: true },
+      { name: "Barclays - Maki Nori", balance: 6937.59, operational: true },
       { name: "Revolut GBP", balance: 0.00, operational: false }
     ]
   },
   {
     name: "Maki Leicester Ltd",
-    cash: -1854.73,
+    cash: -1904.73,
     opNames: "Lloyds - Leicester + Modulr - AP Only",
     reconTotal: 36160.30,
     reconCount: 3,
     accounts: [
       { name: "Modulr GBP -  do not edit transactions here", balance: -64973.38, operational: false },
       { name: "Modulr - AP Only", balance: -7826.19, operational: true },
-      { name: "Lloyds - Leicester", balance: 5971.46, operational: true }
+      { name: "Lloyds - Leicester", balance: 5921.46, operational: true }
     ]
   }
 ];
 
-const TENANT_DELTAS = {"Maki Property Ltd": 0.00, "Maki SJQ": 0.00, "Maki Metro Ltd": 0.00, "South Ikigai Ltd": 0.00, "Maki Aberdeen Ltd": 0.00, "Maki Soho Ltd": 0.00, "Maki Leeds Limited": 0.00, "Maki Nottingham Ltd": 0.00, "Maki Manchester Ltd": 0.00, "Maki 1HW Ltd": 0.00, "Maki Lakeside Ltd": 0.00, "Maki Yorkshire Ltd": 0.00, "M1TOO Ltd": 0.00, "Renfield Delight Ltd": 0.00, "Fountain Good Food Ltd": 0.00, "Maki Birmingham Ltd": 0.00, "Maki Newcastle Ltd": 0.00, "AAHQ Ltd": 0.00, "Maki Shoreditch Ltd": 0.00, "Maki Southampton Ltd": 0.00, "Maki Nori Ltd": 0.00, "Maki Leicester Ltd": 0.00};
+const TENANT_DELTAS = {"Maki Property Ltd": 92630.49, "South Ikigai Ltd": 0.00, "Maki Soho Ltd": 14451.48, "Maki Aberdeen Ltd": 288.34, "Maki SJQ": -21650.80, "Maki Metro Ltd": -21478.12, "Maki Leeds Limited": 3371.31, "Maki Manchester Ltd": 5202.67, "Maki Nottingham Ltd": 0.00, "Maki 1HW Ltd": 0.00, "Maki Lakeside Ltd": 0.00, "Maki Yorkshire Ltd": 4586.50, "Renfield Delight Ltd": 15493.59, "M1TOO Ltd": -2208.49, "Maki Birmingham Ltd": 13166.74, "Fountain Good Food Ltd": 3143.78, "Maki Newcastle Ltd": 0.00, "AAHQ Ltd": 536.76, "Maki Shoreditch Ltd": 2597.78, "Maki Southampton Ltd": 6731.39, "Maki Nori Ltd": 2497.04, "Maki Leicester Ltd": -50.00};
 
 const gbp = n => "£" + n.toLocaleString("en-GB", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
 const negGbp = n => (n < 0 ? "−" : "") + "£" + Math.abs(n).toLocaleString("en-GB", { minimumFractionDigits: 2, maximumFractionDigits: 2 });

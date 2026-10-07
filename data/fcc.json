@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-07T12:38:45+04:00",
+ "generated_at": "2026-10-07T20:37:41+04:00",
  "as_of": "2026-10-07",
  "companies": [
   {
@@ -22219,7 +22219,7 @@
    "tech": {
     "typical_day": 1,
     "last_amount": 2115.86,
-    "avg_6m": 1187.19,
+    "avg_6m": 1187.18,
     "months_observed": 6,
     "last_paid": "2026-10-01"
    },
@@ -22739,11 +22739,11 @@
      },
      "ma_closed": {
       "state": "green",
-      "text": "2026-08 closed. Sales 159,542, net profit 1,388."
+      "text": "2026-09 closed. Sales 151,964, net profit -20,017."
      },
      "np_negative": {
       "state": "amber",
-      "text": "Net profit negative in 2026-07, positive in the other month on the board."
+      "text": "Net profit negative in 2026-09, positive in the other month on the board."
      }
     },
     "running": [
@@ -22767,6 +22767,31 @@
     "ma": {
      "code": "M18",
      "name": "Soho",
+     "sales": 151963.65,
+     "tips": 17453.73,
+     "wages_pct": 35.5,
+     "rent_pct": 23.2,
+     "food_pct": 32.2,
+     "variable_pct": 15.3,
+     "vat_pct": 7.0,
+     "total_costs": 171981.08,
+     "np": -20017.43,
+     "np_pct": -13.2,
+     "ytd_sales": 998228.65,
+     "ytd_np": -188661.43,
+     "pounds": {
+      "wages": 53940.6,
+      "rent": 35203.0,
+      "food": 48874.1,
+      "variable": 23325.92,
+      "vat": 10637.46
+     },
+     "month": "2026-09",
+     "source": "M18_2026.xlsx [2026 Summary MA]"
+    },
+    "ma_prior": {
+     "code": "M18",
+     "name": "Soho",
      "sales": 159542.0,
      "tips": 18725.0,
      "wages_pct": 31.0,
@@ -22782,27 +22807,279 @@
      "month": "2026-08",
      "source": "Maki_MA_Dashboard_August_2026.html"
     },
-    "ma_prior": {
-     "code": "M18",
-     "name": "Soho",
-     "sales": 146225.0,
-     "tips": 17003.0,
-     "wages_pct": 32.0,
-     "rent_pct": 24.1,
-     "food_pct": 28.0,
-     "variable_pct": 30.1,
-     "vat_pct": 7.0,
-     "total_costs": 177293.0,
-     "np": -31068.0,
-     "np_pct": -21.2,
-     "ytd_sales": null,
-     "ytd_np": null,
-     "month": "2026-07",
-     "source": "Maki_MA_Dashboard_July_2026.html"
-    },
     "flags": [],
     "notes": [
      "Financial analysis for M18 finished with 7 lines that do not tie and 0 unallocated."
+    ]
+   },
+   {
+    "code": "M14",
+    "tenant": "Maki Yorkshire Ltd",
+    "cluster": "North England & Midlands",
+    "overall": "amber",
+    "tests": {
+     "overdrawn": {
+      "state": "green",
+      "text": "Cash 93,322.26."
+     },
+     "vat": {
+      "state": "green",
+      "text": "Last VAT payment 2026-09-04."
+     },
+     "filing": {
+      "state": "unknown",
+      "text": "Companies House is not connected, so filing and corporation tax dates cannot be checked."
+     },
+     "ma_closed": {
+      "state": "green",
+      "text": "2026-09 closed. Sales 158,305, net profit -7,851."
+     },
+     "np_negative": {
+      "state": "amber",
+      "text": "Net profit negative in 2026-09, positive in the other month on the board."
+     }
+    },
+    "running": [
+     {
+      "state": "green",
+      "text": "Bank feed last row 2026-10-05 (2 days old)."
+     },
+     {
+      "state": "green",
+      "text": "Financial analysis last ran 2026-10-07: ok, 0 lines that do not tie and 0 unallocated."
+     }
+    ],
+    "unchecked": [
+     "Companies House filing"
+    ],
+    "cash": 93322.26,
+    "ma": {
+     "code": "M14",
+     "name": "Meadowhall",
+     "sales": 158304.93,
+     "tips": 8489.57,
+     "wages_pct": 26.7,
+     "rent_pct": 23.8,
+     "food_pct": 27.1,
+     "variable_pct": 13.0,
+     "vat_pct": 14.4,
+     "total_costs": 166155.93,
+     "np": -7851.0,
+     "np_pct": -5.0,
+     "ytd_sales": 1565894.93,
+     "ytd_np": 152442.0,
+     "pounds": {
+      "wages": 42212.5,
+      "rent": 37629.95,
+      "food": 42899.38,
+      "variable": 20551.64,
+      "vat": 22862.46
+     },
+     "month": "2026-09",
+     "source": "M14_2026.xlsx [Summary MA]"
+    },
+    "ma_prior": {
+     "code": "M14",
+     "name": "Meadowhall",
+     "sales": 191084.0,
+     "tips": 9975.0,
+     "wages_pct": 21.5,
+     "rent_pct": 6.8,
+     "food_pct": 20.2,
+     "variable_pct": 12.3,
+     "vat_pct": 7.0,
+     "total_costs": 129698.0,
+     "np": 61386.0,
+     "np_pct": 32.1,
+     "ytd_sales": 1407590.0,
+     "ytd_np": 160293.0,
+     "month": "2026-08",
+     "source": "Maki_MA_Dashboard_August_2026.html"
+    },
+    "flags": [],
+    "notes": []
+   },
+   {
+    "code": "M8",
+    "tenant": "Renfield Delight Ltd",
+    "cluster": "Scotland & Newcastle",
+    "overall": "amber",
+    "tests": {
+     "overdrawn": {
+      "state": "green",
+      "text": "Cash 76,004.93."
+     },
+     "vat": {
+      "state": "green",
+      "text": "On the expected pattern."
+     },
+     "filing": {
+      "state": "unknown",
+      "text": "Companies House is not connected, so filing and corporation tax dates cannot be checked."
+     },
+     "ma_closed": {
+      "state": "green",
+      "text": "2026-09 closed. Sales 198,467, net profit -4,967."
+     },
+     "np_negative": {
+      "state": "amber",
+      "text": "Net profit negative in 2026-09, positive in the other month on the board."
+     }
+    },
+    "running": [
+     {
+      "state": "green",
+      "text": "Bank feed last row 2026-10-05 (2 days old)."
+     },
+     {
+      "state": "amber",
+      "text": "Financial analysis last ran 2026-10-07: ok, 1 lines that do not tie and 0 unallocated."
+     },
+     {
+      "state": "amber",
+      "text": "4 unreconciled bank lines worth 6,125."
+     }
+    ],
+    "unchecked": [
+     "Companies House filing"
+    ],
+    "cash": 76004.93,
+    "ma": {
+     "code": "M8",
+     "name": "Renfield",
+     "sales": 198467.13,
+     "tips": 15168.36,
+     "wages_pct": 34.2,
+     "rent_pct": -0.2,
+     "food_pct": 27.2,
+     "variable_pct": 34.4,
+     "vat_pct": 7.0,
+     "total_costs": 203434.01,
+     "np": -4966.88,
+     "np_pct": -2.5,
+     "ytd_sales": 1704375.13,
+     "ytd_np": 182075.12,
+     "pounds": {
+      "wages": 67782.52,
+      "rent": -432.0,
+      "food": 53894.79,
+      "variable": 68296.0,
+      "vat": 13892.7
+     },
+     "month": "2026-09",
+     "source": "M8_2026.xlsx [Summary MA]"
+    },
+    "ma_prior": {
+     "code": "M8",
+     "name": "Renfield",
+     "sales": 215456.0,
+     "tips": 16933.0,
+     "wages_pct": 27.2,
+     "rent_pct": 5.1,
+     "food_pct": 22.4,
+     "variable_pct": 14.8,
+     "vat_pct": 7.0,
+     "total_costs": 164857.0,
+     "np": 50599.0,
+     "np_pct": 23.5,
+     "ytd_sales": 1505908.0,
+     "ytd_np": 187042.0,
+     "month": "2026-08",
+     "source": "Maki_MA_Dashboard_August_2026.html"
+    },
+    "flags": [],
+    "notes": [
+     "Financial analysis for M8 finished with 1 lines that do not tie and 0 unallocated."
+    ]
+   },
+   {
+    "code": "M20",
+    "tenant": "Maki Southampton Ltd",
+    "cluster": "South England",
+    "overall": "amber",
+    "tests": {
+     "overdrawn": {
+      "state": "green",
+      "text": "Cash 42,335.25."
+     },
+     "vat": {
+      "state": "unknown",
+      "text": "No VAT payment found in the 2026 bank feed, so nothing to check against."
+     },
+     "filing": {
+      "state": "unknown",
+      "text": "Companies House is not connected, so filing and corporation tax dates cannot be checked."
+     },
+     "ma_closed": {
+      "state": "green",
+      "text": "2026-09 closed. Sales 158,277, net profit -17,473."
+     },
+     "np_negative": {
+      "state": "amber",
+      "text": "Net profit negative in 2026-09, positive in the other month on the board."
+     }
+    },
+    "running": [
+     {
+      "state": "green",
+      "text": "Bank feed last row 2026-10-06 (1 days old)."
+     },
+     {
+      "state": "amber",
+      "text": "Financial analysis last ran 2026-10-07: ok, 7 lines that do not tie and 0 unallocated."
+     }
+    ],
+    "unchecked": [
+     "VAT up to date",
+     "Companies House filing"
+    ],
+    "cash": 42335.25,
+    "ma": {
+     "code": "M20",
+     "name": "Southampton",
+     "sales": 158276.87,
+     "tips": 14931.51,
+     "wages_pct": 34.2,
+     "rent_pct": 9.5,
+     "food_pct": 30.5,
+     "variable_pct": 29.8,
+     "vat_pct": 7.0,
+     "total_costs": 175750.06,
+     "np": -17473.19,
+     "np_pct": -11.0,
+     "ytd_sales": 542256.87,
+     "ytd_np": 75355.81,
+     "pounds": {
+      "wages": 54182.85,
+      "rent": 15000.0,
+      "food": 48291.34,
+      "variable": 47196.49,
+      "vat": 11079.38
+     },
+     "month": "2026-09",
+     "source": "M20_2026.xlsx [2026 Summary MA]"
+    },
+    "ma_prior": {
+     "code": "M20",
+     "name": "Southampton",
+     "sales": 177889.0,
+     "tips": 16930.0,
+     "wages_pct": 28.5,
+     "rent_pct": 9.1,
+     "food_pct": 23.7,
+     "variable_pct": 10.5,
+     "vat_pct": 7.0,
+     "total_costs": 140213.0,
+     "np": 37677.0,
+     "np_pct": 21.2,
+     "ytd_sales": 383980.0,
+     "ytd_np": 92829.0,
+     "month": "2026-08",
+     "source": "Maki_MA_Dashboard_August_2026.html"
+    },
+    "flags": [],
+    "notes": [
+     "Financial analysis for M20 finished with 7 lines that do not tie and 0 unallocated."
     ]
    },
    {
@@ -22825,11 +23102,11 @@
      },
      "ma_closed": {
       "state": "green",
-      "text": "2026-08 closed. Sales 129,672, net profit 22,408."
+      "text": "2026-09 closed. Sales 115,064, net profit -19,781."
      },
      "np_negative": {
       "state": "amber",
-      "text": "Net profit negative in 2026-07, positive in the other month on the board."
+      "text": "Net profit negative in 2026-09, positive in the other month on the board."
      }
     },
     "running": [
@@ -22853,6 +23130,31 @@
     "ma": {
      "code": "M12",
      "name": "Newcastle",
+     "sales": 115064.05,
+     "tips": 6424.87,
+     "wages_pct": 30.4,
+     "rent_pct": 27.9,
+     "food_pct": 27.2,
+     "variable_pct": 24.7,
+     "vat_pct": 7.0,
+     "total_costs": 134844.79,
+     "np": -19780.74,
+     "np_pct": -17.2,
+     "ytd_sales": 1124285.05,
+     "ytd_np": -10187.74,
+     "pounds": {
+      "wages": 34966.62,
+      "rent": 32132.41,
+      "food": 31243.18,
+      "variable": 28448.1,
+      "vat": 8054.48
+     },
+     "month": "2026-09",
+     "source": "M12_2026.xlsx [MA 2026]"
+    },
+    "ma_prior": {
+     "code": "M12",
+     "name": "Newcastle",
      "sales": 129672.0,
      "tips": 8446.0,
      "wages_pct": 27.8,
@@ -22867,24 +23169,6 @@
      "ytd_np": 9593.0,
      "month": "2026-08",
      "source": "Maki_MA_Dashboard_August_2026.html"
-    },
-    "ma_prior": {
-     "code": "M12",
-     "name": "Newcastle",
-     "sales": 116556.0,
-     "tips": 7417.0,
-     "wages_pct": 31.9,
-     "rent_pct": 30.2,
-     "food_pct": 31.0,
-     "variable_pct": 19.0,
-     "vat_pct": 7.0,
-     "total_costs": 138909.0,
-     "np": -22353.0,
-     "np_pct": -19.2,
-     "ytd_sales": null,
-     "ytd_np": null,
-     "month": "2026-07",
-     "source": "Maki_MA_Dashboard_July_2026.html"
     },
     "flags": [],
     "notes": [
@@ -22911,11 +23195,11 @@
      },
      "ma_closed": {
       "state": "green",
-      "text": "2026-08 closed. Sales 97,663, net profit -15,728."
+      "text": "2026-09 closed. Sales 101,437, net profit -31,646."
      },
      "np_negative": {
       "state": "amber",
-      "text": "Net profit negative in all 2 months on the board (2026-08, 2026-07), but the rule needs 3 months and only 2 are loaded. The site was not trading in the first half, so there is no earlier month to add."
+      "text": "Net profit negative in all 2 months on the board (2026-09, 2026-08), but the rule needs 3 months and only 2 are loaded. The site was not trading in the first half, so there is no earlier month to add."
      }
     },
     "running": [
@@ -22936,6 +23220,31 @@
     "ma": {
      "code": "M19",
      "name": "Shoreditch",
+     "sales": 101437.1,
+     "tips": 10487.86,
+     "wages_pct": 31.6,
+     "rent_pct": 19.6,
+     "food_pct": 33.9,
+     "variable_pct": 39.1,
+     "vat_pct": 7.0,
+     "total_costs": 133082.67,
+     "np": -31645.57,
+     "np_pct": -31.2,
+     "ytd_sales": 299779.1,
+     "ytd_np": -80997.57,
+     "pounds": {
+      "wages": 32039.82,
+      "rent": 19873.13,
+      "food": 34395.15,
+      "variable": 39673.97,
+      "vat": 7100.6
+     },
+     "month": "2026-09",
+     "source": "M19_2026.xlsx [2026 Summary MA]"
+    },
+    "ma_prior": {
+     "code": "M19",
+     "name": "Shoreditch",
      "sales": 97663.0,
      "tips": 8996.0,
      "wages_pct": 37.0,
@@ -22950,24 +23259,6 @@
      "ytd_np": -49352.0,
      "month": "2026-08",
      "source": "Maki_MA_Dashboard_August_2026.html"
-    },
-    "ma_prior": {
-     "code": "M19",
-     "name": "Shoreditch",
-     "sales": 100679.0,
-     "tips": null,
-     "wages_pct": 43.4,
-     "rent_pct": 24.7,
-     "food_pct": 30.5,
-     "variable_pct": 27.8,
-     "vat_pct": 7.0,
-     "total_costs": 134303.0,
-     "np": -33624.0,
-     "np_pct": -33.4,
-     "ytd_sales": null,
-     "ytd_np": null,
-     "month": "2026-07",
-     "source": "Maki_MA_Dashboard_July_2026.html"
     },
     "flags": [],
     "notes": [
@@ -22994,11 +23285,11 @@
      },
      "ma_closed": {
       "state": "green",
-      "text": "2026-08 closed. Sales 86,230, net profit -32,730."
+      "text": "2026-09 closed. Sales 84,595, net profit -45,757."
      },
      "np_negative": {
       "state": "amber",
-      "text": "Net profit negative in all 2 months on the board (2026-08, 2026-07), but the rule needs 3 months and only 2 are loaded. January to June together was -93,228."
+      "text": "Net profit negative in all 2 months on the board (2026-09, 2026-08), but the rule needs 3 months and only 2 are loaded. January to June together was -93,228."
      }
     },
     "running": [
@@ -23018,6 +23309,31 @@
     "ma": {
      "code": "Nori",
      "name": "Maki Nori",
+     "sales": 84595.09,
+     "tips": 10381.38,
+     "wages_pct": 45.2,
+     "rent_pct": 41.4,
+     "food_pct": 33.2,
+     "variable_pct": 21.5,
+     "vat_pct": 12.8,
+     "total_costs": 130352.05,
+     "np": -45756.96,
+     "np_pct": -54.1,
+     "ytd_sales": 510938.09,
+     "ytd_np": -215234.96,
+     "pounds": {
+      "wages": 38248.26,
+      "rent": 35000.0,
+      "food": 28127.27,
+      "variable": 18171.34,
+      "vat": 10805.18
+     },
+     "month": "2026-09",
+     "source": "NORI_2026.xlsx [2026 Summary MA]"
+    },
+    "ma_prior": {
+     "code": "Nori",
+     "name": "Maki Nori",
      "sales": 86230.0,
      "tips": 10609.0,
      "wages_pct": 30.6,
@@ -23033,113 +23349,9 @@
      "month": "2026-08",
      "source": "Maki_MA_Dashboard_August_2026.html"
     },
-    "ma_prior": {
-     "code": "Nori",
-     "name": "Maki Nori",
-     "sales": 102076.0,
-     "tips": 12212.0,
-     "wages_pct": 38.9,
-     "rent_pct": 34.3,
-     "food_pct": 31.9,
-     "variable_pct": 34.5,
-     "vat_pct": null,
-     "total_costs": 145597.0,
-     "np": -43520.0,
-     "np_pct": -42.6,
-     "ytd_sales": null,
-     "ytd_np": null,
-     "month": "2026-07",
-     "source": "Maki_MA_Dashboard_July_2026.html"
-    },
     "flags": [],
     "notes": [
      "Financial analysis for NORI finished with 9 lines that do not tie and 1 unallocated."
-    ]
-   },
-   {
-    "code": "M11",
-    "tenant": "Maki Leicester Ltd",
-    "cluster": "North England & Midlands",
-    "overall": "amber",
-    "tests": {
-     "overdrawn": {
-      "state": "green",
-      "text": "Cash 10,669.53."
-     },
-     "vat": {
-      "state": "green",
-      "text": "Last VAT payment 2026-09-04."
-     },
-     "filing": {
-      "state": "unknown",
-      "text": "Companies House is not connected, so filing and corporation tax dates cannot be checked."
-     },
-     "ma_closed": {
-      "state": "green",
-      "text": "2026-08 closed. Sales 108,995, net profit 23,712."
-     },
-     "np_negative": {
-      "state": "amber",
-      "text": "Net profit negative in 2026-07, positive in the other month on the board."
-     }
-    },
-    "running": [
-     {
-      "state": "green",
-      "text": "Bank feed last row 2026-10-06 (1 days old)."
-     },
-     {
-      "state": "amber",
-      "text": "Financial analysis last ran 2026-10-07: ok, 5 lines that do not tie and 2 unallocated."
-     },
-     {
-      "state": "amber",
-      "text": "3 unreconciled bank lines worth 36,160."
-     }
-    ],
-    "unchecked": [
-     "Companies House filing"
-    ],
-    "cash": 10669.53,
-    "ma": {
-     "code": "M11",
-     "name": "Leicester",
-     "sales": 108995.0,
-     "tips": 7214.0,
-     "wages_pct": 25.7,
-     "rent_pct": 8.3,
-     "food_pct": 19.7,
-     "variable_pct": 17.6,
-     "vat_pct": 7.0,
-     "total_costs": 85283.0,
-     "np": 23712.0,
-     "np_pct": 21.8,
-     "ytd_sales": 809548.0,
-     "ytd_np": -35165.0,
-     "month": "2026-08",
-     "source": "Maki_MA_Dashboard_August_2026.html"
-    },
-    "ma_prior": {
-     "code": "M11",
-     "name": "Leicester",
-     "sales": 86751.0,
-     "tips": 5805.0,
-     "wages_pct": 32.1,
-     "rent_pct": 24.2,
-     "food_pct": 38.9,
-     "variable_pct": 26.7,
-     "vat_pct": 7.0,
-     "total_costs": 111780.0,
-     "np": -25029.0,
-     "np_pct": -28.9,
-     "ytd_sales": null,
-     "ytd_np": null,
-     "month": "2026-07",
-     "source": "Maki_MA_Dashboard_July_2026.html"
-    },
-    "flags": [],
-    "notes": [
-     "Financial analysis for M11 finished with 5 lines that do not tie and 2 unallocated."
     ]
    },
    {
@@ -23255,11 +23467,11 @@
      },
      "ma_closed": {
       "state": "green",
-      "text": "2026-08 closed. Sales 335,121, net profit 105,578."
+      "text": "2026-09 closed. Sales 301,743, net profit 37,679."
      },
      "np_negative": {
       "state": "green",
-      "text": "2026-08 net profit 105,578."
+      "text": "2026-09 net profit 37,679."
      }
     },
     "running": [
@@ -23283,6 +23495,31 @@
     "ma": {
      "code": "M7",
      "name": "St James Quarter",
+     "sales": 301743.45,
+     "tips": 26174.72,
+     "wages_pct": 29.9,
+     "rent_pct": 10.9,
+     "food_pct": 24.1,
+     "variable_pct": 9.9,
+     "vat_pct": 12.7,
+     "total_costs": 264064.89,
+     "np": 37678.56,
+     "np_pct": 12.5,
+     "ytd_sales": 2424360.45,
+     "ytd_np": 345493.56,
+     "pounds": {
+      "wages": 90369.23,
+      "rent": 32829.93,
+      "food": 72655.77,
+      "variable": 29795.9,
+      "vat": 38414.06
+     },
+     "month": "2026-09",
+     "source": "M7_2026.xlsx [Summary MA]"
+    },
+    "ma_prior": {
+     "code": "M7",
+     "name": "St James Quarter",
      "sales": 335121.0,
      "tips": 29266.0,
      "wages_pct": 23.9,
@@ -23297,24 +23534,6 @@
      "ytd_np": 307815.0,
      "month": "2026-08",
      "source": "Maki_MA_Dashboard_August_2026.html"
-    },
-    "ma_prior": {
-     "code": "M7",
-     "name": "St James Quarter",
-     "sales": 311831.0,
-     "tips": 26387.0,
-     "wages_pct": 23.3,
-     "rent_pct": 7.5,
-     "food_pct": 25.4,
-     "variable_pct": 13.5,
-     "vat_pct": 7.0,
-     "total_costs": 238899.0,
-     "np": 72932.0,
-     "np_pct": 23.4,
-     "ytd_sales": null,
-     "ytd_np": null,
-     "month": "2026-07",
-     "source": "Maki_MA_Dashboard_July_2026.html"
     },
     "flags": [],
     "notes": [
@@ -23341,11 +23560,11 @@
      },
      "ma_closed": {
       "state": "green",
-      "text": "2026-08 closed. Sales 300,733, net profit 88,499."
+      "text": "2026-09 closed. Sales 224,744, net profit 16,258."
      },
      "np_negative": {
       "state": "green",
-      "text": "2026-08 net profit 88,499."
+      "text": "2026-09 net profit 16,258."
      }
     },
     "running": [
@@ -23365,6 +23584,31 @@
     "ma": {
      "code": "M15",
      "name": "Metro",
+     "sales": 224744.44,
+     "tips": 16880.35,
+     "wages_pct": 29.6,
+     "rent_pct": 11.0,
+     "food_pct": 25.8,
+     "variable_pct": 19.3,
+     "vat_pct": 7.0,
+     "total_costs": 208486.06,
+     "np": 16258.38,
+     "np_pct": 7.2,
+     "ytd_sales": 2311435.44,
+     "ytd_np": 335263.38,
+     "pounds": {
+      "wages": 66580.52,
+      "rent": 24742.05,
+      "food": 58080.18,
+      "variable": 43351.2,
+      "vat": 15732.11
+     },
+     "month": "2026-09",
+     "source": "M15_2026.xlsx [Summary MA]"
+    },
+    "ma_prior": {
+     "code": "M15",
+     "name": "Metro",
      "sales": 300733.0,
      "tips": 22547.0,
      "wages_pct": 20.8,
@@ -23379,24 +23623,6 @@
      "ytd_np": 319005.0,
      "month": "2026-08",
      "source": "Maki_MA_Dashboard_August_2026.html"
-    },
-    "ma_prior": {
-     "code": "M15",
-     "name": "Metro",
-     "sales": 260830.0,
-     "tips": 19689.0,
-     "wages_pct": 23.0,
-     "rent_pct": 10.9,
-     "food_pct": 26.9,
-     "variable_pct": 11.5,
-     "vat_pct": null,
-     "total_costs": 218398.0,
-     "np": 42432.0,
-     "np_pct": 16.3,
-     "ytd_sales": null,
-     "ytd_np": null,
-     "month": "2026-07",
-     "source": "Maki_MA_Dashboard_July_2026.html"
     },
     "flags": [],
     "notes": []
@@ -23421,11 +23647,11 @@
      },
      "ma_closed": {
       "state": "green",
-      "text": "2026-08 closed. Sales 170,430, net profit 12,315."
+      "text": "2026-09 closed. Sales 160,205, net profit 26,034."
      },
      "np_negative": {
       "state": "green",
-      "text": "2026-08 net profit 12,315."
+      "text": "2026-09 net profit 26,034."
      }
     },
     "running": [
@@ -23449,6 +23675,31 @@
     "ma": {
      "code": "M13",
      "name": "Aberdeen",
+     "sales": 160205.32,
+     "tips": 10214.08,
+     "wages_pct": 24.2,
+     "rent_pct": 10.9,
+     "food_pct": 26.0,
+     "variable_pct": 11.7,
+     "vat_pct": 10.9,
+     "total_costs": 134171.07,
+     "np": 26034.25,
+     "np_pct": 16.3,
+     "ytd_sales": 1446698.32,
+     "ytd_np": 79643.25,
+     "pounds": {
+      "wages": 38833.42,
+      "rent": 17407.5,
+      "food": 41697.56,
+      "variable": 18710.11,
+      "vat": 17522.48
+     },
+     "month": "2026-09",
+     "source": "M13_2026.xlsx [Summary MA]"
+    },
+    "ma_prior": {
+     "code": "M13",
+     "name": "Aberdeen",
      "sales": 170430.0,
      "tips": 11692.0,
      "wages_pct": 27.0,
@@ -23463,24 +23714,6 @@
      "ytd_np": 53609.0,
      "month": "2026-08",
      "source": "Maki_MA_Dashboard_August_2026.html"
-    },
-    "ma_prior": {
-     "code": "M13",
-     "name": "Aberdeen",
-     "sales": 159588.0,
-     "tips": 11810.0,
-     "wages_pct": 29.0,
-     "rent_pct": 10.9,
-     "food_pct": 32.0,
-     "variable_pct": 12.7,
-     "vat_pct": 7.0,
-     "total_costs": 146217.0,
-     "np": 13370.0,
-     "np_pct": 8.4,
-     "ytd_sales": null,
-     "ytd_np": null,
-     "month": "2026-07",
-     "source": "Maki_MA_Dashboard_July_2026.html"
     },
     "flags": [],
     "notes": [
@@ -23507,11 +23740,11 @@
      },
      "ma_closed": {
       "state": "green",
-      "text": "2026-08 closed. Sales 158,288, net profit 66,116."
+      "text": "2026-09 closed. Sales 98,381, net profit 12,072."
      },
      "np_negative": {
       "state": "green",
-      "text": "2026-08 net profit 66,116."
+      "text": "2026-09 net profit 12,072."
      }
     },
     "running": [
@@ -23531,6 +23764,31 @@
     "ma": {
      "code": "M5",
      "name": "Ikigai 2",
+     "sales": 98381.13,
+     "tips": 8600.64,
+     "wages_pct": 23.7,
+     "rent_pct": 8.8,
+     "food_pct": 32.5,
+     "variable_pct": 15.7,
+     "vat_pct": 7.0,
+     "total_costs": 86309.26,
+     "np": 12071.87,
+     "np_pct": 12.3,
+     "ytd_sales": 810889.13,
+     "ytd_np": 80275.87,
+     "pounds": {
+      "wages": 23339.79,
+      "rent": 8612.57,
+      "food": 32020.88,
+      "variable": 15449.34,
+      "vat": 6886.68
+     },
+     "month": "2026-09",
+     "source": "IKI2_2026.xlsx [Summary MA]"
+    },
+    "ma_prior": {
+     "code": "M5",
+     "name": "Ikigai 2",
      "sales": 158288.0,
      "tips": 14591.0,
      "wages_pct": 15.3,
@@ -23545,24 +23803,6 @@
      "ytd_np": 68204.0,
      "month": "2026-08",
      "source": "Maki_MA_Dashboard_August_2026.html"
-    },
-    "ma_prior": {
-     "code": "M5",
-     "name": "Ikigai 2",
-     "sales": 90923.0,
-     "tips": 7971.0,
-     "wages_pct": 22.1,
-     "rent_pct": 8.0,
-     "food_pct": 30.8,
-     "variable_pct": 15.1,
-     "vat_pct": 7.0,
-     "total_costs": 75573.0,
-     "np": 15350.0,
-     "np_pct": 16.9,
-     "ytd_sales": null,
-     "ytd_np": null,
-     "month": "2026-07",
-     "source": "Maki_MA_Dashboard_July_2026.html"
     },
     "flags": [],
     "notes": []
@@ -23587,11 +23827,11 @@
      },
      "ma_closed": {
       "state": "green",
-      "text": "2026-08 closed. Sales 292,932, net profit 56,314."
+      "text": "2026-09 closed. Sales 287,846, net profit 47,704."
      },
      "np_negative": {
       "state": "green",
-      "text": "2026-08 net profit 56,314."
+      "text": "2026-09 net profit 47,704."
      }
     },
     "running": [
@@ -23615,6 +23855,31 @@
     "ma": {
      "code": "M9",
      "name": "Manchester",
+     "sales": 287845.92,
+     "tips": 21720.02,
+     "wages_pct": 27.9,
+     "rent_pct": 5.4,
+     "food_pct": 28.0,
+     "variable_pct": 15.1,
+     "vat_pct": 7.0,
+     "total_costs": 240141.65,
+     "np": 47704.27,
+     "np_pct": 16.6,
+     "ytd_sales": 2632592.92,
+     "ytd_np": 469342.27,
+     "pounds": {
+      "wages": 80327.02,
+      "rent": 15623.0,
+      "food": 80506.96,
+      "variable": 43535.46,
+      "vat": 20149.21
+     },
+     "month": "2026-09",
+     "source": "M9_2026.xlsx [Summary MA]"
+    },
+    "ma_prior": {
+     "code": "M9",
+     "name": "Manchester",
      "sales": 292932.0,
      "tips": 22577.0,
      "wages_pct": 25.4,
@@ -23629,24 +23894,6 @@
      "ytd_np": 421638.0,
      "month": "2026-08",
      "source": "Maki_MA_Dashboard_August_2026.html"
-    },
-    "ma_prior": {
-     "code": "M9",
-     "name": "Manchester",
-     "sales": 273851.0,
-     "tips": 21386.0,
-     "wages_pct": 25.2,
-     "rent_pct": 1.4,
-     "food_pct": 27.3,
-     "variable_pct": 15.6,
-     "vat_pct": 7.0,
-     "total_costs": 209222.0,
-     "np": 64629.0,
-     "np_pct": 23.6,
-     "ytd_sales": null,
-     "ytd_np": null,
-     "month": "2026-07",
-     "source": "Maki_MA_Dashboard_July_2026.html"
     },
     "flags": [],
     "notes": [
@@ -23673,11 +23920,11 @@
      },
      "ma_closed": {
       "state": "green",
-      "text": "2026-08 closed. Sales 135,721, net profit 9,152."
+      "text": "2026-09 closed. Sales 141,983, net profit 6,237."
      },
      "np_negative": {
       "state": "green",
-      "text": "2026-08 net profit 9,152."
+      "text": "2026-09 net profit 6,237."
      }
     },
     "running": [
@@ -23701,6 +23948,31 @@
     "ma": {
      "code": "M16",
      "name": "Nottingham",
+     "sales": 141982.8,
+     "tips": 9929.31,
+     "wages_pct": 30.8,
+     "rent_pct": 10.2,
+     "food_pct": 27.7,
+     "variable_pct": 16.6,
+     "vat_pct": 10.3,
+     "total_costs": 135745.98,
+     "np": 6236.82,
+     "np_pct": 4.4,
+     "ytd_sales": 1401238.8,
+     "ytd_np": 85628.82,
+     "pounds": {
+      "wages": 43751.04,
+      "rent": 14511.0,
+      "food": 39318.14,
+      "variable": 23562.29,
+      "vat": 14603.51
+     },
+     "month": "2026-09",
+     "source": "M16_2026.xlsx [2026 Summary MA]"
+    },
+    "ma_prior": {
+     "code": "M16",
+     "name": "Nottingham",
      "sales": 135721.0,
      "tips": 9763.0,
      "wages_pct": 29.3,
@@ -23716,32 +23988,7 @@
      "month": "2026-08",
      "source": "Maki_MA_Dashboard_August_2026.html"
     },
-    "ma_prior": {
-     "code": "M16",
-     "name": "Nottingham",
-     "sales": 135331.0,
-     "tips": 9427.0,
-     "wages_pct": 29.3,
-     "rent_pct": 8.5,
-     "food_pct": 34.2,
-     "variable_pct": 19.1,
-     "vat_pct": null,
-     "total_costs": 93317.0,
-     "np": 42014.0,
-     "np_pct": 31.0,
-     "ytd_sales": null,
-     "ytd_np": null,
-     "month": "2026-07",
-     "source": "Maki_MA_Dashboard_July_2026.html"
-    },
-    "flags": [
-     {
-      "code": "M16",
-      "month": "2026-08",
-      "level": "amber",
-      "text": "July carried a £30,010 VAT credit that reversed in August exactly as expected. The underlying run rate is unchanged."
-     }
-    ],
+    "flags": [],
     "notes": [
      "Financial analysis for M16 finished with 7 lines that do not tie and 5 unallocated."
     ]
@@ -23766,11 +24013,11 @@
      },
      "ma_closed": {
       "state": "green",
-      "text": "2026-08 closed. Sales 117,168, net profit 21,899."
+      "text": "2026-09 closed. Sales 129,681, net profit 14,723."
      },
      "np_negative": {
       "state": "green",
-      "text": "2026-08 net profit 21,899."
+      "text": "2026-09 net profit 14,723."
      }
     },
     "running": [
@@ -23794,6 +24041,31 @@
     "ma": {
      "code": "M10",
      "name": "Leeds",
+     "sales": 129680.61,
+     "tips": 8923.74,
+     "wages_pct": 23.1,
+     "rent_pct": 9.7,
+     "food_pct": 30.0,
+     "variable_pct": 12.6,
+     "vat_pct": 13.2,
+     "total_costs": 114957.71,
+     "np": 14722.9,
+     "np_pct": 11.4,
+     "ytd_sales": 1165710.61,
+     "ytd_np": 76136.9,
+     "pounds": {
+      "wages": 29969.17,
+      "rent": 12622.0,
+      "food": 38953.19,
+      "variable": 16308.57,
+      "vat": 17104.78
+     },
+     "month": "2026-09",
+     "source": "M10_2026.xlsx [Summary MA]"
+    },
+    "ma_prior": {
+     "code": "M10",
+     "name": "Leeds",
      "sales": 117168.0,
      "tips": 8839.0,
      "wages_pct": 20.3,
@@ -23808,24 +24080,6 @@
      "ytd_np": 61414.0,
      "month": "2026-08",
      "source": "Maki_MA_Dashboard_August_2026.html"
-    },
-    "ma_prior": {
-     "code": "M10",
-     "name": "Leeds",
-     "sales": 121012.0,
-     "tips": 9083.0,
-     "wages_pct": 23.9,
-     "rent_pct": 10.4,
-     "food_pct": 34.5,
-     "variable_pct": 19.5,
-     "vat_pct": 7.0,
-     "total_costs": 115332.0,
-     "np": 5679.0,
-     "np_pct": 4.7,
-     "ytd_sales": null,
-     "ytd_np": null,
-     "month": "2026-07",
-     "source": "Maki_MA_Dashboard_July_2026.html"
     },
     "flags": [],
     "notes": [
@@ -23852,11 +24106,11 @@
      },
      "ma_closed": {
       "state": "green",
-      "text": "2026-08 closed. Sales 108,536, net profit 34,031."
+      "text": "2026-09 closed. Sales 103,311, net profit 18,613."
      },
      "np_negative": {
       "state": "green",
-      "text": "2026-08 net profit 34,031."
+      "text": "2026-09 net profit 18,613."
      }
     },
     "running": [
@@ -23880,6 +24134,31 @@
     "ma": {
      "code": "M6",
      "name": "Bath Street",
+     "sales": 103311.03,
+     "tips": 7472.12,
+     "wages_pct": 24.1,
+     "rent_pct": 7.3,
+     "food_pct": 24.7,
+     "variable_pct": 18.8,
+     "vat_pct": 7.0,
+     "total_costs": 84697.95,
+     "np": 18613.08,
+     "np_pct": 18.0,
+     "ytd_sales": 868600.03,
+     "ytd_np": 173611.08,
+     "pounds": {
+      "wages": 24936.05,
+      "rent": 7522.0,
+      "food": 25543.95,
+      "variable": 19464.18,
+      "vat": 7231.77
+     },
+     "month": "2026-09",
+     "source": "M6_2026.xlsx [Summary MA]"
+    },
+    "ma_prior": {
+     "code": "M6",
+     "name": "Bath Street",
      "sales": 108536.0,
      "tips": 8223.0,
      "wages_pct": 19.7,
@@ -23894,24 +24173,6 @@
      "ytd_np": 154998.0,
      "month": "2026-08",
      "source": "Maki_MA_Dashboard_August_2026.html"
-    },
-    "ma_prior": {
-     "code": "M6",
-     "name": "Bath Street",
-     "sales": 94962.0,
-     "tips": 7150.0,
-     "wages_pct": 24.4,
-     "rent_pct": 7.9,
-     "food_pct": 28.3,
-     "variable_pct": 10.4,
-     "vat_pct": null,
-     "total_costs": 76266.0,
-     "np": 18695.0,
-     "np_pct": 19.7,
-     "ytd_sales": null,
-     "ytd_np": null,
-     "month": "2026-07",
-     "source": "Maki_MA_Dashboard_July_2026.html"
     },
     "flags": [],
     "notes": []
@@ -23936,11 +24197,11 @@
      },
      "ma_closed": {
       "state": "green",
-      "text": "2026-08 closed. Sales 138,611, net profit 27,482."
+      "text": "2026-09 closed. Sales 100,783, net profit 24,927."
      },
      "np_negative": {
       "state": "green",
-      "text": "2026-08 net profit 27,482."
+      "text": "2026-09 net profit 24,927."
      }
     },
     "running": [
@@ -23964,6 +24225,31 @@
     "ma": {
      "code": "M17",
      "name": "Lakeside",
+     "sales": 100782.89,
+     "tips": 6617.43,
+     "wages_pct": 35.3,
+     "rent_pct": 16.3,
+     "food_pct": 30.2,
+     "variable_pct": 16.5,
+     "vat_pct": -22.9,
+     "total_costs": 75856.31,
+     "np": 24926.58,
+     "np_pct": 24.7,
+     "ytd_sales": 1037283.89,
+     "ytd_np": 163585.58,
+     "pounds": {
+      "wages": 35544.78,
+      "rent": 16431.33,
+      "food": 30391.05,
+      "variable": 16585.16,
+      "vat": -23096.01
+     },
+     "month": "2026-09",
+     "source": "M17_2026.xlsx [2026 Summary MA]"
+    },
+    "ma_prior": {
+     "code": "M17",
+     "name": "Lakeside",
      "sales": 138611.0,
      "tips": 8968.0,
      "wages_pct": 24.8,
@@ -23979,108 +24265,10 @@
      "month": "2026-08",
      "source": "Maki_MA_Dashboard_August_2026.html"
     },
-    "ma_prior": {
-     "code": "M17",
-     "name": "Lakeside",
-     "sales": 119148.0,
-     "tips": 7363.0,
-     "wages_pct": 22.9,
-     "rent_pct": 13.1,
-     "food_pct": 27.3,
-     "variable_pct": 13.2,
-     "vat_pct": 7.0,
-     "total_costs": 99504.0,
-     "np": 19644.0,
-     "np_pct": 16.5,
-     "ytd_sales": null,
-     "ytd_np": null,
-     "month": "2026-07",
-     "source": "Maki_MA_Dashboard_July_2026.html"
-    },
     "flags": [],
     "notes": [
      "Financial analysis for M17 finished with 4 lines that do not tie and 4 unallocated."
     ]
-   },
-   {
-    "code": "M14",
-    "tenant": "Maki Yorkshire Ltd",
-    "cluster": "North England & Midlands",
-    "overall": "green",
-    "tests": {
-     "overdrawn": {
-      "state": "green",
-      "text": "Cash 93,322.26."
-     },
-     "vat": {
-      "state": "green",
-      "text": "Last VAT payment 2026-09-04."
-     },
-     "filing": {
-      "state": "unknown",
-      "text": "Companies House is not connected, so filing and corporation tax dates cannot be checked."
-     },
-     "ma_closed": {
-      "state": "green",
-      "text": "2026-08 closed. Sales 191,084, net profit 61,386."
-     },
-     "np_negative": {
-      "state": "green",
-      "text": "2026-08 net profit 61,386."
-     }
-    },
-    "running": [
-     {
-      "state": "green",
-      "text": "Bank feed last row 2026-10-05 (2 days old)."
-     },
-     {
-      "state": "green",
-      "text": "Financial analysis last ran 2026-10-07: ok, 0 lines that do not tie and 0 unallocated."
-     }
-    ],
-    "unchecked": [
-     "Companies House filing"
-    ],
-    "cash": 93322.26,
-    "ma": {
-     "code": "M14",
-     "name": "Meadowhall",
-     "sales": 191084.0,
-     "tips": 9975.0,
-     "wages_pct": 21.5,
-     "rent_pct": 6.8,
-     "food_pct": 20.2,
-     "variable_pct": 12.3,
-     "vat_pct": 7.0,
-     "total_costs": 129698.0,
-     "np": 61386.0,
-     "np_pct": 32.1,
-     "ytd_sales": 1407590.0,
-     "ytd_np": 160293.0,
-     "month": "2026-08",
-     "source": "Maki_MA_Dashboard_August_2026.html"
-    },
-    "ma_prior": {
-     "code": "M14",
-     "name": "Meadowhall",
-     "sales": 170716.0,
-     "tips": 9441.0,
-     "wages_pct": 24.7,
-     "rent_pct": 6.3,
-     "food_pct": 29.7,
-     "variable_pct": 14.2,
-     "vat_pct": 7.0,
-     "total_costs": 139648.0,
-     "np": 31068.0,
-     "np_pct": 18.2,
-     "ytd_sales": null,
-     "ytd_np": null,
-     "month": "2026-07",
-     "source": "Maki_MA_Dashboard_July_2026.html"
-    },
-    "flags": [],
-    "notes": []
    },
    {
     "code": "M21",
@@ -24102,11 +24290,11 @@
      },
      "ma_closed": {
       "state": "green",
-      "text": "2026-08 closed. Sales 81,803, net profit 9,660."
+      "text": "2026-09 closed. Sales 238,167, net profit 30,934."
      },
      "np_negative": {
       "state": "green",
-      "text": "2026-08 net profit 9,660."
+      "text": "2026-09 net profit 30,934."
      }
     },
     "running": [
@@ -24127,6 +24315,31 @@
     "ma": {
      "code": "M21",
      "name": "Birmingham",
+     "sales": 238167.21,
+     "tips": 14664.03,
+     "wages_pct": 27.7,
+     "rent_pct": 5.5,
+     "food_pct": 28.2,
+     "variable_pct": 18.6,
+     "vat_pct": 7.0,
+     "total_costs": 207232.83,
+     "np": 30934.38,
+     "np_pct": 13.0,
+     "ytd_sales": 319970.21,
+     "ytd_np": 40594.38,
+     "pounds": {
+      "wages": 65990.81,
+      "rent": 13182.09,
+      "food": 67088.55,
+      "variable": 44299.68,
+      "vat": 16671.7
+     },
+     "month": "2026-09",
+     "source": "M21_2026.xlsx [2026 Summary MA]"
+    },
+    "ma_prior": {
+     "code": "M21",
+     "name": "Birmingham",
      "sales": 81803.0,
      "tips": null,
      "wages_pct": 3.1,
@@ -24142,96 +24355,16 @@
      "month": "2026-08",
      "source": "Maki_MA_Dashboard_August_2026.html"
     },
-    "ma_prior": null,
-    "flags": [],
+    "flags": [
+     {
+      "code": "M21",
+      "month": "2026-09",
+      "level": "amber",
+      "text": "September is Birmingham's first full month. Opening-month sales are not a run rate."
+     }
+    ],
     "notes": [
      "Financial analysis for M21 finished with 2 lines that do not tie and 0 unallocated."
-    ]
-   },
-   {
-    "code": "M8",
-    "tenant": "Renfield Delight Ltd",
-    "cluster": "Scotland & Newcastle",
-    "overall": "green",
-    "tests": {
-     "overdrawn": {
-      "state": "green",
-      "text": "Cash 76,004.93."
-     },
-     "vat": {
-      "state": "green",
-      "text": "On the expected pattern."
-     },
-     "filing": {
-      "state": "unknown",
-      "text": "Companies House is not connected, so filing and corporation tax dates cannot be checked."
-     },
-     "ma_closed": {
-      "state": "green",
-      "text": "2026-08 closed. Sales 215,456, net profit 50,599."
-     },
-     "np_negative": {
-      "state": "green",
-      "text": "2026-08 net profit 50,599."
-     }
-    },
-    "running": [
-     {
-      "state": "green",
-      "text": "Bank feed last row 2026-10-05 (2 days old)."
-     },
-     {
-      "state": "amber",
-      "text": "Financial analysis last ran 2026-10-07: ok, 1 lines that do not tie and 0 unallocated."
-     },
-     {
-      "state": "amber",
-      "text": "4 unreconciled bank lines worth 6,125."
-     }
-    ],
-    "unchecked": [
-     "Companies House filing"
-    ],
-    "cash": 76004.93,
-    "ma": {
-     "code": "M8",
-     "name": "Renfield",
-     "sales": 215456.0,
-     "tips": 16933.0,
-     "wages_pct": 27.2,
-     "rent_pct": 5.1,
-     "food_pct": 22.4,
-     "variable_pct": 14.8,
-     "vat_pct": 7.0,
-     "total_costs": 164857.0,
-     "np": 50599.0,
-     "np_pct": 23.5,
-     "ytd_sales": 1505908.0,
-     "ytd_np": 187042.0,
-     "month": "2026-08",
-     "source": "Maki_MA_Dashboard_August_2026.html"
-    },
-    "ma_prior": {
-     "code": "M8",
-     "name": "Renfield",
-     "sales": 194725.0,
-     "tips": 15857.0,
-     "wages_pct": 29.7,
-     "rent_pct": 2.6,
-     "food_pct": 28.9,
-     "variable_pct": 11.4,
-     "vat_pct": null,
-     "total_costs": 149440.0,
-     "np": 45285.0,
-     "np_pct": 23.3,
-     "ytd_sales": null,
-     "ytd_np": null,
-     "month": "2026-07",
-     "source": "Maki_MA_Dashboard_July_2026.html"
-    },
-    "flags": [],
-    "notes": [
-     "Financial analysis for M8 finished with 1 lines that do not tie and 0 unallocated."
     ]
    },
    {
@@ -24254,11 +24387,11 @@
      },
      "ma_closed": {
       "state": "green",
-      "text": "2026-08 closed. Sales 152,954, net profit 75,314."
+      "text": "2026-09 closed. Sales 94,857, net profit 14,435."
      },
      "np_negative": {
       "state": "green",
-      "text": "2026-08 net profit 75,314."
+      "text": "2026-09 net profit 14,435."
      }
     },
     "running": [
@@ -24282,6 +24415,31 @@
     "ma": {
      "code": "M1",
      "name": "Nicolson St, Edinburgh",
+     "sales": 94856.64,
+     "tips": 6692.82,
+     "wages_pct": 24.0,
+     "rent_pct": 2.8,
+     "food_pct": 29.5,
+     "variable_pct": 21.5,
+     "vat_pct": null,
+     "total_costs": 80421.24,
+     "np": 14435.4,
+     "np_pct": 15.2,
+     "ytd_sales": 840802.64,
+     "ytd_np": 211591.4,
+     "pounds": {
+      "wages": 22768.17,
+      "rent": 2628.33,
+      "food": 27963.3,
+      "variable": 20421.48,
+      "vat": null
+     },
+     "month": "2026-09",
+     "source": "M1_2026.xlsx [2026 MA]"
+    },
+    "ma_prior": {
+     "code": "M1",
+     "name": "Nicolson St, Edinburgh",
      "sales": 152954.0,
      "tips": 12825.0,
      "wages_pct": 14.7,
@@ -24296,24 +24454,6 @@
      "ytd_np": 197156.0,
      "month": "2026-08",
      "source": "Maki_MA_Dashboard_August_2026.html"
-    },
-    "ma_prior": {
-     "code": "M1",
-     "name": "Nicolson St, Edinburgh",
-     "sales": 83233.0,
-     "tips": 5514.0,
-     "wages_pct": 24.9,
-     "rent_pct": 3.2,
-     "food_pct": 33.4,
-     "variable_pct": 18.3,
-     "vat_pct": null,
-     "total_costs": 67647.0,
-     "np": 15586.0,
-     "np_pct": 18.7,
-     "ytd_sales": null,
-     "ytd_np": null,
-     "month": "2026-07",
-     "source": "Maki_MA_Dashboard_July_2026.html"
     },
     "flags": [],
     "notes": []
@@ -24338,11 +24478,11 @@
      },
      "ma_closed": {
       "state": "green",
-      "text": "2026-08 closed. Sales 182,988, net profit 52,196."
+      "text": "2026-09 closed. Sales 159,537, net profit 23,664."
      },
      "np_negative": {
       "state": "green",
-      "text": "2026-08 net profit 52,196."
+      "text": "2026-09 net profit 23,664."
      }
     },
     "running": [
@@ -24366,6 +24506,31 @@
     "ma": {
      "code": "M3",
      "name": "Fountainbridge",
+     "sales": 159537.15,
+     "tips": 10786.93,
+     "wages_pct": 30.6,
+     "rent_pct": 2.8,
+     "food_pct": 27.4,
+     "variable_pct": 11.8,
+     "vat_pct": 12.6,
+     "total_costs": 135872.95,
+     "np": 23664.2,
+     "np_pct": 14.8,
+     "ytd_sales": 1403417.15,
+     "ytd_np": 213000.2,
+     "pounds": {
+      "wages": 48866.8,
+      "rent": 4406.0,
+      "food": 43744.33,
+      "variable": 18760.1,
+      "vat": 20095.72
+     },
+     "month": "2026-09",
+     "source": "M3_2026.xlsx [2026 MA]"
+    },
+    "ma_prior": {
+     "code": "M3",
+     "name": "Fountainbridge",
      "sales": 182988.0,
      "tips": 14081.0,
      "wages_pct": 27.6,
@@ -24381,40 +24546,22 @@
      "month": "2026-08",
      "source": "Maki_MA_Dashboard_August_2026.html"
     },
-    "ma_prior": {
-     "code": "M3",
-     "name": "Fountainbridge",
-     "sales": 159337.0,
-     "tips": 11799.0,
-     "wages_pct": 31.6,
-     "rent_pct": 2.8,
-     "food_pct": 29.8,
-     "variable_pct": 12.9,
-     "vat_pct": null,
-     "total_costs": 139845.0,
-     "np": 19492.0,
-     "np_pct": 12.2,
-     "ytd_sales": null,
-     "ytd_np": null,
-     "month": "2026-07",
-     "source": "Maki_MA_Dashboard_July_2026.html"
-    },
     "flags": [],
     "notes": []
    },
    {
-    "code": "M20",
-    "tenant": "Maki Southampton Ltd",
-    "cluster": "South England",
+    "code": "M11",
+    "tenant": "Maki Leicester Ltd",
+    "cluster": "North England & Midlands",
     "overall": "green",
     "tests": {
      "overdrawn": {
       "state": "green",
-      "text": "Cash 42,335.25."
+      "text": "Cash 10,669.53."
      },
      "vat": {
-      "state": "unknown",
-      "text": "No VAT payment found in the 2026 bank feed, so nothing to check against."
+      "state": "green",
+      "text": "Last VAT payment 2026-09-04."
      },
      "filing": {
       "state": "unknown",
@@ -24422,11 +24569,11 @@
      },
      "ma_closed": {
       "state": "green",
-      "text": "2026-08 closed. Sales 177,889, net profit 37,677."
+      "text": "2026-09 closed. Sales 86,540, net profit 2,355."
      },
      "np_negative": {
       "state": "green",
-      "text": "2026-08 net profit 37,677."
+      "text": "2026-09 net profit 2,355."
      }
     },
     "running": [
@@ -24436,60 +24583,70 @@
      },
      {
       "state": "amber",
-      "text": "Financial analysis last ran 2026-10-07: ok, 7 lines that do not tie and 0 unallocated."
+      "text": "Financial analysis last ran 2026-10-07: ok, 5 lines that do not tie and 2 unallocated."
+     },
+     {
+      "state": "amber",
+      "text": "3 unreconciled bank lines worth 36,160."
      }
     ],
     "unchecked": [
-     "VAT up to date",
      "Companies House filing"
     ],
-    "cash": 42335.25,
+    "cash": 10669.53,
     "ma": {
-     "code": "M20",
-     "name": "Southampton",
-     "sales": 177889.0,
-     "tips": 16930.0,
-     "wages_pct": 28.5,
-     "rent_pct": 9.1,
-     "food_pct": 23.7,
-     "variable_pct": 10.5,
+     "code": "M11",
+     "name": "Leicester",
+     "sales": 86540.38,
+     "tips": 5552.76,
+     "wages_pct": 33.1,
+     "rent_pct": 10.4,
+     "food_pct": 28.8,
+     "variable_pct": 18.0,
      "vat_pct": 7.0,
-     "total_costs": 140213.0,
-     "np": 37677.0,
-     "np_pct": 21.2,
-     "ytd_sales": 383980.0,
-     "ytd_np": 92829.0,
+     "total_costs": 84185.69,
+     "np": 2354.69,
+     "np_pct": 2.7,
+     "ytd_sales": 896088.38,
+     "ytd_np": -32810.31,
+     "pounds": {
+      "wages": 28613.73,
+      "rent": 9000.0,
+      "food": 24901.35,
+      "variable": 15587.17,
+      "vat": 6083.44
+     },
+     "month": "2026-09",
+     "source": "M11_2026.xlsx [Summary MA]"
+    },
+    "ma_prior": {
+     "code": "M11",
+     "name": "Leicester",
+     "sales": 108995.0,
+     "tips": 7214.0,
+     "wages_pct": 25.7,
+     "rent_pct": 8.3,
+     "food_pct": 19.7,
+     "variable_pct": 17.6,
+     "vat_pct": 7.0,
+     "total_costs": 85283.0,
+     "np": 23712.0,
+     "np_pct": 21.8,
+     "ytd_sales": 809548.0,
+     "ytd_np": -35165.0,
      "month": "2026-08",
      "source": "Maki_MA_Dashboard_August_2026.html"
     },
-    "ma_prior": {
-     "code": "M20",
-     "name": "Southampton",
-     "sales": 206091.0,
-     "tips": null,
-     "wages_pct": 26.4,
-     "rent_pct": 7.3,
-     "food_pct": 20.8,
-     "variable_pct": 7.0,
-     "vat_pct": null,
-     "total_costs": 150938.0,
-     "np": 55152.0,
-     "np_pct": 26.8,
-     "ytd_sales": null,
-     "ytd_np": null,
-     "month": "2026-07",
-     "source": "Maki_MA_Dashboard_July_2026.html"
-    },
     "flags": [],
     "notes": [
-     "Financial analysis for M20 finished with 7 lines that do not tie and 0 unallocated."
+     "Financial analysis for M11 finished with 5 lines that do not tie and 2 unallocated."
     ]
    }
   ],
   "counts": {
-   "amber": 5,
+   "amber": 7,
    "unknown": 2,
-   "green": 15
+   "green": 13
   },
   "rules": [
    {
@@ -24515,15 +24672,50 @@
   ],
   "as_of": "2026-10-07",
   "basis": "Red when a ruled test fails. A test with nothing behind it says not checked and never counts as green.",
-  "latest_ma_month": "2026-08",
-  "prior_ma_month": "2026-07"
+  "latest_ma_month": "2026-09",
+  "prior_ma_month": "2026-08"
  },
  "ma": {
-  "latest_month": "2026-08",
-  "prior_month": "2026-07",
-  "latest_label": "August 2026",
-  "prior_label": "July 2026",
+  "latest_month": "2026-09",
+  "prior_month": "2026-08",
+  "latest_label": "September 2026",
+  "prior_label": "August 2026",
   "group": {
+   "code": "ALL",
+   "ma_code": "ALL",
+   "name": "20 sites - group",
+   "sales": 3095887.79,
+   "tips": 237566.23,
+   "wages_pct": 29.8,
+   "rent_pct": 11.4,
+   "food_pct": 28.1,
+   "variable_pct": 18.5,
+   "vat_pct": 7.8,
+   "pounds": {
+    "wages": 923263.7,
+    "rent": 353924.29,
+    "food": 870590.42,
+    "variable": 571494.1,
+    "vat": 241831.71
+   },
+   "pounds_basis": "as written in the annual workbook",
+   "prior_year_sales": null,
+   "prior_year_label": null,
+   "prior_year_delta_pct": null,
+   "site_notes": [],
+   "total_costs": 2967744.18,
+   "np": 128143.61,
+   "np_pct": 4.1,
+   "ytd_sales": 24304845.79,
+   "ytd_np": 2156147.61,
+   "sales_delta": -245928.21,
+   "np_delta": -579124.39,
+   "h1_sales": 14933277.0,
+   "h1_np": 1015002.0,
+   "food_over_target": 3.1,
+   "prior_np": 707268.0
+  },
+  "group_prior": {
    "code": "ALL",
    "ma_code": "ALL",
    "name": "20 sites - group",
@@ -24535,13 +24727,13 @@
    "variable_pct": 14.3,
    "vat_pct": 7.4,
    "pounds": {
-    "wages": 808754.0,
-    "rent": 335833.0,
-    "food": 765117.0,
-    "variable": 478104.0,
-    "vat": 246741.0
+    "wages": 808719.47,
+    "rent": 334181.6,
+    "food": 765275.86,
+    "variable": 477879.69,
+    "vat": 247294.38
    },
-   "pounds_basis": "as written in the monthly analysis",
+   "pounds_basis": "worked back from the percentage of sales",
    "prior_year_sales": null,
    "prior_year_label": null,
    "prior_year_delta_pct": null,
@@ -24551,821 +24743,713 @@
    "np_pct": 21.2,
    "ytd_sales": 21208958.0,
    "ytd_np": 2028004.0,
-   "sales_delta": 407951.0,
-   "np_delta": 401534.0,
-   "h1_sales": 14933277.0,
-   "h1_np": 1015002.0,
-   "food_over_target": -2.1,
-   "prior_np": 305734.0
-  },
-  "group_prior": {
-   "code": "ALL",
-   "ma_code": "ALL",
-   "name": "19 sites - group",
-   "sales": 2933865.0,
-   "tips": 205314.0,
-   "wages_pct": 27.5,
-   "rent_pct": 10.8,
-   "food_pct": 29.0,
-   "variable_pct": 16.1,
-   "vat_pct": 6.2,
-   "pounds": {
-    "wages": 808754.0,
-    "rent": 335833.0,
-    "food": 765117.0,
-    "variable": 478104.0,
-    "vat": 246741.0
-   },
-   "pounds_basis": "as written in the monthly analysis",
-   "prior_year_sales": null,
-   "prior_year_label": null,
-   "prior_year_delta_pct": null,
-   "site_notes": [],
-   "total_costs": 2628128.0,
-   "np": 305734.0,
-   "np_pct": 10.4,
-   "ytd_sales": null,
-   "ytd_np": null,
    "sales_delta": 0.0,
    "np_delta": 0.0,
    "h1_sales": 14933277.0,
    "h1_np": 1015002.0,
-   "food_over_target": 4.0,
-   "prior_np": 305734.0
+   "food_over_target": -2.1,
+   "prior_np": 707268.0
   },
   "sites": [
-   {
-    "code": "M7",
-    "ma_code": "M7",
-    "name": "St James Quarter",
-    "sales": 335121.0,
-    "tips": 29266.0,
-    "wages_pct": 23.9,
-    "rent_pct": 6.9,
-    "food_pct": 22.4,
-    "variable_pct": 8.2,
-    "vat_pct": 7.0,
-    "pounds": {
-     "wages": 80255.0,
-     "rent": 23234.0,
-     "food": 75131.0,
-     "variable": 27465.0,
-     "vat": 23459.0
-    },
-    "pounds_basis": "as written in the monthly analysis",
-    "prior_year_sales": 6.95,
-    "prior_year_label": "Aug-25",
-    "prior_year_delta_pct": 4821784.9,
-    "site_notes": [
-     "Net profit sitting at 31%, sales has increase £ 6k compare to last year"
-    ],
-    "total_costs": 229543.0,
-    "np": 105578.0,
-    "np_pct": 31.5,
-    "ytd_sales": 2122617.0,
-    "ytd_np": 307815.0,
-    "sales_delta": 23290.0,
-    "np_delta": 32646.0,
-    "h1_sales": 1475665.0,
-    "h1_np": 129305.0,
-    "food_over_target": -2.6,
-    "prior_np": 72932.0
-   },
-   {
-    "code": "M15",
-    "ma_code": "M15",
-    "name": "Metro",
-    "sales": 300733.0,
-    "tips": 22547.0,
-    "wages_pct": 20.8,
-    "rent_pct": 9.3,
-    "food_pct": 19.7,
-    "variable_pct": 13.7,
-    "vat_pct": 7.0,
-    "pounds": {
-     "wages": 62576.0,
-     "rent": 27940.0,
-     "food": 59381.0,
-     "variable": 41286.0,
-     "vat": 21051.0
-    },
-    "pounds_basis": "as written in the monthly analysis",
-    "prior_year_sales": null,
-    "prior_year_label": null,
-    "prior_year_delta_pct": null,
-    "site_notes": [
-     "Large Payment: £ 50k to MPD",
-     "Repair- £ 2.5k",
-     "Net profit sitting at 29%, wages and food cost are well control."
-    ],
-    "total_costs": 212235.0,
-    "np": 88499.0,
-    "np_pct": 29.4,
-    "ytd_sales": 2086691.0,
-    "ytd_np": 319005.0,
-    "sales_delta": 39903.0,
-    "np_delta": 46067.0,
-    "h1_sales": 1525128.0,
-    "h1_np": 188074.0,
-    "food_over_target": -5.3,
-    "prior_np": 42432.0
-   },
-   {
-    "code": "M1",
-    "ma_code": "M1",
-    "name": "Nicolson St, Edinburgh",
-    "sales": 152954.0,
-    "tips": 12825.0,
-    "wages_pct": 14.7,
-    "rent_pct": 1.7,
-    "food_pct": 21.3,
-    "variable_pct": 6.6,
-    "vat_pct": 6.4,
-    "pounds": {
-     "wages": 22409.0,
-     "rent": 2628.0,
-     "food": 32652.0,
-     "variable": 10135.0,
-     "vat": 9815.69
-    },
-    "pounds_basis": "as written in the monthly analysis",
-    "prior_year_sales": 45.58,
-    "prior_year_label": "Aug-25",
-    "prior_year_delta_pct": 335472.6,
-    "site_notes": [
-     "Large Payment:",
-     "Repair - £ 1k for safety certificate including EICR and PAT test.",
-     "Advert - Fresher Fair £ 709",
-     "Sales increase 45%, net profit sitting at 49%"
-    ],
-    "total_costs": 77640.0,
-    "np": 75314.0,
-    "np_pct": 49.2,
-    "ytd_sales": 745946.0,
-    "ytd_np": 197156.0,
-    "sales_delta": 69721.0,
-    "np_delta": 59728.0,
-    "h1_sales": 509759.0,
-    "h1_np": 106256.0,
-    "food_over_target": -3.7,
-    "prior_np": 15586.0
-   },
-   {
-    "code": "IKI 2",
-    "ma_code": "M5",
-    "name": "Ikigai 2",
-    "sales": 158288.0,
-    "tips": 14591.0,
-    "wages_pct": 15.3,
-    "rent_pct": 4.2,
-    "food_pct": 23.0,
-    "variable_pct": 9.0,
-    "vat_pct": 6.8,
-    "pounds": {
-     "wages": 24222.0,
-     "rent": 6600.0,
-     "food": 36410.0,
-     "variable": 14180.0,
-     "vat": 10760.0
-    },
-    "pounds_basis": "as written in the monthly analysis",
-    "prior_year_sales": 42.56,
-    "prior_year_label": "Aug-25",
-    "prior_year_delta_pct": 371817.3,
-    "site_notes": [
-     "Large Payment:",
-     "Sales went down £ 5k compare to last year. However wages and food cost are well control.",
-     "Net profit sitting at 41% which 7% higher than Aug 25"
-    ],
-    "total_costs": 92172.0,
-    "np": 66116.0,
-    "np_pct": 41.8,
-    "ytd_sales": 712508.0,
-    "ytd_np": 68204.0,
-    "sales_delta": 67365.0,
-    "np_delta": 50766.0,
-    "h1_sales": 463297.0,
-    "h1_np": -13262.0,
-    "food_over_target": -2.0,
-    "prior_np": 15350.0
-   },
-   {
-    "code": "M14",
-    "ma_code": "M14",
-    "name": "Meadowhall",
-    "sales": 191084.0,
-    "tips": 9975.0,
-    "wages_pct": 21.5,
-    "rent_pct": 6.8,
-    "food_pct": 20.2,
-    "variable_pct": 12.3,
-    "vat_pct": 7.0,
-    "pounds": {
-     "wages": 41103.0,
-     "rent": 13082.0,
-     "food": 38616.0,
-     "variable": 23522.0,
-     "vat": 13376.0
-    },
-    "pounds_basis": "as written in the monthly analysis",
-    "prior_year_sales": null,
-    "prior_year_label": null,
-    "prior_year_delta_pct": null,
-    "site_notes": [
-     "Large Payment: £ 90k to MPD",
-     "Glasswasher - £ 2.3k",
-     "Halal Food festival - £ 2520, which showing on sales as it has increase 10%",
-     "Net profit sitting at 32%  which almost double of previous month."
-    ],
-    "total_costs": 129698.0,
-    "np": 61386.0,
-    "np_pct": 32.1,
-    "ytd_sales": 1407590.0,
-    "ytd_np": 160293.0,
-    "sales_delta": 20368.0,
-    "np_delta": 30318.0,
-    "h1_sales": 1045790.0,
-    "h1_np": 67839.0,
-    "food_over_target": -4.8,
-    "prior_np": 31068.0
-   },
    {
     "code": "M9",
     "ma_code": "M9",
     "name": "Manchester",
-    "sales": 292932.0,
-    "tips": 22577.0,
-    "wages_pct": 25.4,
-    "rent_pct": 7.7,
-    "food_pct": 22.0,
-    "variable_pct": 13.8,
-    "vat_pct": 11.8,
-    "pounds": {
-     "wages": 74466.0,
-     "rent": 22701.0,
-     "food": 64372.0,
-     "variable": 40548.0,
-     "vat": 34531.0
-    },
-    "pounds_basis": "as written in the monthly analysis",
-    "prior_year_sales": 6.51,
-    "prior_year_label": "Aug-25",
-    "prior_year_delta_pct": 4499623.5,
-    "site_notes": [
-     "VAT sitting at 12%",
-     "Ice machine - £ 2004"
-    ],
-    "total_costs": 236618.0,
-    "np": 56314.0,
-    "np_pct": 19.2,
-    "ytd_sales": 2344747.0,
-    "ytd_np": 421638.0,
-    "sales_delta": 19081.0,
-    "np_delta": -8315.0,
-    "h1_sales": 1777964.0,
-    "h1_np": 300695.0,
-    "food_over_target": -3.0,
-    "prior_np": 64629.0
-   },
-   {
-    "code": "M3",
-    "ma_code": "M3",
-    "name": "Fountainbridge",
-    "sales": 182988.0,
-    "tips": 14081.0,
-    "wages_pct": 27.6,
-    "rent_pct": 2.4,
-    "food_pct": 21.4,
-    "variable_pct": 13.1,
-    "vat_pct": 7.0,
-    "pounds": {
-     "wages": 50482.0,
-     "rent": 4406.0,
-     "food": 39193.0,
-     "variable": 23902.0,
-     "vat": 12809.0
-    },
-    "pounds_basis": "as written in the monthly analysis",
-    "prior_year_sales": 12.92,
-    "prior_year_label": "Aug-25",
-    "prior_year_delta_pct": 1416215.8,
-    "site_notes": [
-     "Music Licence - £ 1075",
-     "Sales increase 13% while wages remain the same.",
-     "Net profit sitting at 28% which is 5% lower than Aug 25 (33%)"
-    ],
-    "total_costs": 130792.0,
-    "np": 52196.0,
-    "np_pct": 28.5,
-    "ytd_sales": 1243880.0,
-    "ytd_np": 189336.0,
-    "sales_delta": 23651.0,
-    "np_delta": 32704.0,
-    "h1_sales": 901555.0,
-    "h1_np": 117648.0,
-    "food_over_target": -3.6,
-    "prior_np": 19492.0
-   },
-   {
-    "code": "M8",
-    "ma_code": "M8",
-    "name": "Renfield",
-    "sales": 215456.0,
-    "tips": 16933.0,
-    "wages_pct": 27.2,
-    "rent_pct": 5.1,
-    "food_pct": 22.4,
-    "variable_pct": 14.8,
-    "vat_pct": 7.0,
-    "pounds": {
-     "wages": 58543.0,
-     "rent": 11068.0,
-     "food": 48352.0,
-     "variable": 31812.0,
-     "vat": 15082.0
-    },
-    "pounds_basis": "as written in the monthly analysis",
-    "prior_year_sales": 9.62,
-    "prior_year_label": "Aug-25",
-    "prior_year_delta_pct": 2239567.4,
-    "site_notes": [
-     "Large Payment:",
-     "Advert - £ 3k including fresher fair and freshers festival group."
-    ],
-    "total_costs": 164857.0,
-    "np": 50599.0,
-    "np_pct": 23.5,
-    "ytd_sales": 1505908.0,
-    "ytd_np": 187042.0,
-    "sales_delta": 20731.0,
-    "np_delta": 5314.0,
-    "h1_sales": 1095727.0,
-    "h1_np": 91158.0,
-    "food_over_target": -2.6,
-    "prior_np": 45285.0
-   },
-   {
-    "code": "M20",
-    "ma_code": "M20",
-    "name": "Southampton",
-    "sales": 177889.0,
-    "tips": 16930.0,
-    "wages_pct": 28.5,
-    "rent_pct": 9.1,
-    "food_pct": 23.7,
-    "variable_pct": 10.5,
-    "vat_pct": 7.0,
-    "pounds": {
-     "wages": 50665.0,
-     "rent": 16231.0,
-     "food": 42119.0,
-     "variable": 18746.0,
-     "vat": 12452.0
-    },
-    "pounds_basis": "as written in the monthly analysis",
-    "prior_year_sales": null,
-    "prior_year_label": null,
-    "prior_year_delta_pct": null,
-    "site_notes": [
-     "Large Payment:",
-     "£ 1230 – bid levy"
-    ],
-    "total_costs": 140213.0,
-    "np": 37677.0,
-    "np_pct": 21.2,
-    "ytd_sales": 383980.0,
-    "ytd_np": 92829.0,
-    "sales_delta": -28202.0,
-    "np_delta": -17475.0,
-    "h1_sales": 0.0,
-    "h1_np": 0.0,
-    "food_over_target": -1.3,
-    "prior_np": 55152.0
-   },
-   {
-    "code": "M6",
-    "ma_code": "M6",
-    "name": "Bath Street",
-    "sales": 108536.0,
-    "tips": 8223.0,
-    "wages_pct": 19.7,
-    "rent_pct": 6.9,
-    "food_pct": 21.6,
-    "variable_pct": 13.4,
-    "vat_pct": 7.0,
-    "pounds": {
-     "wages": 21400.0,
-     "rent": 7522.0,
-     "food": 23469.0,
-     "variable": 14517.0,
-     "vat": 7598.0
-    },
-    "pounds_basis": "as written in the monthly analysis",
-    "prior_year_sales": 12.51,
-    "prior_year_label": "Aug-25",
-    "prior_year_delta_pct": 867493.9,
-    "site_notes": [
-     "Wages and food cost are well control. Net profit sitting at 31%",
-     "Equipment – 5 burner £ 4591"
-    ],
-    "total_costs": 74506.0,
-    "np": 34031.0,
-    "np_pct": 31.4,
-    "ytd_sales": 765289.0,
-    "ytd_np": 154998.0,
-    "sales_delta": 13574.0,
-    "np_delta": 15336.0,
-    "h1_sales": 561791.0,
-    "h1_np": 102272.0,
-    "food_over_target": -3.4,
-    "prior_np": 18695.0
-   },
-   {
-    "code": "M17",
-    "ma_code": "M17",
-    "name": "Lakeside",
-    "sales": 138611.0,
-    "tips": 8968.0,
-    "wages_pct": 24.8,
-    "rent_pct": 11.2,
-    "food_pct": 22.1,
+    "sales": 287845.92,
+    "tips": 21720.02,
+    "wages_pct": 27.9,
+    "rent_pct": 5.4,
+    "food_pct": 28.0,
     "variable_pct": 15.1,
     "vat_pct": 7.0,
     "pounds": {
-     "wages": 34423.0,
-     "rent": 15552.0,
-     "food": 30578.0,
-     "variable": 20874.0,
-     "vat": 9703.0
+     "wages": 80327.02,
+     "rent": 15623.0,
+     "food": 80506.96,
+     "variable": 43535.46,
+     "vat": 20149.21
     },
-    "pounds_basis": "as written in the monthly analysis",
-    "prior_year_sales": null,
-    "prior_year_label": null,
-    "prior_year_delta_pct": null,
-    "site_notes": [
-     "Large Payment:",
-     "Card receivable between Kobas and Worldpay does not match - £ 800 diff. will speak to Worldpay",
-     "Sales increase 14% while net profit sitting at 20%"
-    ],
-    "total_costs": 111129.0,
-    "np": 27482.0,
-    "np_pct": 19.8,
-    "ytd_sales": 936501.0,
-    "ytd_np": 138659.0,
-    "sales_delta": 19463.0,
-    "np_delta": 7838.0,
-    "h1_sales": 678742.0,
-    "h1_np": 91533.0,
-    "food_over_target": -2.9,
-    "prior_np": 19644.0
+    "pounds_basis": "as written in the annual workbook",
+    "prior_year_sales": 265639.52,
+    "prior_year_label": "Sep-25",
+    "prior_year_delta_pct": 8.4,
+    "site_notes": [],
+    "total_costs": 240141.65,
+    "np": 47704.27,
+    "np_pct": 16.6,
+    "ytd_sales": 2632592.92,
+    "ytd_np": 469342.27,
+    "sales_delta": -5086.08,
+    "np_delta": -8609.73,
+    "h1_sales": 1777964.0,
+    "h1_np": 300695.0,
+    "food_over_target": 3.0,
+    "prior_np": 56314.0
    },
    {
-    "code": "M11",
-    "ma_code": "M11",
-    "name": "Leicester",
-    "sales": 108995.0,
-    "tips": 7214.0,
-    "wages_pct": 25.7,
-    "rent_pct": 8.3,
-    "food_pct": 19.7,
-    "variable_pct": 17.6,
-    "vat_pct": 7.0,
+    "code": "M7",
+    "ma_code": "M7",
+    "name": "St James Quarter",
+    "sales": 301743.45,
+    "tips": 26174.72,
+    "wages_pct": 29.9,
+    "rent_pct": 10.9,
+    "food_pct": 24.1,
+    "variable_pct": 9.9,
+    "vat_pct": 12.7,
     "pounds": {
-     "wages": 28001.0,
-     "rent": 9000.0,
-     "food": 21433.0,
-     "variable": 19219.0,
-     "vat": 7630.0
+     "wages": 90369.23,
+     "rent": 32829.93,
+     "food": 72655.77,
+     "variable": 29795.9,
+     "vat": 38414.06
     },
-    "pounds_basis": "as written in the monthly analysis",
-    "prior_year_sales": 20.41,
-    "prior_year_label": "Aug-25",
-    "prior_year_delta_pct": 533927.4,
-    "site_notes": [
-     "Sales increase 20%",
-     "Repair - £ 4.3k"
-    ],
-    "total_costs": 85283.0,
-    "np": 23712.0,
-    "np_pct": 21.8,
-    "ytd_sales": 809548.0,
-    "ytd_np": -35165.0,
-    "sales_delta": 22244.0,
-    "np_delta": 48741.0,
-    "h1_sales": 613802.0,
-    "h1_np": -33848.0,
-    "food_over_target": -5.3,
-    "prior_np": -25029.0
-   },
-   {
-    "code": "M12",
-    "ma_code": "M12",
-    "name": "Newcastle",
-    "sales": 129672.0,
-    "tips": 8446.0,
-    "wages_pct": 27.8,
-    "rent_pct": 12.5,
-    "food_pct": 25.4,
-    "variable_pct": 10.1,
-    "vat_pct": 7.0,
-    "pounds": {
-     "wages": 36051.0,
-     "rent": 16152.0,
-     "food": 32941.0,
-     "variable": 13043.0,
-     "vat": 9077.0
-    },
-    "pounds_basis": "as written in the monthly analysis",
-    "prior_year_sales": 10.11,
-    "prior_year_label": "Aug-25",
-    "prior_year_delta_pct": 1282511.3,
-    "site_notes": [
-     "Large Payment:",
-     "Sales has increase 10%, wages and food cost has improved"
-    ],
-    "total_costs": 107264.0,
-    "np": 22408.0,
-    "np_pct": 17.3,
-    "ytd_sales": 1009221.0,
-    "ytd_np": 9593.0,
-    "sales_delta": 13116.0,
-    "np_delta": 44761.0,
-    "h1_sales": 762993.0,
-    "h1_np": 9538.0,
-    "food_over_target": 0.4,
-    "prior_np": -22353.0
-   },
-   {
-    "code": "M10",
-    "ma_code": "M10",
-    "name": "Leeds",
-    "sales": 117168.0,
-    "tips": 8839.0,
-    "wages_pct": 20.3,
-    "rent_pct": 15.5,
-    "food_pct": 22.1,
-    "variable_pct": 16.5,
-    "vat_pct": 7.0,
-    "pounds": {
-     "wages": 23751.0,
-     "rent": 18117.0,
-     "food": 25865.0,
-     "variable": 19334.0,
-     "vat": 8202.0
-    },
-    "pounds_basis": "as written in the monthly analysis",
-    "prior_year_sales": 3.28,
-    "prior_year_label": "Aug-25",
-    "prior_year_delta_pct": 3572095.1,
-    "site_notes": [
-     "Advert - £ 3k including freshers festival group and Native Freshers",
-     "£ 5.5k services charge",
-     "Link to start up Budget: Click here"
-    ],
-    "total_costs": 95269.0,
-    "np": 21899.0,
-    "np_pct": 18.7,
-    "ytd_sales": 1036030.0,
-    "ytd_np": 61414.0,
-    "sales_delta": -3844.0,
-    "np_delta": 16220.0,
-    "h1_sales": 797850.0,
-    "h1_np": 33836.0,
-    "food_over_target": -2.9,
-    "prior_np": 5679.0
-   },
-   {
-    "code": "M13",
-    "ma_code": "M13",
-    "name": "Aberdeen",
-    "sales": 170430.0,
-    "tips": 11692.0,
-    "wages_pct": 27.0,
-    "rent_pct": 17.1,
-    "food_pct": 24.9,
-    "variable_pct": 16.8,
-    "vat_pct": 7.0,
-    "pounds": {
-     "wages": 46064.0,
-     "rent": 29061.0,
-     "food": 42401.0,
-     "variable": 28659.0,
-     "vat": 11930.0
-    },
-    "pounds_basis": "as written in the monthly analysis",
-    "prior_year_sales": 6.36,
-    "prior_year_label": "Aug-25",
-    "prior_year_delta_pct": 2679617.0,
-    "site_notes": [
-     "Large Payment:",
-     "Services charge - £ 11.6k",
-     "Music licence - £ 2.8k"
-    ],
-    "total_costs": 158115.0,
-    "np": 12315.0,
-    "np_pct": 7.2,
-    "ytd_sales": 1286493.0,
-    "ytd_np": 53609.0,
-    "sales_delta": 10842.0,
-    "np_delta": -1055.0,
-    "h1_sales": 956475.0,
-    "h1_np": 27924.0,
-    "food_over_target": -0.1,
-    "prior_np": 13370.0
+    "pounds_basis": "as written in the annual workbook",
+    "prior_year_sales": 288244.26,
+    "prior_year_label": "Sep-25",
+    "prior_year_delta_pct": 4.7,
+    "site_notes": [],
+    "total_costs": 264064.89,
+    "np": 37678.56,
+    "np_pct": 12.5,
+    "ytd_sales": 2424360.45,
+    "ytd_np": 345493.56,
+    "sales_delta": -33377.55,
+    "np_delta": -67899.44,
+    "h1_sales": 1475665.0,
+    "h1_np": 129305.0,
+    "food_over_target": -0.9,
+    "prior_np": 105578.0
    },
    {
     "code": "M21",
     "ma_code": "M21",
     "name": "Birmingham",
-    "sales": 81803.0,
-    "tips": null,
-    "wages_pct": 3.1,
-    "rent_pct": 15.3,
-    "food_pct": 44.8,
-    "variable_pct": 18.0,
+    "sales": 238167.21,
+    "tips": 14664.03,
+    "wages_pct": 27.7,
+    "rent_pct": 5.5,
+    "food_pct": 28.2,
+    "variable_pct": 18.6,
     "vat_pct": 7.0,
     "pounds": {
-     "wages": 2536.0,
-     "rent": 12500.0,
-     "food": 36663.0,
-     "variable": 14718.0,
-     "vat": 5726.0
+     "wages": 65990.81,
+     "rent": 13182.09,
+     "food": 67088.55,
+     "variable": 44299.68,
+     "vat": 16671.7
     },
-    "pounds_basis": "as written in the monthly analysis",
+    "pounds_basis": "as written in the annual workbook",
     "prior_year_sales": null,
     "prior_year_label": null,
     "prior_year_delta_pct": null,
-    "site_notes": [
-     "Large Payment:",
-     "Trading for 11 days, net profit sitting at 12%"
-    ],
-    "total_costs": 72143.0,
-    "np": 9660.0,
-    "np_pct": 11.8,
-    "ytd_sales": 81803.0,
-    "ytd_np": 9660.0,
-    "sales_delta": null,
-    "np_delta": null,
+    "site_notes": [],
+    "total_costs": 207232.83,
+    "np": 30934.38,
+    "np_pct": 13.0,
+    "ytd_sales": 319970.21,
+    "ytd_np": 40594.38,
+    "sales_delta": 156364.21,
+    "np_delta": 21274.38,
     "h1_sales": null,
     "h1_np": null,
-    "food_over_target": 19.8,
-    "prior_np": null
+    "food_over_target": 3.2,
+    "prior_np": 9660.0
+   },
+   {
+    "code": "M13",
+    "ma_code": "M13",
+    "name": "Aberdeen",
+    "sales": 160205.32,
+    "tips": 10214.08,
+    "wages_pct": 24.2,
+    "rent_pct": 10.9,
+    "food_pct": 26.0,
+    "variable_pct": 11.7,
+    "vat_pct": 10.9,
+    "pounds": {
+     "wages": 38833.42,
+     "rent": 17407.5,
+     "food": 41697.56,
+     "variable": 18710.11,
+     "vat": 17522.48
+    },
+    "pounds_basis": "as written in the annual workbook",
+    "prior_year_sales": 332590.36,
+    "prior_year_label": "Sep-25",
+    "prior_year_delta_pct": -51.8,
+    "site_notes": [],
+    "total_costs": 134171.07,
+    "np": 26034.25,
+    "np_pct": 16.3,
+    "ytd_sales": 1446698.32,
+    "ytd_np": 79643.25,
+    "sales_delta": -10224.68,
+    "np_delta": 13719.25,
+    "h1_sales": 956475.0,
+    "h1_np": 27924.0,
+    "food_over_target": 1.0,
+    "prior_np": 12315.0
+   },
+   {
+    "code": "M17",
+    "ma_code": "M17",
+    "name": "Lakeside",
+    "sales": 100782.89,
+    "tips": 6617.43,
+    "wages_pct": 35.3,
+    "rent_pct": 16.3,
+    "food_pct": 30.2,
+    "variable_pct": 16.5,
+    "vat_pct": -22.9,
+    "pounds": {
+     "wages": 35544.78,
+     "rent": 16431.33,
+     "food": 30391.05,
+     "variable": 16585.16,
+     "vat": -23096.01
+    },
+    "pounds_basis": "as written in the annual workbook",
+    "prior_year_sales": null,
+    "prior_year_label": null,
+    "prior_year_delta_pct": null,
+    "site_notes": [],
+    "total_costs": 75856.31,
+    "np": 24926.58,
+    "np_pct": 24.7,
+    "ytd_sales": 1037283.89,
+    "ytd_np": 163585.58,
+    "sales_delta": -37828.11,
+    "np_delta": -2555.42,
+    "h1_sales": 678742.0,
+    "h1_np": 91533.0,
+    "food_over_target": 5.2,
+    "prior_np": 27482.0
+   },
+   {
+    "code": "M3",
+    "ma_code": "M3",
+    "name": "Fountainbridge",
+    "sales": 159537.15,
+    "tips": 10786.93,
+    "wages_pct": 30.6,
+    "rent_pct": 2.8,
+    "food_pct": 27.4,
+    "variable_pct": 11.8,
+    "vat_pct": 12.6,
+    "pounds": {
+     "wages": 48866.8,
+     "rent": 4406.0,
+     "food": 43744.33,
+     "variable": 18760.1,
+     "vat": 20095.72
+    },
+    "pounds_basis": "as written in the annual workbook",
+    "prior_year_sales": 168084.89,
+    "prior_year_label": "Sep-25",
+    "prior_year_delta_pct": -5.1,
+    "site_notes": [],
+    "total_costs": 135872.95,
+    "np": 23664.2,
+    "np_pct": 14.8,
+    "ytd_sales": 1403417.15,
+    "ytd_np": 213000.2,
+    "sales_delta": -23450.85,
+    "np_delta": -28531.8,
+    "h1_sales": 901555.0,
+    "h1_np": 117648.0,
+    "food_over_target": 2.4,
+    "prior_np": 52196.0
+   },
+   {
+    "code": "M6",
+    "ma_code": "M6",
+    "name": "Bath Street",
+    "sales": 103311.03,
+    "tips": 7472.12,
+    "wages_pct": 24.1,
+    "rent_pct": 7.3,
+    "food_pct": 24.7,
+    "variable_pct": 18.8,
+    "vat_pct": 7.0,
+    "pounds": {
+     "wages": 24936.05,
+     "rent": 7522.0,
+     "food": 25543.95,
+     "variable": 19464.18,
+     "vat": 7231.77
+    },
+    "pounds_basis": "as written in the annual workbook",
+    "prior_year_sales": 102079.82,
+    "prior_year_label": "Sep-25",
+    "prior_year_delta_pct": 1.2,
+    "site_notes": [],
+    "total_costs": 84697.95,
+    "np": 18613.08,
+    "np_pct": 18.0,
+    "ytd_sales": 868600.03,
+    "ytd_np": 173611.08,
+    "sales_delta": -5224.97,
+    "np_delta": -15417.92,
+    "h1_sales": 561791.0,
+    "h1_np": 102272.0,
+    "food_over_target": -0.3,
+    "prior_np": 34031.0
+   },
+   {
+    "code": "M15",
+    "ma_code": "M15",
+    "name": "Metro",
+    "sales": 224744.44,
+    "tips": 16880.35,
+    "wages_pct": 29.6,
+    "rent_pct": 11.0,
+    "food_pct": 25.8,
+    "variable_pct": 19.3,
+    "vat_pct": 7.0,
+    "pounds": {
+     "wages": 66580.52,
+     "rent": 24742.05,
+     "food": 58080.18,
+     "variable": 43351.2,
+     "vat": 15732.11
+    },
+    "pounds_basis": "as written in the annual workbook",
+    "prior_year_sales": null,
+    "prior_year_label": null,
+    "prior_year_delta_pct": null,
+    "site_notes": [],
+    "total_costs": 208486.06,
+    "np": 16258.38,
+    "np_pct": 7.2,
+    "ytd_sales": 2311435.44,
+    "ytd_np": 335263.38,
+    "sales_delta": -75988.56,
+    "np_delta": -72240.62,
+    "h1_sales": 1525128.0,
+    "h1_np": 188074.0,
+    "food_over_target": 0.8,
+    "prior_np": 88499.0
+   },
+   {
+    "code": "M10",
+    "ma_code": "M10",
+    "name": "Leeds",
+    "sales": 129680.61,
+    "tips": 8923.74,
+    "wages_pct": 23.1,
+    "rent_pct": 9.7,
+    "food_pct": 30.0,
+    "variable_pct": 12.6,
+    "vat_pct": 13.2,
+    "pounds": {
+     "wages": 29969.17,
+     "rent": 12622.0,
+     "food": 38953.19,
+     "variable": 16308.57,
+     "vat": 17104.78
+    },
+    "pounds_basis": "as written in the annual workbook",
+    "prior_year_sales": 144301.39,
+    "prior_year_label": "Sep-25",
+    "prior_year_delta_pct": -10.1,
+    "site_notes": [],
+    "total_costs": 114957.71,
+    "np": 14722.9,
+    "np_pct": 11.4,
+    "ytd_sales": 1165710.61,
+    "ytd_np": 76136.9,
+    "sales_delta": 12512.61,
+    "np_delta": -7176.1,
+    "h1_sales": 797850.0,
+    "h1_np": 33836.0,
+    "food_over_target": 5.0,
+    "prior_np": 21899.0
+   },
+   {
+    "code": "M1",
+    "ma_code": "M1",
+    "name": "Nicolson St, Edinburgh",
+    "sales": 94856.64,
+    "tips": 6692.82,
+    "wages_pct": 24.0,
+    "rent_pct": 2.8,
+    "food_pct": 29.5,
+    "variable_pct": 21.5,
+    "vat_pct": null,
+    "pounds": {
+     "wages": 22768.17,
+     "rent": 2628.33,
+     "food": 27963.3,
+     "variable": 20421.48,
+     "vat": null
+    },
+    "pounds_basis": "as written in the annual workbook",
+    "prior_year_sales": 92464.17,
+    "prior_year_label": "Sep-25",
+    "prior_year_delta_pct": 2.6,
+    "site_notes": [],
+    "total_costs": 80421.24,
+    "np": 14435.4,
+    "np_pct": 15.2,
+    "ytd_sales": 840802.64,
+    "ytd_np": 211591.4,
+    "sales_delta": -58097.36,
+    "np_delta": -60878.6,
+    "h1_sales": 509759.0,
+    "h1_np": 106256.0,
+    "food_over_target": 4.5,
+    "prior_np": 75314.0
+   },
+   {
+    "code": "IKI 2",
+    "ma_code": "M5",
+    "name": "Ikigai 2",
+    "sales": 98381.13,
+    "tips": 8600.64,
+    "wages_pct": 23.7,
+    "rent_pct": 8.8,
+    "food_pct": 32.5,
+    "variable_pct": 15.7,
+    "vat_pct": 7.0,
+    "pounds": {
+     "wages": 23339.79,
+     "rent": 8612.57,
+     "food": 32020.88,
+     "variable": 15449.34,
+     "vat": 6886.68
+    },
+    "pounds_basis": "as written in the annual workbook",
+    "prior_year_sales": 99844.08,
+    "prior_year_label": "Sep-25",
+    "prior_year_delta_pct": -1.5,
+    "site_notes": [],
+    "total_costs": 86309.26,
+    "np": 12071.87,
+    "np_pct": 12.3,
+    "ytd_sales": 810889.13,
+    "ytd_np": 80275.87,
+    "sales_delta": -59906.87,
+    "np_delta": -54044.13,
+    "h1_sales": 463297.0,
+    "h1_np": -13262.0,
+    "food_over_target": 7.5,
+    "prior_np": 66116.0
    },
    {
     "code": "M16",
     "ma_code": "M16",
     "name": "Nottingham",
-    "sales": 135721.0,
-    "tips": 9763.0,
-    "wages_pct": 29.3,
-    "rent_pct": 10.9,
-    "food_pct": 23.1,
-    "variable_pct": 22.9,
-    "vat_pct": 7.0,
+    "sales": 141982.8,
+    "tips": 9929.31,
+    "wages_pct": 30.8,
+    "rent_pct": 10.2,
+    "food_pct": 27.7,
+    "variable_pct": 16.6,
+    "vat_pct": 10.3,
     "pounds": {
-     "wages": 39758.0,
-     "rent": 14835.0,
-     "food": 31328.0,
-     "variable": 31146.0,
-     "vat": 9500.0
+     "wages": 43751.04,
+     "rent": 14511.0,
+     "food": 39318.14,
+     "variable": 23562.29,
+     "vat": 14603.51
     },
-    "pounds_basis": "as written in the monthly analysis",
+    "pounds_basis": "as written in the annual workbook",
     "prior_year_sales": null,
     "prior_year_label": null,
     "prior_year_delta_pct": null,
-    "site_notes": [
-     "Large Payment: £ 30k to MPD",
-     "Wok cooker - £ 1443"
-    ],
-    "total_costs": 126568.0,
-    "np": 9152.0,
-    "np_pct": 6.7,
-    "ytd_sales": 1259256.0,
-    "ytd_np": 79392.0,
-    "sales_delta": 390.0,
-    "np_delta": -32862.0,
+    "site_notes": [],
+    "total_costs": 135745.98,
+    "np": 6236.82,
+    "np_pct": 4.4,
+    "ytd_sales": 1401238.8,
+    "ytd_np": 85628.82,
+    "sales_delta": 6261.8,
+    "np_delta": -2915.18,
     "h1_sales": 988204.0,
     "h1_np": 28226.0,
-    "food_over_target": -1.9,
-    "prior_np": 42014.0
+    "food_over_target": 2.7,
+    "prior_np": 9152.0
+   },
+   {
+    "code": "M11",
+    "ma_code": "M11",
+    "name": "Leicester",
+    "sales": 86540.38,
+    "tips": 5552.76,
+    "wages_pct": 33.1,
+    "rent_pct": 10.4,
+    "food_pct": 28.8,
+    "variable_pct": 18.0,
+    "vat_pct": 7.0,
+    "pounds": {
+     "wages": 28613.73,
+     "rent": 9000.0,
+     "food": 24901.35,
+     "variable": 15587.17,
+     "vat": 6083.44
+    },
+    "pounds_basis": "as written in the annual workbook",
+    "prior_year_sales": 121169.21,
+    "prior_year_label": "Sep-25",
+    "prior_year_delta_pct": -28.6,
+    "site_notes": [],
+    "total_costs": 84185.69,
+    "np": 2354.69,
+    "np_pct": 2.7,
+    "ytd_sales": 896088.38,
+    "ytd_np": -32810.31,
+    "sales_delta": -22454.62,
+    "np_delta": -21357.31,
+    "h1_sales": 613802.0,
+    "h1_np": -33848.0,
+    "food_over_target": 3.8,
+    "prior_np": 23712.0
+   },
+   {
+    "code": "M8",
+    "ma_code": "M8",
+    "name": "Renfield",
+    "sales": 198467.13,
+    "tips": 15168.36,
+    "wages_pct": 34.2,
+    "rent_pct": -0.2,
+    "food_pct": 27.2,
+    "variable_pct": 34.4,
+    "vat_pct": 7.0,
+    "pounds": {
+     "wages": 67782.52,
+     "rent": -432.0,
+     "food": 53894.79,
+     "variable": 68296.0,
+     "vat": 13892.7
+    },
+    "pounds_basis": "as written in the annual workbook",
+    "prior_year_sales": 196862.62,
+    "prior_year_label": "Sep-25",
+    "prior_year_delta_pct": 0.8,
+    "site_notes": [],
+    "total_costs": 203434.01,
+    "np": -4966.88,
+    "np_pct": -2.5,
+    "ytd_sales": 1704375.13,
+    "ytd_np": 182075.12,
+    "sales_delta": -16988.87,
+    "np_delta": -55565.88,
+    "h1_sales": 1095727.0,
+    "h1_np": 91158.0,
+    "food_over_target": 2.2,
+    "prior_np": 50599.0
+   },
+   {
+    "code": "M14",
+    "ma_code": "M14",
+    "name": "Meadowhall",
+    "sales": 158304.93,
+    "tips": 8489.57,
+    "wages_pct": 26.7,
+    "rent_pct": 23.8,
+    "food_pct": 27.1,
+    "variable_pct": 13.0,
+    "vat_pct": 14.4,
+    "pounds": {
+     "wages": 42212.5,
+     "rent": 37629.95,
+     "food": 42899.38,
+     "variable": 20551.64,
+     "vat": 22862.46
+    },
+    "pounds_basis": "as written in the annual workbook",
+    "prior_year_sales": null,
+    "prior_year_label": null,
+    "prior_year_delta_pct": null,
+    "site_notes": [],
+    "total_costs": 166155.93,
+    "np": -7851.0,
+    "np_pct": -5.0,
+    "ytd_sales": 1565894.93,
+    "ytd_np": 152442.0,
+    "sales_delta": -32779.07,
+    "np_delta": -69237.0,
+    "h1_sales": 1045790.0,
+    "h1_np": 67839.0,
+    "food_over_target": 2.1,
+    "prior_np": 61386.0
+   },
+   {
+    "code": "M20",
+    "ma_code": "M20",
+    "name": "Southampton",
+    "sales": 158276.87,
+    "tips": 14931.51,
+    "wages_pct": 34.2,
+    "rent_pct": 9.5,
+    "food_pct": 30.5,
+    "variable_pct": 29.8,
+    "vat_pct": 7.0,
+    "pounds": {
+     "wages": 54182.85,
+     "rent": 15000.0,
+     "food": 48291.34,
+     "variable": 47196.49,
+     "vat": 11079.38
+    },
+    "pounds_basis": "as written in the annual workbook",
+    "prior_year_sales": null,
+    "prior_year_label": null,
+    "prior_year_delta_pct": null,
+    "site_notes": [],
+    "total_costs": 175750.06,
+    "np": -17473.19,
+    "np_pct": -11.0,
+    "ytd_sales": 542256.87,
+    "ytd_np": 75355.81,
+    "sales_delta": -19612.13,
+    "np_delta": -55150.19,
+    "h1_sales": 0.0,
+    "h1_np": 0.0,
+    "food_over_target": 5.5,
+    "prior_np": 37677.0
+   },
+   {
+    "code": "M12",
+    "ma_code": "M12",
+    "name": "Newcastle",
+    "sales": 115064.05,
+    "tips": 6424.87,
+    "wages_pct": 30.4,
+    "rent_pct": 27.9,
+    "food_pct": 27.2,
+    "variable_pct": 24.7,
+    "vat_pct": 7.0,
+    "pounds": {
+     "wages": 34966.62,
+     "rent": 32132.41,
+     "food": 31243.18,
+     "variable": 28448.1,
+     "vat": 8054.48
+    },
+    "pounds_basis": "as written in the annual workbook",
+    "prior_year_sales": 141302.99,
+    "prior_year_label": "Sep-25",
+    "prior_year_delta_pct": -18.6,
+    "site_notes": [],
+    "total_costs": 134844.79,
+    "np": -19780.74,
+    "np_pct": -17.2,
+    "ytd_sales": 1124285.05,
+    "ytd_np": -10187.74,
+    "sales_delta": -14607.95,
+    "np_delta": -42188.74,
+    "h1_sales": 762993.0,
+    "h1_np": 9538.0,
+    "food_over_target": 2.2,
+    "prior_np": 22408.0
    },
    {
     "code": "M18",
     "ma_code": "M18",
     "name": "Soho",
-    "sales": 159542.0,
-    "tips": 18725.0,
-    "wages_pct": 31.0,
-    "rent_pct": 22.1,
-    "food_pct": 22.2,
-    "variable_pct": 16.9,
+    "sales": 151963.65,
+    "tips": 17453.73,
+    "wages_pct": 35.5,
+    "rent_pct": 23.2,
+    "food_pct": 32.2,
+    "variable_pct": 15.3,
     "vat_pct": 7.0,
     "pounds": {
-     "wages": 49475.0,
+     "wages": 53940.6,
      "rent": 35203.0,
-     "food": 35356.0,
-     "variable": 26951.0,
-     "vat": 11168.0
+     "food": 48874.1,
+     "variable": 23325.92,
+     "vat": 10637.46
     },
-    "pounds_basis": "as written in the monthly analysis",
+    "pounds_basis": "as written in the annual workbook",
     "prior_year_sales": null,
     "prior_year_label": null,
     "prior_year_delta_pct": null,
-    "site_notes": [
-     "Large Payment:",
-     "Best month to date and also the first profitable month."
-    ],
-    "total_costs": 158154.0,
-    "np": 1388.0,
-    "np_pct": 0.9,
-    "ytd_sales": 846265.0,
-    "ytd_np": -168644.0,
-    "sales_delta": 13317.0,
-    "np_delta": 32456.0,
+    "site_notes": [],
+    "total_costs": 171981.08,
+    "np": -20017.43,
+    "np_pct": -13.2,
+    "ytd_sales": 998228.65,
+    "ytd_np": -188661.43,
+    "sales_delta": -7578.35,
+    "np_delta": -21405.43,
     "h1_sales": 540498.0,
     "h1_np": -138964.0,
-    "food_over_target": -2.8,
-    "prior_np": -31068.0
+    "food_over_target": 7.2,
+    "prior_np": 1388.0
    },
    {
     "code": "M19",
     "ma_code": "M19",
     "name": "Shoreditch",
-    "sales": 97663.0,
-    "tips": 8996.0,
-    "wages_pct": 37.0,
-    "rent_pct": 15.4,
-    "food_pct": 27.2,
-    "variable_pct": 29.5,
+    "sales": 101437.1,
+    "tips": 10487.86,
+    "wages_pct": 31.6,
+    "rent_pct": 19.6,
+    "food_pct": 33.9,
+    "variable_pct": 39.1,
     "vat_pct": 7.0,
     "pounds": {
-     "wages": 36164.0,
-     "rent": 15000.0,
-     "food": 26586.0,
-     "variable": 28805.0,
-     "vat": 6836.0
+     "wages": 32039.82,
+     "rent": 19873.13,
+     "food": 34395.15,
+     "variable": 39673.97,
+     "vat": 7100.6
     },
-    "pounds_basis": "as written in the monthly analysis",
+    "pounds_basis": "as written in the annual workbook",
     "prior_year_sales": null,
     "prior_year_label": null,
     "prior_year_delta_pct": null,
-    "site_notes": [
-     "Large Payment:",
-     "Making Loss £ 15.7k",
-     "£5144 – dragon installation in July"
-    ],
-    "total_costs": 113391.0,
-    "np": -15728.0,
-    "np_pct": -16.1,
-    "ytd_sales": 198342.0,
-    "ytd_np": -49352.0,
-    "sales_delta": -3016.0,
-    "np_delta": 17896.0,
+    "site_notes": [],
+    "total_costs": 133082.67,
+    "np": -31645.57,
+    "np_pct": -31.2,
+    "ytd_sales": 299779.1,
+    "ytd_np": -80997.57,
+    "sales_delta": 3774.1,
+    "np_delta": -15917.57,
     "h1_sales": 0.0,
     "h1_np": 0.0,
-    "food_over_target": 2.2,
-    "prior_np": -33624.0
+    "food_over_target": 8.9,
+    "prior_np": -15728.0
    },
    {
     "code": "NORI",
     "ma_code": "Nori",
     "name": "Maki Nori",
-    "sales": 86230.0,
-    "tips": 10609.0,
-    "wages_pct": 30.6,
-    "rent_pct": 40.6,
-    "food_pct": 25.8,
-    "variable_pct": 33.9,
-    "vat_pct": 7.0,
+    "sales": 84595.09,
+    "tips": 10381.38,
+    "wages_pct": 45.2,
+    "rent_pct": 41.4,
+    "food_pct": 33.2,
+    "variable_pct": 21.5,
+    "vat_pct": 12.8,
     "pounds": {
-     "wages": 26412.0,
+     "wages": 38248.26,
      "rent": 35000.0,
-     "food": 22270.0,
-     "variable": 29241.0,
-     "vat": 6036.0
+     "food": 28127.27,
+     "variable": 18171.34,
+     "vat": 10805.18
     },
-    "pounds_basis": "as written in the monthly analysis",
+    "pounds_basis": "as written in the annual workbook",
     "prior_year_sales": null,
     "prior_year_label": null,
     "prior_year_delta_pct": null,
-    "site_notes": [
-     "Large Payment:",
-     "Making Loss £ 32.7k",
-     "Sales drop 18%",
-     "Summaries for the building:",
-     "Total Loss – £ 31,342"
-    ],
-    "total_costs": 118959.0,
-    "np": -32730.0,
-    "np_pct": -38.0,
-    "ytd_sales": 426343.0,
-    "ytd_np": -169478.0,
-    "sales_delta": -15846.0,
-    "np_delta": 10790.0,
+    "site_notes": [],
+    "total_costs": 130352.05,
+    "np": -45756.96,
+    "np_pct": -54.1,
+    "ytd_sales": 510938.09,
+    "ytd_np": -215234.96,
+    "sales_delta": -1634.91,
+    "np_delta": -13026.96,
     "h1_sales": 238037.0,
     "h1_np": -93228.0,
-    "food_over_target": 0.8,
-    "prior_np": -43520.0
+    "food_over_target": 8.2,
+    "prior_np": -32730.0
    }
   ],
   "by_number": [
@@ -25391,29 +25475,104 @@
    "NORI"
   ],
   "losers": [
+   "M8",
+   "M14",
+   "M20",
+   "M12",
+   "M18",
    "M19",
    "NORI"
   ],
-  "loser_total": -48458.0,
+  "loser_total": -147491.77,
   "over_food": [
    {
-    "code": "M21",
-    "food_pct": 44.8,
-    "caution": null
-   },
-   {
     "code": "M19",
-    "food_pct": 27.2,
+    "food_pct": 33.9,
     "caution": null
    },
    {
     "code": "NORI",
-    "food_pct": 25.8,
+    "food_pct": 33.2,
+    "caution": null
+   },
+   {
+    "code": "IKI 2",
+    "food_pct": 32.5,
+    "caution": null
+   },
+   {
+    "code": "M18",
+    "food_pct": 32.2,
+    "caution": null
+   },
+   {
+    "code": "M20",
+    "food_pct": 30.5,
+    "caution": null
+   },
+   {
+    "code": "M17",
+    "food_pct": 30.2,
+    "caution": null
+   },
+   {
+    "code": "M10",
+    "food_pct": 30.0,
+    "caution": null
+   },
+   {
+    "code": "M1",
+    "food_pct": 29.5,
+    "caution": null
+   },
+   {
+    "code": "M11",
+    "food_pct": 28.8,
+    "caution": null
+   },
+   {
+    "code": "M21",
+    "food_pct": 28.2,
+    "caution": null
+   },
+   {
+    "code": "M9",
+    "food_pct": 28.0,
+    "caution": null
+   },
+   {
+    "code": "M16",
+    "food_pct": 27.7,
+    "caution": null
+   },
+   {
+    "code": "M3",
+    "food_pct": 27.4,
+    "caution": null
+   },
+   {
+    "code": "M8",
+    "food_pct": 27.2,
     "caution": null
    },
    {
     "code": "M12",
-    "food_pct": 25.4,
+    "food_pct": 27.2,
+    "caution": null
+   },
+   {
+    "code": "M14",
+    "food_pct": 27.1,
+    "caution": null
+   },
+   {
+    "code": "M13",
+    "food_pct": 26.0,
+    "caution": null
+   },
+   {
+    "code": "M15",
+    "food_pct": 25.8,
     "caution": null
    }
   ],
@@ -25421,387 +25580,414 @@
   "wage_target": 27,
   "over_wages": [
    {
-    "code": "M19",
-    "wages_pct": 37.0
+    "code": "NORI",
+    "wages_pct": 45.2
    },
    {
     "code": "M18",
-    "wages_pct": 31.0
+    "wages_pct": 35.5
    },
    {
-    "code": "NORI",
-    "wages_pct": 30.6
-   },
-   {
-    "code": "M16",
-    "wages_pct": 29.3
-   },
-   {
-    "code": "M20",
-    "wages_pct": 28.5
-   },
-   {
-    "code": "M12",
-    "wages_pct": 27.8
-   },
-   {
-    "code": "M3",
-    "wages_pct": 27.6
+    "code": "M17",
+    "wages_pct": 35.3
    },
    {
     "code": "M8",
-    "wages_pct": 27.2
+    "wages_pct": 34.2
+   },
+   {
+    "code": "M20",
+    "wages_pct": 34.2
+   },
+   {
+    "code": "M11",
+    "wages_pct": 33.1
+   },
+   {
+    "code": "M19",
+    "wages_pct": 31.6
+   },
+   {
+    "code": "M16",
+    "wages_pct": 30.8
+   },
+   {
+    "code": "M3",
+    "wages_pct": 30.6
+   },
+   {
+    "code": "M12",
+    "wages_pct": 30.4
+   },
+   {
+    "code": "M7",
+    "wages_pct": 29.9
+   },
+   {
+    "code": "M15",
+    "wages_pct": 29.6
+   },
+   {
+    "code": "M9",
+    "wages_pct": 27.9
+   },
+   {
+    "code": "M21",
+    "wages_pct": 27.7
    }
   ],
   "movers_up": [
    {
-    "code": "M1",
-    "ma_code": "M1",
-    "name": "Nicolson St, Edinburgh",
-    "sales": 152954.0,
-    "tips": 12825.0,
-    "wages_pct": 14.7,
-    "rent_pct": 1.7,
-    "food_pct": 21.3,
-    "variable_pct": 6.6,
-    "vat_pct": 6.4,
-    "pounds": {
-     "wages": 22409.0,
-     "rent": 2628.0,
-     "food": 32652.0,
-     "variable": 10135.0,
-     "vat": 9815.69
-    },
-    "pounds_basis": "as written in the monthly analysis",
-    "prior_year_sales": 45.58,
-    "prior_year_label": "Aug-25",
-    "prior_year_delta_pct": 335472.6,
-    "site_notes": [
-     "Large Payment:",
-     "Repair - £ 1k for safety certificate including EICR and PAT test.",
-     "Advert - Fresher Fair £ 709",
-     "Sales increase 45%, net profit sitting at 49%"
-    ],
-    "total_costs": 77640.0,
-    "np": 75314.0,
-    "np_pct": 49.2,
-    "ytd_sales": 745946.0,
-    "ytd_np": 197156.0,
-    "sales_delta": 69721.0,
-    "np_delta": 59728.0,
-    "h1_sales": 509759.0,
-    "h1_np": 106256.0,
-    "food_over_target": -3.7,
-    "prior_np": 15586.0
-   },
-   {
-    "code": "IKI 2",
-    "ma_code": "M5",
-    "name": "Ikigai 2",
-    "sales": 158288.0,
-    "tips": 14591.0,
-    "wages_pct": 15.3,
-    "rent_pct": 4.2,
-    "food_pct": 23.0,
-    "variable_pct": 9.0,
-    "vat_pct": 6.8,
-    "pounds": {
-     "wages": 24222.0,
-     "rent": 6600.0,
-     "food": 36410.0,
-     "variable": 14180.0,
-     "vat": 10760.0
-    },
-    "pounds_basis": "as written in the monthly analysis",
-    "prior_year_sales": 42.56,
-    "prior_year_label": "Aug-25",
-    "prior_year_delta_pct": 371817.3,
-    "site_notes": [
-     "Large Payment:",
-     "Sales went down £ 5k compare to last year. However wages and food cost are well control.",
-     "Net profit sitting at 41% which 7% higher than Aug 25"
-    ],
-    "total_costs": 92172.0,
-    "np": 66116.0,
-    "np_pct": 41.8,
-    "ytd_sales": 712508.0,
-    "ytd_np": 68204.0,
-    "sales_delta": 67365.0,
-    "np_delta": 50766.0,
-    "h1_sales": 463297.0,
-    "h1_np": -13262.0,
-    "food_over_target": -2.0,
-    "prior_np": 15350.0
-   },
-   {
-    "code": "M11",
-    "ma_code": "M11",
-    "name": "Leicester",
-    "sales": 108995.0,
-    "tips": 7214.0,
-    "wages_pct": 25.7,
-    "rent_pct": 8.3,
-    "food_pct": 19.7,
-    "variable_pct": 17.6,
+    "code": "M21",
+    "ma_code": "M21",
+    "name": "Birmingham",
+    "sales": 238167.21,
+    "tips": 14664.03,
+    "wages_pct": 27.7,
+    "rent_pct": 5.5,
+    "food_pct": 28.2,
+    "variable_pct": 18.6,
     "vat_pct": 7.0,
     "pounds": {
-     "wages": 28001.0,
-     "rent": 9000.0,
-     "food": 21433.0,
-     "variable": 19219.0,
-     "vat": 7630.0
+     "wages": 65990.81,
+     "rent": 13182.09,
+     "food": 67088.55,
+     "variable": 44299.68,
+     "vat": 16671.7
     },
-    "pounds_basis": "as written in the monthly analysis",
-    "prior_year_sales": 20.41,
-    "prior_year_label": "Aug-25",
-    "prior_year_delta_pct": 533927.4,
-    "site_notes": [
-     "Sales increase 20%",
-     "Repair - £ 4.3k"
-    ],
-    "total_costs": 85283.0,
-    "np": 23712.0,
-    "np_pct": 21.8,
-    "ytd_sales": 809548.0,
-    "ytd_np": -35165.0,
-    "sales_delta": 22244.0,
-    "np_delta": 48741.0,
-    "h1_sales": 613802.0,
-    "h1_np": -33848.0,
-    "food_over_target": -5.3,
-    "prior_np": -25029.0
-   },
-   {
-    "code": "M15",
-    "ma_code": "M15",
-    "name": "Metro",
-    "sales": 300733.0,
-    "tips": 22547.0,
-    "wages_pct": 20.8,
-    "rent_pct": 9.3,
-    "food_pct": 19.7,
-    "variable_pct": 13.7,
-    "vat_pct": 7.0,
-    "pounds": {
-     "wages": 62576.0,
-     "rent": 27940.0,
-     "food": 59381.0,
-     "variable": 41286.0,
-     "vat": 21051.0
-    },
-    "pounds_basis": "as written in the monthly analysis",
+    "pounds_basis": "as written in the annual workbook",
     "prior_year_sales": null,
     "prior_year_label": null,
     "prior_year_delta_pct": null,
-    "site_notes": [
-     "Large Payment: £ 50k to MPD",
-     "Repair- £ 2.5k",
-     "Net profit sitting at 29%, wages and food cost are well control."
-    ],
-    "total_costs": 212235.0,
-    "np": 88499.0,
-    "np_pct": 29.4,
-    "ytd_sales": 2086691.0,
-    "ytd_np": 319005.0,
-    "sales_delta": 39903.0,
-    "np_delta": 46067.0,
-    "h1_sales": 1525128.0,
-    "h1_np": 188074.0,
-    "food_over_target": -5.3,
-    "prior_np": 42432.0
-   },
-   {
-    "code": "M12",
-    "ma_code": "M12",
-    "name": "Newcastle",
-    "sales": 129672.0,
-    "tips": 8446.0,
-    "wages_pct": 27.8,
-    "rent_pct": 12.5,
-    "food_pct": 25.4,
-    "variable_pct": 10.1,
-    "vat_pct": 7.0,
-    "pounds": {
-     "wages": 36051.0,
-     "rent": 16152.0,
-     "food": 32941.0,
-     "variable": 13043.0,
-     "vat": 9077.0
-    },
-    "pounds_basis": "as written in the monthly analysis",
-    "prior_year_sales": 10.11,
-    "prior_year_label": "Aug-25",
-    "prior_year_delta_pct": 1282511.3,
-    "site_notes": [
-     "Large Payment:",
-     "Sales has increase 10%, wages and food cost has improved"
-    ],
-    "total_costs": 107264.0,
-    "np": 22408.0,
-    "np_pct": 17.3,
-    "ytd_sales": 1009221.0,
-    "ytd_np": 9593.0,
-    "sales_delta": 13116.0,
-    "np_delta": 44761.0,
-    "h1_sales": 762993.0,
-    "h1_np": 9538.0,
-    "food_over_target": 0.4,
-    "prior_np": -22353.0
-   }
-  ],
-  "movers_down": [
-   {
-    "code": "M16",
-    "ma_code": "M16",
-    "name": "Nottingham",
-    "sales": 135721.0,
-    "tips": 9763.0,
-    "wages_pct": 29.3,
-    "rent_pct": 10.9,
-    "food_pct": 23.1,
-    "variable_pct": 22.9,
-    "vat_pct": 7.0,
-    "pounds": {
-     "wages": 39758.0,
-     "rent": 14835.0,
-     "food": 31328.0,
-     "variable": 31146.0,
-     "vat": 9500.0
-    },
-    "pounds_basis": "as written in the monthly analysis",
-    "prior_year_sales": null,
-    "prior_year_label": null,
-    "prior_year_delta_pct": null,
-    "site_notes": [
-     "Large Payment: £ 30k to MPD",
-     "Wok cooker - £ 1443"
-    ],
-    "total_costs": 126568.0,
-    "np": 9152.0,
-    "np_pct": 6.7,
-    "ytd_sales": 1259256.0,
-    "ytd_np": 79392.0,
-    "sales_delta": 390.0,
-    "np_delta": -32862.0,
-    "h1_sales": 988204.0,
-    "h1_np": 28226.0,
-    "food_over_target": -1.9,
-    "prior_np": 42014.0
-   },
-   {
-    "code": "M20",
-    "ma_code": "M20",
-    "name": "Southampton",
-    "sales": 177889.0,
-    "tips": 16930.0,
-    "wages_pct": 28.5,
-    "rent_pct": 9.1,
-    "food_pct": 23.7,
-    "variable_pct": 10.5,
-    "vat_pct": 7.0,
-    "pounds": {
-     "wages": 50665.0,
-     "rent": 16231.0,
-     "food": 42119.0,
-     "variable": 18746.0,
-     "vat": 12452.0
-    },
-    "pounds_basis": "as written in the monthly analysis",
-    "prior_year_sales": null,
-    "prior_year_label": null,
-    "prior_year_delta_pct": null,
-    "site_notes": [
-     "Large Payment:",
-     "£ 1230 – bid levy"
-    ],
-    "total_costs": 140213.0,
-    "np": 37677.0,
-    "np_pct": 21.2,
-    "ytd_sales": 383980.0,
-    "ytd_np": 92829.0,
-    "sales_delta": -28202.0,
-    "np_delta": -17475.0,
-    "h1_sales": 0.0,
-    "h1_np": 0.0,
-    "food_over_target": -1.3,
-    "prior_np": 55152.0
-   },
-   {
-    "code": "M9",
-    "ma_code": "M9",
-    "name": "Manchester",
-    "sales": 292932.0,
-    "tips": 22577.0,
-    "wages_pct": 25.4,
-    "rent_pct": 7.7,
-    "food_pct": 22.0,
-    "variable_pct": 13.8,
-    "vat_pct": 11.8,
-    "pounds": {
-     "wages": 74466.0,
-     "rent": 22701.0,
-     "food": 64372.0,
-     "variable": 40548.0,
-     "vat": 34531.0
-    },
-    "pounds_basis": "as written in the monthly analysis",
-    "prior_year_sales": 6.51,
-    "prior_year_label": "Aug-25",
-    "prior_year_delta_pct": 4499623.5,
-    "site_notes": [
-     "VAT sitting at 12%",
-     "Ice machine - £ 2004"
-    ],
-    "total_costs": 236618.0,
-    "np": 56314.0,
-    "np_pct": 19.2,
-    "ytd_sales": 2344747.0,
-    "ytd_np": 421638.0,
-    "sales_delta": 19081.0,
-    "np_delta": -8315.0,
-    "h1_sales": 1777964.0,
-    "h1_np": 300695.0,
-    "food_over_target": -3.0,
-    "prior_np": 64629.0
+    "site_notes": [],
+    "total_costs": 207232.83,
+    "np": 30934.38,
+    "np_pct": 13.0,
+    "ytd_sales": 319970.21,
+    "ytd_np": 40594.38,
+    "sales_delta": 156364.21,
+    "np_delta": 21274.38,
+    "h1_sales": null,
+    "h1_np": null,
+    "food_over_target": 3.2,
+    "prior_np": 9660.0
    },
    {
     "code": "M13",
     "ma_code": "M13",
     "name": "Aberdeen",
-    "sales": 170430.0,
-    "tips": 11692.0,
-    "wages_pct": 27.0,
-    "rent_pct": 17.1,
-    "food_pct": 24.9,
-    "variable_pct": 16.8,
-    "vat_pct": 7.0,
+    "sales": 160205.32,
+    "tips": 10214.08,
+    "wages_pct": 24.2,
+    "rent_pct": 10.9,
+    "food_pct": 26.0,
+    "variable_pct": 11.7,
+    "vat_pct": 10.9,
     "pounds": {
-     "wages": 46064.0,
-     "rent": 29061.0,
-     "food": 42401.0,
-     "variable": 28659.0,
-     "vat": 11930.0
+     "wages": 38833.42,
+     "rent": 17407.5,
+     "food": 41697.56,
+     "variable": 18710.11,
+     "vat": 17522.48
     },
-    "pounds_basis": "as written in the monthly analysis",
-    "prior_year_sales": 6.36,
-    "prior_year_label": "Aug-25",
-    "prior_year_delta_pct": 2679617.0,
-    "site_notes": [
-     "Large Payment:",
-     "Services charge - £ 11.6k",
-     "Music licence - £ 2.8k"
-    ],
-    "total_costs": 158115.0,
-    "np": 12315.0,
-    "np_pct": 7.2,
-    "ytd_sales": 1286493.0,
-    "ytd_np": 53609.0,
-    "sales_delta": 10842.0,
-    "np_delta": -1055.0,
+    "pounds_basis": "as written in the annual workbook",
+    "prior_year_sales": 332590.36,
+    "prior_year_label": "Sep-25",
+    "prior_year_delta_pct": -51.8,
+    "site_notes": [],
+    "total_costs": 134171.07,
+    "np": 26034.25,
+    "np_pct": 16.3,
+    "ytd_sales": 1446698.32,
+    "ytd_np": 79643.25,
+    "sales_delta": -10224.68,
+    "np_delta": 13719.25,
     "h1_sales": 956475.0,
     "h1_np": 27924.0,
-    "food_over_target": -0.1,
-    "prior_np": 13370.0
+    "food_over_target": 1.0,
+    "prior_np": 12315.0
+   },
+   {
+    "code": "M17",
+    "ma_code": "M17",
+    "name": "Lakeside",
+    "sales": 100782.89,
+    "tips": 6617.43,
+    "wages_pct": 35.3,
+    "rent_pct": 16.3,
+    "food_pct": 30.2,
+    "variable_pct": 16.5,
+    "vat_pct": -22.9,
+    "pounds": {
+     "wages": 35544.78,
+     "rent": 16431.33,
+     "food": 30391.05,
+     "variable": 16585.16,
+     "vat": -23096.01
+    },
+    "pounds_basis": "as written in the annual workbook",
+    "prior_year_sales": null,
+    "prior_year_label": null,
+    "prior_year_delta_pct": null,
+    "site_notes": [],
+    "total_costs": 75856.31,
+    "np": 24926.58,
+    "np_pct": 24.7,
+    "ytd_sales": 1037283.89,
+    "ytd_np": 163585.58,
+    "sales_delta": -37828.11,
+    "np_delta": -2555.42,
+    "h1_sales": 678742.0,
+    "h1_np": 91533.0,
+    "food_over_target": 5.2,
+    "prior_np": 27482.0
+   },
+   {
+    "code": "M16",
+    "ma_code": "M16",
+    "name": "Nottingham",
+    "sales": 141982.8,
+    "tips": 9929.31,
+    "wages_pct": 30.8,
+    "rent_pct": 10.2,
+    "food_pct": 27.7,
+    "variable_pct": 16.6,
+    "vat_pct": 10.3,
+    "pounds": {
+     "wages": 43751.04,
+     "rent": 14511.0,
+     "food": 39318.14,
+     "variable": 23562.29,
+     "vat": 14603.51
+    },
+    "pounds_basis": "as written in the annual workbook",
+    "prior_year_sales": null,
+    "prior_year_label": null,
+    "prior_year_delta_pct": null,
+    "site_notes": [],
+    "total_costs": 135745.98,
+    "np": 6236.82,
+    "np_pct": 4.4,
+    "ytd_sales": 1401238.8,
+    "ytd_np": 85628.82,
+    "sales_delta": 6261.8,
+    "np_delta": -2915.18,
+    "h1_sales": 988204.0,
+    "h1_np": 28226.0,
+    "food_over_target": 2.7,
+    "prior_np": 9152.0
+   },
+   {
+    "code": "M10",
+    "ma_code": "M10",
+    "name": "Leeds",
+    "sales": 129680.61,
+    "tips": 8923.74,
+    "wages_pct": 23.1,
+    "rent_pct": 9.7,
+    "food_pct": 30.0,
+    "variable_pct": 12.6,
+    "vat_pct": 13.2,
+    "pounds": {
+     "wages": 29969.17,
+     "rent": 12622.0,
+     "food": 38953.19,
+     "variable": 16308.57,
+     "vat": 17104.78
+    },
+    "pounds_basis": "as written in the annual workbook",
+    "prior_year_sales": 144301.39,
+    "prior_year_label": "Sep-25",
+    "prior_year_delta_pct": -10.1,
+    "site_notes": [],
+    "total_costs": 114957.71,
+    "np": 14722.9,
+    "np_pct": 11.4,
+    "ytd_sales": 1165710.61,
+    "ytd_np": 76136.9,
+    "sales_delta": 12512.61,
+    "np_delta": -7176.1,
+    "h1_sales": 797850.0,
+    "h1_np": 33836.0,
+    "food_over_target": 5.0,
+    "prior_np": 21899.0
+   }
+  ],
+  "movers_down": [
+   {
+    "code": "M15",
+    "ma_code": "M15",
+    "name": "Metro",
+    "sales": 224744.44,
+    "tips": 16880.35,
+    "wages_pct": 29.6,
+    "rent_pct": 11.0,
+    "food_pct": 25.8,
+    "variable_pct": 19.3,
+    "vat_pct": 7.0,
+    "pounds": {
+     "wages": 66580.52,
+     "rent": 24742.05,
+     "food": 58080.18,
+     "variable": 43351.2,
+     "vat": 15732.11
+    },
+    "pounds_basis": "as written in the annual workbook",
+    "prior_year_sales": null,
+    "prior_year_label": null,
+    "prior_year_delta_pct": null,
+    "site_notes": [],
+    "total_costs": 208486.06,
+    "np": 16258.38,
+    "np_pct": 7.2,
+    "ytd_sales": 2311435.44,
+    "ytd_np": 335263.38,
+    "sales_delta": -75988.56,
+    "np_delta": -72240.62,
+    "h1_sales": 1525128.0,
+    "h1_np": 188074.0,
+    "food_over_target": 0.8,
+    "prior_np": 88499.0
+   },
+   {
+    "code": "M14",
+    "ma_code": "M14",
+    "name": "Meadowhall",
+    "sales": 158304.93,
+    "tips": 8489.57,
+    "wages_pct": 26.7,
+    "rent_pct": 23.8,
+    "food_pct": 27.1,
+    "variable_pct": 13.0,
+    "vat_pct": 14.4,
+    "pounds": {
+     "wages": 42212.5,
+     "rent": 37629.95,
+     "food": 42899.38,
+     "variable": 20551.64,
+     "vat": 22862.46
+    },
+    "pounds_basis": "as written in the annual workbook",
+    "prior_year_sales": null,
+    "prior_year_label": null,
+    "prior_year_delta_pct": null,
+    "site_notes": [],
+    "total_costs": 166155.93,
+    "np": -7851.0,
+    "np_pct": -5.0,
+    "ytd_sales": 1565894.93,
+    "ytd_np": 152442.0,
+    "sales_delta": -32779.07,
+    "np_delta": -69237.0,
+    "h1_sales": 1045790.0,
+    "h1_np": 67839.0,
+    "food_over_target": 2.1,
+    "prior_np": 61386.0
+   },
+   {
+    "code": "M7",
+    "ma_code": "M7",
+    "name": "St James Quarter",
+    "sales": 301743.45,
+    "tips": 26174.72,
+    "wages_pct": 29.9,
+    "rent_pct": 10.9,
+    "food_pct": 24.1,
+    "variable_pct": 9.9,
+    "vat_pct": 12.7,
+    "pounds": {
+     "wages": 90369.23,
+     "rent": 32829.93,
+     "food": 72655.77,
+     "variable": 29795.9,
+     "vat": 38414.06
+    },
+    "pounds_basis": "as written in the annual workbook",
+    "prior_year_sales": 288244.26,
+    "prior_year_label": "Sep-25",
+    "prior_year_delta_pct": 4.7,
+    "site_notes": [],
+    "total_costs": 264064.89,
+    "np": 37678.56,
+    "np_pct": 12.5,
+    "ytd_sales": 2424360.45,
+    "ytd_np": 345493.56,
+    "sales_delta": -33377.55,
+    "np_delta": -67899.44,
+    "h1_sales": 1475665.0,
+    "h1_np": 129305.0,
+    "food_over_target": -0.9,
+    "prior_np": 105578.0
+   },
+   {
+    "code": "M1",
+    "ma_code": "M1",
+    "name": "Nicolson St, Edinburgh",
+    "sales": 94856.64,
+    "tips": 6692.82,
+    "wages_pct": 24.0,
+    "rent_pct": 2.8,
+    "food_pct": 29.5,
+    "variable_pct": 21.5,
+    "vat_pct": null,
+    "pounds": {
+     "wages": 22768.17,
+     "rent": 2628.33,
+     "food": 27963.3,
+     "variable": 20421.48,
+     "vat": null
+    },
+    "pounds_basis": "as written in the annual workbook",
+    "prior_year_sales": 92464.17,
+    "prior_year_label": "Sep-25",
+    "prior_year_delta_pct": 2.6,
+    "site_notes": [],
+    "total_costs": 80421.24,
+    "np": 14435.4,
+    "np_pct": 15.2,
+    "ytd_sales": 840802.64,
+    "ytd_np": 211591.4,
+    "sales_delta": -58097.36,
+    "np_delta": -60878.6,
+    "h1_sales": 509759.0,
+    "h1_np": 106256.0,
+    "food_over_target": 4.5,
+    "prior_np": 75314.0
+   },
+   {
+    "code": "M8",
+    "ma_code": "M8",
+    "name": "Renfield",
+    "sales": 198467.13,
+    "tips": 15168.36,
+    "wages_pct": 34.2,
+    "rent_pct": -0.2,
+    "food_pct": 27.2,
+    "variable_pct": 34.4,
+    "vat_pct": 7.0,
+    "pounds": {
+     "wages": 67782.52,
+     "rent": -432.0,
+     "food": 53894.79,
+     "variable": 68296.0,
+     "vat": 13892.7
+    },
+    "pounds_basis": "as written in the annual workbook",
+    "prior_year_sales": 196862.62,
+    "prior_year_label": "Sep-25",
+    "prior_year_delta_pct": 0.8,
+    "site_notes": [],
+    "total_costs": 203434.01,
+    "np": -4966.88,
+    "np_pct": -2.5,
+    "ytd_sales": 1704375.13,
+    "ytd_np": 182075.12,
+    "sales_delta": -16988.87,
+    "np_delta": -55565.88,
+    "h1_sales": 1095727.0,
+    "h1_np": 91158.0,
+    "food_over_target": 2.2,
+    "prior_np": 50599.0
    }
   ],
   "group_series": {
@@ -25845,6 +26031,11 @@
      "month": "Aug",
      "value": 3340000.0,
      "rounded": true
+    },
+    {
+     "month": "Sep",
+     "value": 3095887.79,
+     "rounded": false
     }
    ],
    "np": [
@@ -25887,6 +26078,11 @@
      "month": "Aug",
      "value": 707000.0,
      "rounded": true
+    },
+    {
+     "month": "Sep",
+     "value": 128143.61,
+     "rounded": false
     }
    ],
    "source": "Maki_MA_Dashboard_August_2026.html",
@@ -25903,40 +26099,39 @@
   },
   "flags": [
    {
-    "code": "ALL",
-    "month": "2026-08",
+    "code": "M21",
+    "month": "2026-09",
     "level": "amber",
-    "text": "August is the Edinburgh Fringe. M1, M3, M6, M7 and Ikigai 2 are well above trend. Do not annualise August."
+    "text": "September is Birmingham's first full month. Opening-month sales are not a run rate."
    },
    {
-    "code": "M16",
-    "month": "2026-08",
+    "code": "ALL",
+    "month": "2026-09",
     "level": "amber",
-    "text": "July carried a £30,010 VAT credit that reversed in August exactly as expected. The underlying run rate is unchanged."
+    "text": "Read from Monica's annual workbooks on 7 Oct 2026 while she was still working on several sites. Re-run before quoting a final number."
+   },
+   {
+    "code": "ALL",
+    "month": "2026-09",
+    "level": "amber",
+    "text": "August was the Edinburgh Fringe. September falling back in M1, M3, M6, M7 and Ikigai 2 is expected."
    }
   ],
   "store_gaps": [
    "2023, 2024, 2025 and January to June 2026 month by month are in Monica's annual workbooks in Google Drive. This machine's shell has no network, so they are not in the store yet. Only the group totals by month for 2026 are here, taken from the chart labels.",
-   "September 2026 is not closed yet."
+   "October 2026 is not closed yet."
   ],
-  "closing_notes": [
-   "Turnover - £ 3.3M, overall sales has increase £ 400k with Birmingham trading for 10 days.",
-   "Net profit £ 707k sitting at 21%. This is the best month so far",
-   "Edinburgh and Glasgow site performance are strong during this festival month.",
-   "M1 showing very well control when sales have increase. Their net profit sitting at 49% which is the highest across the group.",
-   "M7 is the highest-revenue site at £ 335k, with net profit 32%",
-   "Shoreditch and Nori are the only 2site that making loss."
-  ],
-  "analysis_source": "Financial Analysis Aug 2026.docx",
-  "source": "Maki_MA_Dashboard_August_2026.html",
+  "closing_notes": [],
+  "analysis_source": "ma_years.json (Monica's annual workbooks)",
+  "source": "Monica's annual MA workbooks (ma_years.json)",
   "notes": [
-   "20 sites. Group tie-out to the group book passed at £3 on sales and £3 on net profit.",
-   "19 sites (M21 Birmingham had no MA yet)."
+   "20 sites, read straight from the annual workbooks. Group = simple sum of the sites.",
+   "20 sites. Group tie-out to the group book passed at £3 on sales and £3 on net profit."
   ]
  },
  "mayears": {
   "schema": 2,
-  "built": "2026-09-11",
+  "built": "2026-10-07",
   "lines": [
    "sales",
    "tips",
@@ -25986,7 +26181,8 @@
    "2026-05",
    "2026-06",
    "2026-07",
-   "2026-08"
+   "2026-08",
+   "2026-09"
   ],
   "sites": {
    "IKI 1": {
@@ -26446,7 +26642,7 @@
        72754.23,
        90923.0,
        158288.0,
-       null,
+       98381.13,
        null,
        null,
        null
@@ -26460,7 +26656,7 @@
        6132.69,
        7970.99,
        14590.91,
-       null,
+       8600.64,
        null,
        null,
        null
@@ -26474,7 +26670,7 @@
        72754.23,
        90922.92,
        158288.0,
-       null,
+       98381.13,
        null,
        null,
        null
@@ -26488,7 +26684,7 @@
        21675.26,
        20124.01,
        24221.92,
-       null,
+       23339.79,
        null,
        null,
        null
@@ -26502,7 +26698,7 @@
        8111.0,
        7305.52,
        6600.0,
-       null,
+       8612.57,
        null,
        null,
        null
@@ -26516,7 +26712,7 @@
        17659.24,
        28033.14,
        36410.44,
-       null,
+       32020.88,
        null,
        null,
        null
@@ -26530,7 +26726,7 @@
        24356.23,
        13746.06,
        14179.9,
-       null,
+       15449.34,
        null,
        null,
        null
@@ -26544,7 +26740,7 @@
        5092.8,
        6364.6,
        10759.54,
-       null,
+       6886.68,
        null,
        null,
        null
@@ -26558,7 +26754,7 @@
        76894.53,
        75573.0,
        92172.0,
-       null,
+       86309.26,
        null,
        null,
        null
@@ -26572,7 +26768,7 @@
        -4140.3,
        15350.0,
        66116.0,
-       null,
+       12071.87,
        null,
        null,
        null
@@ -27042,7 +27238,7 @@
        114605.75,
        121012.0,
        117168.0,
-       null,
+       129680.61,
        null,
        null,
        null
@@ -27056,7 +27252,7 @@
        7976.92,
        9082.87,
        8839.37,
-       null,
+       8923.74,
        null,
        null,
        null
@@ -27070,7 +27266,7 @@
        114605.75,
        121011.68,
        117168.06,
-       null,
+       129680.61,
        null,
        null,
        null
@@ -27084,7 +27280,7 @@
        29922.66,
        28909.3,
        23750.86,
-       null,
+       29969.17,
        null,
        null,
        null
@@ -27098,7 +27294,7 @@
        12622.0,
        12622.0,
        18116.85,
-       null,
+       12622.0,
        null,
        null,
        null
@@ -27112,7 +27308,7 @@
        29935.26,
        41703.03,
        25865.06,
-       null,
+       38953.19,
        null,
        null,
        null
@@ -27126,7 +27322,7 @@
        21831.12,
        23627.04,
        19334.12,
-       null,
+       16308.57,
        null,
        null,
        null
@@ -27140,7 +27336,7 @@
        15312.37,
        8470.82,
        8201.76,
-       null,
+       17104.78,
        null,
        null,
        null
@@ -27154,7 +27350,7 @@
        109623.41,
        115332.0,
        95269.0,
-       null,
+       114957.71,
        null,
        null,
        null
@@ -27168,7 +27364,7 @@
        4982.34,
        5679.0,
        21899.0,
-       null,
+       14722.9,
        null,
        null,
        null
@@ -27341,7 +27537,7 @@
        92609.64,
        86751.0,
        108995.0,
-       null,
+       86540.38,
        null,
        null,
        null
@@ -27355,7 +27551,7 @@
        5824.07,
        5805.38,
        7213.67,
-       null,
+       5552.76,
        null,
        null,
        null
@@ -27369,7 +27565,7 @@
        92609.64,
        86750.71,
        108994.82,
-       null,
+       86540.38,
        null,
        null,
        null
@@ -27383,7 +27579,7 @@
        26145.61,
        27841.06,
        28001.11,
-       null,
+       28613.73,
        null,
        null,
        null
@@ -27397,7 +27593,7 @@
        9000.0,
        20974.5,
        9000.0,
-       null,
+       9000.0,
        null,
        null,
        null
@@ -27411,7 +27607,7 @@
        25344.5,
        33748.43,
        21433.39,
-       null,
+       24901.35,
        null,
        null,
        null
@@ -27425,7 +27621,7 @@
        19325.34,
        23143.09,
        19218.57,
-       null,
+       15587.17,
        null,
        null,
        null
@@ -27439,7 +27635,7 @@
        6402.76,
        6072.55,
        7629.64,
-       null,
+       6083.44,
        null,
        null,
        null
@@ -27453,7 +27649,7 @@
        86218.21,
        111780.0,
        85283.0,
-       null,
+       84185.69,
        null,
        null,
        null
@@ -27467,7 +27663,7 @@
        6391.43,
        -25029.0,
        23712.0,
-       null,
+       2354.69,
        null,
        null,
        null
@@ -27639,7 +27835,7 @@
        103383.28,
        116556.0,
        129672.0,
-       null,
+       115064.05,
        null,
        null,
        null
@@ -27653,7 +27849,7 @@
        6620.02,
        7417.19,
        8445.89,
-       null,
+       6424.87,
        null,
        null,
        null
@@ -27667,7 +27863,7 @@
        103383.28,
        116556.08,
        129672.2,
-       null,
+       115064.05,
        null,
        null,
        null
@@ -27681,7 +27877,7 @@
        36336.24,
        37220.42,
        36051.06,
-       null,
+       34966.62,
        null,
        null,
        null
@@ -27695,7 +27891,7 @@
        16152.0,
        35163.74,
        16152.0,
-       null,
+       32132.41,
        null,
        null,
        null
@@ -27709,7 +27905,7 @@
        30342.03,
        36164.6,
        32941.21,
-       null,
+       31243.18,
        null,
        null,
        null
@@ -27723,7 +27919,7 @@
        40291.25,
        22201.59,
        13042.92,
-       null,
+       28448.1,
        null,
        null,
        null
@@ -27737,7 +27933,7 @@
        7236.83,
        8158.93,
        9077.05,
-       null,
+       8054.48,
        null,
        null,
        null
@@ -27751,7 +27947,7 @@
        130358.35,
        138909.0,
        107264.0,
-       null,
+       134844.79,
        null,
        null,
        null
@@ -27765,7 +27961,7 @@
        -26975.07,
        -22353.0,
        22408.0,
-       null,
+       -19780.74,
        null,
        null,
        null
@@ -27937,7 +28133,7 @@
        152340.56,
        159588.0,
        170430.0,
-       null,
+       160205.32,
        null,
        null,
        null
@@ -27951,7 +28147,7 @@
        11509.49,
        11810.04,
        11692.39,
-       null,
+       10214.08,
        null,
        null,
        null
@@ -27965,7 +28161,7 @@
        152340.56,
        159587.78,
        170429.89,
-       null,
+       160205.32,
        null,
        null,
        null
@@ -27979,7 +28175,7 @@
        41063.57,
        46232.27,
        46064.1,
-       null,
+       38833.42,
        null,
        null,
        null
@@ -27993,7 +28189,7 @@
        19815.0,
        17407.5,
        29061.33,
-       null,
+       17407.5,
        null,
        null,
        null
@@ -28007,7 +28203,7 @@
        38625.78,
        51096.39,
        42400.63,
-       null,
+       41697.56,
        null,
        null,
        null
@@ -28021,7 +28217,7 @@
        24980.33,
        20310.07,
        28658.6,
-       null,
+       18710.11,
        null,
        null,
        null
@@ -28035,7 +28231,7 @@
        13531.14,
        11171.14,
        11930.09,
-       null,
+       17522.48,
        null,
        null,
        null
@@ -28049,7 +28245,7 @@
        138015.82,
        146217.0,
        158115.0,
-       null,
+       134171.07,
        null,
        null,
        null
@@ -28063,7 +28259,7 @@
        14324.74,
        13370.0,
        12315.0,
-       null,
+       26034.25,
        null,
        null,
        null
@@ -28235,7 +28431,7 @@
        166397.25,
        170716.0,
        191084.0,
-       null,
+       158304.93,
        null,
        null,
        null
@@ -28249,7 +28445,7 @@
        10322.46,
        9440.9,
        9974.67,
-       null,
+       8489.57,
        null,
        null,
        null
@@ -28263,7 +28459,7 @@
        166397.25,
        170715.96,
        191084.0,
-       null,
+       158304.93,
        null,
        null,
        null
@@ -28277,7 +28473,7 @@
        42951.44,
        42096.3,
        41102.9,
-       null,
+       42212.5,
        null,
        null,
        null
@@ -28291,7 +28487,7 @@
        31394.5,
        10677.0,
        13081.91,
-       null,
+       37629.95,
        null,
        null,
        null
@@ -28305,7 +28501,7 @@
        40755.09,
        50726.16,
        38615.5,
-       null,
+       42899.38,
        null,
        null,
        null
@@ -28319,7 +28515,7 @@
        21845.31,
        24198.34,
        23521.78,
-       null,
+       20551.64,
        null,
        null,
        null
@@ -28333,7 +28529,7 @@
        -18897.21,
        11950.12,
        13375.88,
-       null,
+       22862.46,
        null,
        null,
        null
@@ -28347,7 +28543,7 @@
        118049.13,
        139648.0,
        129698.0,
-       null,
+       166155.93,
        null,
        null,
        null
@@ -28361,7 +28557,7 @@
        48348.12,
        31068.0,
        61386.0,
-       null,
+       -7851.0,
        null,
        null,
        null
@@ -28533,7 +28729,7 @@
        238340.98,
        260830.0,
        300733.0,
-       null,
+       224744.44,
        null,
        null,
        null
@@ -28547,7 +28743,7 @@
        18432.27,
        19689.15,
        22547.04,
-       null,
+       16880.35,
        null,
        null,
        null
@@ -28561,7 +28757,7 @@
        238340.98,
        260829.6,
        300733.34,
-       null,
+       224744.44,
        null,
        null,
        null
@@ -28575,7 +28771,7 @@
        61839.49,
        59950.6,
        62575.54,
-       null,
+       66580.52,
        null,
        null,
        null
@@ -28589,7 +28785,7 @@
        27940.0,
        28338.72,
        27940.0,
-       null,
+       24742.05,
        null,
        null,
        null
@@ -28603,7 +28799,7 @@
        54808.99,
        70188.1,
        59381.36,
-       null,
+       58080.18,
        null,
        null,
        null
@@ -28617,7 +28813,7 @@
        44767.57,
        30074.47,
        41286.27,
-       null,
+       43351.2,
        null,
        null,
        null
@@ -28631,7 +28827,7 @@
        16684.0,
        29846.17,
        21051.33,
-       null,
+       15732.11,
        null,
        null,
        null
@@ -28645,7 +28841,7 @@
        206040.05,
        218398.0,
        212235.0,
-       null,
+       208486.06,
        null,
        null,
        null
@@ -28659,7 +28855,7 @@
        32300.93,
        42432.0,
        88499.0,
-       null,
+       16258.38,
        null,
        null,
        null
@@ -28689,7 +28885,7 @@
        134729.92,
        135331.0,
        135721.0,
-       null,
+       141982.8,
        null,
        null,
        null
@@ -28703,7 +28899,7 @@
        9025.9,
        9427.05,
        9763.43,
-       null,
+       9929.31,
        null,
        null,
        null
@@ -28717,7 +28913,7 @@
        134729.92,
        135330.87,
        135720.7,
-       null,
+       141982.8,
        null,
        null,
        null
@@ -28731,7 +28927,7 @@
        42451.83,
        39676.96,
        39758.04,
-       null,
+       43751.04,
        null,
        null,
        null
@@ -28745,7 +28941,7 @@
        9900.0,
        11518.54,
        14835.46,
-       null,
+       14511.0,
        null,
        null,
        null
@@ -28759,7 +28955,7 @@
        37764.36,
        46236.56,
        31327.98,
-       null,
+       39318.14,
        null,
        null,
        null
@@ -28773,7 +28969,7 @@
        20864.97,
        25894.37,
        31146.35,
-       null,
+       23562.29,
        null,
        null,
        null
@@ -28787,7 +28983,7 @@
        9431.09,
        -30009.63,
        9500.45,
-       null,
+       14603.51,
        null,
        null,
        null
@@ -28801,7 +28997,7 @@
        120412.25,
        93317.0,
        126568.0,
-       null,
+       135745.98,
        null,
        null,
        null
@@ -28815,7 +29011,7 @@
        14317.67,
        42014.0,
        9152.0,
-       null,
+       6236.82,
        null,
        null,
        null
@@ -28987,7 +29183,7 @@
        115355.79,
        119148.0,
        138611.0,
-       null,
+       100782.89,
        null,
        null,
        null
@@ -29001,7 +29197,7 @@
        7428.65,
        7363.3,
        8968.22,
-       null,
+       6617.43,
        null,
        null,
        null
@@ -29015,7 +29211,7 @@
        115355.79,
        119148.32,
        138611.48,
-       null,
+       100782.89,
        null,
        null,
        null
@@ -29029,7 +29225,7 @@
        34426.48,
        27322.87,
        34422.53,
-       null,
+       35544.78,
        null,
        null,
        null
@@ -29043,7 +29239,7 @@
        15552.0,
        15552.0,
        15552.0,
-       null,
+       16431.33,
        null,
        null,
        null
@@ -29057,7 +29253,7 @@
        29088.44,
        32540.58,
        30578.32,
-       null,
+       30391.05,
        null,
        null,
        null
@@ -29071,7 +29267,7 @@
        15405.02,
        15748.43,
        20873.64,
-       null,
+       16585.16,
        null,
        null,
        null
@@ -29085,7 +29281,7 @@
        8074.91,
        8340.38,
        9702.8,
-       null,
+       -23096.01,
        null,
        null,
        null
@@ -29099,7 +29295,7 @@
        102546.85,
        99504.0,
        111129.0,
-       null,
+       75856.31,
        null,
        null,
        null
@@ -29113,7 +29309,7 @@
        12808.94,
        19644.0,
        27482.0,
-       null,
+       24926.58,
        null,
        null,
        null
@@ -29142,7 +29338,7 @@
        143306.35,
        146225.0,
        159542.0,
-       null,
+       151963.65,
        null,
        null,
        null
@@ -29156,7 +29352,7 @@
        15105.14,
        17002.81,
        18724.87,
-       null,
+       17453.73,
        null,
        null,
        null
@@ -29170,7 +29366,7 @@
        143306.35,
        146224.93,
        159542.34,
-       null,
+       151963.65,
        null,
        null,
        null
@@ -29184,7 +29380,7 @@
        47287.91,
        46826.84,
        49475.23,
-       null,
+       53940.6,
        null,
        null,
        null
@@ -29198,7 +29394,7 @@
        35203.0,
        35203.0,
        35203.0,
-       null,
+       35203.0,
        null,
        null,
        null
@@ -29212,7 +29408,7 @@
        42289.71,
        41007.49,
        35356.49,
-       null,
+       48874.1,
        null,
        null,
        null
@@ -29226,7 +29422,7 @@
        31419.8,
        44020.05,
        26951.38,
-       null,
+       23325.92,
        null,
        null,
        null
@@ -29240,7 +29436,7 @@
        10031.44,
        10235.75,
        11167.96,
-       null,
+       10637.46,
        null,
        null,
        null
@@ -29254,7 +29450,7 @@
        166231.86,
        177293.0,
        158154.0,
-       null,
+       171981.08,
        null,
        null,
        null
@@ -29268,7 +29464,7 @@
        -22925.51,
        -31068.0,
        1388.0,
-       null,
+       -20017.43,
        null,
        null,
        null
@@ -29297,7 +29493,7 @@
        null,
        100679.0,
        97663.0,
-       null,
+       101437.1,
        null,
        null,
        null
@@ -29311,7 +29507,7 @@
        null,
        9352.36,
        8995.53,
-       null,
+       10487.86,
        null,
        null,
        null
@@ -29325,7 +29521,7 @@
        null,
        100678.84,
        97663.16,
-       null,
+       101437.1,
        null,
        null,
        null
@@ -29339,7 +29535,7 @@
        null,
        43716.4,
        36163.59,
-       null,
+       32039.82,
        null,
        null,
        null
@@ -29353,7 +29549,7 @@
        null,
        24842.78,
        15000.0,
-       null,
+       19873.13,
        null,
        null,
        null
@@ -29367,7 +29563,7 @@
        null,
        30748.88,
        26585.58,
-       null,
+       34395.15,
        null,
        null,
        null
@@ -29381,7 +29577,7 @@
        null,
        27947.16,
        28805.12,
-       null,
+       39673.97,
        null,
        null,
        null
@@ -29395,7 +29591,7 @@
        null,
        7047.52,
        6836.42,
-       null,
+       7100.6,
        null,
        null,
        null
@@ -29409,7 +29605,7 @@
        null,
        134303.0,
        113391.0,
-       null,
+       133082.67,
        null,
        null,
        null
@@ -29423,7 +29619,7 @@
        null,
        -33624.0,
        -15728.0,
-       null,
+       -31645.57,
        null,
        null,
        null
@@ -29736,7 +29932,7 @@
        77055.77,
        83233.0,
        152954.0,
-       null,
+       94856.64,
        null,
        null,
        null
@@ -29750,7 +29946,7 @@
        4939.69,
        5514.48,
        12824.95,
-       null,
+       6692.82,
        null,
        null,
        null
@@ -29778,7 +29974,7 @@
        18383.83,
        20752.99,
        22408.93,
-       null,
+       22768.17,
        null,
        null,
        null
@@ -29792,7 +29988,7 @@
        3137.33,
        2630.21,
        2628.33,
-       null,
+       2628.33,
        null,
        null,
        null
@@ -29806,7 +30002,7 @@
        19756.83,
        27806.54,
        32651.94,
-       null,
+       27963.3,
        null,
        null,
        null
@@ -29820,7 +30016,7 @@
        11213.77,
        15209.15,
        10135.42,
-       null,
+       20421.48,
        null,
        null,
        null
@@ -29848,7 +30044,7 @@
        57885.66,
        67647.0,
        77640.0,
-       null,
+       80421.24,
        null,
        null,
        null
@@ -29862,7 +30058,7 @@
        19170.11,
        15586.0,
        75314.0,
-       null,
+       14435.4,
        null,
        null,
        null
@@ -29893,7 +30089,7 @@
        null,
        206091.0,
        177889.0,
-       null,
+       158276.87,
        null,
        null,
        null
@@ -29906,8 +30102,8 @@
        null,
        null,
        18754.51,
-       16930.0,
-       null,
+       16929.62,
+       14931.51,
        null,
        null,
        null
@@ -29920,8 +30116,8 @@
        null,
        null,
        206091.33,
-       177889.0,
-       null,
+       177889.29,
+       158276.87,
        null,
        null,
        null
@@ -29933,9 +30129,9 @@
        null,
        null,
        null,
-       55953.8,
-       50556.05,
-       null,
+       54492.05,
+       50664.53,
+       54182.85,
        null,
        null,
        null
@@ -29948,8 +30144,8 @@
        null,
        null,
        15000.0,
-       16231.0,
-       null,
+       16230.75,
+       15000.0,
        null,
        null,
        null
@@ -29961,9 +30157,9 @@
        null,
        null,
        null,
-       56675.12,
-       42119.0,
-       null,
+       42839.19,
+       42119.14,
+       48291.34,
        null,
        null,
        null
@@ -29975,9 +30171,9 @@
        null,
        null,
        null,
-       38600.91,
-       33318.61,
-       null,
+       24181.39,
+       18746.04,
+       47196.49,
        null,
        null,
        null
@@ -29990,8 +30186,8 @@
        null,
        null,
        14426.39,
-       12452.0,
-       null,
+       12452.25,
+       11079.38,
        null,
        null,
        null
@@ -30005,7 +30201,7 @@
        null,
        150938.0,
        140213.0,
-       null,
+       175750.06,
        null,
        null,
        null
@@ -30019,7 +30215,7 @@
        null,
        55152.0,
        37677.0,
-       null,
+       -17473.19,
        null,
        null,
        null
@@ -30048,7 +30244,7 @@
        null,
        null,
        81803.0,
-       null,
+       238167.21,
        null,
        null,
        null
@@ -30062,7 +30258,7 @@
        null,
        null,
        5797.12,
-       null,
+       14664.03,
        null,
        null,
        null
@@ -30076,7 +30272,7 @@
        null,
        null,
        81803.45,
-       null,
+       238167.21,
        null,
        null,
        null
@@ -30090,7 +30286,7 @@
        null,
        null,
        2535.85,
-       null,
+       65990.81,
        null,
        null,
        null
@@ -30104,7 +30300,7 @@
        null,
        null,
        12500.0,
-       null,
+       13182.09,
        null,
        null,
        null
@@ -30118,7 +30314,7 @@
        null,
        null,
        36663.37,
-       null,
+       67088.55,
        null,
        null,
        null
@@ -30132,7 +30328,7 @@
        null,
        null,
        14717.6,
-       null,
+       44299.68,
        null,
        null,
        null
@@ -30146,7 +30342,7 @@
        null,
        null,
        5726.24,
-       null,
+       16671.7,
        null,
        null,
        null
@@ -30160,7 +30356,7 @@
        null,
        null,
        72143.0,
-       null,
+       207232.83,
        null,
        null,
        null
@@ -30174,7 +30370,7 @@
        null,
        null,
        9660.0,
-       null,
+       30934.38,
        null,
        null,
        null
@@ -30487,7 +30683,7 @@
        137476.53,
        159337.0,
        182988.0,
-       null,
+       159537.15,
        null,
        null,
        null
@@ -30501,7 +30697,7 @@
        9587.51,
        11799.05,
        14081.49,
-       null,
+       10786.93,
        null,
        null,
        null
@@ -30515,7 +30711,7 @@
        137476.53,
        159337.0,
        182988.0,
-       null,
+       159537.15,
        null,
        null,
        null
@@ -30529,7 +30725,7 @@
        45837.66,
        50415.12,
        50482.38,
-       null,
+       48866.8,
        null,
        null,
        null
@@ -30543,7 +30739,7 @@
        5253.0,
        4409.96,
        4406.0,
-       null,
+       4406.0,
        null,
        null,
        null
@@ -30557,7 +30753,7 @@
        32996.13,
        47415.76,
        39192.64,
-       null,
+       43744.33,
        null,
        null,
        null
@@ -30571,7 +30767,7 @@
        23256.99,
        20608.39,
        23901.8,
-       null,
+       18760.1,
        null,
        null,
        null
@@ -30585,7 +30781,7 @@
        9623.36,
        16995.44,
        12809.17,
-       null,
+       20095.72,
        null,
        null,
        null
@@ -30599,7 +30795,7 @@
        116967.14,
        139845.0,
        130792.0,
-       null,
+       135872.95,
        null,
        null,
        null
@@ -30613,7 +30809,7 @@
        20509.39,
        19492.0,
        52196.0,
-       null,
+       23664.2,
        null,
        null,
        null
@@ -31226,7 +31422,7 @@
        90381.54,
        94962.0,
        108536.0,
-       null,
+       103311.03,
        null,
        null,
        null
@@ -31240,7 +31436,7 @@
        6951.1,
        7150.34,
        8223.29,
-       null,
+       7472.12,
        null,
        null,
        null
@@ -31254,7 +31450,7 @@
        90381.54,
        94961.51,
        108536.49,
-       null,
+       103311.03,
        null,
        null,
        null
@@ -31268,7 +31464,7 @@
        22082.32,
        23213.66,
        21399.78,
-       null,
+       24936.05,
        null,
        null,
        null
@@ -31282,7 +31478,7 @@
        9906.09,
        7525.64,
        7522.0,
-       null,
+       7522.0,
        null,
        null,
        null
@@ -31296,7 +31492,7 @@
        22168.71,
        26871.66,
        23469.02,
-       null,
+       25543.95,
        null,
        null,
        null
@@ -31310,7 +31506,7 @@
        17523.38,
        9902.78,
        14517.33,
-       null,
+       19464.18,
        null,
        null,
        null
@@ -31324,7 +31520,7 @@
        6326.71,
        8752.59,
        7597.55,
-       null,
+       7231.77,
        null,
        null,
        null
@@ -31338,7 +31534,7 @@
        78007.21,
        76266.0,
        74506.0,
-       null,
+       84697.95,
        null,
        null,
        null
@@ -31352,7 +31548,7 @@
        12374.33,
        18695.0,
        34031.0,
-       null,
+       18613.08,
        null,
        null,
        null
@@ -31667,7 +31863,7 @@
        245386.5,
        311831.0,
        335121.0,
-       null,
+       301743.45,
        null,
        null,
        null
@@ -31681,7 +31877,7 @@
        20999.4,
        26386.8,
        29266.14,
-       null,
+       26174.72,
        null,
        null,
        null
@@ -31695,7 +31891,7 @@
        245386.5,
        311830.53,
        335121.42,
-       null,
+       301743.45,
        null,
        null,
        null
@@ -31709,7 +31905,7 @@
        73334.49,
        72505.76,
        80255.26,
-       null,
+       90369.23,
        null,
        null,
        null
@@ -31723,7 +31919,7 @@
        34444.93,
        23237.93,
        23233.53,
-       null,
+       32829.93,
        null,
        null,
        null
@@ -31737,7 +31933,7 @@
        59889.45,
        79212.28,
        75130.59,
-       null,
+       72655.77,
        null,
        null,
        null
@@ -31751,7 +31947,7 @@
        26254.96,
        42114.87,
        27465.21,
-       null,
+       29795.9,
        null,
        null,
        null
@@ -31765,7 +31961,7 @@
        26152.19,
        21828.14,
        23458.5,
-       null,
+       38414.06,
        null,
        null,
        null
@@ -31779,7 +31975,7 @@
        220076.02,
        238899.0,
        229543.0,
-       null,
+       264064.89,
        null,
        null,
        null
@@ -31793,7 +31989,7 @@
        25310.48,
        72932.0,
        105578.0,
-       null,
+       37678.56,
        null,
        null,
        null
@@ -32108,7 +32304,7 @@
        165418.81,
        194725.0,
        215456.0,
-       null,
+       198467.13,
        null,
        null,
        null
@@ -32122,7 +32318,7 @@
        13341.85,
        15856.68,
        16933.22,
-       null,
+       15168.36,
        null,
        null,
        null
@@ -32136,7 +32332,7 @@
        165418.81,
        194724.95,
        215456.11,
-       null,
+       198467.13,
        null,
        null,
        null
@@ -32150,7 +32346,7 @@
        55033.42,
        57820.02,
        58542.62,
-       null,
+       67782.52,
        null,
        null,
        null
@@ -32164,7 +32360,7 @@
        2136.0,
        5076.62,
        11068.0,
-       null,
+       -432.0,
        null,
        null,
        null
@@ -32178,7 +32374,7 @@
        43899.49,
        56363.26,
        48351.97,
-       null,
+       53894.79,
        null,
        null,
        null
@@ -32192,7 +32388,7 @@
        39912.6,
        22143.22,
        31812.29,
-       null,
+       68296.0,
        null,
        null,
        null
@@ -32206,7 +32402,7 @@
        11579.32,
        8037.29,
        15081.93,
-       null,
+       13892.7,
        null,
        null,
        null
@@ -32220,7 +32416,7 @@
        152560.83,
        149440.0,
        164857.0,
-       null,
+       203434.01,
        null,
        null,
        null
@@ -32234,7 +32430,7 @@
        12857.98,
        45285.0,
        50599.0,
-       null,
+       -4966.88,
        null,
        null,
        null
@@ -32549,7 +32745,7 @@
        250601.8,
        273851.0,
        292932.0,
-       null,
+       287845.92,
        null,
        null,
        null
@@ -32563,7 +32759,7 @@
        19141.54,
        21386.0,
        22577.31,
-       null,
+       21720.02,
        null,
        null,
        null
@@ -32577,7 +32773,7 @@
        250601.8,
        273851.13,
        292932.17,
-       null,
+       287845.92,
        null,
        null,
        null
@@ -32591,7 +32787,7 @@
        71584.78,
        68887.14,
        74465.9,
-       null,
+       80327.02,
        null,
        null,
        null
@@ -32605,7 +32801,7 @@
        12500.0,
        3750.85,
        22701.45,
-       null,
+       15623.0,
        null,
        null,
        null
@@ -32619,7 +32815,7 @@
        65419.81,
        74684.28,
        64371.82,
-       null,
+       80506.96,
        null,
        null,
        null
@@ -32633,7 +32829,7 @@
        60103.53,
        42729.81,
        40548.47,
-       null,
+       43535.46,
        null,
        null,
        null
@@ -32647,7 +32843,7 @@
        17542.13,
        19169.58,
        34530.56,
-       null,
+       20149.21,
        null,
        null,
        null
@@ -32661,7 +32857,7 @@
        227150.25,
        209222.0,
        236618.0,
-       null,
+       240141.65,
        null,
        null,
        null
@@ -32675,7 +32871,7 @@
        23451.55,
        64629.0,
        56314.0,
-       null,
+       47704.27,
        null,
        null,
        null
@@ -33144,10 +33340,10 @@
    "NORI": {
     "code": "NORI",
     "name": "Maki Nori",
-    "region": "Scotland & Newcastle",
+    "region": "South England",
     "cohort": "brands",
     "kind": "restaurant",
-    "note": null,
+    "note": "Region moved to South England 7-Oct-2026 (Lincoln's cluster per the AM structure).",
     "y": {
      "2026": {
       "sales": [
@@ -33159,7 +33355,7 @@
        111444.46,
        102076.0,
        86230.0,
-       null,
+       84595.09,
        null,
        null,
        null
@@ -33173,7 +33369,7 @@
        11631.63,
        12211.63,
        10609.26,
-       null,
+       10381.38,
        null,
        null,
        null
@@ -33187,7 +33383,7 @@
        111444.46,
        102076.29,
        86229.53,
-       null,
+       84595.09,
        null,
        null,
        null
@@ -33201,7 +33397,7 @@
        31157.64,
        39717.77,
        26412.06,
-       null,
+       38248.26,
        null,
        null,
        null
@@ -33215,7 +33411,7 @@
        35000.0,
        35000.0,
        35000.0,
-       null,
+       35000.0,
        null,
        null,
        null
@@ -33229,7 +33425,7 @@
        32689.57,
        32564.29,
        22270.4,
-       null,
+       28127.27,
        null,
        null,
        null
@@ -33243,7 +33439,7 @@
        25322.34,
        35254.36,
        29240.9,
-       null,
+       18171.34,
        null,
        null,
        null
@@ -33257,7 +33453,7 @@
        7801.11,
        3060.35,
        6036.07,
-       null,
+       10805.18,
        null,
        null,
        null
@@ -33271,7 +33467,7 @@
        131970.66,
        145597.0,
        118959.0,
-       null,
+       130352.05,
        null,
        null,
        null
@@ -33285,7 +33481,7 @@
        -20526.2,
        -43520.0,
        -32730.0,
-       null,
+       -45756.96,
        null,
        null,
        null
@@ -33341,22 +33537,7 @@
    "MF",
    "MRLLC"
   ],
-  "overrides": [
-   {
-    "code": "M20",
-    "month": "2026-08",
-    "line": "np",
-    "workbook": 23212.34,
-    "banked": 37677.0
-   },
-   {
-    "code": "M20",
-    "month": "2026-07",
-    "line": "np",
-    "workbook": 25435.12,
-    "banked": 55152.0
-   }
-  ],
+  "overrides": [],
   "conflicts": [],
   "rejected": [
    "AAHQ_2024.xlsx: no summary tab found",
@@ -33419,12 +33600,12 @@
       "kobas": 3500.34,
       "z": 3460.88,
       "petty": 74.34,
-      "to_bank": 3386.54,
+      "to_bank": 3386.53,
       "counted": 3499.74,
       "counted_days": 28,
       "traded_days": 28,
       "count_var": 113.2,
-      "to_bank_on_counted": 3386.54,
+      "to_bank_on_counted": 3386.53,
       "banked": 0.0,
       "lodgements": 0
      },
@@ -33521,13 +33702,13 @@
      },
      "YTD": {
       "kobas": 31532.39,
-      "z": 31300.66,
+      "z": 31300.65,
       "petty": 1060.04,
       "to_bank": 30240.62,
       "counted": 30881.12,
       "counted_days": 264,
       "traded_days": 270,
-      "count_var": 640.51,
+      "count_var": 640.5,
       "to_bank_on_counted": 30240.62,
       "banked": 0.0,
       "lodgements": 0
@@ -41577,7 +41758,7 @@
      },
      "2026-03": {
       "kobas": 10697.58,
-      "z": 11491.51,
+      "z": 11491.5,
       "petty": 908.46,
       "to_bank": 11052.41,
       "counted": 3352.63,
@@ -41683,7 +41864,7 @@
       "kobas": 81170.61,
       "z": 82827.63,
       "petty": 4115.19,
-      "to_bank": 80848.5,
+      "to_bank": 80848.51,
       "counted": 44267.24,
       "counted_days": 138,
       "traded_days": 241,
@@ -41696,7 +41877,7 @@
     "last_cashup": "2026-09-27",
     "last_counted": "2026-09-22",
     "last_banked": "2026-09-07",
-    "unbanked_ytd": 60276.37,
+    "unbanked_ytd": 60276.38,
     "source": "_cashup_NORI.xlsx tab 'Maki Lakeside' (downloaded 2026-10-01 10:10)",
     "daily": [
      {
@@ -42201,13 +42382,13 @@
      "2026-09": {
       "kobas": 6958.7,
       "z": 6426.15,
-      "petty": 111.87,
-      "to_bank": 6375.08,
-      "counted": 3188.49,
-      "counted_days": 14,
+      "petty": 133.87,
+      "to_bank": 6292.28,
+      "counted": 6727.46,
+      "counted_days": 29,
       "traded_days": 28,
-      "count_var": -78.56,
-      "to_bank_on_counted": 3267.05,
+      "count_var": 435.18,
+      "to_bank_on_counted": 6292.28,
       "banked": 0.0,
       "lodgements": 0
      },
@@ -42227,22 +42408,22 @@
      "YTD": {
       "kobas": 43173.46,
       "z": 42801.79,
-      "petty": 1583.3,
-      "to_bank": 41353.56,
-      "counted": 36925.16,
-      "counted_days": 187,
+      "petty": 1605.3,
+      "to_bank": 41270.76,
+      "counted": 40464.13,
+      "counted_days": 202,
       "traded_days": 208,
-      "count_var": -919.81,
-      "to_bank_on_counted": 37844.97,
+      "count_var": -406.07,
+      "to_bank_on_counted": 40870.2,
       "banked": 41317.56,
       "lodgements": 6
      }
     },
     "last_cashup": "2026-09-27",
-    "last_counted": "2026-09-14",
+    "last_counted": "2026-09-30",
     "last_banked": "2026-10-02",
-    "unbanked_ytd": 36.0,
-    "source": "_cashup_m18plus.xlsx tab 'Maki Soho' (downloaded 2026-10-07 10:43)",
+    "unbanked_ytd": -46.8,
+    "source": "_cashup_m18plus.xlsx tab 'Maki Soho' (downloaded 2026-10-07 20:37)",
     "daily": [
      {
       "date": "2026-09-02",
@@ -42360,9 +42541,9 @@
       "z_cash": 272.25,
       "cash_tips": 23.05,
       "petty": 7.8,
-      "to_bank": 272.25,
+      "to_bank": 264.45,
       "counted": 264.45,
-      "sheet_var": -7.8
+      "sheet_var": 0.0
      },
      {
       "date": "2026-09-12",
@@ -42409,8 +42590,8 @@
       "cash_tips": 11.64,
       "petty": 0.0,
       "to_bank": 128.74,
-      "counted": null,
-      "sheet_var": null
+      "counted": 117.1,
+      "sheet_var": -11.64
      },
      {
       "date": "2026-09-16",
@@ -42421,8 +42602,8 @@
       "cash_tips": 3.0,
       "petty": 0.0,
       "to_bank": 51.24,
-      "counted": null,
-      "sheet_var": null
+      "counted": 51.24,
+      "sheet_var": 0.0
      },
      {
       "date": "2026-09-17",
@@ -42433,8 +42614,8 @@
       "cash_tips": 15.64,
       "petty": 0.0,
       "to_bank": 187.74,
-      "counted": null,
-      "sheet_var": null
+      "counted": 172.1,
+      "sheet_var": -15.64
      },
      {
       "date": "2026-09-18",
@@ -42445,8 +42626,8 @@
       "cash_tips": 31.23,
       "petty": 0.0,
       "to_bank": 281.03,
-      "counted": null,
-      "sheet_var": null
+      "counted": 249.8,
+      "sheet_var": -31.23
      },
      {
       "date": "2026-09-19",
@@ -42457,8 +42638,8 @@
       "cash_tips": 37.15,
       "petty": 0.0,
       "to_bank": 484.15,
-      "counted": null,
-      "sheet_var": null
+      "counted": 484.15,
+      "sheet_var": 0.0
      },
      {
       "date": "2026-09-20",
@@ -42469,8 +42650,8 @@
       "cash_tips": 18.36,
       "petty": 0.0,
       "to_bank": 267.96,
-      "counted": null,
-      "sheet_var": null
+      "counted": 268.0,
+      "sheet_var": 0.04
      },
      {
       "date": "2026-09-21",
@@ -42481,8 +42662,8 @@
       "cash_tips": 6.56,
       "petty": 0.0,
       "to_bank": 63.06,
-      "counted": null,
-      "sheet_var": null
+      "counted": 56.5,
+      "sheet_var": -6.56
      },
      {
       "date": "2026-09-22",
@@ -42493,8 +42674,8 @@
       "cash_tips": 4.33,
       "petty": 0.0,
       "to_bank": 57.78,
-      "counted": null,
-      "sheet_var": null
+      "counted": 57.9,
+      "sheet_var": 0.12
      },
      {
       "date": "2026-09-24",
@@ -42505,8 +42686,8 @@
       "cash_tips": 0.0,
       "petty": 0.0,
       "to_bank": 84.8,
-      "counted": null,
-      "sheet_var": null
+      "counted": 84.8,
+      "sheet_var": 0.0
      },
      {
       "date": "2026-09-25",
@@ -42517,8 +42698,8 @@
       "cash_tips": 38.28,
       "petty": 0.0,
       "to_bank": 472.78,
-      "counted": null,
-      "sheet_var": null
+      "counted": 472.78,
+      "sheet_var": 0.0
      },
      {
       "date": "2026-09-26",
@@ -42528,9 +42709,9 @@
       "z_cash": 726.14,
       "cash_tips": 69.74,
       "petty": 53.0,
-      "to_bank": 726.14,
-      "counted": null,
-      "sheet_var": null
+      "to_bank": 673.14,
+      "counted": 673.14,
+      "sheet_var": 0.0
      },
      {
       "date": "2026-09-27",
@@ -42541,26 +42722,44 @@
       "cash_tips": 25.81,
       "petty": 0.0,
       "to_bank": 302.61,
-      "counted": null,
-      "sheet_var": null
+      "counted": 303.0,
+      "sheet_var": 0.39
      },
      {
       "date": "2026-09-28",
       "kobas_cash": 257.0,
       "kobas_gross": 3174.76,
-      "kobas_cash_var": 0.12
+      "kobas_cash_var": 0.12,
+      "z_cash": 0.0,
+      "cash_tips": 0.0,
+      "petty": 22.0,
+      "to_bank": -22.0,
+      "counted": 257.0,
+      "sheet_var": 279.0
      },
      {
       "date": "2026-09-29",
       "kobas_cash": 176.5,
       "kobas_gross": 4758.31,
-      "kobas_cash_var": -0.01
+      "kobas_cash_var": -0.01,
+      "z_cash": 0.0,
+      "cash_tips": 0.0,
+      "petty": 0.0,
+      "to_bank": 0.0,
+      "counted": 176.51,
+      "sheet_var": 176.51
      },
      {
       "date": "2026-09-30",
       "kobas_cash": 115.0,
       "kobas_gross": 5522.18,
-      "kobas_cash_var": 0.05
+      "kobas_cash_var": 0.05,
+      "z_cash": 0.0,
+      "cash_tips": 0.0,
+      "petty": 0.0,
+      "to_bank": 0.0,
+      "counted": 114.95,
+      "sheet_var": 114.95
      },
      {
       "date": "2026-10-01",
@@ -42775,7 +42974,7 @@
     "last_counted": "2026-09-14",
     "last_banked": "2026-09-16",
     "unbanked_ytd": 5444.22,
-    "source": "_cashup_m18plus.xlsx tab 'Maki Shoreditch' (downloaded 2026-10-07 10:43)",
+    "source": "_cashup_m18plus.xlsx tab 'Maki Shoreditch' (downloaded 2026-10-07 20:37)",
     "daily": [
      {
       "date": "2026-09-02",
@@ -43275,7 +43474,7 @@
     "last_counted": "2026-08-24",
     "last_banked": "2026-09-24",
     "unbanked_ytd": 8498.61,
-    "source": "_cashup_m18plus.xlsx tab 'Maki Southampton' (downloaded 2026-10-07 10:43)",
+    "source": "_cashup_m18plus.xlsx tab 'Maki Southampton' (downloaded 2026-10-07 20:37)",
     "daily": [
      {
       "date": "2026-09-02",
@@ -43810,7 +44009,7 @@
     "last_counted": "2026-09-20",
     "last_banked": "2026-09-29",
     "unbanked_ytd": 624.87,
-    "source": "_cashup_m18plus.xlsx tab 'Maki Birmingham' (downloaded 2026-10-07 10:43)",
+    "source": "_cashup_m18plus.xlsx tab 'Maki Birmingham' (downloaded 2026-10-07 20:37)",
     "daily": [
      {
       "date": "2026-09-02",
@@ -44360,7 +44559,7 @@
     "last_counted": "2026-06-28",
     "last_banked": "2026-08-20",
     "unbanked_ytd": 3923.49,
-    "source": "_cashup_m18plus.xlsx tab 'Maki NORI' (downloaded 2026-10-07 10:43)",
+    "source": "_cashup_m18plus.xlsx tab 'Maki NORI' (downloaded 2026-10-07 20:37)",
     "daily": [
      {
       "date": "2026-09-02",
@@ -44859,11 +45058,6 @@
    },
    {
     "level": "amber",
-    "code": "M18",
-    "text": "Cash is counted up to 2026-09-14 but the cash-up runs to 2026-09-27: 13 days not counted yet."
-   },
-   {
-    "level": "amber",
     "code": "M19",
     "text": "5,444 of cash this year has not reached the bank in Xero.",
     "kind": "mismatch"
@@ -44943,7 +45137,7 @@
     "text": "Cash is counted up to 2026-06-28 but the cash-up runs to 2026-09-27: 91 days not counted yet."
    }
   ],
-  "built": "2026-10-07T10:44:01",
+  "built": "2026-10-07T20:37:40",
   "sources": {
    "kobas": "data/sources/kobas_cashlog_daily_2026.csv (Kobas Cash Log, cash_declared)",
    "cashup": "'Maki 1-10', 'Maki 11-17' and 'Maki 18+ New 2025 Cash UP' workbooks, per-site tab, columns A-J",
@@ -45815,16 +46009,16 @@
  },
  "target": {
   "target": 32000000,
-  "ytd": 21208958.0,
-  "through": "2026-08",
-  "months_done": 8,
-  "months_left": 4,
-  "needed": 10791042.0,
-  "needed_per_month": 2697760.5,
-  "ytd_average": 2651119.75,
-  "pct": 66.3,
-  "projection_run_rate": 31813437.0,
-  "projection_seasonal": 34647530.73,
+  "ytd": 24304845.79,
+  "through": "2026-09",
+  "months_done": 9,
+  "months_left": 3,
+  "needed": 7695154.21,
+  "needed_per_month": 2565051.4,
+  "ytd_average": 2700538.42,
+  "pct": 76.0,
+  "projection_run_rate": 32406461.05,
+  "projection_seasonal": 35625676.13,
   "prior_year_total": 22191841.01,
   "basis": "Year to date is the management-accounts figure. The run-rate projection keeps the year-to-date average going. The seasonal projection repeats last year's shape from here, scaled by how this month compares with the same month last year."
  },
@@ -46170,11 +46364,7 @@
   },
   {
    "company": "Group",
-   "text": "Company Health: the Companies House filing test is not wired, and only 2 months of net profit are loaded, so the 3-month loss rule cannot go red yet."
-  },
-  {
-   "company": "Group",
-   "text": "Management Accounts: 2023 to 2025 and January to June 2026 month by month are still in Monica's annual workbooks in Drive. This machine has no network from the shell, so the board shows the two closed months plus the 2026 group totals by month."
+   "text": "Company Health: the Companies House filing test is not wired, and only 3 months of net profit are loaded, so the 3-month loss rule cannot go red yet."
   }
  ],
  "tabs_live": [

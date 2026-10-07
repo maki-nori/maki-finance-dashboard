@@ -48,6 +48,10 @@ CAT_LABELS = {
     "nest": "Nest pension",
     "rates": "Business rates",
     "rent": "Rent",
+    "utilities": "Gas, electric & water",
+    "waste": "Waste & bins",
+    "tech": "Kobas & tech",
+    "recurring": "Other monthly payments",
     "supplier_run": "Supplier payment run",
     "corp_tax": "Corporation tax",
     "companies_house": "Companies House filing",
@@ -87,6 +91,22 @@ COUNCIL_RE = re.compile(r"council|city of |borough|glasgow city|edinburgh cou|bu
 LANDLORD_RE = re.compile(r"savills|jll|british land|derwent|pinnacle property|property compan|real estate|landswood|mqm commercial|consolidated property|estates? ltd|land securities|hammerson|intu|westfield", re.I)
 
 
+# 2-Oct-2026 (Michael): name the running costs, not just the big lines.
+UTILITY_RE = re.compile(r"ecotricity|yu energy|octopus energy|british gas|scottish gas|jellyfish energy|yorkshire gas|\bygp\b|totalenergies|"
+                        r"smartest ?energy|edf ?energy|uc energy|e\.?on\b|\bsse\b|npower|ovo |opus energy|crown gas|haven power|"
+                        r"bristol energy|pozitive|valda|drax|engie|corona energy|everflow|business stream|water plus|castle water|"
+                        r"wave utilities|scottish water|thames water|yorkshire water|united utilities|severn trent|anglian water|"
+                        r"northumbrian water|southern water|wessex water|clear business water|water2business|light, power", re.I)
+WASTE_RE = re.compile(r"waste|recycl|biffa|veolia|suez|grundon|enva\b|first mile|olleco|bin ?collect|\bbins?\b|"
+                      r"commercial collection|trade refuse|reconomy|bywaters|paper round|cawleys|mitie waste", re.I)
+TECH_RE = re.compile(r"kobas|hospitality tech holdings|deliverect|xero|klaviyo|asana|trifft|google|microsoft|apple\.com|"
+                     r"cr technology|radar leisure tech|dojo|worldpay|sumup|square ?up|zettle|tevalis|lightspeed|"
+                     r"slack|zoom\.us|dropbox|adobe|canva|mailchimp|hubspot|sevenrooms|opentable|resdiary|tablein|"
+                     r"mapal|flow hospitality|planday|deputy|rotaready|brightpay|hubdoc|dext|pleo subscription|"
+                     r"bt group|british telecom|\bbt\b|virgin media|vodafone|\bo2\b|\bee limited|sky business|giffgaff|"
+                     r"telephone|internet|it software|subscriptions", re.I)
+
+
 def classify(row: dict, company: dict, cfg: dict) -> str | None:
     """Return a category key for an OUT row, or None if it is not a cash leaving item."""
     t = row.get("Type", "")
@@ -118,13 +138,21 @@ def classify(row: dict, company: dict, cfg: dict) -> str | None:
             return "intercompany"
     if not contact:
         return None  # blank contact = uncoded line; named as a gap, never guessed
-    return "supplier_run"
+    named = " ".join([contact, acct])
+    if UTILITY_RE.search(named):
+        return "utilities"
+    if WASTE_RE.search(named):
+        return "waste"
+    if TECH_RE.search(named):
+        return "tech"
+    return "supplier_run"   # split later into "recurring" (monthly by contact) and the weekly run
 
 
 # ---------------------------------------------------------------------------
 # pattern engine
 # ---------------------------------------------------------------------------
-def monthly_pattern(obs: list[tuple[date, float]], today: date, horizon: int, grace: int, label: str, source: str, code: str, note: str = ""):
+def monthly_pattern(obs: list[tuple[date, float]], today: date, horizon: int, grace: int, label: str, source: str, code: str, note: str = "",
+                    amount: str = "last"):
     """Project a monthly item from its observed payments. obs sorted by date. One entry per month (summed)."""
     if not obs:
         return [], None
@@ -146,6 +174,13 @@ def monthly_pattern(obs: list[tuple[date, float]], today: date, horizon: int, gr
     last_paid_dt = max(x[0] for x in by_month[last_m])
     stale = (today - last_paid_dt).days > 75  # pattern may have stopped: never call it overdue, ask instead
     basis = f"estimate, last paid {last_amt:,.2f} on {last_paid_dt.isoformat()}"
+    if amount == "avg3":
+        # running costs (energy, bins, subscriptions) wobble month to month: use the last three
+        # complete months, so one big catch-up bill does not become next month's number
+        cur = (today.year, today.month)
+        done = [m for m in months if m < cur][-3:] or months[-1:]
+        last_amt = money(statistics.mean([sum(a for _, a in by_month[m]) for m in done]))
+        basis = f"estimate, average of the last {len(done)} months (last paid {last_paid_dt.isoformat()})"
     m = start
     while m <= end:
         key = (m.year, m.month)
@@ -168,6 +203,146 @@ def monthly_pattern(obs: list[tuple[date, float]], today: date, horizon: int, gr
         m = add_months(m, 1)
     summary = dict(typical_day=typical_day, last_amount=last_amt, avg_6m=avg_amt, months_observed=len(months), last_paid=max(x[0] for x in by_month[last_m]).isoformat())
     return items, summary
+
+
+def soften(items: list[dict], today: date) -> list[dict]:
+    """Running costs are projected, never alarmed on: a bill not seen yet this month stays
+    expected (it may simply be late); a miss from an earlier month is dropped, not double counted."""
+    first = date(today.year, today.month, 1)
+    out = []
+    for i in items:
+        if i["status"] == "overdue":
+            if d(i["date"]) < first:
+                continue
+            i["status"] = "due"
+            i["note"] = (i.get("note", "") + " Expected this month, not seen in the bank yet.").strip()
+        out.append(i)
+    return out
+
+
+def split_recurring(rows: list[tuple[date, float, str]], today: date, window: int = 4, need: int = 3, max_per_month: int = 2):
+    """Pull monthly payees (direct debits, retainers, individuals, MPD) out of the supplier run.
+    A payee is monthly when it was paid in at least `need` of the last `window` complete months
+    and never more than `max_per_month` times in any of them. Weekly suppliers (Lynas, LWC) stay
+    in the weekly run, so nothing is counted twice."""
+    cur = date(today.year, today.month, 1)
+    full = [(add_months(cur, -k).year, add_months(cur, -k).month) for k in range(window, 0, -1)]
+    by_c: dict[str, list] = defaultdict(list)
+    for r in rows:
+        by_c[r[2].lower()].append(r)
+    monthly: dict[str, list] = {}
+    rest: list = []
+    for key, rs in by_c.items():
+        per = Counter((dt.year, dt.month) for dt, _, _ in rs if dt < cur)
+        hit = [m for m in full if per.get(m)]
+        if len(hit) >= need and max(per[m] for m in hit) <= max_per_month:
+            monthly[rs[0][2]] = sorted(rs)
+        else:
+            rest += rs
+    return monthly, sorted(rest)
+
+
+def payee_cadence(rows: list[tuple[date, float, str]], today: date, horizon: int, label: str, source: str, code: str, note: str):
+    """Landlord rent paid by Maki Property: each landlord on its own rhythm (monthly or the
+    quarter days), so a quarter-day month is not projected every month and vice versa."""
+    by_p: dict[str, list] = defaultdict(list)
+    for dt, a, ct in rows:
+        by_p[ct.lower()].append((dt, a, ct))
+    items: list[dict] = []
+    end = today + timedelta(days=horizon)
+    for key, rs in by_p.items():
+        rs.sort()
+        name = rs[-1][2]
+        by_m: dict[tuple[int, int], list] = defaultdict(list)
+        for dt, a, _ in rs:
+            by_m[(dt.year, dt.month)].append((dt, a))
+        pays = [(max(x[0] for x in by_m[m]), money(sum(a for _, a in by_m[m]))) for m in sorted(by_m)]
+        gaps = [(pays[i][0] - pays[i - 1][0]).days for i in range(1, len(pays))]
+        step = 1 if (gaps and statistics.median(gaps) < 45) else 3
+        for dt, amt in pays:
+            if dt >= today - timedelta(days=45):
+                items.append(dict(company=code, category=label, date=dt.isoformat(), amount=amt, basis="actual", status="paid",
+                                  note=f"{note} {name}.", source=source, payee=name))
+        last_dt, last_amt = pays[-1]
+        if (today - last_dt).days > (75 if step == 1 else 200):
+            continue    # stopped: not projected
+        nxt = add_months(last_dt, step)
+        while nxt < date(today.year, today.month, 1):
+            nxt = add_months(nxt, step)   # a missed beat from an earlier month is not carried forward
+        while nxt <= end:
+            st = "due"
+            items.append(dict(company=code, category=label, date=nxt.isoformat(), amount=last_amt,
+                              basis=f"estimate, {'monthly' if step == 1 else 'quarterly'}, last paid {last_amt:,.2f} on {last_dt.isoformat()}",
+                              status=st, note=f"{note} {name}.", source=source, payee=name))
+            nxt = add_months(nxt, step)
+    return items
+
+
+def outflows_for_company(c: dict, feed: list[dict], today: date, cfg: dict, src: str, horizon: int, grace: int, lookback: int):
+    """Every expected outflow for one company from its bank feed. Used by the board and by the
+    month-end backtest (which hands in the feed cut off at an earlier date)."""
+    code = c["code"]
+    obs: dict[str, list] = defaultdict(list)
+    uncoded = 0.0
+    for r in feed:
+        if r.get("Direction") != "OUT":
+            continue
+        cat = classify(r, c, cfg)
+        dt, amt = d(r["Date"]), abs(float(r["Amount"]))
+        if dt > today:
+            continue
+        if cat is None:
+            if "TRANSFER" not in r.get("Type", "") and not (r.get("Contact") or "").strip() and dt >= today - timedelta(days=lookback):
+                uncoded += amt
+            continue
+        obs[cat].append((dt, amt, (r.get("Contact") or "").strip()))
+    for cat in obs:
+        obs[cat].sort()
+    items_all: list[dict] = []
+    p: dict = {}
+    items, s = vat_pattern([(a, b) for a, b, _ in obs["vat"]], today, horizon, grace, src, code)
+    items_all += items; p["vat"] = s
+    for cat in ("paye", "payroll", "nest", "rates", "rent"):
+        note = ""
+        if cat == "nest":
+            note = "Nest pension contributions, paid a few days after the wages."
+        if cat == "rent":
+            note = "Paid to landlords (see rent register once wired)." if c.get("is_property_co") else "Paid to Maki Property."
+        if cat == "rates":
+            note = "Standing order to the council. Watched: a missed month goes red."
+        if cat == "payroll":
+            note = "Net pay as it left the bank. The Nest pension is counted separately."
+        if cat == "rent" and c.get("is_property_co"):
+            items_all += payee_cadence(obs[cat], today, horizon, CAT_LABELS[cat], src, code, "Landlord:")
+            p[cat] = dict(landlords=len({ct.lower() for _, _, ct in obs[cat]}))
+            continue
+        items, s = monthly_pattern([(a, b) for a, b, _ in obs[cat]], today, horizon, grace, CAT_LABELS[cat], src, code, note)
+        items_all += items; p[cat] = s
+    for cat, note in (("utilities", "Energy and water suppliers."), ("waste", "Bin collections and recycling."),
+                      ("tech", "Kobas, Deliverect, card terminals, software and telecoms.")):
+        if not obs[cat]:
+            continue
+        who = Counter()
+        for _, a, ct in obs[cat]:
+            who[ct] += a
+        n2 = note + " Paid to: " + ", ".join(k for k, _ in who.most_common(3)) + "."
+        items, s = monthly_pattern([(a, b) for a, b, _ in obs[cat]], today, horizon, grace, CAT_LABELS[cat], src, code, n2, amount="avg3")
+        items_all += soften(items, today); p[cat] = s
+    monthly, rest = split_recurring(obs["supplier_run"], today)
+    rec = {}
+    for name, rs in monthly.items():
+        items, s = monthly_pattern([(a, b) for a, b, _ in rs], today, horizon, grace, CAT_LABELS["recurring"], src, code, name, amount="avg3")
+        for i in items:
+            i["payee"] = name
+        items_all += soften(items, today)
+        if s:
+            rec[name] = s["last_amount"]
+    p["recurring"] = dict(payees=len(rec), monthly_total=money(sum(rec.values())),
+                          top=[dict(name=k, amount=money(v)) for k, v in sorted(rec.items(), key=lambda kv: -kv[1])[:8]])
+    items, s = weekly_pattern(rest, today, horizon, code, CAT_LABELS["supplier_run"], src)
+    items_all += items; p["supplier_run"] = s
+    obs["supplier_run"] = rest
+    return items_all, p, obs, uncoded
 
 
 def vat_pattern(obs: list[tuple[date, float]], today: date, horizon: int, grace: int, source: str, code: str):
@@ -250,6 +425,79 @@ def weekly_pattern(rows: list[tuple[date, float, str]], today: date, horizon: in
 
 
 # ---------------------------------------------------------------------------
+# tab 6: cash reconciliation (2-Oct-2026, Michael)
+# ---------------------------------------------------------------------------
+def load_cash_recon(today: date, gaps: list) -> dict | None:
+    """Kobas till cash vs the site cash-up sheet vs cash lodged in the bank, per site.
+    Built from cash_recon.json (extract_cash_recon.py). Never invents a figure: a site with no
+    cash-up tab, or no lodgement in Xero, is named as such."""
+    fp = HERE / "cash_recon.json"
+    if not fp.exists():
+        gaps.append(dict(company="Group", text="cash_recon.json not built yet: run extract_cash_recon.py, so the Cash tab is empty."))
+        return None
+    raw = json.loads(fp.read_text())
+    months = []
+    m = date(today.year, 1, 1)
+    while m <= today:
+        months.append(m.strftime("%Y-%m")); m = add_months(m, 1)
+    sites, flags = [], []
+    for code, sdat in raw["sites"].items():
+        days = [r for r in sdat["days"] if r["date"] <= today.isoformat()]
+        bank = [b for b in sdat["banked"] if b["date"] >= raw["start"] and b["date"] <= today.isoformat()]
+        per = {}
+        for mo in months + ["YTD"]:
+            rows = [r for r in days if mo == "YTD" or r["date"].startswith(mo)]
+            cnt = [r for r in rows if r.get("counted")]
+            agg = lambda k, rr=rows: money(sum((r.get(k) or 0) for r in rr))
+            per[mo] = dict(
+                kobas=agg("kobas_cash"), z=agg("z_cash"), petty=agg("petty"), to_bank=agg("to_bank"),
+                counted=agg("counted"), counted_days=len(cnt), traded_days=len([r for r in rows if (r.get("kobas_cash") or r.get("z_cash"))]),
+                count_var=money(sum(r["counted"] - (r.get("to_bank") or 0) for r in cnt)),
+                to_bank_on_counted=money(sum((r.get("to_bank") or 0) for r in cnt)),
+                banked=money(sum(b["amount"] for b in bank if mo == "YTD" or b["date"].startswith(mo))),
+                lodgements=len([b for b in bank if mo == "YTD" or b["date"].startswith(mo)]),
+            )
+        last_z = max((r["date"] for r in days if r.get("z_cash")), default=None)
+        last_c = max((r["date"] for r in days if r.get("counted")), default=None)
+        last_b = max((b["date"] for b in bank), default=None)
+        y = per["YTD"]
+        unbanked = money((y["to_bank"] if sdat["has_cashup"] else y["kobas"]) - y["banked"])
+        g4s = sdat.get("g4s")
+        how = f"G4S ({g4s} on the statement)" if g4s else "cash lodgement"
+        row = dict(code=code, has_cashup=sdat["has_cashup"], g4s=g4s, per=per, last_cashup=last_z, last_counted=last_c, last_banked=last_b,
+                   unbanked_ytd=unbanked, source=sdat.get("cashup_source"),
+                   daily=[r for r in days if r["date"] >= (today - timedelta(days=35)).isoformat()],
+                   lodgements=[b for b in bank if b["date"] >= (today - timedelta(days=95)).isoformat()])
+        sites.append(row)
+        if not sdat["has_cashup"]:
+            flags.append(dict(level="amber", code=code, text=f"No cash-up tab for {code} in any of the three Cash UP workbooks, so only Kobas and the bank can be compared."))
+        if not bank:
+            flags.append(dict(level="red", code=code, text=f"No {how} reconciled in Xero this year, against {y['kobas']:,.0f} of Kobas cash. "
+                              + ("Not on the G4S round: ask how this site banks its cash." if not g4s else "Check the statement for unreconciled G4S lines.")))
+        elif last_b and (today - d(last_b)).days > 21:
+            flags.append(dict(level="red" if (g4s and (today - d(last_b)).days > 45) else "amber", code=code,
+                              text=f"Last {how} reconciled in Xero was {last_b}, {(today - d(last_b)).days} days ago, with {unbanked:,.0f} not banked this year. "
+                                   "Either G4S has not collected or the lines are sitting unreconciled." if g4s else
+                                   f"Last cash lodgement reconciled in Xero was {last_b}, {(today - d(last_b)).days} days ago."))
+        # 2-Oct-2026 (Michael): "if they don't match it's not ok" - a gap either way is a break.
+        if abs(unbanked) > 500:
+            if unbanked > 0:
+                txt = f"{unbanked:,.0f} of cash this year has not reached the bank in Xero."
+            else:
+                txt = (f"{-unbanked:,.0f} more was banked as cash in Xero this year than the "
+                       f"{'cash-up' if sdat['has_cashup'] else 'Kobas'} says was taken. Find what else is coded to the contact Cash, or what the cash-up is missing.")
+            flags.append(dict(level="red" if abs(unbanked) > 10000 else "amber", code=code, text=txt, kind="mismatch"))
+        if last_c and last_z and (d(last_z) - d(last_c)).days > 7:
+            flags.append(dict(level="amber", code=code, text=f"Cash is counted up to {last_c} but the cash-up runs to {last_z}: {(d(last_z) - d(last_c)).days} days not counted yet."))
+        if y["counted_days"] and abs(y["count_var"]) > 1000:
+            flags.append(dict(level="amber", code=code, text=f"Counted cash is {y['count_var']:+,.0f} against what the cash-up says should be there, over {y['counted_days']} counted days this year."))
+        if sdat["has_cashup"] and y["kobas"] and abs(y["kobas"] - y["z"]) / y["kobas"] > 0.05:
+            flags.append(dict(level="amber", code=code, text=f"Kobas cash {y['kobas']:,.0f} against cash-up Z cash {y['z']:,.0f} this year ({(y['z'] - y['kobas']) / y['kobas'] * 100:+.1f}%)."))
+    flags.sort(key=lambda f: (0 if f["level"] == "red" else 1, f["code"]))
+    return dict(months=months, sites=sites, flags=flags, built=raw["built"], sources=raw["sources"])
+
+
+# ---------------------------------------------------------------------------
 # tab 3: company health
 # ---------------------------------------------------------------------------
 HEALTH_RULES = [
@@ -268,6 +516,8 @@ def load_analysis(cfg: dict, period: str | None):
         fp = HERE / f"analysis_{period}.json"
         if fp.exists():
             return json.loads(fp.read_text())
+    if period:
+        return None      # never pair one month's analysis with another month's figures (7-Oct-2026)
     cands = sorted(HERE.glob("analysis_*.json"))
     return json.loads(cands[-1].read_text()) if cands else None
 
@@ -694,6 +944,9 @@ def ma_block(cfg, store, alias, gaps, analysis=None):
             pounds = dict(wages=exact.get("wage"), rent=exact.get("rent"), food=exact.get("cost_of_sales"),
                           variable=exact.get("variable"), vat=exact.get("tax"))
             pounds_basis = "as written in the monthly analysis"
+        elif v.get("pounds"):
+            pounds = dict(v["pounds"])
+            pounds_basis = "as written in the annual workbook"
         else:
             pounds = {}
             for key in ("wages", "rent", "food", "variable", "vat"):
@@ -731,7 +984,8 @@ def ma_block(cfg, store, alias, gaps, analysis=None):
     movers_up = sorted([r for r in sites if r["np_delta"] is not None], key=lambda r: -r["np_delta"])[:5]
     movers_dn = sorted([r for r in sites if r["np_delta"] is not None and r["np_delta"] < 0], key=lambda r: r["np_delta"])[:5]
 
-    gaps.append(dict(company="Group", text="Management Accounts: 2023 to 2025 and January to June 2026 month by month are still in "
+    if not (HERE / "ma_years.json").exists():
+      gaps.append(dict(company="Group", text="Management Accounts: 2023 to 2025 and January to June 2026 month by month are still in "
                                            "Monica's annual workbooks in Drive. This machine has no network from the shell, so the board "
                                            "shows the two closed months plus the 2026 group totals by month."))
     return dict(
@@ -885,39 +1139,10 @@ def build(root: Path, today: date) -> dict:
         if (today - last_row).days > 4:
             attention.append(dict(level="amber", company=code, text=f"Bank feed last row is {last_row.isoformat()}, {(today - last_row).days} days old.", tab="calendar"))
         src = f"{c['feed']} (bank feed, last row {last_row.isoformat()})"
-        obs: dict[str, list] = defaultdict(list)
-        uncoded = 0.0
-        for r in feed:
-            if r.get("Direction") != "OUT":
-                continue
-            cat = classify(r, c, cfg)
-            dt, amt = d(r["Date"]), abs(float(r["Amount"]))
-            if cat is None:
-                if "TRANSFER" not in r.get("Type", "") and not (r.get("Contact") or "").strip() and dt >= today - timedelta(days=lookback):
-                    uncoded += amt
-                continue
-            obs[cat].append((dt, amt, (r.get("Contact") or "").strip()))
-        for cat in obs:
-            obs[cat].sort()
+        items_c, p, obs, uncoded = outflows_for_company(c, feed, today, cfg, src, horizon, grace, lookback)
+        calendar += items_c
         if uncoded > 0:
             gaps.append(dict(company=code, text=f"{uncoded:,.0f} of payments in the last {lookback} days have no contact in Xero, so they are not on the calendar."))
-        p = {}
-        items, s = vat_pattern([(a, b) for a, b, _ in obs["vat"]], today, horizon, grace, src, code)
-        calendar += items; p["vat"] = s
-        for cat in ("paye", "payroll", "nest", "rates", "rent"):
-            note = ""
-            if cat == "nest":
-                note = "Nest pension contributions, paid a few days after the wages."
-            if cat == "rent":
-                note = "Paid to landlords (see rent register once wired)." if c.get("is_property_co") else "Paid to Maki Property."
-            if cat == "rates":
-                note = "Standing order to the council. Watched: a missed month goes red."
-            if cat == "payroll":
-                note = "Net pay as it left the bank. The Nest pension is counted separately."
-            items, s = monthly_pattern([(a, b) for a, b, _ in obs[cat]], today, horizon, grace, CAT_LABELS[cat], src, code, note)
-            calendar += items; p[cat] = s
-        items, s = weekly_pattern(obs["supplier_run"], today, horizon, code, CAT_LABELS["supplier_run"], src)
-        calendar += items; p["supplier_run"] = s
         p["intercompany_out_90d"] = money(sum(a for dt, a, _ in obs["intercompany"] if dt >= today - timedelta(days=90)))
         patterns[code] = p
         for cat in ("vat", "paye", "payroll", "rates", "rent"):
@@ -1056,6 +1281,31 @@ def build(root: Path, today: date) -> dict:
 
     me = month_end(today)
     projection = project(me)
+    # how good was this engine last month? stand on day 1 of last month with only the feed up to
+    # then, project to that month end, and set it against what actually left (2-Oct-2026)
+    try:
+        bt_start = add_months(date(today.year, today.month, 1), -1)
+        bt_end = month_end(bt_start)
+        bt_p = bt_a = 0.0
+        for c in companies:
+            fp = feed_dir / c["feed"] if c.get("feed") else None
+            if not fp or not fp.exists():
+                continue
+            with fp.open(newline="") as fh:
+                feed = list(csv.DictReader(fh))
+            before = [r for r in feed if d(r["Date"]) < bt_start]
+            if not before:
+                continue
+            its, *_ = outflows_for_company(c, before, bt_start, cfg, "", horizon, grace, lookback)
+            bt_p += sum(i["amount"] for i in its if i["status"] in ("due", "overdue") and bt_start <= d(i["date"]) <= bt_end)
+            for r in feed:
+                if r.get("Direction") == "OUT" and bt_start <= d(r["Date"]) <= bt_end and classify(r, c, cfg) not in (None, "intercompany"):
+                    bt_a += abs(float(r["Amount"]))
+        if bt_a:
+            projection["backtest"] = dict(month=bt_start.strftime("%B %Y"), projected=money(bt_p), actual=money(bt_a),
+                                          diff=money(bt_p - bt_a), pct=round((bt_p - bt_a) / bt_a * 100, 1))
+    except Exception as e:  # never let the check break the board
+        projection["backtest"] = dict(error=str(e))
     projection["next"] = project(month_end(me + timedelta(days=1)))
     if projection["closing"] < cfg["cash_alarm_gbp"]:
         attention.append(dict(level="amber", company="Group",
@@ -1097,6 +1347,11 @@ def build(root: Path, today: date) -> dict:
         for f in ma["flags"]:
             if f["level"] == "red":
                 att.append(dict(level="red", company=alias.get(f["code"], f["code"]), text=f["text"], tab="ma"))
+    cashrec = load_cash_recon(today, gaps)
+    if cashrec:
+        for f in cashrec["flags"]:
+            if f["level"] == "red":
+                att.append(dict(level="red", company=f["code"], text=f["text"], tab="cash"))
     seen2 = set(); att2 = []
     for a in att:
         k = (a["company"], a["text"])
@@ -1119,12 +1374,13 @@ def build(root: Path, today: date) -> dict:
         health=health,
         ma=ma,
         mayears=mayears,
+        cashrec=cashrec,
         bep=bep,
         prior_year=prior_pl,
         target=revenue_target(cfg, store, prior_pl, gaps),
         projection=projection,
         gaps=gaps,
-        tabs_live=["today", "calendar", "health", "ma", "bep"],
+        tabs_live=["today", "calendar", "health", "ma", "bep", "cash"],
         tabs_next=["accounts_payable", "receivables", "fpa", "reconciliation"],
     )
 

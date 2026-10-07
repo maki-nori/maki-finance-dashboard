@@ -118,6 +118,85 @@ def parse_group_series(path: Path, heading: str, unit: str):
     return pairs
 
 
+
+# ---------------------------------------------------------------------------
+# Months after August 2026 come straight from Monica's annual workbooks
+# (ma_years.json, written by extract_ma_annuals.py). Added 7-Oct-2026 for the
+# September close. August stays on the published dashboard as before.
+# ---------------------------------------------------------------------------
+YEARS_TO_DASH = {"IKI2": "M5", "NORI": "Nori"}      # ma_years code -> the dashboard's code
+NOT_UK_RESTAURANT = {"MRLLC", "MF", "MP", "AAHQ", "IRB", "IKI1", "M4"}
+MONTH_NAMES = ["January", "February", "March", "April", "May", "June", "July",
+               "August", "September", "October", "November", "December"]
+
+
+def extend_with_annuals(payload: dict, here: Path) -> list[str]:
+    fp = here / "ma_years.json"
+    if not fp.exists():
+        return []
+    yrs = json.loads(fp.read_text())
+    done = []
+    names = {k: v.get("name") for k, v in payload["months"][payload["latest_month"]]["sites"].items()}
+    while True:
+        prev = payload["latest_month"]
+        y, m = map(int, prev.split("-"))
+        y, m = (y + 1, 1) if m == 12 else (y, m + 1)
+        key = f"{y}-{m:02d}"
+        prev_sites = payload["months"][prev]["sites"]
+        rows = {}
+        for c0, srec in (yrs.get("sites") or {}).items():
+            if c0 in NOT_UK_RESTAURANT:
+                continue
+            rec = (((srec.get("years") or {}).get(str(y)) or {}).get("months") or {}).get(str(m))
+            if not rec or rec.get("sales") in (None, 0):
+                continue
+            code = YEARS_TO_DASH.get(c0, c0)
+            src = ((srec.get("years") or {}).get(str(y)) or {}).get("source") or f"{c0}_{y}.xlsx"
+            sales = rec["sales"]
+            pv = prev_sites.get(code) or {}
+            ytd_s = (pv.get("ytd_sales") or 0) + sales if (pv.get("ytd_sales") is not None or not pv) else None
+            ytd_n = (pv.get("ytd_np") or 0) + (rec.get("np") or 0) if (pv.get("ytd_np") is not None or not pv) else None
+            def pct(v):
+                return None if v is None or not sales else round(v / sales * 100, 1)
+            rows[code] = dict(
+                code=code, name=names.get(code) or code, sales=round(sales, 2), tips=rec.get("tips"),
+                wages_pct=pct(rec.get("wages")), rent_pct=pct(rec.get("rent")), food_pct=pct(rec.get("food")),
+                variable_pct=pct(rec.get("variable")), vat_pct=pct(rec.get("vat")),
+                total_costs=None if rec.get("total_costs") is None else round(rec["total_costs"], 2),
+                np=None if rec.get("np") is None else round(rec["np"], 2), np_pct=pct(rec.get("np")),
+                ytd_sales=None if ytd_s is None else round(ytd_s, 2),
+                ytd_np=None if ytd_n is None else round(ytd_n, 2),
+                pounds={k: (None if rec.get(k) is None else round(rec[k], 2))
+                        for k in ("wages", "rent", "food", "variable", "vat")},
+                month=key, source=src)
+        # only a month most sites have closed counts as closed
+        if len(rows) < max(5, int(len(prev_sites) * 0.75)):
+            break
+        tot = lambda f: round(sum((r.get(f) or 0) for r in rows.values()), 2)
+        tp = lambda k: round(sum((r["pounds"].get(k) or 0) for r in rows.values()), 2)
+        S = tot("sales")
+        g = dict(code="ALL", name=f"{len(rows)} sites - group", sales=S, tips=tot("tips"),
+                 wages_pct=round(tp("wages") / S * 100, 1), rent_pct=round(tp("rent") / S * 100, 1),
+                 food_pct=round(tp("food") / S * 100, 1), variable_pct=round(tp("variable") / S * 100, 1),
+                 vat_pct=round(tp("vat") / S * 100, 1), total_costs=tot("total_costs"), np=tot("np"),
+                 np_pct=round(tot("np") / S * 100, 1),
+                 ytd_sales=round((prev_sites.get("ALL", {}).get("ytd_sales") or 0) + S, 2),
+                 ytd_np=round((prev_sites.get("ALL", {}).get("ytd_np") or 0) + tot("np"), 2),
+                 pounds={k: tp(k) for k in ("wages", "rent", "food", "variable", "vat")},
+                 month=key, source="ma_years.json")
+        rows["ALL"] = g
+        label = f"{MONTH_NAMES[m - 1]} {y}"
+        payload["months"][key] = dict(
+            label=label, sites=rows, source="Monica's annual MA workbooks (ma_years.json)",
+            note=f"{len(rows) - 1} sites, read straight from the annual workbooks. Group = simple sum of the sites.")
+        payload["prior_month"], payload["latest_month"] = prev, key
+        gs = payload.get("group_series") or {}
+        gs.setdefault("sales", []).append(dict(month=MONTH_NAMES[m - 1][:3], value=S, rounded=False))
+        gs.setdefault("np", []).append(dict(month=MONTH_NAMES[m - 1][:3], value=g["np"], rounded=False))
+        done.append(key)
+    return done
+
+
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--root", default=str(HERE.parent))
@@ -177,6 +256,15 @@ def main() -> int:
             "September 2026 is not closed yet.",
         ],
     )
+    added = extend_with_annuals(payload, HERE)
+    if added:
+        payload["flags"] = [f for f in payload["flags"] if f.get("month") not in ("2026-08",)] + \
+            ((json.loads((HERE / "ma_flags.json").read_text()) if (HERE / "ma_flags.json").exists() else []))
+        nxt = payload["latest_month"]
+        y, m = map(int, nxt.split("-"))
+        nm = MONTH_NAMES[m % 12] + f" {y + (1 if m == 12 else 0)}"
+        payload["gaps"] = [g for g in payload["gaps"] if "not closed yet" not in g] + [f"{nm} is not closed yet."]
+        print("added from the annual workbooks: " + ", ".join(added))
     OUT.write_text(json.dumps(payload, indent=1, ensure_ascii=False))
     g = m_aug.get("ALL", {})
     print(f"wrote {OUT.name}: Aug {len(m_aug)} rows, Jul {len(m_jul)} rows, H1 {len(h1)} rows, "

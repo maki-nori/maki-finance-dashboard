@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-07T10:44:02+04:00",
+ "generated_at": "2026-10-07T12:38:45+04:00",
  "as_of": "2026-10-07",
  "companies": [
   {
@@ -114,7 +114,7 @@
   }
  ],
  "cash": {
-  "as_at": "2026-10-07T05:00:53.616743+00:00",
+  "as_at": "2026-10-07T08:38:40.813988+00:00",
   "snapshot_date": "2026-10-07",
   "group_total": 2093982.92,
   "snapshot_group_total": 2093982.92,
@@ -22219,7 +22219,7 @@
    "tech": {
     "typical_day": 1,
     "last_amount": 2115.86,
-    "avg_6m": 1187.18,
+    "avg_6m": 1187.19,
     "months_observed": 6,
     "last_paid": "2026-10-01"
    },
@@ -33419,12 +33419,12 @@
       "kobas": 3500.34,
       "z": 3460.88,
       "petty": 74.34,
-      "to_bank": 3386.53,
+      "to_bank": 3386.54,
       "counted": 3499.74,
       "counted_days": 28,
       "traded_days": 28,
       "count_var": 113.2,
-      "to_bank_on_counted": 3386.53,
+      "to_bank_on_counted": 3386.54,
       "banked": 0.0,
       "lodgements": 0
      },
@@ -33521,13 +33521,13 @@
      },
      "YTD": {
       "kobas": 31532.39,
-      "z": 31300.65,
+      "z": 31300.66,
       "petty": 1060.04,
       "to_bank": 30240.62,
       "counted": 30881.12,
       "counted_days": 264,
       "traded_days": 270,
-      "count_var": 640.5,
+      "count_var": 640.51,
       "to_bank_on_counted": 30240.62,
       "banked": 0.0,
       "lodgements": 0
@@ -41577,7 +41577,7 @@
      },
      "2026-03": {
       "kobas": 10697.58,
-      "z": 11491.5,
+      "z": 11491.51,
       "petty": 908.46,
       "to_bank": 11052.41,
       "counted": 3352.63,
@@ -41683,7 +41683,7 @@
       "kobas": 81170.61,
       "z": 82827.63,
       "petty": 4115.19,
-      "to_bank": 80848.51,
+      "to_bank": 80848.5,
       "counted": 44267.24,
       "counted_days": 138,
       "traded_days": 241,
@@ -41696,7 +41696,7 @@
     "last_cashup": "2026-09-27",
     "last_counted": "2026-09-22",
     "last_banked": "2026-09-07",
-    "unbanked_ytd": 60276.38,
+    "unbanked_ytd": 60276.37,
     "source": "_cashup_NORI.xlsx tab 'Maki Lakeside' (downloaded 2026-10-01 10:10)",
     "daily": [
      {

@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-08T10:02:04+04:00",
+ "generated_at": "2026-10-08T10:43:21+04:00",
  "as_of": "2026-10-08",
  "companies": [
   {
@@ -489,7 +489,7 @@
  },
  "leaving": {
   "window_days": 30,
-  "total": 2629171.15,
+  "total": 2629397.6,
   "by_category": [
    {
     "category": "Payroll (net wages)",
@@ -497,7 +497,7 @@
    },
    {
     "category": "Supplier payment run",
-    "amount": 517328.44
+    "amount": 517554.89
    },
    {
     "category": "VAT",
@@ -1285,7 +1285,7 @@
   {
    "level": "red",
    "company": "IKI 2",
-   "text": "No cash lodgement reconciled in Xero this year, against 38,487 of Kobas cash. Not on the G4S round: ask how this site banks its cash.",
+   "text": "No cash lodgement reconciled in Xero this year, against 38,696 of Kobas cash. Not on the G4S round: ask how this site banks its cash.",
    "tab": "cash"
   },
   {
@@ -1297,7 +1297,7 @@
   {
    "level": "red",
    "company": "M1",
-   "text": "No cash lodgement reconciled in Xero this year, against 31,532 of Kobas cash. Not on the G4S round: ask how this site banks its cash.",
+   "text": "No cash lodgement reconciled in Xero this year, against 31,553 of Kobas cash. Not on the G4S round: ask how this site banks its cash.",
    "tab": "cash"
   },
   {
@@ -1357,7 +1357,7 @@
   {
    "level": "red",
    "company": "M6",
-   "text": "No cash lodgement reconciled in Xero this year, against 62,239 of Kobas cash. Not on the G4S round: ask how this site banks its cash.",
+   "text": "No cash lodgement reconciled in Xero this year, against 62,644 of Kobas cash. Not on the G4S round: ask how this site banks its cash.",
    "tab": "cash"
   },
   {
@@ -1369,7 +1369,7 @@
   {
    "level": "red",
    "company": "M7",
-   "text": "113,598 of cash this year has not reached the bank in Xero.",
+   "text": "107,578 of cash this year has not reached the bank in Xero.",
    "tab": "cash"
   },
   {
@@ -4598,17 +4598,6 @@
    "days": -7
   },
   {
-   "company": "NORI",
-   "category": "Supplier payment run",
-   "date": "2026-10-01",
-   "amount": 2019.62,
-   "basis": "actual, week total",
-   "status": "paid",
-   "note": "Week 40: 6 payments.",
-   "source": "daily_bank_NORI.csv (bank feed, last row 2026-10-06)",
-   "days": -7
-  },
-  {
    "company": "MP",
    "category": "Rent",
    "date": "2026-10-01",
@@ -5039,6 +5028,17 @@
    "days": -6
   },
   {
+   "company": "NORI",
+   "category": "Supplier payment run",
+   "date": "2026-10-02",
+   "amount": 2228.42,
+   "basis": "actual, week total",
+   "status": "paid",
+   "note": "Week 40: 10 payments.",
+   "source": "daily_bank_NORI.csv (bank feed, last row 2026-10-06)",
+   "days": -6
+  },
+  {
    "company": "M17",
    "category": "Supplier payment run",
    "date": "2026-10-02",
@@ -5361,17 +5361,6 @@
    "status": "paid",
    "note": "Week 41: 3 payments.",
    "source": "daily_bank_M17.csv (bank feed, last row 2026-10-06)",
-   "days": -3
-  },
-  {
-   "company": "NORI",
-   "category": "Supplier payment run",
-   "date": "2026-10-05",
-   "amount": 700.27,
-   "basis": "actual, week total",
-   "status": "paid",
-   "note": "Week 41: 1 payments.",
-   "source": "daily_bank_NORI.csv (bank feed, last row 2026-10-06)",
    "days": -3
   },
   {
@@ -5737,6 +5726,17 @@
    "status": "paid",
    "note": "Nest pension contributions, paid a few days after the wages.",
    "source": "daily_bank_M16.csv (bank feed, last row 2026-10-07)",
+   "days": -2
+  },
+  {
+   "company": "NORI",
+   "category": "Supplier payment run",
+   "date": "2026-10-06",
+   "amount": 790.24,
+   "basis": "actual, week total",
+   "status": "paid",
+   "note": "Week 41: 2 payments.",
+   "source": "daily_bank_NORI.csv (bank feed, last row 2026-10-06)",
    "days": -2
   },
   {
@@ -6314,8 +6314,8 @@
    "company": "NORI",
    "category": "Supplier payment run",
    "date": "2026-10-09",
-   "amount": 3865.12,
-   "basis": "estimate, 8-week average (last week 700.27)",
+   "amount": 3910.41,
+   "basis": "estimate, 8-week average (last week 790.24)",
    "status": "due",
    "note": "Usually paid on a Fri. Top: EatClub Technologies Ltd 13,235, Winley Limited 9,680, LWC Drinks Ltd 6,283.",
    "source": "daily_bank_NORI.csv (bank feed, last row 2026-10-06)",
@@ -6978,8 +6978,8 @@
    "company": "NORI",
    "category": "Supplier payment run",
    "date": "2026-10-16",
-   "amount": 3865.12,
-   "basis": "estimate, 8-week average (last week 700.27)",
+   "amount": 3910.41,
+   "basis": "estimate, 8-week average (last week 790.24)",
    "status": "due",
    "note": "Usually paid on a Fri. Top: EatClub Technologies Ltd 13,235, Winley Limited 9,680, LWC Drinks Ltd 6,283.",
    "source": "daily_bank_NORI.csv (bank feed, last row 2026-10-06)",
@@ -7702,8 +7702,8 @@
    "company": "NORI",
    "category": "Supplier payment run",
    "date": "2026-10-23",
-   "amount": 3865.12,
-   "basis": "estimate, 8-week average (last week 700.27)",
+   "amount": 3910.41,
+   "basis": "estimate, 8-week average (last week 790.24)",
    "status": "due",
    "note": "Usually paid on a Fri. Top: EatClub Technologies Ltd 13,235, Winley Limited 9,680, LWC Drinks Ltd 6,283.",
    "source": "daily_bank_NORI.csv (bank feed, last row 2026-10-06)",
@@ -8610,8 +8610,8 @@
    "company": "NORI",
    "category": "Supplier payment run",
    "date": "2026-10-30",
-   "amount": 3865.12,
-   "basis": "estimate, 8-week average (last week 700.27)",
+   "amount": 3910.41,
+   "basis": "estimate, 8-week average (last week 790.24)",
    "status": "due",
    "note": "Usually paid on a Fri. Top: EatClub Technologies Ltd 13,235, Winley Limited 9,680, LWC Drinks Ltd 6,283.",
    "source": "daily_bank_NORI.csv (bank feed, last row 2026-10-06)",
@@ -9718,8 +9718,8 @@
    "company": "NORI",
    "category": "Supplier payment run",
    "date": "2026-11-06",
-   "amount": 3865.12,
-   "basis": "estimate, 8-week average (last week 700.27)",
+   "amount": 3910.41,
+   "basis": "estimate, 8-week average (last week 790.24)",
    "status": "due",
    "note": "Usually paid on a Fri. Top: EatClub Technologies Ltd 13,235, Winley Limited 9,680, LWC Drinks Ltd 6,283.",
    "source": "daily_bank_NORI.csv (bank feed, last row 2026-10-06)",
@@ -10857,8 +10857,8 @@
    "company": "NORI",
    "category": "Supplier payment run",
    "date": "2026-11-13",
-   "amount": 3865.12,
-   "basis": "estimate, 8-week average (last week 700.27)",
+   "amount": 3910.41,
+   "basis": "estimate, 8-week average (last week 790.24)",
    "status": "due",
    "note": "Usually paid on a Fri. Top: EatClub Technologies Ltd 13,235, Winley Limited 9,680, LWC Drinks Ltd 6,283.",
    "source": "daily_bank_NORI.csv (bank feed, last row 2026-10-06)",
@@ -11391,8 +11391,8 @@
    "company": "NORI",
    "category": "Supplier payment run",
    "date": "2026-11-20",
-   "amount": 3865.12,
-   "basis": "estimate, 8-week average (last week 700.27)",
+   "amount": 3910.41,
+   "basis": "estimate, 8-week average (last week 790.24)",
    "status": "due",
    "note": "Usually paid on a Fri. Top: EatClub Technologies Ltd 13,235, Winley Limited 9,680, LWC Drinks Ltd 6,283.",
    "source": "daily_bank_NORI.csv (bank feed, last row 2026-10-06)",
@@ -12331,8 +12331,8 @@
    "company": "NORI",
    "category": "Supplier payment run",
    "date": "2026-11-27",
-   "amount": 3865.12,
-   "basis": "estimate, 8-week average (last week 700.27)",
+   "amount": 3910.41,
+   "basis": "estimate, 8-week average (last week 790.24)",
    "status": "due",
    "note": "Usually paid on a Fri. Top: EatClub Technologies Ltd 13,235, Winley Limited 9,680, LWC Drinks Ltd 6,283.",
    "source": "daily_bank_NORI.csv (bank feed, last row 2026-10-06)",
@@ -13519,8 +13519,8 @@
    "company": "NORI",
    "category": "Supplier payment run",
    "date": "2026-12-04",
-   "amount": 3865.12,
-   "basis": "estimate, 8-week average (last week 700.27)",
+   "amount": 3910.41,
+   "basis": "estimate, 8-week average (last week 790.24)",
    "status": "due",
    "note": "Usually paid on a Fri. Top: EatClub Technologies Ltd 13,235, Winley Limited 9,680, LWC Drinks Ltd 6,283.",
    "source": "daily_bank_NORI.csv (bank feed, last row 2026-10-06)",
@@ -14736,8 +14736,8 @@
    "company": "NORI",
    "category": "Supplier payment run",
    "date": "2026-12-11",
-   "amount": 3865.12,
-   "basis": "estimate, 8-week average (last week 700.27)",
+   "amount": 3910.41,
+   "basis": "estimate, 8-week average (last week 790.24)",
    "status": "due",
    "note": "Usually paid on a Fri. Top: EatClub Technologies Ltd 13,235, Winley Limited 9,680, LWC Drinks Ltd 6,283.",
    "source": "daily_bank_NORI.csv (bank feed, last row 2026-10-06)",
@@ -15376,8 +15376,8 @@
    "company": "NORI",
    "category": "Supplier payment run",
    "date": "2026-12-18",
-   "amount": 3865.12,
-   "basis": "estimate, 8-week average (last week 700.27)",
+   "amount": 3910.41,
+   "basis": "estimate, 8-week average (last week 790.24)",
    "status": "due",
    "note": "Usually paid on a Fri. Top: EatClub Technologies Ltd 13,235, Winley Limited 9,680, LWC Drinks Ltd 6,283.",
    "source": "daily_bank_NORI.csv (bank feed, last row 2026-10-06)",
@@ -16283,8 +16283,8 @@
    "company": "NORI",
    "category": "Supplier payment run",
    "date": "2026-12-25",
-   "amount": 3865.12,
-   "basis": "estimate, 8-week average (last week 700.27)",
+   "amount": 3910.41,
+   "basis": "estimate, 8-week average (last week 790.24)",
    "status": "due",
    "note": "Usually paid on a Fri. Top: EatClub Technologies Ltd 13,235, Winley Limited 9,680, LWC Drinks Ltd 6,283.",
    "source": "daily_bank_NORI.csv (bank feed, last row 2026-10-06)",
@@ -17043,8 +17043,8 @@
    "company": "NORI",
    "category": "Supplier payment run",
    "date": "2027-01-01",
-   "amount": 3865.12,
-   "basis": "estimate, 8-week average (last week 700.27)",
+   "amount": 3910.41,
+   "basis": "estimate, 8-week average (last week 790.24)",
    "status": "due",
    "note": "Usually paid on a Fri. Top: EatClub Technologies Ltd 13,235, Winley Limited 9,680, LWC Drinks Ltd 6,283.",
    "source": "daily_bank_NORI.csv (bank feed, last row 2026-10-06)",
@@ -22090,7 +22090,7 @@
    "tech": {
     "typical_day": 1,
     "last_amount": 2115.86,
-    "avg_6m": 1187.19,
+    "avg_6m": 1187.18,
     "months_observed": 6,
     "last_paid": "2026-10-01"
    },
@@ -22392,8 +22392,8 @@
    },
    "supplier_run": {
     "run_day": "Fri",
-    "avg_week": 3865.12,
-    "last_week": 700.27,
+    "avg_week": 3910.41,
+    "last_week": 790.24,
     "weeks": 9,
     "top": [
      {
@@ -22414,11 +22414,11 @@
      },
      {
       "name": "Amazon",
-      "amount": 1399.68
+      "amount": 1771.32
      },
      {
       "name": "First Colour Limited",
-      "amount": 599.34
+      "amount": 635.34
      },
      {
       "name": "Nisbets Limited",
@@ -23080,7 +23080,7 @@
      },
      {
       "state": "amber",
-      "text": "Financial analysis last ran 2026-10-07: ok, 5 lines that do not tie and 0 unallocated."
+      "text": "Financial analysis last ran 2026-10-08: ok, 5 lines that do not tie and 0 unallocated."
      }
     ],
     "unchecked": [
@@ -23170,7 +23170,7 @@
      },
      {
       "state": "amber",
-      "text": "Financial analysis last ran 2026-10-07: ok, 9 lines that do not tie and 1 unallocated."
+      "text": "Financial analysis last ran 2026-10-08: ok, 9 lines that do not tie and 1 unallocated."
      }
     ],
     "unchecked": [
@@ -23259,7 +23259,7 @@
      },
      {
       "state": "amber",
-      "text": "Financial analysis last ran 2026-10-07: ok, 829 lines that do not tie and 269 unallocated."
+      "text": "Financial analysis last ran 2026-10-08: ok, 829 lines that do not tie and 269 unallocated."
      }
     ],
     "unchecked": [
@@ -33477,12 +33477,12 @@
       "kobas": 3500.34,
       "z": 3460.88,
       "petty": 74.34,
-      "to_bank": 3386.54,
+      "to_bank": 3386.53,
       "counted": 3499.74,
       "counted_days": 28,
       "traded_days": 28,
       "count_var": 113.2,
-      "to_bank_on_counted": 3386.54,
+      "to_bank_on_counted": 3386.53,
       "banked": 0.0,
       "lodgements": 0
      },
@@ -33565,27 +33565,27 @@
       "lodgements": 0
      },
      "2026-10": {
-      "kobas": 620.63,
+      "kobas": 641.34,
       "z": 0.0,
       "petty": 0.0,
       "to_bank": 0.0,
       "counted": 0.0,
       "counted_days": 0,
-      "traded_days": 6,
+      "traded_days": 7,
       "count_var": 0.0,
       "to_bank_on_counted": 0.0,
       "banked": 0.0,
       "lodgements": 0
      },
      "YTD": {
-      "kobas": 31532.39,
-      "z": 31300.66,
+      "kobas": 31553.1,
+      "z": 31300.65,
       "petty": 1060.04,
       "to_bank": 30240.62,
       "counted": 30881.12,
       "counted_days": 264,
-      "traded_days": 270,
-      "count_var": 640.51,
+      "traded_days": 271,
+      "count_var": 640.5,
       "to_bank_on_counted": 30240.62,
       "banked": 0.0,
       "lodgements": 0
@@ -33595,7 +33595,7 @@
     "last_counted": "2026-09-30",
     "last_banked": null,
     "unbanked_ytd": 30240.62,
-    "source": "_cashup_M10.xlsx tab 'Maki 12 (Nicolson St)' (downloaded 2026-10-07 09:38)",
+    "source": "_cashup_M10.xlsx tab 'Maki 12 (Nicolson St)' (downloaded 2026-10-08 09:34)",
     "daily": [
      {
       "date": "2026-09-03",
@@ -33956,6 +33956,12 @@
       "kobas_cash": 34.6,
       "kobas_gross": 2752.77,
       "kobas_cash_var": 0.0
+     },
+     {
+      "date": "2026-10-07",
+      "kobas_cash": 20.71,
+      "kobas_gross": 2505.97,
+      "kobas_cash_var": 0.0
      }
     ],
     "lodgements": []
@@ -34083,26 +34089,26 @@
       "lodgements": 0
      },
      "2026-10": {
-      "kobas": 1366.26,
+      "kobas": 1461.31,
       "z": 0.0,
       "petty": 4.0,
       "to_bank": -4.0,
       "counted": 711.26,
       "counted_days": 4,
-      "traded_days": 6,
+      "traded_days": 7,
       "count_var": 715.26,
       "to_bank_on_counted": -4.0,
       "banked": 0.0,
       "lodgements": 0
      },
      "YTD": {
-      "kobas": 62448.98,
+      "kobas": 62544.03,
       "z": 62221.27,
       "petty": 1943.5,
       "to_bank": 60277.77,
       "counted": 61725.89,
       "counted_days": 274,
-      "traded_days": 276,
+      "traded_days": 277,
       "count_var": 1448.12,
       "to_bank_on_counted": 60277.77,
       "banked": 66250.0,
@@ -34113,7 +34119,7 @@
     "last_counted": "2026-10-04",
     "last_banked": "2026-08-20",
     "unbanked_ytd": -5972.23,
-    "source": "_cashup_M10.xlsx tab 'Fountainbridge' (downloaded 2026-10-07 09:38)",
+    "source": "_cashup_M10.xlsx tab 'Fountainbridge' (downloaded 2026-10-08 09:34)",
     "daily": [
      {
       "date": "2026-09-03",
@@ -34510,6 +34516,12 @@
       "kobas_cash": 264.9,
       "kobas_gross": 5844.71,
       "kobas_cash_var": 0.18
+     },
+     {
+      "date": "2026-10-07",
+      "kobas_cash": 95.05,
+      "kobas_gross": 5824.8,
+      "kobas_cash_var": -0.98
      }
     ],
     "lodgements": [
@@ -34653,26 +34665,26 @@
       "lodgements": 0
      },
      "2026-10": {
-      "kobas": 1245.9,
+      "kobas": 1454.3,
       "z": 0.0,
       "petty": 26.56,
       "to_bank": -26.56,
       "counted": 922.27,
       "counted_days": 4,
-      "traded_days": 6,
+      "traded_days": 7,
       "count_var": 948.83,
       "to_bank_on_counted": -26.56,
       "banked": 0.0,
       "lodgements": 0
      },
      "YTD": {
-      "kobas": 38487.23,
+      "kobas": 38695.63,
       "z": 38109.21,
       "petty": 1174.47,
       "to_bank": 36934.74,
       "counted": 38024.78,
       "counted_days": 272,
-      "traded_days": 275,
+      "traded_days": 276,
       "count_var": 1089.53,
       "to_bank_on_counted": 36935.25,
       "banked": 0.0,
@@ -34683,7 +34695,7 @@
     "last_counted": "2026-10-04",
     "last_banked": null,
     "unbanked_ytd": 36934.74,
-    "source": "_cashup_M10.xlsx tab 'Ikigai SB' (downloaded 2026-10-07 09:38)",
+    "source": "_cashup_M10.xlsx tab 'Ikigai SB' (downloaded 2026-10-08 09:34)",
     "daily": [
      {
       "date": "2026-09-03",
@@ -35080,6 +35092,12 @@
       "kobas_cash": 184.3,
       "kobas_gross": 2582.03,
       "kobas_cash_var": 0.03
+     },
+     {
+      "date": "2026-10-07",
+      "kobas_cash": 208.4,
+      "kobas_gross": 2825.06,
+      "kobas_cash_var": 0.0
      }
     ],
     "lodgements": []
@@ -35207,26 +35225,26 @@
       "lodgements": 0
      },
      "2026-10": {
-      "kobas": 1405.76,
+      "kobas": 1811.33,
       "z": 0.0,
       "petty": 20.8,
       "to_bank": -20.8,
       "counted": 702.16,
       "counted_days": 4,
-      "traded_days": 6,
+      "traded_days": 7,
       "count_var": 722.96,
       "to_bank_on_counted": -20.8,
       "banked": 0.0,
       "lodgements": 0
      },
      "YTD": {
-      "kobas": 62238.68,
+      "kobas": 62644.25,
       "z": 62121.16,
       "petty": 2576.19,
       "to_bank": 59557.85,
       "counted": 61526.35,
       "counted_days": 277,
-      "traded_days": 279,
+      "traded_days": 280,
       "count_var": 1968.5,
       "to_bank_on_counted": 59557.85,
       "banked": 0.0,
@@ -35237,7 +35255,7 @@
     "last_counted": "2026-10-04",
     "last_banked": null,
     "unbanked_ytd": 59557.85,
-    "source": "_cashup_M10.xlsx tab 'Bath St' (downloaded 2026-10-07 09:38)",
+    "source": "_cashup_M10.xlsx tab 'Bath St' (downloaded 2026-10-08 09:34)",
     "daily": [
      {
       "date": "2026-09-03",
@@ -35634,6 +35652,12 @@
       "kobas_cash": 502.1,
       "kobas_gross": 3699.09,
       "kobas_cash_var": -0.9
+     },
+     {
+      "date": "2026-10-07",
+      "kobas_cash": 405.57,
+      "kobas_gross": 4094.07,
+      "kobas_cash_var": -0.17
      }
     ],
     "lodgements": []
@@ -35761,37 +35785,37 @@
       "lodgements": 5
      },
      "2026-10": {
-      "kobas": 5031.28,
+      "kobas": 5840.01,
       "z": 0.0,
       "petty": 18.0,
       "to_bank": -18.0,
       "counted": 3410.05,
       "counted_days": 4,
-      "traded_days": 6,
+      "traded_days": 7,
       "count_var": 3428.05,
       "to_bank_on_counted": -18.0,
-      "banked": 0.0,
-      "lodgements": 0
+      "banked": 6019.75,
+      "lodgements": 1
      },
      "YTD": {
-      "kobas": 213216.04,
+      "kobas": 214024.77,
       "z": 205797.23,
       "petty": 4002.29,
       "to_bank": 201794.94,
       "counted": 211522.58,
       "counted_days": 277,
-      "traded_days": 279,
+      "traded_days": 280,
       "count_var": 9727.64,
       "to_bank_on_counted": 201794.94,
-      "banked": 88197.44,
-      "lodgements": 15
+      "banked": 94217.19,
+      "lodgements": 16
      }
     },
     "last_cashup": "2026-09-27",
     "last_counted": "2026-10-04",
-    "last_banked": "2026-09-30",
-    "unbanked_ytd": 113597.5,
-    "source": "_cashup_M10.xlsx tab 'SJQ' (downloaded 2026-10-07 09:38)",
+    "last_banked": "2026-10-07",
+    "unbanked_ytd": 107577.75,
+    "source": "_cashup_M10.xlsx tab 'SJQ' (downloaded 2026-10-08 09:34)",
     "daily": [
      {
       "date": "2026-09-03",
@@ -36188,6 +36212,12 @@
       "kobas_cash": 775.53,
       "kobas_gross": 8855.26,
       "kobas_cash_var": -6.43
+     },
+     {
+      "date": "2026-10-07",
+      "kobas_cash": 808.73,
+      "kobas_gross": 8732.85,
+      "kobas_cash_var": 2.5
      }
     ],
     "lodgements": [
@@ -36249,6 +36279,11 @@
      {
       "date": "2026-09-30",
       "amount": 6195.54,
+      "ref": ""
+     },
+     {
+      "date": "2026-10-07",
+      "amount": 6019.75,
       "ref": ""
      }
     ]
@@ -36376,26 +36411,26 @@
       "lodgements": 2
      },
      "2026-10": {
-      "kobas": 2786.9,
+      "kobas": 3084.1,
       "z": 0.0,
       "petty": 9.2,
       "to_bank": -9.2,
       "counted": 1871.9,
       "counted_days": 4,
-      "traded_days": 6,
+      "traded_days": 7,
       "count_var": 1881.1,
       "to_bank_on_counted": -9.2,
       "banked": 0.0,
       "lodgements": 0
      },
      "YTD": {
-      "kobas": 119630.18,
+      "kobas": 119927.38,
       "z": 117154.82,
       "petty": 4192.24,
       "to_bank": 113196.58,
       "counted": 118314.98,
       "counted_days": 276,
-      "traded_days": 278,
+      "traded_days": 279,
       "count_var": 5118.4,
       "to_bank_on_counted": 113196.58,
       "banked": 83260.78,
@@ -36406,7 +36441,7 @@
     "last_counted": "2026-10-04",
     "last_banked": "2026-09-23",
     "unbanked_ytd": 29935.8,
-    "source": "_cashup_M10.xlsx tab 'Renfield' (downloaded 2026-10-07 09:38)",
+    "source": "_cashup_M10.xlsx tab 'Renfield' (downloaded 2026-10-08 09:34)",
     "daily": [
      {
       "date": "2026-09-03",
@@ -36803,6 +36838,12 @@
       "kobas_cash": 498.0,
       "kobas_gross": 4721.96,
       "kobas_cash_var": 5.1
+     },
+     {
+      "date": "2026-10-07",
+      "kobas_cash": 297.2,
+      "kobas_gross": 5917.36,
+      "kobas_cash_var": 1.19
      }
     ],
     "lodgements": [
@@ -36961,26 +37002,26 @@
       "lodgements": 4
      },
      "2026-10": {
-      "kobas": 2621.1,
+      "kobas": 3258.1,
       "z": 0.0,
       "petty": 0.0,
       "to_bank": 0.0,
       "counted": 0.0,
       "counted_days": 0,
-      "traded_days": 6,
+      "traded_days": 7,
       "count_var": 0.0,
       "to_bank_on_counted": 0.0,
       "banked": 0.0,
       "lodgements": 0
      },
      "YTD": {
-      "kobas": 162910.25,
+      "kobas": 163547.25,
       "z": 161163.68,
       "petty": 2817.24,
       "to_bank": 158574.99,
       "counted": 158554.11,
       "counted_days": 266,
-      "traded_days": 274,
+      "traded_days": 275,
       "count_var": -20.88,
       "to_bank_on_counted": 158574.99,
       "banked": 169935.0,
@@ -36991,7 +37032,7 @@
     "last_counted": "2026-09-27",
     "last_banked": "2026-09-29",
     "unbanked_ytd": -11360.01,
-    "source": "_cashup_M10.xlsx tab 'Manchester' (downloaded 2026-10-07 09:38)",
+    "source": "_cashup_M10.xlsx tab 'Manchester' (downloaded 2026-10-08 09:34)",
     "daily": [
      {
       "date": "2026-09-03",
@@ -37346,6 +37387,12 @@
       "kobas_cash": 655.2,
       "kobas_gross": 9789.18,
       "kobas_cash_var": 0.11
+     },
+     {
+      "date": "2026-10-07",
+      "kobas_cash": 637.0,
+      "kobas_gross": 10084.54,
+      "kobas_cash_var": -0.62
      }
     ],
     "lodgements": [
@@ -37514,26 +37561,26 @@
       "lodgements": 3
      },
      "2026-10": {
-      "kobas": 1537.02,
+      "kobas": 1699.88,
       "z": 0.0,
       "petty": 0.0,
       "to_bank": 0.0,
       "counted": 0.0,
       "counted_days": 0,
-      "traded_days": 6,
+      "traded_days": 7,
       "count_var": 0.0,
       "to_bank_on_counted": 0.0,
       "banked": 0.0,
       "lodgements": 0
      },
      "YTD": {
-      "kobas": 48135.67,
+      "kobas": 48298.53,
       "z": 48081.41,
       "petty": 2334.46,
       "to_bank": 45806.94,
       "counted": 46108.68,
       "counted_days": 260,
-      "traded_days": 270,
+      "traded_days": 271,
       "count_var": 526.92,
       "to_bank_on_counted": 45581.76,
       "banked": 64305.0,
@@ -37544,7 +37591,7 @@
     "last_counted": "2026-09-27",
     "last_banked": "2026-09-29",
     "unbanked_ytd": -18498.06,
-    "source": "_cashup_M10.xlsx tab 'Leeds' (downloaded 2026-10-07 09:38)",
+    "source": "_cashup_M10.xlsx tab 'Leeds' (downloaded 2026-10-08 09:34)",
     "daily": [
      {
       "date": "2026-09-03",
@@ -37899,6 +37946,12 @@
       "kobas_cash": 175.32,
       "kobas_gross": 5434.96,
       "kobas_cash_var": 0.0
+     },
+     {
+      "date": "2026-10-07",
+      "kobas_cash": 162.86,
+      "kobas_gross": 4477.56,
+      "kobas_cash_var": 0.0
      }
     ],
     "lodgements": [
@@ -38062,26 +38115,26 @@
       "lodgements": 4
      },
      "2026-10": {
-      "kobas": 1211.74,
+      "kobas": 1390.89,
       "z": 0.0,
       "petty": 0.0,
       "to_bank": 0.0,
       "counted": 0.0,
       "counted_days": 0,
-      "traded_days": 6,
+      "traded_days": 7,
       "count_var": 0.0,
       "to_bank_on_counted": 0.0,
       "banked": 0.0,
       "lodgements": 0
      },
      "YTD": {
-      "kobas": 59724.42,
+      "kobas": 59903.57,
       "z": 60305.39,
       "petty": 1786.98,
       "to_bank": 59189.03,
       "counted": 50788.01,
       "counted_days": 230,
-      "traded_days": 275,
+      "traded_days": 276,
       "count_var": -632.27,
       "to_bank_on_counted": 51420.28,
       "banked": 72590.0,
@@ -38441,6 +38494,12 @@
       "kobas_cash": 7.57,
       "kobas_gross": 2228.5,
       "kobas_cash_var": -1.78
+     },
+     {
+      "date": "2026-10-07",
+      "kobas_cash": 179.15,
+      "kobas_gross": 3190.8,
+      "kobas_cash_var": 0.04
      }
     ],
     "lodgements": [
@@ -38649,26 +38708,26 @@
       "lodgements": 3
      },
      "2026-10": {
-      "kobas": 1333.1,
+      "kobas": 1458.15,
       "z": 0.0,
       "petty": 0.0,
       "to_bank": 0.0,
       "counted": 0.0,
       "counted_days": 0,
-      "traded_days": 6,
+      "traded_days": 7,
       "count_var": 0.0,
       "to_bank_on_counted": 0.0,
       "banked": 0.0,
       "lodgements": 0
      },
      "YTD": {
-      "kobas": 71252.07,
+      "kobas": 71377.12,
       "z": 64766.06,
       "petty": 1299.44,
       "to_bank": 63612.19,
       "counted": 58410.89,
       "counted_days": 224,
-      "traded_days": 276,
+      "traded_days": 277,
       "count_var": 5868.11,
       "to_bank_on_counted": 52542.78,
       "banked": 140554.49,
@@ -39034,6 +39093,12 @@
       "kobas_cash": 109.5,
       "kobas_gross": 3039.11,
       "kobas_cash_var": 0.1
+     },
+     {
+      "date": "2026-10-07",
+      "kobas_cash": 125.05,
+      "kobas_gross": 3757.97,
+      "kobas_cash_var": 1.08
      }
     ],
     "lodgements": [
@@ -39212,26 +39277,26 @@
       "lodgements": 19
      },
      "2026-10": {
-      "kobas": 1590.1,
+      "kobas": 1936.17,
       "z": 0.0,
       "petty": 0.0,
       "to_bank": 0.0,
       "counted": 0.0,
       "counted_days": 0,
-      "traded_days": 6,
+      "traded_days": 7,
       "count_var": 0.0,
       "to_bank_on_counted": 0.0,
       "banked": 0.0,
       "lodgements": 0
      },
      "YTD": {
-      "kobas": 72273.86,
+      "kobas": 72619.93,
       "z": 73089.66,
       "petty": 4092.54,
       "to_bank": 70268.38,
       "counted": 57710.91,
       "counted_days": 223,
-      "traded_days": 277,
+      "traded_days": 278,
       "count_var": 105.93,
       "to_bank_on_counted": 57604.98,
       "banked": 73287.49,
@@ -39597,6 +39662,12 @@
       "kobas_cash": 210.0,
       "kobas_gross": 4781.22,
       "kobas_cash_var": 1.4
+     },
+     {
+      "date": "2026-10-07",
+      "kobas_cash": 346.07,
+      "kobas_gross": 4778.82,
+      "kobas_cash_var": -0.18
      }
     ],
     "lodgements": [
@@ -39910,26 +39981,26 @@
       "lodgements": 8
      },
      "2026-10": {
-      "kobas": 2839.25,
+      "kobas": 3073.7,
       "z": 0.0,
       "petty": 0.0,
       "to_bank": 0.0,
       "counted": 0.0,
       "counted_days": 0,
-      "traded_days": 6,
+      "traded_days": 7,
       "count_var": 0.0,
       "to_bank_on_counted": 0.0,
       "banked": 0.0,
       "lodgements": 0
      },
      "YTD": {
-      "kobas": 152494.15,
+      "kobas": 152728.6,
       "z": 143568.66,
       "petty": 2462.73,
       "to_bank": 142122.98,
       "counted": 124631.79,
       "counted_days": 226,
-      "traded_days": 279,
+      "traded_days": 280,
       "count_var": 6612.52,
       "to_bank_on_counted": 118019.27,
       "banked": 154955.0,
@@ -40295,6 +40366,12 @@
       "kobas_cash": 220.0,
       "kobas_gross": 3509.47,
       "kobas_cash_var": 0.44
+     },
+     {
+      "date": "2026-10-07",
+      "kobas_cash": 234.45,
+      "kobas_gross": 3856.7,
+      "kobas_cash_var": 5.52
      }
     ],
     "lodgements": [
@@ -40503,26 +40580,26 @@
       "lodgements": 0
      },
      "2026-10": {
-      "kobas": 4569.56,
+      "kobas": 4763.82,
       "z": 0.0,
       "petty": 0.0,
       "to_bank": 0.0,
       "counted": 0.0,
       "counted_days": 0,
-      "traded_days": 6,
+      "traded_days": 7,
       "count_var": 0.0,
       "to_bank_on_counted": 0.0,
       "banked": 0.0,
       "lodgements": 0
      },
      "YTD": {
-      "kobas": 219437.0,
+      "kobas": 219631.26,
       "z": 200131.52,
       "petty": 1947.38,
       "to_bank": 198804.3,
       "counted": 177553.74,
       "counted_days": 226,
-      "traded_days": 279,
+      "traded_days": 280,
       "count_var": 14873.57,
       "to_bank_on_counted": 162680.17,
       "banked": 146404.41,
@@ -40888,6 +40965,12 @@
       "kobas_cash": 1023.86,
       "kobas_gross": 5436.45,
       "kobas_cash_var": 11.36
+     },
+     {
+      "date": "2026-10-07",
+      "kobas_cash": 194.26,
+      "kobas_gross": 4348.56,
+      "kobas_cash_var": 700.0
      }
     ],
     "lodgements": [
@@ -41021,26 +41104,26 @@
       "lodgements": 2
      },
      "2026-10": {
-      "kobas": 750.9,
+      "kobas": 1050.9,
       "z": 0.0,
       "petty": 0.0,
       "to_bank": 0.0,
       "counted": 0.0,
       "counted_days": 0,
-      "traded_days": 4,
+      "traded_days": 5,
       "count_var": 0.0,
       "to_bank_on_counted": 0.0,
       "banked": 2445.0,
       "lodgements": 1
      },
      "YTD": {
-      "kobas": 73789.07,
+      "kobas": 74089.07,
       "z": 91581.63,
       "petty": 5091.4,
       "to_bank": 87007.26,
       "counted": 70862.53,
       "counted_days": 261,
-      "traded_days": 277,
+      "traded_days": 278,
       "count_var": -14221.54,
       "to_bank_on_counted": 85084.07,
       "banked": 89811.0,
@@ -41394,6 +41477,12 @@
       "kobas_cash": 92.25,
       "kobas_gross": 4143.22,
       "kobas_cash_var": -0.15
+     },
+     {
+      "date": "2026-10-07",
+      "kobas_cash": 300.0,
+      "kobas_gross": 4377.16,
+      "kobas_cash_var": -4.65
      }
     ],
     "lodgements": [
@@ -41467,7 +41556,7 @@
      },
      "2026-03": {
       "kobas": 10697.58,
-      "z": 11491.51,
+      "z": 11491.5,
       "petty": 908.46,
       "to_bank": 11052.41,
       "counted": 3352.63,
@@ -41557,26 +41646,26 @@
       "lodgements": 1
      },
      "2026-10": {
-      "kobas": 2065.72,
+      "kobas": 2149.67,
       "z": 0.0,
       "petty": 0.0,
       "to_bank": 0.0,
       "counted": 0.0,
       "counted_days": 0,
-      "traded_days": 6,
+      "traded_days": 7,
       "count_var": 0.0,
       "to_bank_on_counted": 0.0,
       "banked": 0.0,
       "lodgements": 0
      },
      "YTD": {
-      "kobas": 81170.61,
+      "kobas": 81254.56,
       "z": 82827.63,
       "petty": 4115.19,
-      "to_bank": 80848.5,
+      "to_bank": 80848.51,
       "counted": 44267.24,
       "counted_days": 138,
-      "traded_days": 241,
+      "traded_days": 242,
       "count_var": 467.14,
       "to_bank_on_counted": 43800.1,
       "banked": 20572.13,
@@ -41586,7 +41675,7 @@
     "last_cashup": "2026-09-27",
     "last_counted": "2026-09-22",
     "last_banked": "2026-09-07",
-    "unbanked_ytd": 60276.37,
+    "unbanked_ytd": 60276.38,
     "source": "_cashup_NORI.xlsx tab 'Maki Lakeside' (downloaded 2026-10-01 10:10)",
     "daily": [
      {
@@ -41942,6 +42031,12 @@
       "kobas_cash": 168.35,
       "kobas_gross": 1455.82,
       "kobas_cash_var": 0.07
+     },
+     {
+      "date": "2026-10-07",
+      "kobas_cash": 83.95,
+      "kobas_gross": 1795.34,
+      "kobas_cash_var": -101.03
      }
     ],
     "lodgements": [
@@ -42090,26 +42185,26 @@
       "lodgements": 0
      },
      "2026-10": {
-      "kobas": 1168.9,
+      "kobas": 1253.1,
       "z": 0.0,
       "petty": 0.0,
       "to_bank": 0.0,
       "counted": 0.0,
       "counted_days": 0,
-      "traded_days": 6,
+      "traded_days": 7,
       "count_var": 0.0,
       "to_bank_on_counted": 0.0,
       "banked": 14496.72,
       "lodgements": 2
      },
      "YTD": {
-      "kobas": 43173.46,
+      "kobas": 43257.66,
       "z": 42801.79,
       "petty": 1605.3,
       "to_bank": 41270.76,
       "counted": 40464.13,
       "counted_days": 202,
-      "traded_days": 208,
+      "traded_days": 209,
       "count_var": -406.07,
       "to_bank_on_counted": 40870.2,
       "banked": 41317.56,
@@ -42120,7 +42215,7 @@
     "last_counted": "2026-09-30",
     "last_banked": "2026-10-02",
     "unbanked_ytd": -46.8,
-    "source": "_cashup_m18plus.xlsx tab 'Maki Soho' (downloaded 2026-10-07 20:37)",
+    "source": "_cashup_m18plus.xlsx tab 'Maki Soho' (downloaded 2026-10-08 10:43)",
     "daily": [
      {
       "date": "2026-09-03",
@@ -42481,6 +42576,12 @@
       "kobas_cash": 420.0,
       "kobas_gross": 4630.27,
       "kobas_cash_var": 0.14
+     },
+     {
+      "date": "2026-10-07",
+      "kobas_cash": 84.2,
+      "kobas_gross": 5404.02,
+      "kobas_cash_var": 0.09
      }
     ],
     "lodgements": [
@@ -42629,26 +42730,26 @@
       "lodgements": 1
      },
      "2026-10": {
-      "kobas": 309.24,
+      "kobas": 316.14,
       "z": 0.0,
       "petty": 0.0,
       "to_bank": 0.0,
       "counted": 0.0,
       "counted_days": 0,
-      "traded_days": 5,
+      "traded_days": 6,
       "count_var": 0.0,
       "to_bank_on_counted": 0.0,
       "banked": 0.0,
       "lodgements": 0
      },
      "YTD": {
-      "kobas": 8912.31,
+      "kobas": 8919.21,
       "z": 8622.22,
       "petty": 397.8,
       "to_bank": 8300.97,
       "counted": 3821.8,
       "counted_days": 40,
-      "traded_days": 88,
+      "traded_days": 89,
       "count_var": 351.6,
       "to_bank_on_counted": 3470.2,
       "banked": 2856.75,
@@ -42659,7 +42760,7 @@
     "last_counted": "2026-09-14",
     "last_banked": "2026-09-16",
     "unbanked_ytd": 5444.22,
-    "source": "_cashup_m18plus.xlsx tab 'Maki Shoreditch' (downloaded 2026-10-07 20:37)",
+    "source": "_cashup_m18plus.xlsx tab 'Maki Shoreditch' (downloaded 2026-10-08 10:43)",
     "daily": [
      {
       "date": "2026-09-03",
@@ -42984,6 +43085,12 @@
       "kobas_cash": 11.75,
       "kobas_gross": 2958.08,
       "kobas_cash_var": 0.0
+     },
+     {
+      "date": "2026-10-07",
+      "kobas_cash": 6.9,
+      "kobas_gross": 3713.38,
+      "kobas_cash_var": -7.62
      }
     ],
     "lodgements": [
@@ -43117,26 +43224,26 @@
       "lodgements": 1
      },
      "2026-10": {
-      "kobas": 2181.69,
+      "kobas": 2234.19,
       "z": 0.0,
       "petty": 0.0,
       "to_bank": 0.0,
       "counted": 0.0,
       "counted_days": 0,
-      "traded_days": 6,
+      "traded_days": 7,
       "count_var": 0.0,
       "to_bank_on_counted": 0.0,
       "banked": 0.0,
       "lodgements": 0
      },
      "YTD": {
-      "kobas": 30137.46,
+      "kobas": 30189.96,
       "z": 33002.28,
       "petty": 1299.52,
       "to_bank": 32167.31,
       "counted": 20049.23,
       "counted_days": 53,
-      "traded_days": 96,
+      "traded_days": 97,
       "count_var": 200.92,
       "to_bank_on_counted": 19848.31,
       "banked": 23668.7,
@@ -43147,7 +43254,7 @@
     "last_counted": "2026-08-24",
     "last_banked": "2026-09-24",
     "unbanked_ytd": 8498.61,
-    "source": "_cashup_m18plus.xlsx tab 'Maki Southampton' (downloaded 2026-10-07 20:37)",
+    "source": "_cashup_m18plus.xlsx tab 'Maki Southampton' (downloaded 2026-10-08 10:43)",
     "daily": [
      {
       "date": "2026-09-03",
@@ -43502,6 +43609,12 @@
       "kobas_cash": 176.25,
       "kobas_gross": 3311.55,
       "kobas_cash_var": 0.05
+     },
+     {
+      "date": "2026-10-07",
+      "kobas_cash": 52.5,
+      "kobas_gross": 5349.82,
+      "kobas_cash_var": -0.07
      }
     ],
     "lodgements": [
@@ -43640,26 +43753,26 @@
       "lodgements": 5
      },
      "2026-10": {
-      "kobas": 3015.63,
+      "kobas": 3565.63,
       "z": 0.0,
       "petty": 0.0,
       "to_bank": 0.0,
       "counted": 0.0,
       "counted_days": 0,
-      "traded_days": 6,
+      "traded_days": 7,
       "count_var": 0.0,
       "to_bank_on_counted": 0.0,
       "banked": 0.0,
       "lodgements": 0
      },
      "YTD": {
-      "kobas": 24962.84,
+      "kobas": 25512.84,
       "z": 22876.27,
       "petty": 2797.95,
       "to_bank": 20359.87,
       "counted": 16565.69,
       "counted_days": 31,
-      "traded_days": 48,
+      "traded_days": 49,
       "count_var": -241.96,
       "to_bank_on_counted": 16807.65,
       "banked": 19735.0,
@@ -43670,7 +43783,7 @@
     "last_counted": "2026-09-20",
     "last_banked": "2026-09-29",
     "unbanked_ytd": 624.87,
-    "source": "_cashup_m18plus.xlsx tab 'Maki Birmingham' (downloaded 2026-10-07 20:37)",
+    "source": "_cashup_m18plus.xlsx tab 'Maki Birmingham' (downloaded 2026-10-08 10:43)",
     "daily": [
      {
       "date": "2026-09-03",
@@ -44025,6 +44138,12 @@
       "kobas_cash": 507.53,
       "kobas_gross": 4958.81,
       "kobas_cash_var": 0.0
+     },
+     {
+      "date": "2026-10-07",
+      "kobas_cash": 550.0,
+      "kobas_gross": 6057.2,
+      "kobas_cash_var": 1.13
      }
     ],
     "lodgements": [
@@ -44178,26 +44297,26 @@
       "lodgements": 0
      },
      "2026-10": {
-      "kobas": 531.56,
+      "kobas": 584.3,
       "z": 0.0,
       "petty": 0.0,
       "to_bank": 0.0,
       "counted": 0.0,
       "counted_days": 0,
-      "traded_days": 3,
+      "traded_days": 4,
       "count_var": 0.0,
       "to_bank_on_counted": 0.0,
       "banked": 0.0,
       "lodgements": 0
      },
      "YTD": {
-      "kobas": 13577.26,
+      "kobas": 13630.0,
       "z": 13650.95,
       "petty": 1461.27,
       "to_bank": 13165.55,
       "counted": 5326.9,
       "counted_days": 53,
-      "traded_days": 128,
+      "traded_days": 129,
       "count_var": 569.96,
       "to_bank_on_counted": 4756.94,
       "banked": 9242.06,
@@ -44208,7 +44327,7 @@
     "last_counted": "2026-06-28",
     "last_banked": "2026-08-20",
     "unbanked_ytd": 3923.49,
-    "source": "_cashup_m18plus.xlsx tab 'Maki NORI' (downloaded 2026-10-07 20:37)",
+    "source": "_cashup_m18plus.xlsx tab 'Maki NORI' (downloaded 2026-10-08 10:43)",
     "daily": [
      {
       "date": "2026-09-03",
@@ -44497,6 +44616,12 @@
       "kobas_cash": 209.43,
       "kobas_gross": 3713.5,
       "kobas_cash_var": -30.63
+     },
+     {
+      "date": "2026-10-07",
+      "kobas_cash": 52.74,
+      "kobas_gross": 2645.65,
+      "kobas_cash_var": -3.5
      }
     ],
     "lodgements": [
@@ -44512,7 +44637,7 @@
    {
     "level": "red",
     "code": "IKI 2",
-    "text": "No cash lodgement reconciled in Xero this year, against 38,487 of Kobas cash. Not on the G4S round: ask how this site banks its cash."
+    "text": "No cash lodgement reconciled in Xero this year, against 38,696 of Kobas cash. Not on the G4S round: ask how this site banks its cash."
    },
    {
     "level": "red",
@@ -44523,7 +44648,7 @@
    {
     "level": "red",
     "code": "M1",
-    "text": "No cash lodgement reconciled in Xero this year, against 31,532 of Kobas cash. Not on the G4S round: ask how this site banks its cash."
+    "text": "No cash lodgement reconciled in Xero this year, against 31,553 of Kobas cash. Not on the G4S round: ask how this site banks its cash."
    },
    {
     "level": "red",
@@ -44575,7 +44700,7 @@
    {
     "level": "red",
     "code": "M6",
-    "text": "No cash lodgement reconciled in Xero this year, against 62,239 of Kobas cash. Not on the G4S round: ask how this site banks its cash."
+    "text": "No cash lodgement reconciled in Xero this year, against 62,644 of Kobas cash. Not on the G4S round: ask how this site banks its cash."
    },
    {
     "level": "red",
@@ -44586,7 +44711,7 @@
    {
     "level": "red",
     "code": "M7",
-    "text": "113,598 of cash this year has not reached the bank in Xero.",
+    "text": "107,578 of cash this year has not reached the bank in Xero.",
     "kind": "mismatch"
    },
    {
@@ -44629,7 +44754,7 @@
    {
     "level": "amber",
     "code": "M12",
-    "text": "Kobas cash 71,252 against cash-up Z cash 64,766 this year (-9.1%)."
+    "text": "Kobas cash 71,377 against cash-up Z cash 64,766 this year (-9.3%)."
    },
    {
     "level": "amber",
@@ -44655,7 +44780,7 @@
    {
     "level": "amber",
     "code": "M14",
-    "text": "Kobas cash 152,494 against cash-up Z cash 143,569 this year (-5.9%)."
+    "text": "Kobas cash 152,729 against cash-up Z cash 143,569 this year (-6.0%)."
    },
    {
     "level": "amber",
@@ -44670,7 +44795,7 @@
    {
     "level": "amber",
     "code": "M15",
-    "text": "Kobas cash 219,437 against cash-up Z cash 200,132 this year (-8.8%)."
+    "text": "Kobas cash 219,631 against cash-up Z cash 200,132 this year (-8.9%)."
    },
    {
     "level": "amber",
@@ -44686,7 +44811,7 @@
    {
     "level": "amber",
     "code": "M16",
-    "text": "Kobas cash 73,789 against cash-up Z cash 91,582 this year (+24.1%)."
+    "text": "Kobas cash 74,089 against cash-up Z cash 91,582 this year (+23.6%)."
    },
    {
     "level": "amber",
@@ -44723,7 +44848,7 @@
    {
     "level": "amber",
     "code": "M20",
-    "text": "Kobas cash 30,137 against cash-up Z cash 33,002 this year (+9.5%)."
+    "text": "Kobas cash 30,190 against cash-up Z cash 33,002 this year (+9.3%)."
    },
    {
     "level": "amber",
@@ -44734,7 +44859,7 @@
    {
     "level": "amber",
     "code": "M21",
-    "text": "Kobas cash 24,963 against cash-up Z cash 22,876 this year (-8.4%)."
+    "text": "Kobas cash 25,513 against cash-up Z cash 22,876 this year (-10.3%)."
    },
    {
     "level": "amber",
@@ -44779,7 +44904,7 @@
     "text": "Cash is counted up to 2026-06-28 but the cash-up runs to 2026-09-27: 91 days not counted yet."
    }
   ],
-  "built": "2026-10-07T20:37:40",
+  "built": "2026-10-08T10:43:20",
   "sources": {
    "kobas": "data/sources/kobas_cashlog_daily_2026.csv (Kobas Cash Log, cash_declared)",
    "cashup": "'Maki 1-10', 'Maki 11-17' and 'Maki 18+ New 2025 Cash UP' workbooks, per-site tab, columns A-J",
@@ -45770,8 +45895,8 @@
   "opening": 2139924.98,
   "inflow": 2597907.78,
   "inflow_30d": 3388575.36,
-  "outflow": 1850073.36,
-  "closing": 2887759.4,
+  "outflow": 1850254.52,
+  "closing": 2887578.24,
   "out_by_category": [
    {
     "category": "Payroll (net wages)",
@@ -45779,7 +45904,7 @@
    },
    {
     "category": "Supplier payment run",
-    "amount": 391807.26
+    "amount": 391988.42
    },
    {
     "category": "PAYE to HMRC",
@@ -45902,9 +46027,9 @@
   "basis": "Runs to 31 October 2026, the last day of the month, so the month's payroll is inside it. Money in is what actually landed in the bank over the last 30 days across 21 companies (£3,388,575, transfers between our own companies taken out), carried forward at the same daily rate for the 23 days left. Money out is everything the calendar expects between now and then. Neither is a forecast of trading.",
   "backtest": {
    "month": "September 2026",
-   "projected": 2691793.81,
-   "actual": 3080797.34,
-   "diff": -389003.53,
+   "projected": 2691811.81,
+   "actual": 3080870.21,
+   "diff": -389058.4,
    "pct": -12.6
   },
   "next": {
@@ -45914,8 +46039,8 @@
    "opening": 2139924.98,
    "inflow": 5986483.14,
    "inflow_30d": 3388575.36,
-   "outflow": 4417136.34,
-   "closing": 3709271.78,
+   "outflow": 4417498.66,
+   "closing": 3708909.46,
    "out_by_category": [
     {
      "category": "Payroll (net wages)",
@@ -45923,7 +46048,7 @@
     },
     {
      "category": "Supplier payment run",
-     "amount": 904734.4
+     "amount": 905096.72
     },
     {
      "category": "PAYE to HMRC",

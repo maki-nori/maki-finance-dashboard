@@ -161,6 +161,8 @@
   .bars .b em { font-style:normal; font-size:10.5px; color:var(--mute); margin-top:4px; }
   .bars .b s { text-decoration:none; font-size:10.5px; font-weight:700; margin-bottom:3px; white-space:nowrap; }
   .bad { color:var(--red); font-weight:700; } .good { color:var(--green); font-weight:700; }
+  .warn { color:var(--warn); font-weight:600; }
+  table.cashtbl th, table.cashtbl td { padding:6px 6px; }
   @media (max-width:600px) { .tst .tl{min-width:120px;} .bars{height:96px;} .bars .b s{font-size:9px;} .big{font-size:28px;} th,td{padding:6px 4px;} iframe{height:420px;} .ev{grid-template-columns:48px 1fr auto;} }
 </style>
 </head>
@@ -174,6 +176,8 @@
     <button data-tab="health">Company Health</button>
     <button data-tab="ma">Management Accounts</button>
     <button data-tab="bep">Break-even</button>
+    <button data-tab="cash">Cash</button>
+    <button data-tab="utilities">Utilities</button>
   </nav>
 </header>
 <main>
@@ -182,6 +186,8 @@
   <section class="tab" id="tab-health"></section>
   <section class="tab" id="tab-ma"></section>
   <section class="tab" id="tab-bep"></section>
+  <section class="tab" id="tab-cash"></section>
+  <section class="tab" id="tab-utilities"></section>
 </main>
 <script src="data/fcc.js"></script>
 <script>
@@ -299,13 +305,13 @@
         tip: (P&&P.next)?`<b>Cash left at ${meShort(P.next.month_end)}</b><br><span class="k">Today</span> £${Math.round(P.next.opening).toLocaleString('en-GB')}<br><span class="k">Money in, ${P.next.days_to_month_end} days</span> +£${Math.round(P.next.inflow).toLocaleString('en-GB')}<br><span class="k">Due out</span> -£${Math.round(P.next.outflow).toLocaleString('en-GB')}<br>Both months' payroll inside it.`:'' },
       { l:`Sales, ${M?esc(M.latest_label):'latest month'}`, v:gbp(g.sales), s:`${chip(g.sales_delta,true,k0)} on ${M?esc(M.prior_label):'last month'}`, state:'',
         tip:`<b>Sales</b><br><span class="k">${M?esc(M.prior_label):''}</span> £${Math.round(gp.sales||0).toLocaleString('en-GB')}<br><span class="k">Year to date</span> £${Math.round(g.ytd_sales||0).toLocaleString('en-GB')}` },
-      { l:'Net profit', v:gbp(g.np), s:`${chip(g.np_delta,true,k0)} on ${M?esc(M.prior_label):'last month'}`,
+      { l:`Net profit, ${M?esc(M.latest_label):'latest month'}`, v:gbp(g.np), s:`${chip(g.np_delta,true,k0)} on ${M?esc(M.prior_label):'last month'}<br><span style="white-space:nowrap">${g.ytd_np!=null?'£'+(g.ytd_np/1e6).toFixed(2)+'m year to date':''}</span>`,
         state: g.np>0?'good':'bad',
         tip:`<b>Net profit</b><br><span class="k">Margin</span> ${g.np_pct}%<br><span class="k">${M?esc(M.prior_label):''}</span> £${Math.round(gp.np||0).toLocaleString('en-GB')} at ${gp.np_pct}%<br><span class="k">Year to date</span> £${Math.round(g.ytd_np||0).toLocaleString('en-GB')}` },
-      { l:'Wage cost', v:(g.wages_pct==null?'–':g.wages_pct.toFixed(1)+'%'), s:`${chip(g.wages_pct==null?null:g.wages_pct-wageT,false,v=>(v>0?'+':'')+v.toFixed(1)+'pp')} against the ${wageT}% target`,
+      { l:`Wage cost, ${M?esc(M.latest_label):'latest month'}`, v:(g.wages_pct==null?'–':g.wages_pct.toFixed(1)+'%'), s:`${chip(g.wages_pct==null?null:g.wages_pct-wageT,false,v=>(v>0?'+':'')+v.toFixed(1)+'pp')} against the ${wageT}% target`,
         state: g.wages_pct==null?'':g.wages_pct<=wageT?'good':'bad',
         tip:`<b>Wage cost</b><br><span class="k">Target</span> ${wageT}% of sales<br><span class="k">${M?esc(M.latest_label):''}</span> £${Math.round((g.pounds&&g.pounds.wages)||0).toLocaleString('en-GB')} on £${Math.round(g.sales||0).toLocaleString('en-GB')} of sales<br><span class="k">${M?esc(M.prior_label):''}</span> ${gp.wages_pct}%<br>Management accounts, not the payroll run.` },
-      { l:'Food cost', v:(g.food_pct==null?'–':g.food_pct.toFixed(1)+'%'), s:`${chip(g.food_pct==null?null:g.food_pct-foodT,false,v=>(v>0?'+':'')+v.toFixed(1)+'pp')} against the ${foodT}% target`,
+      { l:`Food cost, ${M?esc(M.latest_label):'latest month'}`, v:(g.food_pct==null?'–':g.food_pct.toFixed(1)+'%'), s:`${chip(g.food_pct==null?null:g.food_pct-foodT,false,v=>(v>0?'+':'')+v.toFixed(1)+'pp')} against the ${foodT}% target`,
         state: g.food_pct==null?'':g.food_pct<=foodT?'good':'bad',
         tip:`<b>Food cost</b><br><span class="k">Target</span> ${foodT}% of sales<br><span class="k">${M?esc(M.prior_label):''}</span> ${gp.food_pct}%` },
     ];
@@ -357,6 +363,10 @@
           <div class="wk" data-tip="<b>Money out</b><br>Everything the calendar expects between today and ${meLab}.${(P.out_by_category||[]).map(c=>`<br><span class='k'>${esc(c.category)}</span> £${Math.round(c.amount).toLocaleString('en-GB')}`).join('')}"><span class="wl">Money out, to ${meLab}</span><span class="wv neg">-${gbp(P.outflow)}</span></div>
           <div class="wk tot"><span class="wl">Lands near</span><span class="wv" style="color:${closeState==='bad'?'var(--bad)':'var(--good)'}">${gbp(P.closing)}</span></div>
         </div>
+        <table class="tbl" style="margin-top:10px;font-size:12.5px"><thead><tr><th>Going out by ${meLab}</th><th class="n">£</th></tr></thead><tbody>
+          ${(P.out_by_category||[]).map(c=>`<tr><td>${esc(c.category)}</td><td class="n">${Math.round(c.amount).toLocaleString('en-GB')}</td></tr>`).join('')}
+          <tr><td><b>Total</b></td><td class="n"><b>${Math.round(P.outflow).toLocaleString('en-GB')}</b></td></tr></tbody></table>
+        ${P.backtest&&P.backtest.actual?`<div class="src"><b>How close was this last month?</b> Standing on 1 ${esc(P.backtest.month)} with only the bank feed up to then, this method expected £${Math.round(P.backtest.projected).toLocaleString('en-GB')} to go out; £${Math.round(P.backtest.actual).toLocaleString('en-GB')} actually did (${P.backtest.pct>0?'+':''}${P.backtest.pct}%). The usual misses are a company's first VAT return and landlord rent that does not follow a fixed rhythm.</div>`:''}
         <div class="src">${esc(P.basis)}</div>`:'<div class="muted">No projection: the bank feeds did not give enough to work from.</div>'}</div>
       <div class="card"><h2>Food cost <small>how much of the ${foodT}% allowance is used</small></h2>
         <div class="gauge">${gauge(g.food_pct==null?0:g.food_pct/foodT, 'food cost against target', foodState)}
@@ -1055,7 +1065,7 @@
         else if(r.monthsLeftAvg!=null) eta = r.monthsLeftAvg<=120 ? `about ${Math.ceil(r.monthsLeftAvg)} more months at its own average` : 'more than 10 years at its average so far';
         else if(r.monthsLeftRun!=null) eta = r.monthsLeftRun<=120 ? `about ${Math.ceil(r.monthsLeftRun)} more months at ${(M&&M.latest_label)||'this month'}'s profit` : `more than 10 years at ${(M&&M.latest_label)||'this month'}'s profit`;
         else eta = (r.run!=null && r.run<=0) ? 'losing money, so not paying itself back yet' : 'no profit figure to project from';
-        x += `<div class="barrow" style="grid-template-columns:104px 1fr 150px" data-tip="<b>${esc(r.code)}</b><br><span class='k'>Build cost</span> £${Math.round(r.capex).toLocaleString('en-GB')}<br><span class='k'>Profit since opening</span> £${Math.round(r.profit_to_date||0).toLocaleString('en-GB')}<br><span class='k'>Still to earn</span> ${r.done?'nothing, paid back':'£'+Math.round(r.outstanding).toLocaleString('en-GB')}<br><span class='k'>Trading</span> ${r.months_trading?r.months_trading+' months from '+esc(r.start):(r.start_precision==='year'?'since '+esc(r.start.slice(0,4))+', exact date not given':'start date not given')}<br><span class='k'>${esc((M&&M.latest_label)||'Latest month')}</span> ${r.run==null?'no figure':'£'+Math.round(r.run).toLocaleString('en-GB')}" tabindex="0">
+        x += `<div class="barrow" style="grid-template-columns:104px 1fr 150px" data-tip="<b>${esc(r.code)}</b><br><span class='k'>Build cost</span> £${Math.round(r.capex).toLocaleString('en-GB')}<br><span class='k'>Profit since opening</span> £${Math.round(r.profit_to_date||0).toLocaleString('en-GB')}<br><span class='k'>Still to earn</span> ${r.done?'nothing, paid back':'£'+Math.round(r.outstanding).toLocaleString('en-GB')}<br>${r.profit_source?`<span class='k'>Profit basis</span> ${esc(r.profit_source)}<br>`:''}${r.profit_to_date_monica!=null?`<span class='k'>Monica's analysis figure</span> £${Math.round(r.profit_to_date_monica).toLocaleString('en-GB')}<br>`:''}<span class='k'>Trading</span> ${r.months_trading?r.months_trading+' months from '+esc(r.start):(r.start_precision==='year'?'since '+esc(r.start.slice(0,4))+', exact date not given':'start date not given')}<br><span class='k'>${esc((M&&M.latest_label)||'Latest month')}</span> ${r.run==null?'no figure':'£'+Math.round(r.run).toLocaleString('en-GB')}" tabindex="0">
           <div class="lb">${esc(r.code)}<small>${r.months_trading?r.months_trading+' month'+(r.months_trading===1?'':'s')+' trading':(r.start_precision==='year'?'trading since '+esc(r.start.slice(0,4)):'start date unknown')}</small></div>
           <div class="tr" style="height:18px">${p>=0
             ? `<span class="fl" style="width:${p}%;background:${col}"></span>`
@@ -1094,6 +1104,159 @@
       wireTips(w);
       fitTiles();
       w.querySelectorAll('.chip[data-show]').forEach(ch=>ch.onclick=()=>{ bf.show=ch.dataset.show; draw(); });
+    }
+    draw();
+  })();
+
+  // ================= TAB 6: CASH RECONCILIATION (2-Oct-2026) =================
+  (function(){
+    const w = document.getElementById('tab-cash'); if(!w) return;
+    const R = D.cashrec;
+    if(!R){ w.innerHTML = '<div class="card"><h2>Cash</h2><div class="muted">cash_recon.json has not been built yet.</div></div>'; return; }
+    const ML = m => m==='YTD' ? `${D.as_of.slice(0,4)} to date` : new Date(m+'-01T00:00:00').toLocaleDateString('en-GB',{month:'short',year:'numeric'});
+    const cur = D.as_of.slice(0,7);
+    const done = R.months.filter(m=>m<cur);
+    const st = { mo: done.length ? done[done.length-1] : 'YTD', open:null };
+    const n0 = v => v==null ? '–' : Math.round(v).toLocaleString('en-GB');
+    const diffCell = (v, warn=250) => v==null ? '<td class="n muted">–</td>' : `<td class="n ${Math.abs(v)>warn?(v<0?'bad':'warn'):''}">${v>0?'+':''}${n0(v)}</td>`;
+    function draw(){
+      const P = s => s.per[st.mo] || {};
+      const tot = k => R.sites.reduce((a,s)=>a+(P(s)[k]||0),0);
+      const unb = R.sites.reduce((a,s)=>a+(s.unbanked_ytd||0),0);
+      let x = `<div class="card"><h2>Cash on site <small>Kobas till cash against the site cash-up sheet against what reached the bank</small></h2>
+        <div style="display:flex;flex-wrap:wrap;gap:6px;margin:4px 0 10px">${R.months.concat(['YTD']).map(m=>`<span class="chip sm ${m===st.mo?'on':''}" data-mo="${m}">${esc(ML(m))}${m===cur?' so far':''}</span>`).join('')}</div>`;
+      const tiles = [
+        {l:`Kobas cash, ${ML(st.mo)}`, v:gbp(tot('kobas')), s:'cash the tills took', tip:'<b>Kobas</b><br>Cash declared in the Kobas Cash Log, every site.'},
+        {l:'Should be banked', v:gbp(tot('to_bank')), s:`after ${gbp(tot('petty'))} petty cash`, tip:'<b>Cash-up sheet</b><br>Z-report cash less petty-cash purchases, from the Cash UP workbooks. Sites without a cash-up tab are not in this figure.'},
+        {l:'Counted on site', v:gbp(tot('counted')), s:`${sgn(tot('count_var'))} against expected on counted days`, tip:'<b>Actual cash</b><br>What the site counted, where it has been counted. Days not yet counted are left out of the over/short figure.'},
+        {l:'Banked in Xero', v:gbp(tot('banked')), s:`${R.sites.reduce((a,s)=>a+(P(s).lodgements||0),0)} lodgements`, tip:'<b>Banked</b><br>Money into the operating bank from contact Cash, G4S or Loomis, in the Xero bank feed.'},
+        {l:`Not banked, ${D.as_of.slice(0,4)} to date`, v:gbp(unb), s:'should be banked less banked', state: unb>20000?'bad':'good', tip:'<b>Cash not seen in the bank</b><br>Per site: cash-up cash to bank (or Kobas cash where there is no cash-up) since 1 January, less cash lodged in Xero. Cash banked in January from December takings makes a site look ahead.'},
+      ];
+      x += `<div class="tiles">` + tiles.map(t=>`<div class="tile ${t.state?'is-'+t.state:''}" data-tip="${esc(t.tip)}" tabindex="0"><div class="tl">${esc(t.l)}</div><div class="tv">${t.v}</div><div class="ts">${t.s}</div></div>`).join('') + `</div></div>`;
+
+      x += `<div class="card"><h2>By site <small>${esc(ML(st.mo))} · click a site for its days</small></h2><div style="overflow-x:auto"><table class="cashtbl" style="font-size:12px">
+        <thead><tr><th>Site</th><th class="n">Kobas</th><th class="n">Z cash</th><th class="n">Z vs Kobas</th><th class="n">Petty</th><th class="n">To bank</th><th class="n">Counted</th><th class="n">Over/short</th><th class="n">Banked</th><th class="n">Bank vs cash, month</th><th class="n">Bank vs cash, year</th><th>Last banked</th></tr></thead><tbody>`;
+      const rows = R.sites.slice().sort((a,b)=>(b.unbanked_ytd||0)-(a.unbanked_ytd||0));
+      rows.forEach(s=>{
+        const p = P(s);
+        const gapM = s.has_cashup ? p.to_bank - p.banked : p.kobas - p.banked;
+        x += `<tr class="cr" data-code="${esc(s.code)}" style="cursor:pointer"><td style="white-space:nowrap"><b>${esc(s.code)}</b>${s.has_cashup?'':' <span class="muted" style="font-size:10.5px">no cash-up</span>'}</td>
+          <td class="n">${n0(p.kobas)}</td>
+          <td class="n">${s.has_cashup?n0(p.z):'<span class="muted">–</span>'}</td>
+          ${s.has_cashup?diffCell(p.z-p.kobas, Math.max(250,(p.kobas||0)*0.03)):'<td class="n muted">–</td>'}
+          <td class="n">${s.has_cashup?n0(p.petty):'–'}</td>
+          <td class="n">${s.has_cashup?n0(p.to_bank):'–'}</td>
+          <td class="n" data-tip="${p.counted_days} of ${p.traded_days} trading days counted">${s.has_cashup?n0(p.counted)+` <span class="muted" style="font-size:11px">${p.counted_days}/${p.traded_days}d</span>`:'–'}</td>
+          ${s.has_cashup&&p.counted_days?diffCell(p.count_var,100):'<td class="n muted">–</td>'}
+          <td class="n">${n0(p.banked)}</td>
+          ${diffCell(-gapM, 1000)}
+          <td class="n ${Math.abs(s.unbanked_ytd||0)>500?'bad':'good'}"><b>${-(s.unbanked_ytd||0)>0?'+':''}${n0(-(s.unbanked_ytd||0))}</b></td>
+          <td class="muted" style="white-space:nowrap">${s.last_banked?fmtD(s.last_banked):'<span class="bad">never this year</span>'}${s.g4s?' <span style="font-size:10.5px">G4S</span>':''}</td></tr>`;
+        if(st.open===s.code){
+          x += `<tr><td colspan="12" style="background:var(--bg)"><div>
+            <div><table style="font-size:12px"><thead><tr><th>Day</th><th class="n">Kobas</th><th class="n">Z cash</th><th class="n">Petty</th><th class="n">To bank</th><th class="n">Counted</th><th class="n">Over / short</th></tr></thead><tbody>
+            ${s.daily.slice().reverse().map(r=>`<tr><td>${fmtD(r.date)}</td><td class="n">${n0(r.kobas_cash)}</td><td class="n">${n0(r.z_cash)}</td><td class="n">${n0(r.petty)}</td><td class="n">${n0(r.to_bank)}</td><td class="n">${r.counted?n0(r.counted):'<span class="muted">not counted</span>'}</td>${r.counted?diffCell(r.counted-(r.to_bank||0),20):'<td class="n muted">–</td>'}</tr>`).join('')}
+            </tbody></table></div>
+            <div style="margin-top:8px;font-size:12.5px"><b>Cash lodged in the bank, last 95 days:</b> ${(s.lodgements||[]).slice().reverse().map(b=>`${fmtD(b.date)} £${n0(b.amount)}`).join(' · ') || '<span class="bad">none in the Xero bank feed</span>'}
+            <div class="src">${s.g4s?`Banks through G4S: reads <b>${esc(s.g4s)}</b> on the bank statement, reconciled to the contact Cash in Xero. `:'Not on the G4S round. '}Cash-up: ${esc(s.source||'no tab in any of the three Cash UP workbooks')}. Counted to ${s.last_counted?fmtD(s.last_counted):'never'}.</div></div></div></td></tr>`;
+        }
+      });
+      const g = k => R.sites.reduce((a,s)=>a+(P(s)[k]||0),0);
+      x += `<tr><th>Total</th><th class="n">${n0(g('kobas'))}</th><th class="n">${n0(g('z'))}</th><th></th><th class="n">${n0(g('petty'))}</th><th class="n">${n0(g('to_bank'))}</th><th class="n">${n0(g('counted'))}</th><th class="n">${n0(g('count_var'))}</th><th class="n">${n0(g('banked'))}</th><th></th><th class="n">${-unb>0?"+":""}${n0(-unb)}</th><th></th></tr>`;
+      x += `</tbody></table></div>
+        <div class="src">Cash-up vs Kobas: the cash-up sheet's Z-report cash less Kobas declared cash. Over / short: counted cash less what the cash-up says should be there, on counted days only. Banked: lodgements land in batches, so one month can look short and the next long; the year column is the one to judge on. Bank vs cash is banked less what should have been banked: minus means cash missing from the bank, plus means more banked than the cash-up shows. Anything beyond £500 either way is a break.</div></div>`;
+
+      // ---- month by month: cash taken against cash banked, with the running balance (2-Oct-2026) ----
+      {
+        const mos = R.months;
+        const should = (s,m) => { const p=s.per[m]||{}; return s.has_cashup ? (p.to_bank||0) : (p.kobas||0); };
+        const cell = v => `<td class="n ${Math.abs(v)>500?(v<0?'bad':'warn'):'good'}">${v>0?'+':''}${n0(v)}</td>`;
+        let mt = `<div class="card"><h2>Month by month <small>banked less cash taken, per site · minus = cash missing from the bank · hover for the running balance</small></h2>
+          <div style="overflow-x:auto"><table class="cashtbl" style="font-size:12px"><thead><tr><th>Site</th>${mos.map(m=>`<th class="n">${esc(ML(m).replace(' 2026',''))}${m===cur?'*':''}</th>`).join('')}<th class="n">Year</th><th class="n">Months out</th></tr></thead><tbody>`;
+        const tot = mos.map(()=>0);
+        const order = R.sites.slice().sort((a,b)=>(a.unbanked_ytd>b.unbanked_ytd?-1:1));
+        order.forEach(s=>{
+          let run = 0, bad = 0;
+          const tds = mos.map((m,i)=>{
+            const taken = should(s,m), banked = (s.per[m]||{}).banked||0, v = banked - taken;
+            run += v; tot[i] += v; if(Math.abs(v)>500 && m!==cur) bad++;
+            if(!taken && !banked) return '<td class="n muted">–</td>';
+            return `<td class="n ${Math.abs(v)>500?(v<0?'bad':'warn'):'good'}" data-tip="<b>${esc(s.code)}, ${esc(ML(m))}</b><br><span class='k'>Cash taken</span> £${n0(taken)}<br><span class='k'>Banked</span> £${n0(banked)}<br><span class='k'>This month</span> ${v>0?'+':''}£${n0(v)}<br><span class='k'>Running balance</span> ${run>0?'+':''}£${n0(run)}">${v>0?'+':''}${n0(v)}</td>`;
+          }).join('');
+          mt += `<tr><td style="white-space:nowrap"><b>${esc(s.code)}</b>${s.g4s?' <span class="muted" style="font-size:10.5px">G4S</span>':''}</td>${tds}${cell(run)}<td class="n ${bad?'bad':''}">${bad}</td></tr>`;
+        });
+        const yt = tot.reduce((a,b)=>a+b,0);
+        mt += `<tr><th>Total</th>${tot.map(v=>`<th class="n">${v>0?'+':''}${n0(v)}</th>`).join('')}<th class="n">${yt>0?'+':''}${n0(yt)}</th><th></th></tr></tbody></table></div>
+          <div class="src">Cash taken is the cash-up's cash to bank after petty cash, or Kobas cash where a site has no cash-up. Banked is cash lodged in Xero (G4S or counter deposit) dated in that month. A G4S collection that lands in the next month shows as minus then plus: a site that keeps going minus month after month is the one to chase. Months out counts closed months more than £500 adrift. * month in progress.</div></div>`;
+        x += mt;
+      }
+      x += `<div class="card"><h2>Read this first <small>${R.flags.length} items</small></h2>` +
+        (R.flags.map(f=>`<div class="li"><span class="pill ${f.level==='red'?'red':'amber'}">${f.level==='red'?'RED':'CHECK'}</span><div class="who">${esc(f.code)}</div><div class="what">${esc(f.text)}</div></div>`).join('') || '<div class="muted">Nothing flagged.</div>') +
+        `<div class="src">Sources: ${esc(R.sources.kobas)}; ${esc(R.sources.cashup)}; ${esc(R.sources.bank)}. Built ${esc(R.built.replace('T',' ').slice(0,16))}. Read only.</div></div>`;
+      w.innerHTML = x;
+      wireTips(w); fitTiles();
+      w.querySelectorAll('.chip[data-mo]').forEach(c=>c.onclick=()=>{ st.mo=c.dataset.mo; draw(); });
+      w.querySelectorAll('tr.cr').forEach(tr=>tr.onclick=()=>{ st.open = st.open===tr.dataset.code ? null : tr.dataset.code; draw(); });
+    }
+    draw();
+  })();
+
+  // ================= TAB 7: UTILITIES (12-Oct-2026) =================
+  (function(){
+    const w = document.getElementById('tab-utilities'); if(!w) return;
+    const U = D.utilities;
+    if(!U){ w.innerHTML = '<div class="card"><h2>Utilities</h2><div class="muted">Utilities tracker has not been built yet.</div></div>'; return; }
+    const ML = m => new Date(m+'-01T00:00:00').toLocaleDateString('en-GB',{month:'short'});
+    const n0 = v => v==null ? '–' : Math.round(v).toLocaleString('en-GB');
+    const pill = s => `<span class="pill ${s==='red'?'red':s==='amber'?'amber':'green'}">${s==='red'?'RED':s==='amber'?'CHECK':'OK'}</span>`;
+    const F = f => f==='electricity' ? 'Electricity' : f==='gas' ? 'Gas' : 'Energy';
+    const st = { open:null };
+    function draw(){
+      const reds = U.flags.filter(f=>f.level==='red'), ambers = U.flags.filter(f=>f.level==='amber');
+      let x = `<div class="card"><h2>Gas and electricity <small>who we pay, when we last paid, and where a catch-up bill is building</small></h2>`;
+      const tiles = [
+        {l:`Energy paid, ${D.as_of.slice(0,4)} to date`, v:gbp(U.group_ytd), s:'all sites, gas and electricity', tip:'<b>Energy paid</b><br>Every payment to an energy supplier (or coded 445 Light, Power, Heating) in the Xero bank feeds since 1 January.'},
+        {l:'Back-bills this year', v:gbp(U.backbill_ytd), s:'one payment covering more than 45 days', state: U.backbill_ytd>0?'bad':'good', tip:'<b>Back-bills</b><br>Payments over £3k whose invoice covers more than 45 days: a supplier catching up in one go. This is what hit M8 in September.'},
+        {l:'Sites red', v:String(U.red), s:'back-bill in the last 60 days, or a fuel quiet 75+ days', state: U.red>0?'bad':'good'},
+        {l:'Sites to check', v:String(U.amber), s:'spike, quiet 45+ days, two suppliers, or no payments seen', state: U.amber>0?'warn':'good'},
+        {l:'Largest single payment', v:U.biggest?gbp(U.biggest.amount):'–', s:U.biggest?`${esc(U.biggest.code)} · ${esc(U.biggest.supplier)} · ${esc(fmtY(U.biggest.date))}`:'', tip: U.biggest?`<b>${esc(U.biggest.code)}</b><br>${esc(U.biggest.desc||'')}`:''},
+      ];
+      x += `<div class="tiles">` + tiles.map(t=>`<div class="tile ${t.state?'is-'+t.state:''}" ${t.tip?`data-tip="${esc(t.tip)}"`:''} tabindex="0"><div class="tl">${esc(t.l)}</div><div class="tv">${t.v}</div><div class="ts">${t.s}</div></div>`).join('') + `</div></div>`;
+
+      x += `<div class="card"><h2>Read this first <small>${reds.length} red · ${ambers.length} to check</small></h2>` +
+        (U.flags.map(f=>`<div class="li"><span class="pill ${f.level==='red'?'red':'amber'}">${f.level==='red'?'RED':'CHECK'}</span><div class="who">${esc(f.code)}</div><div class="what"><b>${F(f.fuel)}.</b> ${esc(f.text)}</div></div>`).join('') || '<div class="muted">Nothing flagged.</div>') + `</div>`;
+
+      x += `<div class="card"><h2>By site <small>click a site for its payments</small></h2><div class="wrap"><table style="font-size:12px"><thead><tr><th></th><th>Site</th><th>Fuel</th><th>Supplier</th><th>Last paid</th><th class="n">Days</th><th>Billed up to</th><th class="n">Typical bill</th><th class="n">Paid YTD</th><th>Status</th></tr></thead><tbody>`;
+      U.sites.forEach(s=>{
+        s.fuels.forEach((f,i)=>{
+          x += `<tr class="ur" data-code="${esc(s.code)}" style="cursor:pointer">${i===0?`<td rowspan="${s.fuels.length}">${pill(s.state)}</td><td rowspan="${s.fuels.length}"><b>${esc(s.code)}</b><div class="muted">${esc(s.cluster||'')}</div></td>`:''}<td>${F(f.fuel)}</td><td>${esc(f.suppliers.join(', ')||'none seen')}</td><td>${f.last_paid?esc(fmtY(f.last_paid)):'–'}</td><td class="n ${f.days_since>U.rules.quiet_red_days?'neg':f.days_since>U.rules.quiet_amber_days?'':''}">${f.days_since==null?'–':f.days_since}</td><td>${f.billed_to?esc(fmtY(f.billed_to)):'<span class="muted">not on invoice</span>'}</td><td class="n">${f.typical?gbp(f.typical):'–'}</td><td class="n">${gbp(f.ytd)}</td><td>${pill(f.state)} <span class="muted">${esc(f.text)}</span></td></tr>`;
+        });
+        if(st.open===s.code){
+          const ps = s.fuels.flatMap(f=>f.payments).sort((a,b)=>a.date<b.date?1:-1);
+          x += `<tr><td colspan="10" style="background:var(--bg)"><table style="font-size:12px"><thead><tr><th>Paid</th><th>Fuel</th><th>Supplier</th><th>Covers</th><th class="n">Days</th><th class="n">Amount</th><th>Ref</th></tr></thead><tbody>` +
+            ps.map(p=>`<tr class="${p.period_days>U.rules.backbill_days&&p.amount>=U.rules.big?'alarm':''}"><td>${esc(fmtY(p.date))}</td><td>${F(p.fuel)}</td><td>${esc(p.supplier)}${p.account?` <span class="muted">A/C ${esc(p.account)}</span>`:''}</td><td>${p.period_from?esc(fmtY(p.period_from))+' to '+esc(fmtY(p.period_to)):'<span class="muted">'+esc(p.desc||'no period on invoice')+'</span>'}</td><td class="n">${p.period_days==null?'–':p.period_days}</td><td class="n">${gbp2(p.amount)}</td><td class="muted">${esc(p.ref)}</td></tr>`).join('') +
+            `</tbody></table><div class="muted" style="margin-top:6px">Last 12 payments per fuel. Feed starts ${esc(fmtY(s.feed_start))}.</div></td></tr>`;
+        }
+      });
+      x += `</tbody></table></div><div class="src">${esc(U.source)} Days = days since the last payment for that fuel. Typical bill = median of the site's normal payments, back-bills left out. Rules: quiet after ${U.rules.quiet_amber_days} days (check) and ${U.rules.quiet_red_days} days (red); a back-bill covers more than ${U.rules.backbill_days} days and is over £${n0(U.rules.big)}; a spike is more than ${U.rules.spike}x the typical bill.</div></div>`;
+
+      x += `<div class="card"><h2>Month by month <small>energy paid per site, ${D.as_of.slice(0,4)}</small></h2><div class="wrap"><table style="font-size:12px"><thead><tr><th>Site</th>${U.months.map(m=>`<th class="n">${ML(m)}</th>`).join('')}<th class="n">YTD</th></tr></thead><tbody>`;
+      const sorted = U.sites.slice().sort((a,b)=>b.ytd-a.ytd);
+      sorted.forEach(s=>{
+        const vals = U.months.map(m=>s.monthly[m]||0);
+        const typ = vals.filter(v=>v>0).sort((a,b)=>a-b); const med = typ.length ? typ[Math.floor(typ.length/2)] : 0;
+        x += `<tr><td><b>${esc(s.code)}</b></td>${vals.map(v=>`<td class="n ${med&&v>U.rules.spike*med&&v>=U.rules.big?'neg':''}">${v?n0(v):'<span class="muted">–</span>'}</td>`).join('')}<td class="n"><b>${n0(s.ytd)}</b></td></tr>`;
+      });
+      const col = U.months.map(m=>U.sites.reduce((a,s)=>a+(s.monthly[m]||0),0));
+      x += `<tr><th>Group</th>${col.map(v=>`<th class="n">${n0(v)}</th>`).join('')}<th class="n">${n0(U.group_ytd)}</th></tr></tbody></table></div><div class="src">Red figure: a month more than ${U.rules.spike}x the site's usual month. A dash is a month with no energy payment at all.</div></div>`;
+
+      const reg = Object.values(U.register||{}).sort((a,b)=>a.site.localeCompare(b.site,undefined,{numeric:true})||a.fuel.localeCompare(b.fuel));
+      x += `<div class="card"><h2>Account register <small>${reg.length} accounts · finance fills in payment method and contract end</small></h2><div class="wrap"><table style="font-size:12px"><thead><tr><th>Site</th><th>Fuel</th><th>Supplier</th><th>Account</th><th>Payment method</th><th>Contract end</th><th class="n">Monthly budget</th><th>Notes</th></tr></thead><tbody>` +
+        reg.map(a=>`<tr><td><b>${esc(a.site)}</b></td><td>${F(a.fuel)}</td><td>${esc(a.supplier)}</td><td class="muted">${esc(a.account||'')}</td><td>${a.payment_method?esc(a.payment_method):'<span class="pill amber">unknown</span>'}</td><td>${a.contract_end?esc(a.contract_end):'<span class="pill amber">unknown</span>'}</td><td class="n">${a.monthly_budget?gbp(a.monthly_budget):'–'}</td><td class="muted">${esc(a.notes||'')}</td></tr>`).join('') +
+        `</tbody></table></div><div class="src">Seeded from the bank feeds. Edit finance_control_centre/utilities_register.json to fill in direct debit or invoice, contract end dates and budgets. Protection: every account on monthly direct debit or monthly invoice, no account left quiet past 45 days, and a contract end date on file so no site rolls on to out-of-contract rates.</div></div>`;
+      w.innerHTML = x;
+      wireTips(w); fitTiles();
+      w.querySelectorAll('tr.ur').forEach(tr=>tr.onclick=()=>{ st.open = st.open===tr.dataset.code ? null : tr.dataset.code; draw(); });
     }
     draw();
   })();

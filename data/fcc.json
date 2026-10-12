@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-12T10:48:44+04:00",
+ "generated_at": "2026-10-12T16:19:49+04:00",
  "as_of": "2026-10-12",
  "companies": [
   {
@@ -489,7 +489,7 @@
  },
  "leaving": {
   "window_days": 30,
-  "total": 2661353.03,
+  "total": 2661353.07,
   "by_category": [
    {
     "category": "Payroll (net wages)",
@@ -497,7 +497,7 @@
    },
    {
     "category": "Supplier payment run",
-    "amount": 559231.56
+    "amount": 559231.6
    },
    {
     "category": "VAT",
@@ -1067,7 +1067,7 @@
   "M9": {
    "deliveroo": {
     "weekday": "Thu",
-    "avg_week": 4580.55,
+    "avg_week": 4580.54,
     "last_week": 5676.2,
     "next": "2026-10-15"
    },
@@ -1308,9 +1308,21 @@
   },
   {
    "level": "red",
+   "company": "M1",
+   "text": "Gas: Quiet: no gas payment for 84 days (last 2026-07-20, YGP). Roughly £3,440 is building up.",
+   "tab": "utilities"
+  },
+  {
+   "level": "red",
    "company": "M10",
    "text": "16,840 more was banked as cash in Xero this year than the cash-up says was taken. Find what else is coded to the contact Cash, or what the cash-up is missing.",
    "tab": "cash"
+  },
+  {
+   "level": "red",
+   "company": "M10",
+   "text": "Gas: Quiet: no gas payment for 101 days (last 2026-07-03, British Gas). Roughly £2,158 is building up.",
+   "tab": "utilities"
   },
   {
    "level": "red",
@@ -1326,6 +1338,12 @@
   },
   {
    "level": "red",
+   "company": "M11",
+   "text": "Gas: Quiet: no gas payment for 96 days (last 2026-07-08, British Gas). Roughly £3,339 is building up.",
+   "tab": "utilities"
+  },
+  {
+   "level": "red",
    "company": "M12",
    "text": "PAYE to HMRC expected 2026-10-04 (20,783) not seen in the bank feed.",
    "tab": "calendar"
@@ -1338,9 +1356,27 @@
   },
   {
    "level": "red",
+   "company": "M12",
+   "text": "Gas: Quiet: no gas payment for 123 days (last 2026-06-11, British Gas). Roughly £16,815 is building up.",
+   "tab": "utilities"
+  },
+  {
+   "level": "red",
    "company": "M14",
    "text": "12,832 more was banked as cash in Xero this year than the cash-up says was taken. Find what else is coded to the contact Cash, or what the cash-up is missing.",
    "tab": "cash"
+  },
+  {
+   "level": "red",
+   "company": "M14",
+   "text": "Electricity: Quiet: no electricity payment for 103 days (last 2026-07-01, Jellyfish Energy Limited). Roughly £308 is building up.",
+   "tab": "utilities"
+  },
+  {
+   "level": "red",
+   "company": "M14",
+   "text": "Energy: Quiet: no energy payment for 137 days (last 2026-05-28, UC Energy Ltd). Roughly £18,548 is building up.",
+   "tab": "utilities"
   },
   {
    "level": "red",
@@ -1359,6 +1395,12 @@
    "company": "M17",
    "text": "60,276 of cash this year has not reached the bank in Xero.",
    "tab": "cash"
+  },
+  {
+   "level": "red",
+   "company": "M17",
+   "text": "Gas: Quiet: no gas payment for 117 days (last 2026-06-17, Crown Gas and Power Ltd). Roughly £1,661 is building up.",
+   "tab": "utilities"
   },
   {
    "level": "red",
@@ -1389,6 +1431,12 @@
    "company": "M8",
    "text": "27,170 of cash this year has not reached the bank in Xero.",
    "tab": "cash"
+  },
+  {
+   "level": "red",
+   "company": "M8",
+   "text": "Gas: Back-bill: £37,764 to E E Solutions Limited on 2026-09-16 covered 340 days (2025-10-01 to 2026-09-06).",
+   "tab": "utilities"
   },
   {
    "level": "red",
@@ -6437,7 +6485,7 @@
    "company": "M3",
    "category": "Supplier payment run",
    "date": "2026-10-15",
-   "amount": 5436.23,
+   "amount": 5436.24,
    "basis": "estimate, 8-week average (last week 5,421.55)",
    "status": "due",
    "note": "Usually paid on a Thu. Top: Lynas Foodservice 32,170, LWC Drinks Ltd 8,341, PPL PRS LTD 1,076.",
@@ -6972,7 +7020,7 @@
    "company": "M3",
    "category": "Supplier payment run",
    "date": "2026-10-22",
-   "amount": 5436.23,
+   "amount": 5436.24,
    "basis": "estimate, 8-week average (last week 5,421.55)",
    "status": "due",
    "note": "Usually paid on a Thu. Top: Lynas Foodservice 32,170, LWC Drinks Ltd 8,341, PPL PRS LTD 1,076.",
@@ -7967,7 +8015,7 @@
    "company": "M3",
    "category": "Supplier payment run",
    "date": "2026-10-29",
-   "amount": 5436.23,
+   "amount": 5436.24,
    "basis": "estimate, 8-week average (last week 5,421.55)",
    "status": "due",
    "note": "Usually paid on a Thu. Top: Lynas Foodservice 32,170, LWC Drinks Ltd 8,341, PPL PRS LTD 1,076.",
@@ -8945,7 +8993,7 @@
    "company": "M3",
    "category": "Supplier payment run",
    "date": "2026-11-05",
-   "amount": 5436.23,
+   "amount": 5436.24,
    "basis": "estimate, 8-week average (last week 5,421.55)",
    "status": "due",
    "note": "Usually paid on a Thu. Top: Lynas Foodservice 32,170, LWC Drinks Ltd 8,341, PPL PRS LTD 1,076.",
@@ -10209,7 +10257,7 @@
    "company": "M3",
    "category": "Supplier payment run",
    "date": "2026-11-12",
-   "amount": 5436.23,
+   "amount": 5436.24,
    "basis": "estimate, 8-week average (last week 5,421.55)",
    "status": "due",
    "note": "Usually paid on a Thu. Top: Lynas Foodservice 32,170, LWC Drinks Ltd 8,341, PPL PRS LTD 1,076.",
@@ -10767,7 +10815,7 @@
    "company": "M3",
    "category": "Supplier payment run",
    "date": "2026-11-19",
-   "amount": 5436.23,
+   "amount": 5436.24,
    "basis": "estimate, 8-week average (last week 5,421.55)",
    "status": "due",
    "note": "Usually paid on a Thu. Top: Lynas Foodservice 32,170, LWC Drinks Ltd 8,341, PPL PRS LTD 1,076.",
@@ -11778,7 +11826,7 @@
    "company": "M3",
    "category": "Supplier payment run",
    "date": "2026-11-26",
-   "amount": 5436.23,
+   "amount": 5436.24,
    "basis": "estimate, 8-week average (last week 5,421.55)",
    "status": "due",
    "note": "Usually paid on a Thu. Top: Lynas Foodservice 32,170, LWC Drinks Ltd 8,341, PPL PRS LTD 1,076.",
@@ -12830,7 +12878,7 @@
    "company": "M3",
    "category": "Supplier payment run",
    "date": "2026-12-03",
-   "amount": 5436.23,
+   "amount": 5436.24,
    "basis": "estimate, 8-week average (last week 5,421.55)",
    "status": "due",
    "note": "Usually paid on a Thu. Top: Lynas Foodservice 32,170, LWC Drinks Ltd 8,341, PPL PRS LTD 1,076.",
@@ -14070,7 +14118,7 @@
    "company": "M3",
    "category": "Supplier payment run",
    "date": "2026-12-10",
-   "amount": 5436.23,
+   "amount": 5436.24,
    "basis": "estimate, 8-week average (last week 5,421.55)",
    "status": "due",
    "note": "Usually paid on a Thu. Top: Lynas Foodservice 32,170, LWC Drinks Ltd 8,341, PPL PRS LTD 1,076.",
@@ -14754,7 +14802,7 @@
    "company": "M3",
    "category": "Supplier payment run",
    "date": "2026-12-17",
-   "amount": 5436.23,
+   "amount": 5436.24,
    "basis": "estimate, 8-week average (last week 5,421.55)",
    "status": "due",
    "note": "Usually paid on a Thu. Top: Lynas Foodservice 32,170, LWC Drinks Ltd 8,341, PPL PRS LTD 1,076.",
@@ -15647,7 +15695,7 @@
    "company": "M3",
    "category": "Supplier payment run",
    "date": "2026-12-24",
-   "amount": 5436.23,
+   "amount": 5436.24,
    "basis": "estimate, 8-week average (last week 5,421.55)",
    "status": "due",
    "note": "Usually paid on a Thu. Top: Lynas Foodservice 32,170, LWC Drinks Ltd 8,341, PPL PRS LTD 1,076.",
@@ -16386,7 +16434,7 @@
    "company": "M3",
    "category": "Supplier payment run",
    "date": "2026-12-31",
-   "amount": 5436.23,
+   "amount": 5436.24,
    "basis": "estimate, 8-week average (last week 5,421.55)",
    "status": "due",
    "note": "Usually paid on a Thu. Top: Lynas Foodservice 32,170, LWC Drinks Ltd 8,341, PPL PRS LTD 1,076.",
@@ -17773,7 +17821,7 @@
    "company": "M3",
    "category": "Supplier payment run",
    "date": "2027-01-07",
-   "amount": 5436.23,
+   "amount": 5436.24,
    "basis": "estimate, 8-week average (last week 5,421.55)",
    "status": "due",
    "note": "Usually paid on a Thu. Top: Lynas Foodservice 32,170, LWC Drinks Ltd 8,341, PPL PRS LTD 1,076.",
@@ -20025,7 +20073,7 @@
    },
    "supplier_run": {
     "run_day": "Thu",
-    "avg_week": 5436.23,
+    "avg_week": 5436.24,
     "last_week": 5421.55,
     "weeks": 8,
     "top": [
@@ -33213,12 +33261,12 @@
       "kobas": 3500.34,
       "z": 3460.88,
       "petty": 74.34,
-      "to_bank": 3386.53,
+      "to_bank": 3386.54,
       "counted": 3499.74,
       "counted_days": 28,
       "traded_days": 28,
       "count_var": 113.2,
-      "to_bank_on_counted": 3386.53,
+      "to_bank_on_counted": 3386.54,
       "banked": 0.0,
       "lodgements": 0
      },
@@ -33321,7 +33369,7 @@
       "counted": 30881.12,
       "counted_days": 264,
       "traded_days": 275,
-      "count_var": 425.5,
+      "count_var": 425.51,
       "to_bank_on_counted": 30455.62,
       "banked": 0.0,
       "lodgements": 0
@@ -34391,14 +34439,14 @@
      },
      "YTD": {
       "kobas": 39428.26,
-      "z": 39424.15,
+      "z": 39424.16,
       "petty": 1174.47,
-      "to_bank": 38249.68,
+      "to_bank": 38249.69,
       "counted": 38024.78,
       "counted_days": 272,
       "traded_days": 280,
       "count_var": -225.42,
-      "to_bank_on_counted": 38250.19,
+      "to_bank_on_counted": 38250.2,
       "banked": 0.0,
       "lodgements": 0
      }
@@ -34406,7 +34454,7 @@
     "last_cashup": "2026-10-04",
     "last_counted": "2026-10-04",
     "last_banked": null,
-    "unbanked_ytd": 38249.68,
+    "unbanked_ytd": 38249.69,
     "source": "_cashup_M10.xlsx tab 'Ikigai SB' (downloaded 2026-10-12 09:39)",
     "daily": [
      {
@@ -41034,7 +41082,7 @@
      },
      "2026-03": {
       "kobas": 10697.58,
-      "z": 11491.5,
+      "z": 11491.51,
       "petty": 908.46,
       "to_bank": 11052.41,
       "counted": 3352.63,
@@ -41140,7 +41188,7 @@
       "kobas": 82556.66,
       "z": 82827.63,
       "petty": 4115.19,
-      "to_bank": 80848.51,
+      "to_bank": 80848.5,
       "counted": 44267.24,
       "counted_days": 138,
       "traded_days": 246,
@@ -41153,7 +41201,7 @@
     "last_cashup": "2026-09-27",
     "last_counted": "2026-09-22",
     "last_banked": "2026-09-07",
-    "unbanked_ytd": 60276.38,
+    "unbanked_ytd": 60276.37,
     "source": "_cashup_NORI.xlsx tab 'Maki Lakeside' (downloaded 2026-10-01 10:10)",
     "daily": [
      {
@@ -45003,6 +45051,4650 @@
   "capped_codes": [],
   "capped_amount": -710940.54
  },
+ "utilities": {
+  "as_at": "2026-10-12",
+  "months": [
+   "2026-01",
+   "2026-02",
+   "2026-03",
+   "2026-04",
+   "2026-05",
+   "2026-06",
+   "2026-07",
+   "2026-08",
+   "2026-09",
+   "2026-10"
+  ],
+  "sites": [
+   {
+    "code": "M8",
+    "cluster": "Scotland & Newcastle",
+    "state": "red",
+    "ytd": 106491.46,
+    "fuels": [
+     {
+      "fuel": "electricity",
+      "state": "amber",
+      "suppliers": [
+       "EDFEnergy",
+       "Octopus Energy Limited",
+       "Yu Energy"
+      ],
+      "last_paid": "2026-10-08",
+      "days_since": 4,
+      "billed_to": "2026-10-01",
+      "ytd": 62495.83,
+      "typical": 3765.09,
+      "text": "Spike: £9,668 to Yu Energy on 2026-09-09 is 2.6x the site's typical electricity bill (£3,765).",
+      "payments": [
+       {
+        "date": "2026-03-02",
+        "amount": 837.6,
+        "supplier": "Octopus Energy Limited",
+        "account": "A-C31A9CB0",
+        "fuel": "electricity",
+        "period_from": null,
+        "period_to": null,
+        "period_days": null,
+        "desc": "",
+        "ref": "355867229"
+       },
+       {
+        "date": "2026-03-09",
+        "amount": 3636.05,
+        "supplier": "Yu Energy",
+        "account": "2000329193",
+        "fuel": "electricity",
+        "period_from": "2026-02-01",
+        "period_to": "2026-02-28",
+        "period_days": 27,
+        "desc": "Electricity (2026.02.01 to 2026.02.28)",
+        "ref": "03644014"
+       },
+       {
+        "date": "2026-04-01",
+        "amount": 387.32,
+        "supplier": "EDFEnergy",
+        "account": "A-A5E2EBCB",
+        "fuel": "electricity",
+        "period_from": "2025-10-01",
+        "period_to": "2025-10-13",
+        "period_days": 12,
+        "desc": "Electricity (2025.10.01 to 2025.10.13)",
+        "ref": "KI-A5E2EBCB-0001"
+       },
+       {
+        "date": "2026-04-01",
+        "amount": 4295.36,
+        "supplier": "EDFEnergy",
+        "account": "A-A5E2EBCB",
+        "fuel": "electricity",
+        "period_from": "2025-10-14",
+        "period_to": "2025-10-31",
+        "period_days": 17,
+        "desc": "Electricity (2025.10.14 to 2025.10.31)",
+        "ref": "KI-A5E2EBCB-0002"
+       },
+       {
+        "date": "2026-04-01",
+        "amount": 837.6,
+        "supplier": "Octopus Energy Limited",
+        "account": "A-C31A9CB0",
+        "fuel": "electricity",
+        "period_from": null,
+        "period_to": null,
+        "period_days": null,
+        "desc": "",
+        "ref": "355867229"
+       },
+       {
+        "date": "2026-04-10",
+        "amount": 6137.28,
+        "supplier": "Yu Energy",
+        "account": "2000329193",
+        "fuel": "electricity",
+        "period_from": "2026-03-01",
+        "period_to": "2026-04-01",
+        "period_days": 31,
+        "desc": "Electricity - 2026 Mar",
+        "ref": "03761548"
+       },
+       {
+        "date": "2026-05-01",
+        "amount": 837.6,
+        "supplier": "Octopus Energy Limited",
+        "account": "A-C31A9CB0",
+        "fuel": "electricity",
+        "period_from": null,
+        "period_to": null,
+        "period_days": null,
+        "desc": "",
+        "ref": "355867229"
+       },
+       {
+        "date": "2026-06-09",
+        "amount": 10721.59,
+        "supplier": "Yu Energy",
+        "account": "2000329193",
+        "fuel": "electricity",
+        "period_from": "2026-05-01",
+        "period_to": "2026-06-01",
+        "period_days": 31,
+        "desc": "Electricity - 2026 May | Electricity - 2026 May",
+        "ref": "04005563"
+       },
+       {
+        "date": "2026-07-09",
+        "amount": 3729.56,
+        "supplier": "Yu Energy",
+        "account": "2000329193",
+        "fuel": "electricity",
+        "period_from": "2026-06-01",
+        "period_to": "2026-07-01",
+        "period_days": 30,
+        "desc": "Electricity - 2026 Jun",
+        "ref": "04134636"
+       },
+       {
+        "date": "2026-08-10",
+        "amount": 3800.62,
+        "supplier": "Yu Energy",
+        "account": "2000329193",
+        "fuel": "electricity",
+        "period_from": "2026-07-01",
+        "period_to": "2026-08-01",
+        "period_days": 31,
+        "desc": "Electricity - 2026 Jul",
+        "ref": "04274409"
+       },
+       {
+        "date": "2026-09-09",
+        "amount": 9667.78,
+        "supplier": "Yu Energy",
+        "account": "2000329193",
+        "fuel": "electricity",
+        "period_from": "2026-08-01",
+        "period_to": "2026-09-01",
+        "period_days": 31,
+        "desc": "Electricity - 2026 Aug",
+        "ref": "04405851"
+       },
+       {
+        "date": "2026-10-08",
+        "amount": 5826.8,
+        "supplier": "Yu Energy",
+        "account": "2000329193",
+        "fuel": "electricity",
+        "period_from": "2026-09-01",
+        "period_to": "2026-10-01",
+        "period_days": 30,
+        "desc": "Electricity - 2026 Sept",
+        "ref": "04545678"
+       }
+      ]
+     },
+     {
+      "fuel": "gas",
+      "state": "red",
+      "suppliers": [
+       "E E Solutions Limited",
+       "Yorkshire Gas and Power (RGF)"
+      ],
+      "last_paid": "2026-09-16",
+      "days_since": 26,
+      "billed_to": "2026-09-06",
+      "ytd": 43995.63,
+      "typical": 2203.47,
+      "text": "Back-bill: £37,764 to E E Solutions Limited on 2026-09-16 covered 340 days (2025-10-01 to 2026-09-06). Two suppliers for gas: E E Solutions Limited and Yorkshire Gas and Power (RGF) both billed periods inside 2025-10-01 to 2026-09-06 (3 overlapping bills). Check for double billing.",
+      "payments": [
+       {
+        "date": "2026-06-03",
+        "amount": 1824.9,
+        "supplier": "Yorkshire Gas and Power (RGF)",
+        "account": "",
+        "fuel": "gas",
+        "period_from": "2026-03-20",
+        "period_to": "2026-05-20",
+        "period_days": 61,
+        "desc": "Gas (2026.03.20 to 2026.05.20) | Gas (2026.03.20 to 2026.05.20)",
+        "ref": "1358490"
+       },
+       {
+        "date": "2026-06-24",
+        "amount": 3687.75,
+        "supplier": "Yorkshire Gas and Power (RGF)",
+        "account": "",
+        "fuel": "gas",
+        "period_from": "2026-05-20",
+        "period_to": "2026-06-20",
+        "period_days": 31,
+        "desc": "Gas (2026.05.20 to 2026.06.20) | Gas (2026.05.20 to 2026.06.20)",
+        "ref": "1391888"
+       },
+       {
+        "date": "2026-08-26",
+        "amount": 719.19,
+        "supplier": "Yorkshire Gas and Power (RGF)",
+        "account": "",
+        "fuel": "gas",
+        "period_from": "2026-06-20",
+        "period_to": "2026-07-20",
+        "period_days": 30,
+        "desc": "Gas (2026.06.20 to 2026.07.20) | Gas (2026.06.20 to 2026.07.20)",
+        "ref": "1427355"
+       },
+       {
+        "date": "2026-09-16",
+        "amount": 37763.79,
+        "supplier": "E E Solutions Limited",
+        "account": "",
+        "fuel": "gas",
+        "period_from": "2025-10-01",
+        "period_to": "2026-09-06",
+        "period_days": 340,
+        "desc": "Gas (2025.10.01 to 2026.09.06)",
+        "ref": "1482784"
+       }
+      ]
+     }
+    ],
+    "monthly": {
+     "2026-01": 5492.45,
+     "2026-02": 6288.22,
+     "2026-03": 4473.65,
+     "2026-04": 11657.56,
+     "2026-05": 837.6,
+     "2026-06": 16234.24,
+     "2026-07": 3729.56,
+     "2026-08": 4519.81,
+     "2026-09": 47431.57,
+     "2026-10": 5826.8
+    },
+    "feed_start": "2026-01-01"
+   },
+   {
+    "code": "M10",
+    "cluster": "North England & Midlands",
+    "state": "red",
+    "ytd": 71186.78,
+    "fuels": [
+     {
+      "fuel": "electricity",
+      "state": "amber",
+      "suppliers": [
+       "Ecotricity Limited",
+       "Jellyfish Energy"
+      ],
+      "last_paid": "2026-10-08",
+      "days_since": 4,
+      "billed_to": "2026-08-01",
+      "ytd": 66824.21,
+      "typical": 2735.62,
+      "text": "Back-bill: £30,475 to Ecotricity Limited in 4 instalments (2026-01-06 to 2026-04-07) covered 425 days (2024-08-01 to 2025-09-30). Spike: £5,924 to Jellyfish Energy on 2026-10-07 is 2.2x the site's typical electricity bill (£2,736).",
+      "payments": [
+       {
+        "date": "2026-05-29",
+        "amount": 384.08,
+        "supplier": "Jellyfish Energy",
+        "account": "",
+        "fuel": "electricity",
+        "period_from": null,
+        "period_to": null,
+        "period_days": null,
+        "desc": "",
+        "ref": "9BA65F8B-0218"
+       },
+       {
+        "date": "2026-06-22",
+        "amount": 2784.14,
+        "supplier": "Ecotricity Limited",
+        "account": "200364638",
+        "fuel": "electricity",
+        "period_from": "2026-04-28",
+        "period_to": "2026-05-28",
+        "period_days": 30,
+        "desc": "Electricity (2026.04.28 - 2026.05.28)",
+        "ref": "08916755"
+       },
+       {
+        "date": "2026-06-25",
+        "amount": 2735.62,
+        "supplier": "Jellyfish Energy",
+        "account": "",
+        "fuel": "electricity",
+        "period_from": null,
+        "period_to": null,
+        "period_days": null,
+        "desc": "",
+        "ref": "9BA65F8B-DRAFT"
+       },
+       {
+        "date": "2026-07-09",
+        "amount": 580.53,
+        "supplier": "Jellyfish Energy",
+        "account": "",
+        "fuel": "electricity",
+        "period_from": null,
+        "period_to": null,
+        "period_days": null,
+        "desc": "",
+        "ref": "128986"
+       },
+       {
+        "date": "2026-07-20",
+        "amount": 2896.67,
+        "supplier": "Ecotricity Limited",
+        "account": "200364638",
+        "fuel": "electricity",
+        "period_from": "2026-05-28",
+        "period_to": "2026-06-28",
+        "period_days": 31,
+        "desc": "Electricity (2026.05.28 - 2026.06.28)",
+        "ref": "09087511"
+       },
+       {
+        "date": "2026-08-07",
+        "amount": 462.57,
+        "supplier": "Jellyfish Energy",
+        "account": "",
+        "fuel": "electricity",
+        "period_from": null,
+        "period_to": null,
+        "period_days": null,
+        "desc": "",
+        "ref": "133921"
+       },
+       {
+        "date": "2026-08-27",
+        "amount": 2734.92,
+        "supplier": "Ecotricity Limited",
+        "account": "200364638",
+        "fuel": "electricity",
+        "period_from": "2026-06-28",
+        "period_to": "2026-08-01",
+        "period_days": 34,
+        "desc": "Electricity (2026.06.28 - 2026.08.01)",
+        "ref": "09359345"
+       },
+       {
+        "date": "2026-09-07",
+        "amount": 552.47,
+        "supplier": "Jellyfish Energy",
+        "account": "207904",
+        "fuel": "electricity",
+        "period_from": null,
+        "period_to": null,
+        "period_days": null,
+        "desc": "",
+        "ref": "138969"
+       },
+       {
+        "date": "2026-09-09",
+        "amount": 300.74,
+        "supplier": "Jellyfish Energy",
+        "account": "",
+        "fuel": "electricity",
+        "period_from": null,
+        "period_to": null,
+        "period_days": null,
+        "desc": "",
+        "ref": "139384"
+       },
+       {
+        "date": "2026-09-30",
+        "amount": 379.16,
+        "supplier": "Ecotricity Limited",
+        "account": "200364638",
+        "fuel": "electricity",
+        "period_from": "2026-06-28",
+        "period_to": "2026-08-01",
+        "period_days": 34,
+        "desc": "Electricity (2026.06.28 - 2026.08.01)",
+        "ref": "09540510"
+       },
+       {
+        "date": "2026-10-07",
+        "amount": 5923.77,
+        "supplier": "Jellyfish Energy",
+        "account": "",
+        "fuel": "electricity",
+        "period_from": null,
+        "period_to": null,
+        "period_days": null,
+        "desc": "",
+        "ref": "144369"
+       },
+       {
+        "date": "2026-10-08",
+        "amount": 894.55,
+        "supplier": "Jellyfish Energy",
+        "account": "",
+        "fuel": "electricity",
+        "period_from": null,
+        "period_to": null,
+        "period_days": null,
+        "desc": "",
+        "ref": "144770"
+       }
+      ]
+     },
+     {
+      "fuel": "gas",
+      "state": "red",
+      "suppliers": [
+       "British Gas"
+      ],
+      "last_paid": "2026-07-03",
+      "days_since": 101,
+      "billed_to": null,
+      "ytd": 4362.57,
+      "typical": 641.12,
+      "text": "Quiet: no gas payment for 101 days (last 2026-07-03, British Gas). Roughly £2,158 is building up.",
+      "payments": [
+       {
+        "date": "2026-01-19",
+        "amount": 579.03,
+        "supplier": "British Gas",
+        "account": "604012577",
+        "fuel": "gas",
+        "period_from": null,
+        "period_to": null,
+        "period_days": null,
+        "desc": "",
+        "ref": "726041695"
+       },
+       {
+        "date": "2026-02-13",
+        "amount": 733.82,
+        "supplier": "British Gas",
+        "account": "604012577",
+        "fuel": "gas",
+        "period_from": null,
+        "period_to": null,
+        "period_days": null,
+        "desc": "",
+        "ref": "726169584"
+       },
+       {
+        "date": "2026-03-13",
+        "amount": 525.93,
+        "supplier": "British Gas",
+        "account": "604012577",
+        "fuel": "gas",
+        "period_from": null,
+        "period_to": null,
+        "period_days": null,
+        "desc": "",
+        "ref": "810418993"
+       },
+       {
+        "date": "2026-03-17",
+        "amount": 212.17,
+        "supplier": "British Gas",
+        "account": "604012577",
+        "fuel": "gas",
+        "period_from": null,
+        "period_to": null,
+        "period_days": null,
+        "desc": "",
+        "ref": "726344331"
+       },
+       {
+        "date": "2026-04-16",
+        "amount": 730.77,
+        "supplier": "British Gas",
+        "account": "604012577",
+        "fuel": "gas",
+        "period_from": null,
+        "period_to": null,
+        "period_days": null,
+        "desc": "",
+        "ref": "726502472"
+       },
+       {
+        "date": "2026-05-15",
+        "amount": 773.58,
+        "supplier": "British Gas",
+        "account": "604012577",
+        "fuel": "gas",
+        "period_from": null,
+        "period_to": null,
+        "period_days": null,
+        "desc": "",
+        "ref": "726675283"
+       },
+       {
+        "date": "2026-06-11",
+        "amount": 703.2,
+        "supplier": "British Gas",
+        "account": "604012577",
+        "fuel": "gas",
+        "period_from": null,
+        "period_to": null,
+        "period_days": null,
+        "desc": "",
+        "ref": "726841630"
+       },
+       {
+        "date": "2026-07-03",
+        "amount": 104.07,
+        "supplier": "British Gas",
+        "account": "604012577",
+        "fuel": "gas",
+        "period_from": null,
+        "period_to": null,
+        "period_days": null,
+        "desc": "",
+        "ref": "810525367"
+       }
+      ]
+     }
+    ],
+    "monthly": {
+     "2026-01": 11414.53,
+     "2026-02": 11843.16,
+     "2026-03": 8356.94,
+     "2026-04": 14454.0,
+     "2026-05": 4065.74,
+     "2026-06": 6222.96,
+     "2026-07": 3581.27,
+     "2026-08": 3197.49,
+     "2026-09": 1232.37,
+     "2026-10": 6818.32
+    },
+    "feed_start": "2026-01-01"
+   },
+   {
+    "code": "M12",
+    "cluster": "Scotland & Newcastle",
+    "state": "red",
+    "ytd": 39220.42,
+    "fuels": [
+     {
+      "fuel": "electricity",
+      "state": "green",
+      "suppliers": [
+       "Jellyfish Energy",
+       "Scottish Gas"
+      ],
+      "last_paid": "2026-10-02",
+      "days_since": 10,
+      "billed_to": "2026-07-01",
+      "ytd": 35119.32,
+      "typical": 5351.88,
+      "text": "Paying regularly.",
+      "payments": [
+       {
+        "date": "2026-06-19",
+        "amount": 4244.95,
+        "supplier": "Scottish Gas",
+        "account": "604197942",
+        "fuel": "electricity",
+        "period_from": "2026-05-01",
+        "period_to": "2026-06-01",
+        "period_days": 31,
+        "desc": "Electricity - 2026 May",
+        "ref": "807300992"
+       },
+       {
+        "date": "2026-06-19",
+        "amount": 4101.1,
+        "supplier": "Scottish Gas",
+        "account": "604197942",
+        "fuel": "electricity",
+        "period_from": "2026-04-01",
+        "period_to": "2026-05-01",
+        "period_days": 30,
+        "desc": "Electricity - 2026 Apr",
+        "ref": "807273333"
+       },
+       {
+        "date": "2026-06-24",
+        "amount": 5351.88,
+        "supplier": "Jellyfish Energy",
+        "account": "",
+        "fuel": "electricity",
+        "period_from": null,
+        "period_to": null,
+        "period_days": null,
+        "desc": "",
+        "ref": "9BA65F8B-DRAFT"
+       },
+       {
+        "date": "2026-07-20",
+        "amount": 4267.22,
+        "supplier": "Scottish Gas",
+        "account": "604197942",
+        "fuel": "electricity",
+        "period_from": "2026-06-01",
+        "period_to": "2026-07-01",
+        "period_days": 30,
+        "desc": "Electricity - 2026 Jun",
+        "ref": "727095387"
+       },
+       {
+        "date": "2026-07-31",
+        "amount": 5565.86,
+        "supplier": "Jellyfish Energy",
+        "account": "",
+        "fuel": "electricity",
+        "period_from": null,
+        "period_to": null,
+        "period_days": null,
+        "desc": "",
+        "ref": "132721"
+       },
+       {
+        "date": "2026-09-02",
+        "amount": 5595.14,
+        "supplier": "Jellyfish Energy",
+        "account": "",
+        "fuel": "electricity",
+        "period_from": null,
+        "period_to": null,
+        "period_days": null,
+        "desc": "",
+        "ref": "137517"
+       },
+       {
+        "date": "2026-10-02",
+        "amount": 5993.17,
+        "supplier": "Jellyfish Energy",
+        "account": "",
+        "fuel": "electricity",
+        "period_from": null,
+        "period_to": null,
+        "period_days": null,
+        "desc": "",
+        "ref": "143499"
+       }
+      ]
+     },
+     {
+      "fuel": "gas",
+      "state": "red",
+      "suppliers": [
+       "British Gas"
+      ],
+      "last_paid": "2026-06-11",
+      "days_since": 123,
+      "billed_to": null,
+      "ytd": 4101.1,
+      "typical": 4101.1,
+      "text": "Quiet: no gas payment for 123 days (last 2026-06-11, British Gas). Roughly £16,815 is building up.",
+      "payments": [
+       {
+        "date": "2026-06-11",
+        "amount": 4101.1,
+        "supplier": "British Gas",
+        "account": "",
+        "fuel": "gas",
+        "period_from": null,
+        "period_to": null,
+        "period_days": null,
+        "desc": "",
+        "ref": ""
+       }
+      ]
+     }
+    ],
+    "monthly": {
+     "2026-01": 0.0,
+     "2026-02": 0.0,
+     "2026-03": 0.0,
+     "2026-04": 0.0,
+     "2026-05": 0.0,
+     "2026-06": 17799.03,
+     "2026-07": 9833.08,
+     "2026-08": 0.0,
+     "2026-09": 5595.14,
+     "2026-10": 5993.17
+    },
+    "feed_start": "2026-01-22"
+   },
+   {
+    "code": "M11",
+    "cluster": "North England & Midlands",
+    "state": "red",
+    "ytd": 36570.37,
+    "fuels": [
+     {
+      "fuel": "electricity",
+      "state": "green",
+      "suppliers": [
+       "Jellyfish Energy Limited"
+      ],
+      "last_paid": "2026-09-17",
+      "days_since": 25,
+      "billed_to": null,
+      "ytd": 4904.27,
+      "typical": 1200.23,
+      "text": "Paying regularly.",
+      "payments": [
+       {
+        "date": "2026-05-28",
+        "amount": 783.07,
+        "supplier": "Jellyfish Energy Limited",
+        "account": "",
+        "fuel": "electricity",
+        "period_from": null,
+        "period_to": null,
+        "period_days": null,
+        "desc": "",
+        "ref": "9BA65F8B-0219"
+       },
+       {
+        "date": "2026-06-08",
+        "amount": 98.09,
+        "supplier": "Jellyfish Energy Limited",
+        "account": "",
+        "fuel": "electricity",
+        "period_from": null,
+        "period_to": null,
+        "period_days": null,
+        "desc": "",
+        "ref": "9BA65F8B-0219"
+       },
+       {
+        "date": "2026-07-16",
+        "amount": 1200.23,
+        "supplier": "Jellyfish Energy Limited",
+        "account": "207773",
+        "fuel": "electricity",
+        "period_from": null,
+        "period_to": null,
+        "period_days": null,
+        "desc": "",
+        "ref": "129936"
+       },
+       {
+        "date": "2026-08-18",
+        "amount": 1338.89,
+        "supplier": "Jellyfish Energy Limited",
+        "account": "207773",
+        "fuel": "electricity",
+        "period_from": null,
+        "period_to": null,
+        "period_days": null,
+        "desc": "",
+        "ref": "135448"
+       },
+       {
+        "date": "2026-09-17",
+        "amount": 1483.99,
+        "supplier": "Jellyfish Energy Limited",
+        "account": "207773",
+        "fuel": "electricity",
+        "period_from": null,
+        "period_to": null,
+        "period_days": null,
+        "desc": "",
+        "ref": "140674"
+       }
+      ]
+     },
+     {
+      "fuel": "gas",
+      "state": "red",
+      "suppliers": [
+       "British Gas"
+      ],
+      "last_paid": "2026-07-08",
+      "days_since": 96,
+      "billed_to": null,
+      "ytd": 9151.1,
+      "typical": 1043.34,
+      "text": "Quiet: no gas payment for 96 days (last 2026-07-08, British Gas). Roughly £3,339 is building up.",
+      "payments": [
+       {
+        "date": "2026-02-11",
+        "amount": 1848.13,
+        "supplier": "British Gas",
+        "account": "604170466",
+        "fuel": "gas",
+        "period_from": null,
+        "period_to": null,
+        "period_days": null,
+        "desc": "",
+        "ref": "805592400"
+       },
+       {
+        "date": "2026-02-16",
+        "amount": 304.58,
+        "supplier": "British Gas",
+        "account": "604170466",
+        "fuel": "gas",
+        "period_from": null,
+        "period_to": null,
+        "period_days": null,
+        "desc": "",
+        "ref": "726180973"
+       },
+       {
+        "date": "2026-03-16",
+        "amount": 1476.4,
+        "supplier": "British Gas",
+        "account": "604170466",
+        "fuel": "gas",
+        "period_from": null,
+        "period_to": null,
+        "period_days": null,
+        "desc": "",
+        "ref": "976798657"
+       },
+       {
+        "date": "2026-03-17",
+        "amount": 169.48,
+        "supplier": "British Gas",
+        "account": "604170466",
+        "fuel": "gas",
+        "period_from": null,
+        "period_to": null,
+        "period_days": null,
+        "desc": "",
+        "ref": "726341450"
+       },
+       {
+        "date": "2026-04-15",
+        "amount": 1430.86,
+        "supplier": "British Gas",
+        "account": "604170466",
+        "fuel": "gas",
+        "period_from": null,
+        "period_to": null,
+        "period_days": null,
+        "desc": "",
+        "ref": "884854593"
+       },
+       {
+        "date": "2026-04-16",
+        "amount": 196.66,
+        "supplier": "British Gas",
+        "account": "604170466",
+        "fuel": "gas",
+        "period_from": null,
+        "period_to": null,
+        "period_days": null,
+        "desc": "",
+        "ref": "726503928"
+       },
+       {
+        "date": "2026-05-13",
+        "amount": 1485.9,
+        "supplier": "British Gas",
+        "account": "604170466",
+        "fuel": "gas",
+        "period_from": null,
+        "period_to": null,
+        "period_days": null,
+        "desc": "",
+        "ref": "801189237"
+       },
+       {
+        "date": "2026-06-12",
+        "amount": 1399.41,
+        "supplier": "British Gas",
+        "account": "604170466",
+        "fuel": "gas",
+        "period_from": null,
+        "period_to": null,
+        "period_days": null,
+        "desc": "",
+        "ref": "815174931"
+       },
+       {
+        "date": "2026-06-15",
+        "amount": 152.42,
+        "supplier": "British Gas",
+        "account": "604170466",
+        "fuel": "gas",
+        "period_from": null,
+        "period_to": null,
+        "period_days": null,
+        "desc": "",
+        "ref": "726861078"
+       },
+       {
+        "date": "2026-07-08",
+        "amount": 687.26,
+        "supplier": "British Gas",
+        "account": "604170466",
+        "fuel": "gas",
+        "period_from": null,
+        "period_to": null,
+        "period_days": null,
+        "desc": "",
+        "ref": "727047009"
+       }
+      ]
+     },
+     {
+      "fuel": "energy",
+      "state": "green",
+      "suppliers": [
+       "TotalEnergies Gas & Power Limited"
+      ],
+      "last_paid": "2026-09-16",
+      "days_since": 26,
+      "billed_to": null,
+      "ytd": 22515.0,
+      "typical": 3895.87,
+      "text": "Paying regularly.",
+      "payments": [
+       {
+        "date": "2026-05-19",
+        "amount": 7350.86,
+        "supplier": "TotalEnergies Gas & Power Limited",
+        "account": "A-C8281A45",
+        "fuel": "energy",
+        "period_from": null,
+        "period_to": null,
+        "period_days": null,
+        "desc": "",
+        "ref": "KI-C8281A45-001"
+       },
+       {
+        "date": "2026-06-16",
+        "amount": 3731.0,
+        "supplier": "TotalEnergies Gas & Power Limited",
+        "account": "A-C8281A45",
+        "fuel": "energy",
+        "period_from": null,
+        "period_to": null,
+        "period_days": null,
+        "desc": "",
+        "ref": "KI-C8281A45-002"
+       },
+       {
+        "date": "2026-07-16",
+        "amount": 3555.67,
+        "supplier": "TotalEnergies Gas & Power Limited",
+        "account": "A-C8281A45",
+        "fuel": "energy",
+        "period_from": null,
+        "period_to": null,
+        "period_days": null,
+        "desc": "",
+        "ref": "KI-C8281A45-003"
+       },
+       {
+        "date": "2026-08-17",
+        "amount": 3895.87,
+        "supplier": "TotalEnergies Gas & Power Limited",
+        "account": "A-C8281A45",
+        "fuel": "energy",
+        "period_from": null,
+        "period_to": null,
+        "period_days": null,
+        "desc": "",
+        "ref": "KI-C8281A45-004"
+       },
+       {
+        "date": "2026-09-16",
+        "amount": 3981.6,
+        "supplier": "TotalEnergies Gas & Power Limited",
+        "account": "A-C8281A45",
+        "fuel": "energy",
+        "period_from": null,
+        "period_to": null,
+        "period_days": null,
+        "desc": "",
+        "ref": "KI-C8281A45-005"
+       }
+      ]
+     }
+    ],
+    "monthly": {
+     "2026-01": 0.0,
+     "2026-02": 2152.71,
+     "2026-03": 1645.88,
+     "2026-04": 1627.52,
+     "2026-05": 9619.83,
+     "2026-06": 5380.92,
+     "2026-07": 5443.16,
+     "2026-08": 5234.76,
+     "2026-09": 5465.59,
+     "2026-10": 0.0
+    },
+    "feed_start": "2026-01-02"
+   },
+   {
+    "code": "M1",
+    "cluster": "Scotland & Newcastle",
+    "state": "red",
+    "ytd": 11005.66,
+    "fuels": [
+     {
+      "fuel": "electricity",
+      "state": "green",
+      "suppliers": [
+       "Jellyfish",
+       "Jellyfish Energy"
+      ],
+      "last_paid": "2026-10-01",
+      "days_since": 11,
+      "billed_to": null,
+      "ytd": 6557.43,
+      "typical": 1309.74,
+      "text": "Paying regularly.",
+      "payments": [
+       {
+        "date": "2026-05-15",
+        "amount": 1426.19,
+        "supplier": "Jellyfish",
+        "account": "",
+        "fuel": "electricity",
+        "period_from": null,
+        "period_to": null,
+        "period_days": null,
+        "desc": "",
+        "ref": "9BA65F8B-DRAFT"
+       },
+       {
+        "date": "2026-07-01",
+        "amount": 1160.88,
+        "supplier": "Jellyfish Energy",
+        "account": "207536",
+        "fuel": "electricity",
+        "period_from": null,
+        "period_to": null,
+        "period_days": null,
+        "desc": "",
+        "ref": "126978"
+       },
+       {
+        "date": "2026-07-30",
+        "amount": 1225.08,
+        "supplier": "Jellyfish Energy",
+        "account": "207536",
+        "fuel": "electricity",
+        "period_from": null,
+        "period_to": null,
+        "period_days": null,
+        "desc": "",
+        "ref": "132025"
+       },
+       {
+        "date": "2026-09-01",
+        "amount": 1435.54,
+        "supplier": "Jellyfish Energy",
+        "account": "207536",
+        "fuel": "electricity",
+        "period_from": null,
+        "period_to": null,
+        "period_days": null,
+        "desc": "",
+        "ref": "137326"
+       },
+       {
+        "date": "2026-10-01",
+        "amount": 1309.74,
+        "supplier": "Jellyfish Energy",
+        "account": "207536",
+        "fuel": "electricity",
+        "period_from": null,
+        "period_to": null,
+        "period_days": null,
+        "desc": "",
+        "ref": "142840"
+       }
+      ]
+     },
+     {
+      "fuel": "gas",
+      "state": "red",
+      "suppliers": [
+       "YGP"
+      ],
+      "last_paid": "2026-07-20",
+      "days_since": 84,
+      "billed_to": null,
+      "ytd": 4448.23,
+      "typical": 1228.75,
+      "text": "Quiet: no gas payment for 84 days (last 2026-07-20, YGP). Roughly £3,440 is building up.",
+      "payments": [
+       {
+        "date": "2026-01-12",
+        "amount": 1321.83,
+        "supplier": "YGP",
+        "account": "YGP500525590",
+        "fuel": "gas",
+        "period_from": null,
+        "period_to": null,
+        "period_days": null,
+        "desc": "",
+        "ref": "1207939"
+       },
+       {
+        "date": "2026-03-23",
+        "amount": 1478.23,
+        "supplier": "YGP",
+        "account": "YGP500525590",
+        "fuel": "gas",
+        "period_from": null,
+        "period_to": null,
+        "period_days": null,
+        "desc": "",
+        "ref": "1279699"
+       },
+       {
+        "date": "2026-04-22",
+        "amount": 1135.67,
+        "supplier": "YGP",
+        "account": "YGP500525590",
+        "fuel": "gas",
+        "period_from": null,
+        "period_to": null,
+        "period_days": null,
+        "desc": "",
+        "ref": "1312565"
+       },
+       {
+        "date": "2026-07-20",
+        "amount": 512.5,
+        "supplier": "YGP",
+        "account": "YGP500525590",
+        "fuel": "gas",
+        "period_from": null,
+        "period_to": null,
+        "period_days": null,
+        "desc": "",
+        "ref": "1415981"
+       }
+      ]
+     }
+    ],
+    "monthly": {
+     "2026-01": 1321.83,
+     "2026-02": 0.0,
+     "2026-03": 1478.23,
+     "2026-04": 1135.67,
+     "2026-05": 1426.19,
+     "2026-06": 0.0,
+     "2026-07": 2898.46,
+     "2026-08": 0.0,
+     "2026-09": 1435.54,
+     "2026-10": 1309.74
+    },
+    "feed_start": "2026-01-02"
+   },
+   {
+    "code": "M14",
+    "cluster": "North England & Midlands",
+    "state": "red",
+    "ytd": 8212.89,
+    "fuels": [
+     {
+      "fuel": "electricity",
+      "state": "red",
+      "suppliers": [
+       "Jellyfish Energy Limited"
+      ],
+      "last_paid": "2026-07-01",
+      "days_since": 103,
+      "billed_to": null,
+      "ytd": 89.74,
+      "typical": 89.74,
+      "text": "Quiet: no electricity payment for 103 days (last 2026-07-01, Jellyfish Energy Limited). Roughly £308 is building up.",
+      "payments": [
+       {
+        "date": "2026-07-01",
+        "amount": 89.74,
+        "supplier": "Jellyfish Energy Limited",
+        "account": "",
+        "fuel": "electricity",
+        "period_from": null,
+        "period_to": null,
+        "period_days": null,
+        "desc": "",
+        "ref": "9BA65F8B-0216"
+       }
+      ]
+     },
+     {
+      "fuel": "gas",
+      "state": "amber",
+      "suppliers": [],
+      "last_paid": null,
+      "days_since": null,
+      "billed_to": null,
+      "ytd": 0.0,
+      "typical": null,
+      "text": "No gas payment seen since the feed starts (2026-03-06). Confirm whether the site has gas; if it does, a catch-up bill is building.",
+      "payments": []
+     },
+     {
+      "fuel": "energy",
+      "state": "red",
+      "suppliers": [
+       "UC Energy Ltd"
+      ],
+      "last_paid": "2026-05-28",
+      "days_since": 137,
+      "billed_to": null,
+      "ytd": 8123.15,
+      "typical": 4061.58,
+      "text": "Quiet: no energy payment for 137 days (last 2026-05-28, UC Energy Ltd). Roughly £18,548 is building up.",
+      "payments": [
+       {
+        "date": "2026-05-28",
+        "amount": 4235.39,
+        "supplier": "UC Energy Ltd",
+        "account": "",
+        "fuel": "energy",
+        "period_from": null,
+        "period_to": null,
+        "period_days": null,
+        "desc": "",
+        "ref": "2380002187409M/001"
+       },
+       {
+        "date": "2026-05-28",
+        "amount": 3887.76,
+        "supplier": "UC Energy Ltd",
+        "account": "",
+        "fuel": "energy",
+        "period_from": null,
+        "period_to": null,
+        "period_days": null,
+        "desc": "",
+        "ref": "2380002187409M/002"
+       }
+      ]
+     }
+    ],
+    "monthly": {
+     "2026-01": 0.0,
+     "2026-02": 0.0,
+     "2026-03": 0.0,
+     "2026-04": 0.0,
+     "2026-05": 8123.15,
+     "2026-06": 0.0,
+     "2026-07": 89.74,
+     "2026-08": 0.0,
+     "2026-09": 0.0,
+     "2026-10": 0.0
+    },
+    "feed_start": "2026-03-06"
+   },
+   {
+    "code": "M17",
+    "cluster": "South England",
+    "state": "red",
+    "ytd": 2051.34,
+    "fuels": [
+     {
+      "fuel": "electricity",
+      "state": "green",
+      "suppliers": [
+       "Jellyfish Energy"
+      ],
+      "last_paid": "2026-09-21",
+      "days_since": 21,
+      "billed_to": null,
+      "ytd": 868.87,
+      "typical": 297.45,
+      "text": "Paying regularly.",
+      "payments": [
+       {
+        "date": "2026-07-07",
+        "amount": 269.82,
+        "supplier": "Jellyfish Energy",
+        "account": "",
+        "fuel": "electricity",
+        "period_from": null,
+        "period_to": null,
+        "period_days": null,
+        "desc": "",
+        "ref": "HD 956367382"
+       },
+       {
+        "date": "2026-08-20",
+        "amount": 297.45,
+        "supplier": "Jellyfish Energy",
+        "account": "",
+        "fuel": "electricity",
+        "period_from": null,
+        "period_to": null,
+        "period_days": null,
+        "desc": "",
+        "ref": "135800"
+       },
+       {
+        "date": "2026-09-21",
+        "amount": 301.6,
+        "supplier": "Jellyfish Energy",
+        "account": "",
+        "fuel": "electricity",
+        "period_from": null,
+        "period_to": null,
+        "period_days": null,
+        "desc": "",
+        "ref": "141135"
+       }
+      ]
+     },
+     {
+      "fuel": "gas",
+      "state": "red",
+      "suppliers": [
+       "Crown Gas and Power Ltd"
+      ],
+      "last_paid": "2026-06-17",
+      "days_since": 117,
+      "billed_to": null,
+      "ytd": 1182.47,
+      "typical": 426.02,
+      "text": "Quiet: no gas payment for 117 days (last 2026-06-17, Crown Gas and Power Ltd). Roughly £1,661 is building up.",
+      "payments": [
+       {
+        "date": "2026-05-07",
+        "amount": 522.9,
+        "supplier": "Crown Gas and Power Ltd",
+        "account": "",
+        "fuel": "gas",
+        "period_from": null,
+        "period_to": null,
+        "period_days": null,
+        "desc": "",
+        "ref": "3917084"
+       },
+       {
+        "date": "2026-06-17",
+        "amount": 233.55,
+        "supplier": "Crown Gas and Power Ltd",
+        "account": "",
+        "fuel": "gas",
+        "period_from": null,
+        "period_to": null,
+        "period_days": null,
+        "desc": "",
+        "ref": "3990281"
+       },
+       {
+        "date": "2026-06-17",
+        "amount": 426.02,
+        "supplier": "Crown Gas and Power Ltd",
+        "account": "",
+        "fuel": "gas",
+        "period_from": null,
+        "period_to": null,
+        "period_days": null,
+        "desc": "",
+        "ref": "3951929"
+       }
+      ]
+     }
+    ],
+    "monthly": {
+     "2026-01": 0.0,
+     "2026-02": 0.0,
+     "2026-03": 0.0,
+     "2026-04": 0.0,
+     "2026-05": 522.9,
+     "2026-06": 659.57,
+     "2026-07": 269.82,
+     "2026-08": 297.45,
+     "2026-09": 301.6,
+     "2026-10": 0.0
+    },
+    "feed_start": "2026-01-28"
+   },
+   {
+    "code": "M9",
+    "cluster": "North England & Midlands",
+    "state": "amber",
+    "ytd": 77761.71,
+    "fuels": [
+     {
+      "fuel": "electricity",
+      "state": "green",
+      "suppliers": [
+       "Jellyfish Energy"
+      ],
+      "last_paid": "2026-09-23",
+      "days_since": 19,
+      "billed_to": null,
+      "ytd": 24865.06,
+      "typical": 6853.9,
+      "text": "Paying regularly.",
+      "payments": [
+       {
+        "date": "2026-06-25",
+        "amount": 7105.52,
+        "supplier": "Jellyfish Energy",
+        "account": "",
+        "fuel": "electricity",
+        "period_from": null,
+        "period_to": null,
+        "period_days": null,
+        "desc": "",
+        "ref": "9BA65F8B-0215"
+       },
+       {
+        "date": "2026-08-20",
+        "amount": 8200.2,
+        "supplier": "Jellyfish Energy",
+        "account": "207903",
+        "fuel": "electricity",
+        "period_from": null,
+        "period_to": null,
+        "period_days": null,
+        "desc": "",
+        "ref": "136036"
+       },
+       {
+        "date": "2026-08-21",
+        "amount": 767.06,
+        "supplier": "Jellyfish Energy",
+        "account": "207902",
+        "fuel": "electricity",
+        "period_from": null,
+        "period_to": null,
+        "period_days": null,
+        "desc": "",
+        "ref": "136189"
+       },
+       {
+        "date": "2026-09-17",
+        "amount": 6853.9,
+        "supplier": "Jellyfish Energy",
+        "account": "207903",
+        "fuel": "electricity",
+        "period_from": null,
+        "period_to": null,
+        "period_days": null,
+        "desc": "",
+        "ref": "140842"
+       },
+       {
+        "date": "2026-09-23",
+        "amount": 1938.38,
+        "supplier": "Jellyfish Energy",
+        "account": "207902",
+        "fuel": "electricity",
+        "period_from": null,
+        "period_to": null,
+        "period_days": null,
+        "desc": "",
+        "ref": "141499"
+       }
+      ]
+     },
+     {
+      "fuel": "gas",
+      "state": "amber",
+      "suppliers": [
+       "British Gas"
+      ],
+      "last_paid": "2026-08-13",
+      "days_since": 60,
+      "billed_to": null,
+      "ytd": 52896.65,
+      "typical": 1541.1,
+      "text": "Spike: £5,553 to British Gas on 2026-07-22 is 3.6x the site's typical gas bill (£1,541). Quiet: no gas payment for 60 days (last 2026-08-13, British Gas). Roughly £3,082 is building up.",
+      "payments": [
+       {
+        "date": "2026-03-20",
+        "amount": 5216.83,
+        "supplier": "British Gas",
+        "account": "",
+        "fuel": "gas",
+        "period_from": null,
+        "period_to": null,
+        "period_days": null,
+        "desc": "",
+        "ref": "804029016"
+       },
+       {
+        "date": "2026-03-23",
+        "amount": 1336.04,
+        "supplier": "British Gas",
+        "account": "603880232",
+        "fuel": "gas",
+        "period_from": null,
+        "period_to": null,
+        "period_days": null,
+        "desc": "",
+        "ref": "873667433"
+       },
+       {
+        "date": "2026-04-17",
+        "amount": 1473.46,
+        "supplier": "British Gas",
+        "account": "603880232",
+        "fuel": "gas",
+        "period_from": null,
+        "period_to": null,
+        "period_days": null,
+        "desc": "",
+        "ref": "804058813"
+       },
+       {
+        "date": "2026-04-23",
+        "amount": 5789.36,
+        "supplier": "British Gas",
+        "account": "",
+        "fuel": "gas",
+        "period_from": null,
+        "period_to": null,
+        "period_days": null,
+        "desc": "",
+        "ref": "868868024"
+       },
+       {
+        "date": "2026-05-15",
+        "amount": 1521.5,
+        "supplier": "British Gas",
+        "account": "603880232",
+        "fuel": "gas",
+        "period_from": null,
+        "period_to": null,
+        "period_days": null,
+        "desc": "",
+        "ref": "726682825"
+       },
+       {
+        "date": "2026-05-22",
+        "amount": 5645.85,
+        "supplier": "British Gas",
+        "account": "",
+        "fuel": "gas",
+        "period_from": null,
+        "period_to": null,
+        "period_days": null,
+        "desc": "",
+        "ref": "815156492"
+       },
+       {
+        "date": "2026-06-11",
+        "amount": 1344.9,
+        "supplier": "British Gas",
+        "account": "603880232",
+        "fuel": "gas",
+        "period_from": null,
+        "period_to": null,
+        "period_days": null,
+        "desc": "",
+        "ref": "726838755"
+       },
+       {
+        "date": "2026-06-22",
+        "amount": 6198.73,
+        "supplier": "British Gas",
+        "account": "",
+        "fuel": "gas",
+        "period_from": null,
+        "period_to": null,
+        "period_days": null,
+        "desc": "",
+        "ref": "804119530"
+       },
+       {
+        "date": "2026-07-17",
+        "amount": 1541.1,
+        "supplier": "British Gas",
+        "account": "",
+        "fuel": "gas",
+        "period_from": null,
+        "period_to": null,
+        "period_days": null,
+        "desc": "",
+        "ref": "810538304"
+       },
+       {
+        "date": "2026-07-22",
+        "amount": 5553.32,
+        "supplier": "British Gas",
+        "account": "",
+        "fuel": "gas",
+        "period_from": null,
+        "period_to": null,
+        "period_days": null,
+        "desc": "",
+        "ref": "810538217"
+       },
+       {
+        "date": "2026-07-31",
+        "amount": 2381.19,
+        "supplier": "British Gas",
+        "account": "",
+        "fuel": "gas",
+        "period_from": null,
+        "period_to": null,
+        "period_days": null,
+        "desc": "",
+        "ref": "815209145"
+       },
+       {
+        "date": "2026-08-13",
+        "amount": 811.72,
+        "supplier": "British Gas",
+        "account": "603880232",
+        "fuel": "gas",
+        "period_from": null,
+        "period_to": null,
+        "period_days": null,
+        "desc": "",
+        "ref": "727222279"
+       }
+      ]
+     }
+    ],
+    "monthly": {
+     "2026-01": 7026.24,
+     "2026-02": 7056.41,
+     "2026-03": 6552.87,
+     "2026-04": 7262.82,
+     "2026-05": 7167.35,
+     "2026-06": 14649.15,
+     "2026-07": 9475.61,
+     "2026-08": 9778.98,
+     "2026-09": 8792.28,
+     "2026-10": 0.0
+    },
+    "feed_start": "2026-01-01"
+   },
+   {
+    "code": "M16",
+    "cluster": "North England & Midlands",
+    "state": "amber",
+    "ytd": 60686.5,
+    "fuels": [
+     {
+      "fuel": "electricity",
+      "state": "green",
+      "suppliers": [
+       "Jellyfish Energy",
+       "Yu Energy"
+      ],
+      "last_paid": "2026-10-06",
+      "days_since": 6,
+      "billed_to": "2026-09-01",
+      "ytd": 42861.06,
+      "typical": 4106.32,
+      "text": "Paying regularly.",
+      "payments": [
+       {
+        "date": "2026-01-09",
+        "amount": 3288.49,
+        "supplier": "Yu Energy",
+        "account": "2000342265",
+        "fuel": "electricity",
+        "period_from": "2025-12-11",
+        "period_to": "2025-12-31",
+        "period_days": 20,
+        "desc": "Electricity (2025.12.11 to 2025.12.31)",
+        "ref": "03442580"
+       },
+       {
+        "date": "2026-02-09",
+        "amount": 4898.26,
+        "supplier": "Yu Energy",
+        "account": "2000342265",
+        "fuel": "electricity",
+        "period_from": "2026-01-01",
+        "period_to": "2026-02-01",
+        "period_days": 31,
+        "desc": "Electricity- 2026 Jan",
+        "ref": "03483950"
+       },
+       {
+        "date": "2026-03-09",
+        "amount": 4077.64,
+        "supplier": "Yu Energy",
+        "account": "2000342265",
+        "fuel": "electricity",
+        "period_from": "2026-02-01",
+        "period_to": "2026-03-01",
+        "period_days": 28,
+        "desc": "Electricity- 2026 Feb",
+        "ref": "03648225"
+       },
+       {
+        "date": "2026-04-10",
+        "amount": 4135.01,
+        "supplier": "Yu Energy",
+        "account": "2000342265",
+        "fuel": "electricity",
+        "period_from": "2026-03-01",
+        "period_to": "2026-04-01",
+        "period_days": 31,
+        "desc": "Electricity- 2026 Mar",
+        "ref": "03789733"
+       },
+       {
+        "date": "2026-05-11",
+        "amount": 4047.43,
+        "supplier": "Yu Energy",
+        "account": "2000342265",
+        "fuel": "electricity",
+        "period_from": "2026-04-01",
+        "period_to": "2026-05-01",
+        "period_days": 30,
+        "desc": "Electricity- 2026 Apr | TNUoS - April 2026",
+        "ref": "03910494"
+       },
+       {
+        "date": "2026-06-09",
+        "amount": 4399.08,
+        "supplier": "Yu Energy",
+        "account": "2000342265",
+        "fuel": "electricity",
+        "period_from": "2026-05-01",
+        "period_to": "2026-06-01",
+        "period_days": 31,
+        "desc": "Electricity- 2026 May",
+        "ref": "04040875"
+       },
+       {
+        "date": "2026-07-09",
+        "amount": 4476.78,
+        "supplier": "Yu Energy",
+        "account": "2000342265",
+        "fuel": "electricity",
+        "period_from": "2026-06-01",
+        "period_to": "2026-07-01",
+        "period_days": 30,
+        "desc": "Electricity- 2026 Jun",
+        "ref": "04183408"
+       },
+       {
+        "date": "2026-07-28",
+        "amount": 554.64,
+        "supplier": "Jellyfish Energy",
+        "account": "",
+        "fuel": "electricity",
+        "period_from": null,
+        "period_to": null,
+        "period_days": null,
+        "desc": "",
+        "ref": "HD 975650913"
+       },
+       {
+        "date": "2026-08-10",
+        "amount": 4677.76,
+        "supplier": "Yu Energy",
+        "account": "2000342265",
+        "fuel": "electricity",
+        "period_from": "2026-07-01",
+        "period_to": "2026-08-01",
+        "period_days": 31,
+        "desc": "Electricity- 2026 July",
+        "ref": "04229401"
+       },
+       {
+        "date": "2026-09-04",
+        "amount": 2943.52,
+        "supplier": "Jellyfish Energy",
+        "account": "",
+        "fuel": "electricity",
+        "period_from": null,
+        "period_to": null,
+        "period_days": null,
+        "desc": "",
+        "ref": "138308"
+       },
+       {
+        "date": "2026-09-09",
+        "amount": 4561.91,
+        "supplier": "Yu Energy",
+        "account": "2000342265",
+        "fuel": "electricity",
+        "period_from": "2026-08-01",
+        "period_to": "2026-09-01",
+        "period_days": 31,
+        "desc": "Electricity- 2026 Aug",
+        "ref": "04471000"
+       },
+       {
+        "date": "2026-10-06",
+        "amount": 800.54,
+        "supplier": "Jellyfish Energy",
+        "account": "",
+        "fuel": "electricity",
+        "period_from": null,
+        "period_to": null,
+        "period_days": null,
+        "desc": "",
+        "ref": "143713"
+       }
+      ]
+     },
+     {
+      "fuel": "gas",
+      "state": "amber",
+      "suppliers": [],
+      "last_paid": null,
+      "days_since": null,
+      "billed_to": null,
+      "ytd": 0.0,
+      "typical": null,
+      "text": "No gas payment seen since the feed starts (2026-01-02). Confirm whether the site has gas; if it does, a catch-up bill is building.",
+      "payments": []
+     },
+     {
+      "fuel": "energy",
+      "state": "amber",
+      "suppliers": [
+       "TotalEnergies Gas & Power Ltd"
+      ],
+      "last_paid": "2026-08-21",
+      "days_since": 52,
+      "billed_to": null,
+      "ytd": 17825.44,
+      "typical": 1208.96,
+      "text": "Quiet: no energy payment for 52 days (last 2026-08-21, TotalEnergies Gas & Power Ltd). Roughly £2,096 is building up.",
+      "payments": [
+       {
+        "date": "2026-01-29",
+        "amount": 2336.97,
+        "supplier": "TotalEnergies Gas & Power Ltd",
+        "account": "3009679068",
+        "fuel": "energy",
+        "period_from": null,
+        "period_to": null,
+        "period_days": null,
+        "desc": "",
+        "ref": "400247897/25"
+       },
+       {
+        "date": "2026-01-29",
+        "amount": 93.64,
+        "supplier": "TotalEnergies Gas & Power Ltd",
+        "account": "3009679068",
+        "fuel": "energy",
+        "period_from": null,
+        "period_to": null,
+        "period_days": null,
+        "desc": "",
+        "ref": "397174618/25"
+       },
+       {
+        "date": "2026-01-29",
+        "amount": 1751.96,
+        "supplier": "TotalEnergies Gas & Power Ltd",
+        "account": "3009679068",
+        "fuel": "energy",
+        "period_from": null,
+        "period_to": null,
+        "period_days": null,
+        "desc": "",
+        "ref": "397202690/25"
+       },
+       {
+        "date": "2026-01-29",
+        "amount": 91.12,
+        "supplier": "TotalEnergies Gas & Power Ltd",
+        "account": "3009679068",
+        "fuel": "energy",
+        "period_from": null,
+        "period_to": null,
+        "period_days": null,
+        "desc": "",
+        "ref": "397133852/25"
+       },
+       {
+        "date": "2026-01-29",
+        "amount": 3359.87,
+        "supplier": "TotalEnergies Gas & Power Ltd",
+        "account": "3009679068",
+        "fuel": "energy",
+        "period_from": null,
+        "period_to": null,
+        "period_days": null,
+        "desc": "",
+        "ref": "398876967/25"
+       },
+       {
+        "date": "2026-03-12",
+        "amount": 5584.92,
+        "supplier": "TotalEnergies Gas & Power Ltd",
+        "account": "3009679068",
+        "fuel": "energy",
+        "period_from": null,
+        "period_to": null,
+        "period_days": null,
+        "desc": "",
+        "ref": ""
+       },
+       {
+        "date": "2026-03-12",
+        "amount": 75.0,
+        "supplier": "TotalEnergies Gas & Power Ltd",
+        "account": "3009679068",
+        "fuel": "energy",
+        "period_from": null,
+        "period_to": null,
+        "period_days": null,
+        "desc": "",
+        "ref": "409819437/26"
+       },
+       {
+        "date": "2026-07-10",
+        "amount": 2808.05,
+        "supplier": "TotalEnergies Gas & Power Ltd",
+        "account": "3009679068",
+        "fuel": "energy",
+        "period_from": null,
+        "period_to": null,
+        "period_days": null,
+        "desc": "",
+        "ref": "KI-9E7FBFEC-002"
+       },
+       {
+        "date": "2026-07-10",
+        "amount": 1208.96,
+        "supplier": "TotalEnergies Gas & Power Ltd",
+        "account": "3009679068",
+        "fuel": "energy",
+        "period_from": null,
+        "period_to": null,
+        "period_days": null,
+        "desc": "",
+        "ref": "KI-9E7FBFEC-001"
+       },
+       {
+        "date": "2026-07-22",
+        "amount": 281.04,
+        "supplier": "TotalEnergies Gas & Power Ltd",
+        "account": "3009679068",
+        "fuel": "energy",
+        "period_from": null,
+        "period_to": null,
+        "period_days": null,
+        "desc": "",
+        "ref": "KI-9E7FBFEC-003"
+       },
+       {
+        "date": "2026-08-21",
+        "amount": 233.91,
+        "supplier": "TotalEnergies Gas & Power Ltd",
+        "account": "A-9E7FBFEC",
+        "fuel": "energy",
+        "period_from": null,
+        "period_to": null,
+        "period_days": null,
+        "desc": "",
+        "ref": "KI-9E7FBFEC-004"
+       }
+      ]
+     }
+    ],
+    "monthly": {
+     "2026-01": 10922.05,
+     "2026-02": 4898.26,
+     "2026-03": 9737.56,
+     "2026-04": 4135.01,
+     "2026-05": 4047.43,
+     "2026-06": 4399.08,
+     "2026-07": 9329.47,
+     "2026-08": 4911.67,
+     "2026-09": 7505.43,
+     "2026-10": 800.54
+    },
+    "feed_start": "2026-01-02"
+   },
+   {
+    "code": "M13",
+    "cluster": "Scotland & Newcastle",
+    "state": "amber",
+    "ytd": 45755.46,
+    "fuels": [
+     {
+      "fuel": "electricity",
+      "state": "green",
+      "suppliers": [
+       "Octopus Energy Limited"
+      ],
+      "last_paid": "2026-09-10",
+      "days_since": 32,
+      "billed_to": null,
+      "ytd": 45755.46,
+      "typical": 4625.82,
+      "text": "Paying regularly.",
+      "payments": [
+       {
+        "date": "2026-04-16",
+        "amount": 4683.82,
+        "supplier": "Octopus Energy Limited",
+        "account": "A-7AFA35A8",
+        "fuel": "electricity",
+        "period_from": null,
+        "period_to": null,
+        "period_days": null,
+        "desc": "",
+        "ref": "KI-7AFA35A8-0005"
+       },
+       {
+        "date": "2026-04-16",
+        "amount": 5084.03,
+        "supplier": "Octopus Energy Limited",
+        "account": "A-7AFA35A8",
+        "fuel": "electricity",
+        "period_from": null,
+        "period_to": null,
+        "period_days": null,
+        "desc": "",
+        "ref": "KI-7AFA35A8-0004"
+       },
+       {
+        "date": "2026-04-16",
+        "amount": 4567.81,
+        "supplier": "Octopus Energy Limited",
+        "account": "A-7AFA35A8",
+        "fuel": "electricity",
+        "period_from": null,
+        "period_to": null,
+        "period_days": null,
+        "desc": "",
+        "ref": "KI-7AFA35A8-0006"
+       },
+       {
+        "date": "2026-04-16",
+        "amount": 4490.08,
+        "supplier": "Octopus Energy Limited",
+        "account": "A-7AFA35A8",
+        "fuel": "electricity",
+        "period_from": null,
+        "period_to": null,
+        "period_days": null,
+        "desc": "",
+        "ref": "KI-7AFA35A8-0008"
+       },
+       {
+        "date": "2026-04-16",
+        "amount": 4099.72,
+        "supplier": "Octopus Energy Limited",
+        "account": "A-7AFA35A8",
+        "fuel": "electricity",
+        "period_from": null,
+        "period_to": null,
+        "period_days": null,
+        "desc": "",
+        "ref": "KI-7AFA35A8-0007"
+       },
+       {
+        "date": "2026-06-09",
+        "amount": 4696.21,
+        "supplier": "Octopus Energy Limited",
+        "account": "A-7AFA35A8",
+        "fuel": "electricity",
+        "period_from": null,
+        "period_to": null,
+        "period_days": null,
+        "desc": "",
+        "ref": "KI-7AFA35A8-0010"
+       },
+       {
+        "date": "2026-06-09",
+        "amount": 4281.84,
+        "supplier": "Octopus Energy Limited",
+        "account": "A-7AFA35A8",
+        "fuel": "electricity",
+        "period_from": null,
+        "period_to": null,
+        "period_days": null,
+        "desc": "",
+        "ref": "KI-7AFA35A8-0009"
+       },
+       {
+        "date": "2026-07-09",
+        "amount": 4700.46,
+        "supplier": "Octopus Energy Limited",
+        "account": "A-7AFA35A8",
+        "fuel": "electricity",
+        "period_from": null,
+        "period_to": null,
+        "period_days": null,
+        "desc": "",
+        "ref": "KI-7AFA35A8-0011"
+       },
+       {
+        "date": "2026-08-11",
+        "amount": 4339.12,
+        "supplier": "Octopus Energy Limited",
+        "account": "A-7AFA35A8",
+        "fuel": "electricity",
+        "period_from": null,
+        "period_to": null,
+        "period_days": null,
+        "desc": "",
+        "ref": "KI-7AFA35A8-0012"
+       },
+       {
+        "date": "2026-09-10",
+        "amount": 4812.37,
+        "supplier": "Octopus Energy Limited",
+        "account": "A-7AFA35A8",
+        "fuel": "electricity",
+        "period_from": null,
+        "period_to": null,
+        "period_days": null,
+        "desc": "",
+        "ref": "KI-7AFA35A8-0013"
+       }
+      ]
+     },
+     {
+      "fuel": "gas",
+      "state": "amber",
+      "suppliers": [],
+      "last_paid": null,
+      "days_since": null,
+      "billed_to": null,
+      "ytd": 0.0,
+      "typical": null,
+      "text": "No gas payment seen since the feed starts (2026-01-02). Confirm whether the site has gas; if it does, a catch-up bill is building.",
+      "payments": []
+     }
+    ],
+    "monthly": {
+     "2026-01": 0.0,
+     "2026-02": 0.0,
+     "2026-03": 0.0,
+     "2026-04": 22925.46,
+     "2026-05": 0.0,
+     "2026-06": 8978.05,
+     "2026-07": 4700.46,
+     "2026-08": 4339.12,
+     "2026-09": 4812.37,
+     "2026-10": 0.0
+    },
+    "feed_start": "2026-01-02"
+   },
+   {
+    "code": "M15",
+    "cluster": "Scotland & Newcastle",
+    "state": "amber",
+    "ytd": 41562.7,
+    "fuels": [
+     {
+      "fuel": "electricity",
+      "state": "amber",
+      "suppliers": [
+       "Jellyfish Energy",
+       "Pozitive Energy"
+      ],
+      "last_paid": "2026-09-30",
+      "days_since": 12,
+      "billed_to": null,
+      "ytd": 26152.54,
+      "typical": 4594.89,
+      "text": "Spike: £9,433 to Jellyfish Energy on 2026-08-28 is 2.1x the site's typical electricity bill (£4,595).",
+      "payments": [
+       {
+        "date": "2026-06-18",
+        "amount": 11258.62,
+        "supplier": "Pozitive Energy",
+        "account": "721933",
+        "fuel": "electricity",
+        "period_from": null,
+        "period_to": null,
+        "period_days": null,
+        "desc": "",
+        "ref": "721933202610517827"
+       },
+       {
+        "date": "2026-07-14",
+        "amount": 776.83,
+        "supplier": "Jellyfish Energy",
+        "account": "",
+        "fuel": "electricity",
+        "period_from": null,
+        "period_to": null,
+        "period_days": null,
+        "desc": "",
+        "ref": "9BA65F8B-DRAFT"
+       },
+       {
+        "date": "2026-08-28",
+        "amount": 9432.62,
+        "supplier": "Jellyfish Energy",
+        "account": "",
+        "fuel": "electricity",
+        "period_from": null,
+        "period_to": null,
+        "period_days": null,
+        "desc": "",
+        "ref": "137127"
+       },
+       {
+        "date": "2026-09-16",
+        "amount": 4594.89,
+        "supplier": "Jellyfish Energy",
+        "account": "",
+        "fuel": "electricity",
+        "period_from": null,
+        "period_to": null,
+        "period_days": null,
+        "desc": "",
+        "ref": "9BA65F8B-0264"
+       },
+       {
+        "date": "2026-09-30",
+        "amount": 89.58,
+        "supplier": "Jellyfish Energy",
+        "account": "",
+        "fuel": "electricity",
+        "period_from": null,
+        "period_to": null,
+        "period_days": null,
+        "desc": "",
+        "ref": "142685"
+       }
+      ]
+     },
+     {
+      "fuel": "gas",
+      "state": "amber",
+      "suppliers": [],
+      "last_paid": null,
+      "days_since": null,
+      "billed_to": null,
+      "ytd": 0.0,
+      "typical": null,
+      "text": "No gas payment seen since the feed starts (2026-01-02). Confirm whether the site has gas; if it does, a catch-up bill is building.",
+      "payments": []
+     },
+     {
+      "fuel": "energy",
+      "state": "amber",
+      "suppliers": [
+       "TotalEnergies Gas & Power Limited"
+      ],
+      "last_paid": "2026-08-18",
+      "days_since": 55,
+      "billed_to": null,
+      "ytd": 15410.16,
+      "typical": 221.42,
+      "text": "Spike: £5,491 to TotalEnergies Gas & Power Limited on 2026-06-17 is 24.8x the site's typical energy bill (£221). Quiet: no energy payment for 55 days (last 2026-08-18, TotalEnergies Gas & Power Limited). Roughly £406 is building up.",
+      "payments": [
+       {
+        "date": "2026-04-22",
+        "amount": 221.42,
+        "supplier": "TotalEnergies Gas & Power Limited",
+        "account": "3009798418",
+        "fuel": "energy",
+        "period_from": null,
+        "period_to": null,
+        "period_days": null,
+        "desc": "",
+        "ref": "409285761/26"
+       },
+       {
+        "date": "2026-04-22",
+        "amount": 7397.27,
+        "supplier": "TotalEnergies Gas & Power Limited",
+        "account": "3009798418",
+        "fuel": "energy",
+        "period_from": null,
+        "period_to": null,
+        "period_days": null,
+        "desc": "",
+        "ref": "409611230/26"
+       },
+       {
+        "date": "2026-04-22",
+        "amount": 158.59,
+        "supplier": "TotalEnergies Gas & Power Limited",
+        "account": "3009798418",
+        "fuel": "energy",
+        "period_from": null,
+        "period_to": null,
+        "period_days": null,
+        "desc": "",
+        "ref": "409323095/26"
+       },
+       {
+        "date": "2026-05-28",
+        "amount": 83.33,
+        "supplier": "TotalEnergies Gas & Power Limited",
+        "account": "3009798418",
+        "fuel": "energy",
+        "period_from": null,
+        "period_to": null,
+        "period_days": null,
+        "desc": "",
+        "ref": "413801085/26"
+       },
+       {
+        "date": "2026-06-17",
+        "amount": 5491.19,
+        "supplier": "TotalEnergies Gas & Power Limited",
+        "account": "3009798418",
+        "fuel": "energy",
+        "period_from": null,
+        "period_to": null,
+        "period_days": null,
+        "desc": "",
+        "ref": "415198943/26"
+       },
+       {
+        "date": "2026-07-21",
+        "amount": 1996.54,
+        "supplier": "TotalEnergies Gas & Power Limited",
+        "account": "3009798418",
+        "fuel": "energy",
+        "period_from": null,
+        "period_to": null,
+        "period_days": null,
+        "desc": "",
+        "ref": "417741901/26"
+       },
+       {
+        "date": "2026-08-18",
+        "amount": 61.82,
+        "supplier": "TotalEnergies Gas & Power Limited",
+        "account": "3009798418",
+        "fuel": "energy",
+        "period_from": null,
+        "period_to": null,
+        "period_days": null,
+        "desc": "",
+        "ref": "KI-59BE61F6-001"
+       }
+      ]
+     }
+    ],
+    "monthly": {
+     "2026-01": 0.0,
+     "2026-02": 0.0,
+     "2026-03": 0.0,
+     "2026-04": 7777.28,
+     "2026-05": 83.33,
+     "2026-06": 16749.81,
+     "2026-07": 2773.37,
+     "2026-08": 9494.44,
+     "2026-09": 4684.47,
+     "2026-10": 0.0
+    },
+    "feed_start": "2026-01-02"
+   },
+   {
+    "code": "IKI 2",
+    "cluster": "Scotland & Newcastle",
+    "state": "amber",
+    "ytd": 16163.03,
+    "fuels": [
+     {
+      "fuel": "electricity",
+      "state": "amber",
+      "suppliers": [
+       "Jellyfish Energy"
+      ],
+      "last_paid": "2026-08-17",
+      "days_since": 56,
+      "billed_to": null,
+      "ytd": 3376.55,
+      "typical": 1203.28,
+      "text": "Quiet: no electricity payment for 56 days (last 2026-08-17, Jellyfish Energy). Roughly £2,246 is building up.",
+      "payments": [
+       {
+        "date": "2026-06-17",
+        "amount": 1866.83,
+        "supplier": "Jellyfish Energy",
+        "account": "",
+        "fuel": "electricity",
+        "period_from": null,
+        "period_to": null,
+        "period_days": null,
+        "desc": "",
+        "ref": "9BA65F8B-0213"
+       },
+       {
+        "date": "2026-08-17",
+        "amount": 306.44,
+        "supplier": "Jellyfish Energy",
+        "account": "207845",
+        "fuel": "electricity",
+        "period_from": null,
+        "period_to": null,
+        "period_days": null,
+        "desc": "",
+        "ref": "135268"
+       },
+       {
+        "date": "2026-08-17",
+        "amount": 1203.28,
+        "supplier": "Jellyfish Energy",
+        "account": "207844",
+        "fuel": "electricity",
+        "period_from": null,
+        "period_to": null,
+        "period_days": null,
+        "desc": "",
+        "ref": "135269"
+       }
+      ]
+     },
+     {
+      "fuel": "gas",
+      "state": "amber",
+      "suppliers": [
+       "YGP"
+      ],
+      "last_paid": "2026-08-17",
+      "days_since": 56,
+      "billed_to": null,
+      "ytd": 12786.48,
+      "typical": 471.83,
+      "text": "Quiet: no gas payment for 56 days (last 2026-08-17, YGP). Roughly £881 is building up.",
+      "payments": [
+       {
+        "date": "2026-03-17",
+        "amount": 1358.85,
+        "supplier": "YGP",
+        "account": "YGP500522201",
+        "fuel": "gas",
+        "period_from": null,
+        "period_to": null,
+        "period_days": null,
+        "desc": "",
+        "ref": "1275109"
+       },
+       {
+        "date": "2026-03-17",
+        "amount": 480.15,
+        "supplier": "YGP",
+        "account": "YGP500522201",
+        "fuel": "gas",
+        "period_from": null,
+        "period_to": null,
+        "period_days": null,
+        "desc": "",
+        "ref": "1245376"
+       },
+       {
+        "date": "2026-04-17",
+        "amount": 1309.31,
+        "supplier": "YGP",
+        "account": "YGP500522201",
+        "fuel": "gas",
+        "period_from": null,
+        "period_to": null,
+        "period_days": null,
+        "desc": "",
+        "ref": "1306135"
+       },
+       {
+        "date": "2026-04-17",
+        "amount": 463.52,
+        "supplier": "YGP",
+        "account": "YGP500522201",
+        "fuel": "gas",
+        "period_from": null,
+        "period_to": null,
+        "period_days": null,
+        "desc": "",
+        "ref": "1306284"
+       },
+       {
+        "date": "2026-05-18",
+        "amount": 1241.89,
+        "supplier": "YGP",
+        "account": "YGP500522201",
+        "fuel": "gas",
+        "period_from": null,
+        "period_to": null,
+        "period_days": null,
+        "desc": "",
+        "ref": "1342643"
+       },
+       {
+        "date": "2026-05-18",
+        "amount": 323.65,
+        "supplier": "YGP",
+        "account": "YGP500522201",
+        "fuel": "gas",
+        "period_from": null,
+        "period_to": null,
+        "period_days": null,
+        "desc": "",
+        "ref": "1342642"
+       },
+       {
+        "date": "2026-06-17",
+        "amount": 1300.59,
+        "supplier": "YGP",
+        "account": "YGP500522201",
+        "fuel": "gas",
+        "period_from": null,
+        "period_to": null,
+        "period_days": null,
+        "desc": "",
+        "ref": "1378570"
+       },
+       {
+        "date": "2026-06-17",
+        "amount": 335.63,
+        "supplier": "YGP",
+        "account": "YGP500522201",
+        "fuel": "gas",
+        "period_from": null,
+        "period_to": null,
+        "period_days": null,
+        "desc": "",
+        "ref": "1378732"
+       },
+       {
+        "date": "2026-07-17",
+        "amount": 183.99,
+        "supplier": "YGP",
+        "account": "YGP500522201",
+        "fuel": "gas",
+        "period_from": null,
+        "period_to": null,
+        "period_days": null,
+        "desc": "",
+        "ref": "1412252"
+       },
+       {
+        "date": "2026-07-17",
+        "amount": 1339.25,
+        "supplier": "YGP",
+        "account": "YGP500522201",
+        "fuel": "gas",
+        "period_from": null,
+        "period_to": null,
+        "period_days": null,
+        "desc": "",
+        "ref": "1411914"
+       },
+       {
+        "date": "2026-08-17",
+        "amount": 22.81,
+        "supplier": "YGP",
+        "account": "YGP500522201",
+        "fuel": "gas",
+        "period_from": null,
+        "period_to": null,
+        "period_days": null,
+        "desc": "",
+        "ref": "1447000"
+       },
+       {
+        "date": "2026-08-17",
+        "amount": 436.41,
+        "supplier": "YGP",
+        "account": "YGP500522201",
+        "fuel": "gas",
+        "period_from": null,
+        "period_to": null,
+        "period_days": null,
+        "desc": "",
+        "ref": "1447590"
+       }
+      ]
+     }
+    ],
+    "monthly": {
+     "2026-01": 1894.44,
+     "2026-02": 266.68,
+     "2026-03": 3668.31,
+     "2026-04": 1772.83,
+     "2026-05": 1565.54,
+     "2026-06": 3503.05,
+     "2026-07": 1523.24,
+     "2026-08": 1968.94,
+     "2026-09": 0.0,
+     "2026-10": 0.0
+    },
+    "feed_start": "2026-01-02"
+   },
+   {
+    "code": "M6",
+    "cluster": "Scotland & Newcastle",
+    "state": "amber",
+    "ytd": 10791.11,
+    "fuels": [
+     {
+      "fuel": "electricity",
+      "state": "green",
+      "suppliers": [
+       "SmartestEnergy Business Ltd"
+      ],
+      "last_paid": "2026-09-30",
+      "days_since": 12,
+      "billed_to": null,
+      "ytd": 10791.11,
+      "typical": 514.08,
+      "text": "Paying regularly.",
+      "payments": [
+       {
+        "date": "2026-03-30",
+        "amount": 371.89,
+        "supplier": "SmartestEnergy Business Ltd",
+        "account": "",
+        "fuel": "electricity",
+        "period_from": null,
+        "period_to": null,
+        "period_days": null,
+        "desc": "",
+        "ref": "FTM7BMSL9/006"
+       },
+       {
+        "date": "2026-04-30",
+        "amount": 1028.0,
+        "supplier": "SmartestEnergy Business Ltd",
+        "account": "",
+        "fuel": "electricity",
+        "period_from": null,
+        "period_to": null,
+        "period_days": null,
+        "desc": "",
+        "ref": "FTM7BMSL9/007"
+       },
+       {
+        "date": "2026-04-30",
+        "amount": 172.0,
+        "supplier": "SmartestEnergy Business Ltd",
+        "account": "",
+        "fuel": "electricity",
+        "period_from": null,
+        "period_to": null,
+        "period_days": null,
+        "desc": "",
+        "ref": "FTM7BMSL9/008"
+       },
+       {
+        "date": "2026-06-01",
+        "amount": 397.79,
+        "supplier": "SmartestEnergy Business Ltd",
+        "account": "",
+        "fuel": "electricity",
+        "period_from": null,
+        "period_to": null,
+        "period_days": null,
+        "desc": "",
+        "ref": ""
+       },
+       {
+        "date": "2026-06-01",
+        "amount": 793.32,
+        "supplier": "SmartestEnergy Business Ltd",
+        "account": "",
+        "fuel": "electricity",
+        "period_from": null,
+        "period_to": null,
+        "period_days": null,
+        "desc": "",
+        "ref": "FTM7BMSL9/009"
+       },
+       {
+        "date": "2026-06-30",
+        "amount": 857.81,
+        "supplier": "SmartestEnergy Business Ltd",
+        "account": "",
+        "fuel": "electricity",
+        "period_from": null,
+        "period_to": null,
+        "period_days": null,
+        "desc": "",
+        "ref": ""
+       },
+       {
+        "date": "2026-06-30",
+        "amount": 342.19,
+        "supplier": "SmartestEnergy Business Ltd",
+        "account": "",
+        "fuel": "electricity",
+        "period_from": null,
+        "period_to": null,
+        "period_days": null,
+        "desc": "",
+        "ref": "FTM7BMSL9/010"
+       },
+       {
+        "date": "2026-07-30",
+        "amount": 820.55,
+        "supplier": "SmartestEnergy Business Ltd",
+        "account": "",
+        "fuel": "electricity",
+        "period_from": null,
+        "period_to": null,
+        "period_days": null,
+        "desc": "",
+        "ref": ""
+       },
+       {
+        "date": "2026-07-30",
+        "amount": 379.45,
+        "supplier": "SmartestEnergy Business Ltd",
+        "account": "",
+        "fuel": "electricity",
+        "period_from": null,
+        "period_to": null,
+        "period_days": null,
+        "desc": "",
+        "ref": "FTM7BMSL9/012"
+       },
+       {
+        "date": "2026-09-01",
+        "amount": 1200.0,
+        "supplier": "SmartestEnergy Business Ltd",
+        "account": "",
+        "fuel": "electricity",
+        "period_from": null,
+        "period_to": null,
+        "period_days": null,
+        "desc": "",
+        "ref": "FTM7BMSL9/013"
+       },
+       {
+        "date": "2026-09-30",
+        "amount": 360.42,
+        "supplier": "SmartestEnergy Business Ltd",
+        "account": "",
+        "fuel": "electricity",
+        "period_from": null,
+        "period_to": null,
+        "period_days": null,
+        "desc": "",
+        "ref": ""
+       },
+       {
+        "date": "2026-09-30",
+        "amount": 839.58,
+        "supplier": "SmartestEnergy Business Ltd",
+        "account": "",
+        "fuel": "electricity",
+        "period_from": null,
+        "period_to": null,
+        "period_days": null,
+        "desc": "",
+        "ref": "FTM7BMSL9/014"
+       }
+      ]
+     },
+     {
+      "fuel": "gas",
+      "state": "amber",
+      "suppliers": [],
+      "last_paid": null,
+      "days_since": null,
+      "billed_to": null,
+      "ytd": 0.0,
+      "typical": null,
+      "text": "No gas payment seen since the feed starts (2026-01-02). Confirm whether the site has gas; if it does, a catch-up bill is building.",
+      "payments": []
+     }
+    ],
+    "monthly": {
+     "2026-01": 1200.0,
+     "2026-02": 0.0,
+     "2026-03": 2400.0,
+     "2026-04": 1200.0,
+     "2026-05": 0.0,
+     "2026-06": 2391.11,
+     "2026-07": 1200.0,
+     "2026-08": 0.0,
+     "2026-09": 2400.0,
+     "2026-10": 0.0
+    },
+    "feed_start": "2026-01-02"
+   },
+   {
+    "code": "MP",
+    "cluster": "Central",
+    "state": "amber",
+    "ytd": 7875.93,
+    "fuels": [
+     {
+      "fuel": "electricity",
+      "state": "green",
+      "suppliers": [
+       "Pozitive Energy Ltd - 726018",
+       "SSE Energy Solutions"
+      ],
+      "last_paid": "2026-09-28",
+      "days_since": 14,
+      "billed_to": "2026-08-31",
+      "ytd": 2482.71,
+      "typical": 194.0,
+      "text": "Paying regularly.",
+      "payments": [
+       {
+        "date": "2026-03-26",
+        "amount": 686.89,
+        "supplier": "SSE Energy Solutions",
+        "account": "",
+        "fuel": "electricity",
+        "period_from": "2025-12-01",
+        "period_to": "2026-02-28",
+        "period_days": 89,
+        "desc": "Electricity (2025.12.01 to 2026.02.28)",
+        "ref": "IV04210794"
+       },
+       {
+        "date": "2026-05-07",
+        "amount": 196.18,
+        "supplier": "SSE Energy Solutions",
+        "account": "",
+        "fuel": "electricity",
+        "period_from": "2026-01-01",
+        "period_to": "2026-03-31",
+        "period_days": 89,
+        "desc": "Electricity (2026.01.01 to 2026.03.31)",
+        "ref": "IV04386587"
+       },
+       {
+        "date": "2026-06-26",
+        "amount": 711.39,
+        "supplier": "SSE Energy Solutions",
+        "account": "",
+        "fuel": "electricity",
+        "period_from": "2026-04-01",
+        "period_to": "2026-05-31",
+        "period_days": 60,
+        "desc": "Electricity (2026.04.01 to 2026.05.31)",
+        "ref": "IV04556813"
+       },
+       {
+        "date": "2026-07-08",
+        "amount": 194.0,
+        "supplier": "Pozitive Energy Ltd - 726018",
+        "account": "",
+        "fuel": "electricity",
+        "period_from": null,
+        "period_to": null,
+        "period_days": null,
+        "desc": "",
+        "ref": "72601820258968594"
+       },
+       {
+        "date": "2026-09-28",
+        "amount": 694.25,
+        "supplier": "SSE Energy Solutions",
+        "account": "",
+        "fuel": "electricity",
+        "period_from": "2026-06-01",
+        "period_to": "2026-08-31",
+        "period_days": 91,
+        "desc": "Electricity (2026.06.01 to 2026.08.31)",
+        "ref": "IV04885611"
+       }
+      ]
+     },
+     {
+      "fuel": "gas",
+      "state": "amber",
+      "suppliers": [
+       "British Gas"
+      ],
+      "last_paid": "2026-09-17",
+      "days_since": 25,
+      "billed_to": null,
+      "ytd": 5393.22,
+      "typical": 63.95,
+      "text": "Spike: £3,706 to British Gas on 2026-09-17 is 58.0x the site's typical gas bill (£64).",
+      "payments": [
+       {
+        "date": "2026-07-31",
+        "amount": 1393.72,
+        "supplier": "British Gas",
+        "account": "604354315",
+        "fuel": "gas",
+        "period_from": null,
+        "period_to": null,
+        "period_days": null,
+        "desc": "",
+        "ref": "815211404"
+       },
+       {
+        "date": "2026-07-31",
+        "amount": 49.3,
+        "supplier": "British Gas",
+        "account": "604354315",
+        "fuel": "gas",
+        "period_from": null,
+        "period_to": null,
+        "period_days": null,
+        "desc": "",
+        "ref": "727070263"
+       },
+       {
+        "date": "2026-07-31",
+        "amount": 57.63,
+        "supplier": "British Gas",
+        "account": "604354315",
+        "fuel": "gas",
+        "period_from": null,
+        "period_to": null,
+        "period_days": null,
+        "desc": "",
+        "ref": "812097727"
+       },
+       {
+        "date": "2026-07-31",
+        "amount": 49.3,
+        "supplier": "British Gas",
+        "account": "604354315",
+        "fuel": "gas",
+        "period_from": null,
+        "period_to": null,
+        "period_days": null,
+        "desc": "",
+        "ref": "727070264"
+       },
+       {
+        "date": "2026-07-31",
+        "amount": 63.95,
+        "supplier": "British Gas",
+        "account": "604354315",
+        "fuel": "gas",
+        "period_from": null,
+        "period_to": null,
+        "period_days": null,
+        "desc": "",
+        "ref": "727070266"
+       },
+       {
+        "date": "2026-07-31",
+        "amount": 72.84,
+        "supplier": "British Gas",
+        "account": "604354315",
+        "fuel": "gas",
+        "period_from": null,
+        "period_to": null,
+        "period_days": null,
+        "desc": "",
+        "ref": "727070265"
+       },
+       {
+        "date": "2026-09-17",
+        "amount": 3706.48,
+        "supplier": "British Gas",
+        "account": "604354315",
+        "fuel": "gas",
+        "period_from": null,
+        "period_to": null,
+        "period_days": null,
+        "desc": "",
+        "ref": "815244827"
+       }
+      ]
+     }
+    ],
+    "monthly": {
+     "2026-01": 0.0,
+     "2026-02": 0.0,
+     "2026-03": 686.89,
+     "2026-04": 0.0,
+     "2026-05": 196.18,
+     "2026-06": 711.39,
+     "2026-07": 1880.74,
+     "2026-08": 0.0,
+     "2026-09": 4400.73,
+     "2026-10": 0.0
+    },
+    "feed_start": "2026-01-02"
+   },
+   {
+    "code": "M20",
+    "cluster": "South England",
+    "state": "amber",
+    "ytd": 7094.88,
+    "fuels": [
+     {
+      "fuel": "electricity",
+      "state": "green",
+      "suppliers": [
+       "SmartestEnergy Limited"
+      ],
+      "last_paid": "2026-09-02",
+      "days_since": 40,
+      "billed_to": null,
+      "ytd": 7094.88,
+      "typical": 3547.44,
+      "text": "Paying regularly.",
+      "payments": [
+       {
+        "date": "2026-09-02",
+        "amount": 1911.11,
+        "supplier": "SmartestEnergy Limited",
+        "account": "R000244845",
+        "fuel": "electricity",
+        "period_from": null,
+        "period_to": null,
+        "period_days": null,
+        "desc": "",
+        "ref": "IN1101908357"
+       },
+       {
+        "date": "2026-09-02",
+        "amount": 5183.77,
+        "supplier": "SmartestEnergy Limited",
+        "account": "R000244845",
+        "fuel": "electricity",
+        "period_from": null,
+        "period_to": null,
+        "period_days": null,
+        "desc": "",
+        "ref": "IN1101936022"
+       }
+      ]
+     },
+     {
+      "fuel": "gas",
+      "state": "amber",
+      "suppliers": [],
+      "last_paid": null,
+      "days_since": null,
+      "billed_to": null,
+      "ytd": 0.0,
+      "typical": null,
+      "text": "No gas payment seen since the feed starts (2026-05-26). Confirm whether the site has gas; if it does, a catch-up bill is building.",
+      "payments": []
+     }
+    ],
+    "monthly": {
+     "2026-01": 0.0,
+     "2026-02": 0.0,
+     "2026-03": 0.0,
+     "2026-04": 0.0,
+     "2026-05": 0.0,
+     "2026-06": 0.0,
+     "2026-07": 0.0,
+     "2026-08": 0.0,
+     "2026-09": 7094.88,
+     "2026-10": 0.0
+    },
+    "feed_start": "2026-05-26"
+   },
+   {
+    "code": "M21",
+    "cluster": "North England & Midlands",
+    "state": "amber",
+    "ytd": 546.19,
+    "fuels": [
+     {
+      "fuel": "electricity",
+      "state": "amber",
+      "suppliers": [],
+      "last_paid": null,
+      "days_since": null,
+      "billed_to": null,
+      "ytd": 0.0,
+      "typical": null,
+      "text": "No electricity payment seen since the feed starts (2026-08-03). Confirm whether the site has electricity; if it does, a catch-up bill is building.",
+      "payments": []
+     },
+     {
+      "fuel": "gas",
+      "state": "amber",
+      "suppliers": [
+       "Crown Gas and Power Ltd"
+      ],
+      "last_paid": "2026-08-20",
+      "days_since": 53,
+      "billed_to": null,
+      "ytd": 546.19,
+      "typical": 273.09,
+      "text": "Quiet: no gas payment for 53 days (last 2026-08-20, Crown Gas and Power Ltd). Roughly £482 is building up.",
+      "payments": [
+       {
+        "date": "2026-08-12",
+        "amount": 522.43,
+        "supplier": "Crown Gas and Power Ltd",
+        "account": "P025623A",
+        "fuel": "gas",
+        "period_from": null,
+        "period_to": null,
+        "period_days": null,
+        "desc": "",
+        "ref": "294763"
+       },
+       {
+        "date": "2026-08-20",
+        "amount": 23.76,
+        "supplier": "Crown Gas and Power Ltd",
+        "account": "",
+        "fuel": "gas",
+        "period_from": null,
+        "period_to": null,
+        "period_days": null,
+        "desc": "",
+        "ref": "4061521"
+       }
+      ]
+     }
+    ],
+    "monthly": {
+     "2026-01": 0.0,
+     "2026-02": 0.0,
+     "2026-03": 0.0,
+     "2026-04": 0.0,
+     "2026-05": 0.0,
+     "2026-06": 0.0,
+     "2026-07": 0.0,
+     "2026-08": 546.19,
+     "2026-09": 0.0,
+     "2026-10": 0.0
+    },
+    "feed_start": "2026-08-03"
+   },
+   {
+    "code": "M18",
+    "cluster": "South England",
+    "state": "amber",
+    "ytd": 0,
+    "fuels": [
+     {
+      "fuel": "electricity",
+      "state": "amber",
+      "suppliers": [],
+      "last_paid": null,
+      "days_since": null,
+      "billed_to": null,
+      "ytd": 0.0,
+      "typical": null,
+      "text": "No electricity payment seen since the feed starts (2026-01-30). Confirm whether the site has electricity; if it does, a catch-up bill is building.",
+      "payments": []
+     },
+     {
+      "fuel": "gas",
+      "state": "amber",
+      "suppliers": [],
+      "last_paid": null,
+      "days_since": null,
+      "billed_to": null,
+      "ytd": 0.0,
+      "typical": null,
+      "text": "No gas payment seen since the feed starts (2026-01-30). Confirm whether the site has gas; if it does, a catch-up bill is building.",
+      "payments": []
+     }
+    ],
+    "monthly": {
+     "2026-01": 0.0,
+     "2026-02": 0.0,
+     "2026-03": 0.0,
+     "2026-04": 0.0,
+     "2026-05": 0.0,
+     "2026-06": 0.0,
+     "2026-07": 0.0,
+     "2026-08": 0.0,
+     "2026-09": 0.0,
+     "2026-10": 0.0
+    },
+    "feed_start": "2026-01-30"
+   },
+   {
+    "code": "M19",
+    "cluster": "South England",
+    "state": "amber",
+    "ytd": 0,
+    "fuels": [
+     {
+      "fuel": "electricity",
+      "state": "amber",
+      "suppliers": [],
+      "last_paid": null,
+      "days_since": null,
+      "billed_to": null,
+      "ytd": 0.0,
+      "typical": null,
+      "text": "No electricity payment seen since the feed starts (2026-04-14). Confirm whether the site has electricity; if it does, a catch-up bill is building.",
+      "payments": []
+     },
+     {
+      "fuel": "gas",
+      "state": "amber",
+      "suppliers": [],
+      "last_paid": null,
+      "days_since": null,
+      "billed_to": null,
+      "ytd": 0.0,
+      "typical": null,
+      "text": "No gas payment seen since the feed starts (2026-04-14). Confirm whether the site has gas; if it does, a catch-up bill is building.",
+      "payments": []
+     }
+    ],
+    "monthly": {
+     "2026-01": 0.0,
+     "2026-02": 0.0,
+     "2026-03": 0.0,
+     "2026-04": 0.0,
+     "2026-05": 0.0,
+     "2026-06": 0.0,
+     "2026-07": 0.0,
+     "2026-08": 0.0,
+     "2026-09": 0.0,
+     "2026-10": 0.0
+    },
+    "feed_start": "2026-04-14"
+   },
+   {
+    "code": "NORI",
+    "cluster": "South England",
+    "state": "amber",
+    "ytd": 0,
+    "fuels": [
+     {
+      "fuel": "electricity",
+      "state": "amber",
+      "suppliers": [],
+      "last_paid": null,
+      "days_since": null,
+      "billed_to": null,
+      "ytd": 0.0,
+      "typical": null,
+      "text": "No electricity payment seen since the feed starts (2026-01-30). Confirm whether the site has electricity; if it does, a catch-up bill is building.",
+      "payments": []
+     },
+     {
+      "fuel": "gas",
+      "state": "amber",
+      "suppliers": [],
+      "last_paid": null,
+      "days_since": null,
+      "billed_to": null,
+      "ytd": 0.0,
+      "typical": null,
+      "text": "No gas payment seen since the feed starts (2026-01-30). Confirm whether the site has gas; if it does, a catch-up bill is building.",
+      "payments": []
+     }
+    ],
+    "monthly": {
+     "2026-01": 0.0,
+     "2026-02": 0.0,
+     "2026-03": 0.0,
+     "2026-04": 0.0,
+     "2026-05": 0.0,
+     "2026-06": 0.0,
+     "2026-07": 0.0,
+     "2026-08": 0.0,
+     "2026-09": 0.0,
+     "2026-10": 0.0
+    },
+    "feed_start": "2026-01-30"
+   },
+   {
+    "code": "M7",
+    "cluster": "Scotland & Newcastle",
+    "state": "green",
+    "ytd": 32949.93,
+    "fuels": [
+     {
+      "fuel": "electricity",
+      "state": "green",
+      "suppliers": [
+       "ScottishPower"
+      ],
+      "last_paid": "2026-09-09",
+      "days_since": 33,
+      "billed_to": "2026-09-04",
+      "ytd": 912.14,
+      "typical": 104.44,
+      "text": "Paying regularly.",
+      "payments": [
+       {
+        "date": "2026-01-06",
+        "amount": 101.98,
+        "supplier": "ScottishPower",
+        "account": "16081495514",
+        "fuel": "electricity",
+        "period_from": "2026-03-08",
+        "period_to": "2026-03-27",
+        "period_days": 19,
+        "desc": "Electricity (2026.03.08 to 2026.03.27)",
+        "ref": "615004089735"
+       },
+       {
+        "date": "2026-02-03",
+        "amount": 221.49,
+        "supplier": "ScottishPower",
+        "account": "16081495514",
+        "fuel": "electricity",
+        "period_from": null,
+        "period_to": null,
+        "period_days": null,
+        "desc": "Electricity 27 Dec 2025 - 31 Jan 2026",
+        "ref": "614005341044"
+       },
+       {
+        "date": "2026-03-11",
+        "amount": 201.59,
+        "supplier": "ScottishPower",
+        "account": "16081495514",
+        "fuel": "electricity",
+        "period_from": "2026-02-01",
+        "period_to": "2026-03-07",
+        "period_days": 34,
+        "desc": "Electricity (2026.02.01 to 2026.03.07)",
+        "ref": "614005464941"
+       },
+       {
+        "date": "2026-05-11",
+        "amount": 49.56,
+        "supplier": "ScottishPower",
+        "account": "16081495514",
+        "fuel": "electricity",
+        "period_from": "2026-05-02",
+        "period_to": "2026-06-05",
+        "period_days": 34,
+        "desc": "Electricity (2026.05.02 to 2026.06.05)",
+        "ref": "627003976624"
+       },
+       {
+        "date": "2026-06-09",
+        "amount": 60.47,
+        "supplier": "ScottishPower",
+        "account": "16081495514",
+        "fuel": "electricity",
+        "period_from": "2026-05-02",
+        "period_to": "2026-06-05",
+        "period_days": 34,
+        "desc": "Electricity (2026.05.02 to 2026.06.05)",
+        "ref": "627003976624"
+       },
+       {
+        "date": "2026-07-15",
+        "amount": 61.34,
+        "supplier": "ScottishPower",
+        "account": "16081495514",
+        "fuel": "electricity",
+        "period_from": "2026-06-06",
+        "period_to": "2026-06-26",
+        "period_days": 20,
+        "desc": "Electricity (2026.06.06 to 2026.06.26)",
+        "ref": "610005679212"
+       },
+       {
+        "date": "2026-08-07",
+        "amount": 106.9,
+        "supplier": "ScottishPower",
+        "account": "16081495514",
+        "fuel": "electricity",
+        "period_from": "2026-06-27",
+        "period_to": "2026-07-31",
+        "period_days": 34,
+        "desc": "Electricity (2026.06.27 to 2026.07.31)",
+        "ref": "618004137942"
+       },
+       {
+        "date": "2026-09-09",
+        "amount": 108.81,
+        "supplier": "ScottishPower",
+        "account": "16081495514",
+        "fuel": "electricity",
+        "period_from": "2026-07-31",
+        "period_to": "2026-09-04",
+        "period_days": 35,
+        "desc": "Electricity (2026.07.31 to 2026.09.04)",
+        "ref": "651000143706"
+       }
+      ]
+     },
+     {
+      "fuel": "gas",
+      "state": "green",
+      "suppliers": [
+       "Maki Property Limited",
+       "Scottish Power",
+       "Yorkshire Gas and Power"
+      ],
+      "last_paid": "2026-09-21",
+      "days_since": 21,
+      "billed_to": "2026-06-01",
+      "ytd": 27242.74,
+      "typical": 2736.59,
+      "text": "Paying regularly.",
+      "payments": [
+       {
+        "date": "2026-02-02",
+        "amount": 93.0,
+        "supplier": "Scottish Power",
+        "account": "16081495525",
+        "fuel": "gas",
+        "period_from": "2025-12-05",
+        "period_to": "2026-03-04",
+        "period_days": 89,
+        "desc": "Gas (2025.12.05 to 2026.03.04)",
+        "ref": "2025.12.05 to 2026.03.04"
+       },
+       {
+        "date": "2026-02-19",
+        "amount": 2786.56,
+        "supplier": "Yorkshire Gas and Power",
+        "account": "YGPBQT027745",
+        "fuel": "gas",
+        "period_from": null,
+        "period_to": null,
+        "period_days": null,
+        "desc": "",
+        "ref": "1243626"
+       },
+       {
+        "date": "2026-03-02",
+        "amount": 93.0,
+        "supplier": "Scottish Power",
+        "account": "16081495525",
+        "fuel": "gas",
+        "period_from": "2025-12-05",
+        "period_to": "2026-03-04",
+        "period_days": 89,
+        "desc": "Gas (2025.12.05 to 2026.03.04)",
+        "ref": "2025.12.05 to 2026.03.04"
+       },
+       {
+        "date": "2026-03-19",
+        "amount": 2587.16,
+        "supplier": "Yorkshire Gas and Power",
+        "account": "YGPBQT027745",
+        "fuel": "gas",
+        "period_from": null,
+        "period_to": null,
+        "period_days": null,
+        "desc": "",
+        "ref": "1277228"
+       },
+       {
+        "date": "2026-04-01",
+        "amount": 93.0,
+        "supplier": "Scottish Power",
+        "account": "16081495525",
+        "fuel": "gas",
+        "period_from": "2025-12-05",
+        "period_to": "2026-03-04",
+        "period_days": 89,
+        "desc": "Gas (2025.12.05 to 2026.03.04)",
+        "ref": "2025.12.05 to 2026.03.04"
+       },
+       {
+        "date": "2026-04-20",
+        "amount": 2680.98,
+        "supplier": "Yorkshire Gas and Power",
+        "account": "YGPBQT027745",
+        "fuel": "gas",
+        "period_from": null,
+        "period_to": null,
+        "period_days": null,
+        "desc": "",
+        "ref": "1308361"
+       },
+       {
+        "date": "2026-05-19",
+        "amount": 4152.75,
+        "supplier": "Yorkshire Gas and Power",
+        "account": "YGPBQT027745",
+        "fuel": "gas",
+        "period_from": null,
+        "period_to": null,
+        "period_days": null,
+        "desc": "",
+        "ref": "1380208"
+       },
+       {
+        "date": "2026-06-19",
+        "amount": 1331.93,
+        "supplier": "Yorkshire Gas and Power",
+        "account": "YGPBQT027745",
+        "fuel": "gas",
+        "period_from": null,
+        "period_to": null,
+        "period_days": null,
+        "desc": "",
+        "ref": "1380208"
+       },
+       {
+        "date": "2026-07-20",
+        "amount": 2686.61,
+        "supplier": "Yorkshire Gas and Power",
+        "account": "YGPBQT027745",
+        "fuel": "gas",
+        "period_from": null,
+        "period_to": null,
+        "period_days": null,
+        "desc": "",
+        "ref": "1415104"
+       },
+       {
+        "date": "2026-07-23",
+        "amount": 1910.47,
+        "supplier": "Maki Property Limited",
+        "account": "",
+        "fuel": "gas",
+        "period_from": "2026-05-01",
+        "period_to": "2026-06-01",
+        "period_days": 31,
+        "desc": "Gas - 2026 May & Jun",
+        "ref": "INV-2074"
+       },
+       {
+        "date": "2026-08-19",
+        "amount": 2967.21,
+        "supplier": "Yorkshire Gas and Power",
+        "account": "YGPBQT027745",
+        "fuel": "gas",
+        "period_from": null,
+        "period_to": null,
+        "period_days": null,
+        "desc": "",
+        "ref": "1448720"
+       },
+       {
+        "date": "2026-09-21",
+        "amount": 2830.54,
+        "supplier": "Yorkshire Gas and Power",
+        "account": "YGPBQT027745",
+        "fuel": "gas",
+        "period_from": null,
+        "period_to": null,
+        "period_days": null,
+        "desc": "",
+        "ref": "1484807"
+       }
+      ]
+     },
+     {
+      "fuel": "energy",
+      "state": "green",
+      "suppliers": [
+       "Bring Energy"
+      ],
+      "last_paid": "2026-10-07",
+      "days_since": 5,
+      "billed_to": null,
+      "ytd": 4795.05,
+      "typical": 384.95,
+      "text": "Paying regularly.",
+      "payments": [
+       {
+        "date": "2026-01-02",
+        "amount": 267.82,
+        "supplier": "Bring Energy",
+        "account": "",
+        "fuel": "energy",
+        "period_from": null,
+        "period_to": null,
+        "period_days": null,
+        "desc": "supply of energy",
+        "ref": "IN-001818"
+       },
+       {
+        "date": "2026-02-18",
+        "amount": 260.82,
+        "supplier": "Bring Energy",
+        "account": "",
+        "fuel": "energy",
+        "period_from": null,
+        "period_to": null,
+        "period_days": null,
+        "desc": "supply of energy",
+        "ref": "6010-IN-001987"
+       },
+       {
+        "date": "2026-03-06",
+        "amount": 321.52,
+        "supplier": "Bring Energy",
+        "account": "",
+        "fuel": "energy",
+        "period_from": null,
+        "period_to": null,
+        "period_days": null,
+        "desc": "supply of energy",
+        "ref": "6010-IN-002099"
+       },
+       {
+        "date": "2026-04-07",
+        "amount": 267.14,
+        "supplier": "Bring Energy",
+        "account": "",
+        "fuel": "energy",
+        "period_from": null,
+        "period_to": null,
+        "period_days": null,
+        "desc": "supply of energy",
+        "ref": "6010-IN-002239"
+       },
+       {
+        "date": "2026-08-07",
+        "amount": 572.4,
+        "supplier": "Bring Energy",
+        "account": "",
+        "fuel": "energy",
+        "period_from": null,
+        "period_to": null,
+        "period_days": null,
+        "desc": "supply of energy",
+        "ref": "6010-IN-002758"
+       },
+       {
+        "date": "2026-08-07",
+        "amount": 295.6,
+        "supplier": "Bring Energy",
+        "account": "",
+        "fuel": "energy",
+        "period_from": null,
+        "period_to": null,
+        "period_days": null,
+        "desc": "supply of energy",
+        "ref": "6010-IN-002566"
+       },
+       {
+        "date": "2026-08-07",
+        "amount": 448.38,
+        "supplier": "Bring Energy",
+        "account": "",
+        "fuel": "energy",
+        "period_from": null,
+        "period_to": null,
+        "period_days": null,
+        "desc": "supply of energy",
+        "ref": "6010-IN-002662"
+       },
+       {
+        "date": "2026-09-30",
+        "amount": 843.67,
+        "supplier": "Bring Energy",
+        "account": "",
+        "fuel": "energy",
+        "period_from": null,
+        "period_to": null,
+        "period_days": null,
+        "desc": "supply of energy",
+        "ref": "6010-IN-003059"
+       },
+       {
+        "date": "2026-09-30",
+        "amount": 720.36,
+        "supplier": "Bring Energy",
+        "account": "",
+        "fuel": "energy",
+        "period_from": null,
+        "period_to": null,
+        "period_days": null,
+        "desc": "supply of energy",
+        "ref": "6010-IN-002965"
+       },
+       {
+        "date": "2026-10-07",
+        "amount": 797.34,
+        "supplier": "Bring Energy",
+        "account": "",
+        "fuel": "energy",
+        "period_from": null,
+        "period_to": null,
+        "period_days": null,
+        "desc": "supply of energy",
+        "ref": "6010-IN-003170"
+       }
+      ]
+     }
+    ],
+    "monthly": {
+     "2026-01": 3399.33,
+     "2026-02": 3361.87,
+     "2026-03": 3203.27,
+     "2026-04": 3041.12,
+     "2026-05": 4202.31,
+     "2026-06": 1392.4,
+     "2026-07": 4658.42,
+     "2026-08": 4390.49,
+     "2026-09": 4503.38,
+     "2026-10": 797.34
+    },
+    "feed_start": "2026-01-02"
+   },
+   {
+    "code": "M3",
+    "cluster": "Scotland & Newcastle",
+    "state": "green",
+    "ytd": 11961.71,
+    "fuels": [
+     {
+      "fuel": "electricity",
+      "state": "green",
+      "suppliers": [
+       "Octopus Energy Ltd"
+      ],
+      "last_paid": "2026-09-09",
+      "days_since": 33,
+      "billed_to": null,
+      "ytd": 6309.52,
+      "typical": 706.81,
+      "text": "Paying regularly.",
+      "payments": [
+       {
+        "date": "2026-01-14",
+        "amount": 677.52,
+        "supplier": "Octopus Energy Ltd",
+        "account": "",
+        "fuel": "electricity",
+        "period_from": null,
+        "period_to": null,
+        "period_days": null,
+        "desc": "",
+        "ref": "KI-0616550B-0014"
+       },
+       {
+        "date": "2026-02-10",
+        "amount": 722.57,
+        "supplier": "Octopus Energy Ltd",
+        "account": "",
+        "fuel": "electricity",
+        "period_from": null,
+        "period_to": null,
+        "period_days": null,
+        "desc": "",
+        "ref": "KI-0616550B-0015"
+       },
+       {
+        "date": "2026-03-11",
+        "amount": 764.11,
+        "supplier": "Octopus Energy Ltd",
+        "account": "",
+        "fuel": "electricity",
+        "period_from": null,
+        "period_to": null,
+        "period_days": null,
+        "desc": "",
+        "ref": "KI-0616550B-0016"
+       },
+       {
+        "date": "2026-04-09",
+        "amount": 631.92,
+        "supplier": "Octopus Energy Ltd",
+        "account": "",
+        "fuel": "electricity",
+        "period_from": null,
+        "period_to": null,
+        "period_days": null,
+        "desc": "",
+        "ref": "KI-0616550B-0017"
+       },
+       {
+        "date": "2026-05-13",
+        "amount": 745.37,
+        "supplier": "Octopus Energy Ltd",
+        "account": "",
+        "fuel": "electricity",
+        "period_from": null,
+        "period_to": null,
+        "period_days": null,
+        "desc": "",
+        "ref": "KI-0616550B-0018"
+       },
+       {
+        "date": "2026-06-09",
+        "amount": 613.82,
+        "supplier": "Octopus Energy Ltd",
+        "account": "",
+        "fuel": "electricity",
+        "period_from": null,
+        "period_to": null,
+        "period_days": null,
+        "desc": "",
+        "ref": "KI-0616550B-0019"
+       },
+       {
+        "date": "2026-07-10",
+        "amount": 836.52,
+        "supplier": "Octopus Energy Ltd",
+        "account": "",
+        "fuel": "electricity",
+        "period_from": null,
+        "period_to": null,
+        "period_days": null,
+        "desc": "",
+        "ref": "KI-0616550B-0020"
+       },
+       {
+        "date": "2026-08-11",
+        "amount": 706.81,
+        "supplier": "Octopus Energy Ltd",
+        "account": "",
+        "fuel": "electricity",
+        "period_from": null,
+        "period_to": null,
+        "period_days": null,
+        "desc": "",
+        "ref": "KI-0616550B-0021"
+       },
+       {
+        "date": "2026-09-09",
+        "amount": 610.88,
+        "supplier": "Octopus Energy Ltd",
+        "account": "",
+        "fuel": "electricity",
+        "period_from": null,
+        "period_to": null,
+        "period_days": null,
+        "desc": "",
+        "ref": "KI-0616550B-0022"
+       }
+      ]
+     },
+     {
+      "fuel": "gas",
+      "state": "green",
+      "suppliers": [
+       "British Gas"
+      ],
+      "last_paid": "2026-09-25",
+      "days_since": 17,
+      "billed_to": null,
+      "ytd": 5652.19,
+      "typical": 634.06,
+      "text": "Paying regularly.",
+      "payments": [
+       {
+        "date": "2026-01-26",
+        "amount": 855.05,
+        "supplier": "British Gas",
+        "account": "BL606267",
+        "fuel": "gas",
+        "period_from": null,
+        "period_to": null,
+        "period_days": null,
+        "desc": "",
+        "ref": "13572557"
+       },
+       {
+        "date": "2026-02-26",
+        "amount": 843.54,
+        "supplier": "British Gas",
+        "account": "BL606267",
+        "fuel": "gas",
+        "period_from": null,
+        "period_to": null,
+        "period_days": null,
+        "desc": "",
+        "ref": "13880775"
+       },
+       {
+        "date": "2026-03-26",
+        "amount": 620.93,
+        "supplier": "British Gas",
+        "account": "BL606267",
+        "fuel": "gas",
+        "period_from": null,
+        "period_to": null,
+        "period_days": null,
+        "desc": "",
+        "ref": "14198376"
+       },
+       {
+        "date": "2026-04-27",
+        "amount": 802.98,
+        "supplier": "British Gas",
+        "account": "BL606267",
+        "fuel": "gas",
+        "period_from": null,
+        "period_to": null,
+        "period_days": null,
+        "desc": "",
+        "ref": "14505981"
+       },
+       {
+        "date": "2026-05-26",
+        "amount": 384.7,
+        "supplier": "British Gas",
+        "account": "BL606267",
+        "fuel": "gas",
+        "period_from": null,
+        "period_to": null,
+        "period_days": null,
+        "desc": "",
+        "ref": "14828246"
+       },
+       {
+        "date": "2026-06-25",
+        "amount": 634.06,
+        "supplier": "British Gas",
+        "account": "BL606267",
+        "fuel": "gas",
+        "period_from": null,
+        "period_to": null,
+        "period_days": null,
+        "desc": "",
+        "ref": "15168714"
+       },
+       {
+        "date": "2026-07-27",
+        "amount": 219.61,
+        "supplier": "British Gas",
+        "account": "BL606267",
+        "fuel": "gas",
+        "period_from": null,
+        "period_to": null,
+        "period_days": null,
+        "desc": "",
+        "ref": "15530135"
+       },
+       {
+        "date": "2026-08-25",
+        "amount": 197.57,
+        "supplier": "British Gas",
+        "account": "BL606267",
+        "fuel": "gas",
+        "period_from": null,
+        "period_to": null,
+        "period_days": null,
+        "desc": "",
+        "ref": "15872253"
+       },
+       {
+        "date": "2026-09-25",
+        "amount": 1093.75,
+        "supplier": "British Gas",
+        "account": "BL606267",
+        "fuel": "gas",
+        "period_from": null,
+        "period_to": null,
+        "period_days": null,
+        "desc": "",
+        "ref": "16213934"
+       }
+      ]
+     }
+    ],
+    "monthly": {
+     "2026-01": 1532.57,
+     "2026-02": 1566.11,
+     "2026-03": 1385.04,
+     "2026-04": 1434.9,
+     "2026-05": 1130.07,
+     "2026-06": 1247.88,
+     "2026-07": 1056.13,
+     "2026-08": 904.38,
+     "2026-09": 1704.63,
+     "2026-10": 0.0
+    },
+    "feed_start": "2026-01-01"
+   }
+  ],
+  "flags": [
+   {
+    "level": "red",
+    "code": "M1",
+    "fuel": "gas",
+    "text": "Quiet: no gas payment for 84 days (last 2026-07-20, YGP). Roughly £3,440 is building up."
+   },
+   {
+    "level": "red",
+    "code": "M10",
+    "fuel": "gas",
+    "text": "Quiet: no gas payment for 101 days (last 2026-07-03, British Gas). Roughly £2,158 is building up."
+   },
+   {
+    "level": "red",
+    "code": "M11",
+    "fuel": "gas",
+    "text": "Quiet: no gas payment for 96 days (last 2026-07-08, British Gas). Roughly £3,339 is building up."
+   },
+   {
+    "level": "red",
+    "code": "M12",
+    "fuel": "gas",
+    "text": "Quiet: no gas payment for 123 days (last 2026-06-11, British Gas). Roughly £16,815 is building up."
+   },
+   {
+    "level": "red",
+    "code": "M14",
+    "fuel": "electricity",
+    "text": "Quiet: no electricity payment for 103 days (last 2026-07-01, Jellyfish Energy Limited). Roughly £308 is building up."
+   },
+   {
+    "level": "red",
+    "code": "M14",
+    "fuel": "energy",
+    "text": "Quiet: no energy payment for 137 days (last 2026-05-28, UC Energy Ltd). Roughly £18,548 is building up."
+   },
+   {
+    "level": "red",
+    "code": "M17",
+    "fuel": "gas",
+    "text": "Quiet: no gas payment for 117 days (last 2026-06-17, Crown Gas and Power Ltd). Roughly £1,661 is building up."
+   },
+   {
+    "level": "red",
+    "code": "M8",
+    "fuel": "gas",
+    "text": "Back-bill: £37,764 to E E Solutions Limited on 2026-09-16 covered 340 days (2025-10-01 to 2026-09-06)."
+   },
+   {
+    "level": "amber",
+    "code": "IKI 2",
+    "fuel": "electricity",
+    "text": "Quiet: no electricity payment for 56 days (last 2026-08-17, Jellyfish Energy). Roughly £2,246 is building up."
+   },
+   {
+    "level": "amber",
+    "code": "IKI 2",
+    "fuel": "gas",
+    "text": "Quiet: no gas payment for 56 days (last 2026-08-17, YGP). Roughly £881 is building up."
+   },
+   {
+    "level": "amber",
+    "code": "M10",
+    "fuel": "electricity",
+    "text": "Back-bill: £30,475 to Ecotricity Limited in 4 instalments (2026-01-06 to 2026-04-07) covered 425 days (2024-08-01 to 2025-09-30)."
+   },
+   {
+    "level": "amber",
+    "code": "M10",
+    "fuel": "electricity",
+    "text": "Spike: £5,924 to Jellyfish Energy on 2026-10-07 is 2.2x the site's typical electricity bill (£2,736)."
+   },
+   {
+    "level": "amber",
+    "code": "M13",
+    "fuel": "gas",
+    "text": "No gas payment seen since the feed starts (2026-01-02). Confirm whether the site has gas; if it does, a catch-up bill is building."
+   },
+   {
+    "level": "amber",
+    "code": "M14",
+    "fuel": "gas",
+    "text": "No gas payment seen since the feed starts (2026-03-06). Confirm whether the site has gas; if it does, a catch-up bill is building."
+   },
+   {
+    "level": "amber",
+    "code": "M15",
+    "fuel": "electricity",
+    "text": "Spike: £9,433 to Jellyfish Energy on 2026-08-28 is 2.1x the site's typical electricity bill (£4,595)."
+   },
+   {
+    "level": "amber",
+    "code": "M15",
+    "fuel": "gas",
+    "text": "No gas payment seen since the feed starts (2026-01-02). Confirm whether the site has gas; if it does, a catch-up bill is building."
+   },
+   {
+    "level": "amber",
+    "code": "M15",
+    "fuel": "energy",
+    "text": "Spike: £5,491 to TotalEnergies Gas & Power Limited on 2026-06-17 is 24.8x the site's typical energy bill (£221)."
+   },
+   {
+    "level": "amber",
+    "code": "M15",
+    "fuel": "energy",
+    "text": "Quiet: no energy payment for 55 days (last 2026-08-18, TotalEnergies Gas & Power Limited). Roughly £406 is building up."
+   },
+   {
+    "level": "amber",
+    "code": "M16",
+    "fuel": "gas",
+    "text": "No gas payment seen since the feed starts (2026-01-02). Confirm whether the site has gas; if it does, a catch-up bill is building."
+   },
+   {
+    "level": "amber",
+    "code": "M16",
+    "fuel": "energy",
+    "text": "Quiet: no energy payment for 52 days (last 2026-08-21, TotalEnergies Gas & Power Ltd). Roughly £2,096 is building up."
+   },
+   {
+    "level": "amber",
+    "code": "M18",
+    "fuel": "electricity",
+    "text": "No electricity payment seen since the feed starts (2026-01-30). Confirm whether the site has electricity; if it does, a catch-up bill is building."
+   },
+   {
+    "level": "amber",
+    "code": "M18",
+    "fuel": "gas",
+    "text": "No gas payment seen since the feed starts (2026-01-30). Confirm whether the site has gas; if it does, a catch-up bill is building."
+   },
+   {
+    "level": "amber",
+    "code": "M19",
+    "fuel": "electricity",
+    "text": "No electricity payment seen since the feed starts (2026-04-14). Confirm whether the site has electricity; if it does, a catch-up bill is building."
+   },
+   {
+    "level": "amber",
+    "code": "M19",
+    "fuel": "gas",
+    "text": "No gas payment seen since the feed starts (2026-04-14). Confirm whether the site has gas; if it does, a catch-up bill is building."
+   },
+   {
+    "level": "amber",
+    "code": "M20",
+    "fuel": "gas",
+    "text": "No gas payment seen since the feed starts (2026-05-26). Confirm whether the site has gas; if it does, a catch-up bill is building."
+   },
+   {
+    "level": "amber",
+    "code": "M21",
+    "fuel": "electricity",
+    "text": "No electricity payment seen since the feed starts (2026-08-03). Confirm whether the site has electricity; if it does, a catch-up bill is building."
+   },
+   {
+    "level": "amber",
+    "code": "M21",
+    "fuel": "gas",
+    "text": "Quiet: no gas payment for 53 days (last 2026-08-20, Crown Gas and Power Ltd). Roughly £482 is building up."
+   },
+   {
+    "level": "amber",
+    "code": "M6",
+    "fuel": "gas",
+    "text": "No gas payment seen since the feed starts (2026-01-02). Confirm whether the site has gas; if it does, a catch-up bill is building."
+   },
+   {
+    "level": "amber",
+    "code": "M8",
+    "fuel": "electricity",
+    "text": "Spike: £9,668 to Yu Energy on 2026-09-09 is 2.6x the site's typical electricity bill (£3,765)."
+   },
+   {
+    "level": "amber",
+    "code": "M8",
+    "fuel": "gas",
+    "text": "Two suppliers for gas: E E Solutions Limited and Yorkshire Gas and Power (RGF) both billed periods inside 2025-10-01 to 2026-09-06 (3 overlapping bills). Check for double billing."
+   },
+   {
+    "level": "amber",
+    "code": "M9",
+    "fuel": "gas",
+    "text": "Spike: £5,553 to British Gas on 2026-07-22 is 3.6x the site's typical gas bill (£1,541)."
+   },
+   {
+    "level": "amber",
+    "code": "M9",
+    "fuel": "gas",
+    "text": "Quiet: no gas payment for 60 days (last 2026-08-13, British Gas). Roughly £3,082 is building up."
+   },
+   {
+    "level": "amber",
+    "code": "MP",
+    "fuel": "gas",
+    "text": "Spike: £3,706 to British Gas on 2026-09-17 is 58.0x the site's typical gas bill (£64)."
+   },
+   {
+    "level": "amber",
+    "code": "NORI",
+    "fuel": "electricity",
+    "text": "No electricity payment seen since the feed starts (2026-01-30). Confirm whether the site has electricity; if it does, a catch-up bill is building."
+   },
+   {
+    "level": "amber",
+    "code": "NORI",
+    "fuel": "gas",
+    "text": "No gas payment seen since the feed starts (2026-01-30). Confirm whether the site has gas; if it does, a catch-up bill is building."
+   }
+  ],
+  "group_ytd": 587888.07,
+  "backbill_ytd": 68239.15,
+  "biggest": {
+   "date": "2026-09-16",
+   "amount": 37763.79,
+   "supplier": "E E Solutions Limited",
+   "account": "",
+   "fuel": "gas",
+   "period_from": "2025-10-01",
+   "period_to": "2026-09-06",
+   "period_days": 340,
+   "desc": "Gas (2025.10.01 to 2026.09.06)",
+   "ref": "1482784",
+   "code": "M8"
+  },
+  "red": 7,
+  "amber": 12,
+  "register": {
+   "M1|electricity|Jellyfish": {
+    "site": "M1",
+    "fuel": "electricity",
+    "supplier": "Jellyfish",
+    "account": "",
+    "payment_method": "",
+    "contract_end": "",
+    "monthly_budget": null,
+    "notes": ""
+   },
+   "M1|electricity|Jellyfish Energy": {
+    "site": "M1",
+    "fuel": "electricity",
+    "supplier": "Jellyfish Energy",
+    "account": "207536",
+    "payment_method": "",
+    "contract_end": "",
+    "monthly_budget": null,
+    "notes": ""
+   },
+   "M1|gas|YGP": {
+    "site": "M1",
+    "fuel": "gas",
+    "supplier": "YGP",
+    "account": "YGP500525590",
+    "payment_method": "",
+    "contract_end": "",
+    "monthly_budget": null,
+    "notes": ""
+   },
+   "M3|electricity|Octopus Energy Ltd": {
+    "site": "M3",
+    "fuel": "electricity",
+    "supplier": "Octopus Energy Ltd",
+    "account": "",
+    "payment_method": "",
+    "contract_end": "",
+    "monthly_budget": null,
+    "notes": ""
+   },
+   "M3|gas|British Gas": {
+    "site": "M3",
+    "fuel": "gas",
+    "supplier": "British Gas",
+    "account": "BL606267",
+    "payment_method": "",
+    "contract_end": "",
+    "monthly_budget": null,
+    "notes": ""
+   },
+   "IKI 2|electricity|Jellyfish Energy": {
+    "site": "IKI 2",
+    "fuel": "electricity",
+    "supplier": "Jellyfish Energy",
+    "account": "207845",
+    "payment_method": "",
+    "contract_end": "",
+    "monthly_budget": null,
+    "notes": ""
+   },
+   "IKI 2|gas|YGP": {
+    "site": "IKI 2",
+    "fuel": "gas",
+    "supplier": "YGP",
+    "account": "YGP500522201",
+    "payment_method": "",
+    "contract_end": "",
+    "monthly_budget": null,
+    "notes": ""
+   },
+   "M6|electricity|SmartestEnergy Business Ltd": {
+    "site": "M6",
+    "fuel": "electricity",
+    "supplier": "SmartestEnergy Business Ltd",
+    "account": "",
+    "payment_method": "",
+    "contract_end": "",
+    "monthly_budget": null,
+    "notes": ""
+   },
+   "M7|electricity|ScottishPower": {
+    "site": "M7",
+    "fuel": "electricity",
+    "supplier": "ScottishPower",
+    "account": "16081495514",
+    "payment_method": "",
+    "contract_end": "",
+    "monthly_budget": null,
+    "notes": ""
+   },
+   "M7|gas|Scottish Power": {
+    "site": "M7",
+    "fuel": "gas",
+    "supplier": "Scottish Power",
+    "account": "16081495525",
+    "payment_method": "",
+    "contract_end": "",
+    "monthly_budget": null,
+    "notes": ""
+   },
+   "M7|gas|Yorkshire Gas and Power": {
+    "site": "M7",
+    "fuel": "gas",
+    "supplier": "Yorkshire Gas and Power",
+    "account": "YGPBQT027745",
+    "payment_method": "",
+    "contract_end": "",
+    "monthly_budget": null,
+    "notes": ""
+   },
+   "M7|gas|Maki Property Limited": {
+    "site": "M7",
+    "fuel": "gas",
+    "supplier": "Maki Property Limited",
+    "account": "",
+    "payment_method": "",
+    "contract_end": "",
+    "monthly_budget": null,
+    "notes": ""
+   },
+   "M7|energy|Bring Energy": {
+    "site": "M7",
+    "fuel": "energy",
+    "supplier": "Bring Energy",
+    "account": "",
+    "payment_method": "",
+    "contract_end": "",
+    "monthly_budget": null,
+    "notes": ""
+   },
+   "M8|electricity|Octopus Energy Limited": {
+    "site": "M8",
+    "fuel": "electricity",
+    "supplier": "Octopus Energy Limited",
+    "account": "A-C31A9CB0",
+    "payment_method": "",
+    "contract_end": "",
+    "monthly_budget": null,
+    "notes": ""
+   },
+   "M8|electricity|Yu Energy": {
+    "site": "M8",
+    "fuel": "electricity",
+    "supplier": "Yu Energy",
+    "account": "2000329193",
+    "payment_method": "",
+    "contract_end": "",
+    "monthly_budget": null,
+    "notes": ""
+   },
+   "M8|electricity|EDFEnergy": {
+    "site": "M8",
+    "fuel": "electricity",
+    "supplier": "EDFEnergy",
+    "account": "A-A5E2EBCB",
+    "payment_method": "",
+    "contract_end": "",
+    "monthly_budget": null,
+    "notes": ""
+   },
+   "M8|gas|Yorkshire Gas and Power (RGF)": {
+    "site": "M8",
+    "fuel": "gas",
+    "supplier": "Yorkshire Gas and Power (RGF)",
+    "account": "",
+    "payment_method": "",
+    "contract_end": "",
+    "monthly_budget": null,
+    "notes": ""
+   },
+   "M8|gas|E E Solutions Limited": {
+    "site": "M8",
+    "fuel": "gas",
+    "supplier": "E E Solutions Limited",
+    "account": "",
+    "payment_method": "",
+    "contract_end": "",
+    "monthly_budget": null,
+    "notes": ""
+   },
+   "M9|electricity|Jellyfish Energy": {
+    "site": "M9",
+    "fuel": "electricity",
+    "supplier": "Jellyfish Energy",
+    "account": "207903",
+    "payment_method": "",
+    "contract_end": "",
+    "monthly_budget": null,
+    "notes": ""
+   },
+   "M9|gas|British Gas": {
+    "site": "M9",
+    "fuel": "gas",
+    "supplier": "British Gas",
+    "account": "603880232",
+    "payment_method": "",
+    "contract_end": "",
+    "monthly_budget": null,
+    "notes": ""
+   },
+   "M10|electricity|Ecotricity Limited": {
+    "site": "M10",
+    "fuel": "electricity",
+    "supplier": "Ecotricity Limited",
+    "account": "200364638",
+    "payment_method": "",
+    "contract_end": "",
+    "monthly_budget": null,
+    "notes": ""
+   },
+   "M10|electricity|Jellyfish Energy": {
+    "site": "M10",
+    "fuel": "electricity",
+    "supplier": "Jellyfish Energy",
+    "account": "207904",
+    "payment_method": "",
+    "contract_end": "",
+    "monthly_budget": null,
+    "notes": ""
+   },
+   "M10|gas|British Gas": {
+    "site": "M10",
+    "fuel": "gas",
+    "supplier": "British Gas",
+    "account": "604012577",
+    "payment_method": "",
+    "contract_end": "",
+    "monthly_budget": null,
+    "notes": ""
+   },
+   "M11|electricity|Jellyfish Energy Limited": {
+    "site": "M11",
+    "fuel": "electricity",
+    "supplier": "Jellyfish Energy Limited",
+    "account": "207773",
+    "payment_method": "",
+    "contract_end": "",
+    "monthly_budget": null,
+    "notes": ""
+   },
+   "M11|gas|British Gas": {
+    "site": "M11",
+    "fuel": "gas",
+    "supplier": "British Gas",
+    "account": "604170466",
+    "payment_method": "",
+    "contract_end": "",
+    "monthly_budget": null,
+    "notes": ""
+   },
+   "M11|energy|TotalEnergies Gas & Power Limited": {
+    "site": "M11",
+    "fuel": "energy",
+    "supplier": "TotalEnergies Gas & Power Limited",
+    "account": "A-C8281A45",
+    "payment_method": "",
+    "contract_end": "",
+    "monthly_budget": null,
+    "notes": ""
+   },
+   "M12|electricity|Scottish Gas": {
+    "site": "M12",
+    "fuel": "electricity",
+    "supplier": "Scottish Gas",
+    "account": "604197942",
+    "payment_method": "",
+    "contract_end": "",
+    "monthly_budget": null,
+    "notes": ""
+   },
+   "M12|electricity|Jellyfish Energy": {
+    "site": "M12",
+    "fuel": "electricity",
+    "supplier": "Jellyfish Energy",
+    "account": "",
+    "payment_method": "",
+    "contract_end": "",
+    "monthly_budget": null,
+    "notes": ""
+   },
+   "M12|gas|British Gas": {
+    "site": "M12",
+    "fuel": "gas",
+    "supplier": "British Gas",
+    "account": "",
+    "payment_method": "",
+    "contract_end": "",
+    "monthly_budget": null,
+    "notes": ""
+   },
+   "M13|electricity|Octopus Energy Limited": {
+    "site": "M13",
+    "fuel": "electricity",
+    "supplier": "Octopus Energy Limited",
+    "account": "A-7AFA35A8",
+    "payment_method": "",
+    "contract_end": "",
+    "monthly_budget": null,
+    "notes": ""
+   },
+   "M14|electricity|Jellyfish Energy Limited": {
+    "site": "M14",
+    "fuel": "electricity",
+    "supplier": "Jellyfish Energy Limited",
+    "account": "",
+    "payment_method": "",
+    "contract_end": "",
+    "monthly_budget": null,
+    "notes": ""
+   },
+   "M14|energy|UC Energy Ltd": {
+    "site": "M14",
+    "fuel": "energy",
+    "supplier": "UC Energy Ltd",
+    "account": "",
+    "payment_method": "",
+    "contract_end": "",
+    "monthly_budget": null,
+    "notes": ""
+   },
+   "M15|electricity|Pozitive Energy": {
+    "site": "M15",
+    "fuel": "electricity",
+    "supplier": "Pozitive Energy",
+    "account": "721933",
+    "payment_method": "",
+    "contract_end": "",
+    "monthly_budget": null,
+    "notes": ""
+   },
+   "M15|electricity|Jellyfish Energy": {
+    "site": "M15",
+    "fuel": "electricity",
+    "supplier": "Jellyfish Energy",
+    "account": "",
+    "payment_method": "",
+    "contract_end": "",
+    "monthly_budget": null,
+    "notes": ""
+   },
+   "M15|energy|TotalEnergies Gas & Power Limited": {
+    "site": "M15",
+    "fuel": "energy",
+    "supplier": "TotalEnergies Gas & Power Limited",
+    "account": "3009798418",
+    "payment_method": "",
+    "contract_end": "",
+    "monthly_budget": null,
+    "notes": ""
+   },
+   "M16|electricity|Yu Energy": {
+    "site": "M16",
+    "fuel": "electricity",
+    "supplier": "Yu Energy",
+    "account": "2000342265",
+    "payment_method": "",
+    "contract_end": "",
+    "monthly_budget": null,
+    "notes": ""
+   },
+   "M16|electricity|Jellyfish Energy": {
+    "site": "M16",
+    "fuel": "electricity",
+    "supplier": "Jellyfish Energy",
+    "account": "",
+    "payment_method": "",
+    "contract_end": "",
+    "monthly_budget": null,
+    "notes": ""
+   },
+   "M16|energy|TotalEnergies Gas & Power Ltd": {
+    "site": "M16",
+    "fuel": "energy",
+    "supplier": "TotalEnergies Gas & Power Ltd",
+    "account": "3009679068",
+    "payment_method": "",
+    "contract_end": "",
+    "monthly_budget": null,
+    "notes": ""
+   },
+   "M17|electricity|Jellyfish Energy": {
+    "site": "M17",
+    "fuel": "electricity",
+    "supplier": "Jellyfish Energy",
+    "account": "",
+    "payment_method": "",
+    "contract_end": "",
+    "monthly_budget": null,
+    "notes": ""
+   },
+   "M17|gas|Crown Gas and Power Ltd": {
+    "site": "M17",
+    "fuel": "gas",
+    "supplier": "Crown Gas and Power Ltd",
+    "account": "",
+    "payment_method": "",
+    "contract_end": "",
+    "monthly_budget": null,
+    "notes": ""
+   },
+   "M20|electricity|SmartestEnergy Limited": {
+    "site": "M20",
+    "fuel": "electricity",
+    "supplier": "SmartestEnergy Limited",
+    "account": "R000244845",
+    "payment_method": "",
+    "contract_end": "",
+    "monthly_budget": null,
+    "notes": ""
+   },
+   "M21|gas|Crown Gas and Power Ltd": {
+    "site": "M21",
+    "fuel": "gas",
+    "supplier": "Crown Gas and Power Ltd",
+    "account": "P025623A",
+    "payment_method": "",
+    "contract_end": "",
+    "monthly_budget": null,
+    "notes": ""
+   },
+   "MP|electricity|SSE Energy Solutions": {
+    "site": "MP",
+    "fuel": "electricity",
+    "supplier": "SSE Energy Solutions",
+    "account": "",
+    "payment_method": "",
+    "contract_end": "",
+    "monthly_budget": null,
+    "notes": ""
+   },
+   "MP|electricity|Pozitive Energy Ltd - 726018": {
+    "site": "MP",
+    "fuel": "electricity",
+    "supplier": "Pozitive Energy Ltd - 726018",
+    "account": "",
+    "payment_method": "",
+    "contract_end": "",
+    "monthly_budget": null,
+    "notes": ""
+   },
+   "MP|gas|British Gas": {
+    "site": "MP",
+    "fuel": "gas",
+    "supplier": "British Gas",
+    "account": "604354315",
+    "payment_method": "",
+    "contract_end": "",
+    "monthly_budget": null,
+    "notes": ""
+   }
+  },
+  "rules": {
+   "quiet_amber_days": 45,
+   "quiet_red_days": 75,
+   "backbill_days": 45,
+   "big": 3000.0,
+   "spike": 2.0
+  },
+  "source": "Xero bank feeds (daily_bank_*.csv), account 445 Light, Power, Heating and known energy suppliers. Water, waste and £5 admin lines left out."
+ },
  "prior_year": {
   "schema": 1,
   "year": 2025,
@@ -45388,8 +50080,8 @@
   "opening": 2044823.66,
   "inflow": 2084928.55,
   "inflow_30d": 3291992.44,
-  "outflow": 1680867.06,
-  "closing": 2448885.15,
+  "outflow": 1680867.09,
+  "closing": 2448885.12,
   "out_by_category": [
    {
     "category": "Payroll (net wages)",
@@ -45397,7 +50089,7 @@
    },
    {
     "category": "Supplier payment run",
-    "amount": 380877.59
+    "amount": 380877.62
    },
    {
     "category": "PAYE to HMRC",
@@ -45532,8 +50224,8 @@
    "opening": 2044823.66,
    "inflow": 5376920.99,
    "inflow_30d": 3291992.44,
-   "outflow": 4245908.8,
-   "closing": 3175835.85,
+   "outflow": 4245908.87,
+   "closing": 3175835.78,
    "out_by_category": [
     {
      "category": "Payroll (net wages)",
@@ -45541,7 +50233,7 @@
     },
     {
      "category": "Supplier payment run",
-     "amount": 915227.25
+     "amount": 915227.32
     },
     {
      "category": "PAYE to HMRC",
@@ -45728,7 +50420,8 @@
   "health",
   "ma",
   "bep",
-  "cash"
+  "cash",
+  "utilities"
  ],
  "tabs_next": [
   "accounts_payable",

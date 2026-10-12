@@ -522,6 +522,56 @@ def load_analysis(cfg: dict, period: str | None):
     return json.loads(cands[-1].read_text()) if cands else None
 
 
+def roll_bep_from_ma(cfg: dict, b: dict) -> None:
+    """Replace each break-even row's profit_to_date with the cumulative net profit from the
+    annual MA workbooks (every month on record, 2024 onward). No-op if the store is missing."""
+    fp = HERE / "ma_years.json"
+    if not fp.exists():
+        return
+    raw = json.loads(fp.read_text())
+    amap = {k: v for k, v in (cfg.get("ma_annual_code_aliases") or {}).items() if not k.startswith("_")}
+    rev = {v: k for k, v in amap.items()}          # board code -> workbook code
+    sites = raw.get("sites") or {}
+    latest = None
+    for code, r in ((row["code"], row) for row in b["rows"]):
+        key = rev.get(code, code)
+        if key not in sites:
+            key = code.replace(" ", "")
+        s = sites.get(key)
+        if not s:
+            continue
+        total, n, first, last = 0.0, 0, None, None
+        for y, yd in sorted(s.get("years", {}).items()):
+            for m, v in sorted((yd.get("months") or {}).items(), key=lambda kv: int(kv[0])):
+                if v.get("np") is None:
+                    continue
+                total += float(v["np"]); n += 1
+                ym = f"{y}-{int(m):02d}"
+                first = first or ym; last = ym
+        if n == 0:
+            continue
+        r["profit_to_date_monica"] = r.get("profit_to_date")
+        r["profit_to_date"] = round(total, 2)
+        r["profit_months"] = n
+        r["profit_from"] = first
+        r["profit_to"] = last
+        r["profit_source"] = f"MA workbooks, {n} months {first} to {last}"
+        if r.get("capex"):
+            r["bep_pct"] = round(r["profit_to_date"] / r["capex"] * 100, 2)
+        latest = max(latest or last, last)
+    if latest:
+        b["period"] = latest
+        b["as_at"] = date.today().isoformat()
+        b["profit_source"] = "Monica's annual MA workbooks (ma_years.json), net profit summed from January 2024 or opening"
+        b["source"] = f"profit from Monica's annual MA workbooks to {latest}; build cost from {b.get('source')}" \
+            if "annual MA workbooks" not in (b.get("source") or "") else b["source"]
+        b["note"] = ("Break-even is the cumulative management-accounts net profit a site has made since it "
+                     "opened (every month in Monica's annual workbooks, January 2024 onward, so 2024 counts "
+                     "for M9 and M10), against what it cost to build. Sites open before 2024 (M8, M9) have "
+                     "no workbook months before January 2024, so their earlier profit is not counted. "
+                     "Build costs are Monica's, from the monthly analysis.")
+
+
 def load_bep(cfg: dict):
     """The break-even store, plus any figures Michael has given directly that are not in
     the monthly analysis document. Those are merged in and marked with their source."""
@@ -544,6 +594,14 @@ def load_bep(cfg: dict):
         if code not in by_code:
             b["rows"].append(r)
             by_code[code] = r
+    # 8-Oct-2026: the profit side rolls forward every build from Monica's annual MA workbooks
+    # (ma_years.json), summing every month on record for the site from January 2024 to the
+    # latest closed month. That is Monica's own method (her M10 figure is exactly that sum),
+    # it keeps the tab moving month on month instead of freezing at the last analysis
+    # document, and it counts 2024 for M9 and M10 (Michael, 8-Oct-2026). Build costs still
+    # come from the analysis document or Michael's overrides. Monica's own profit figure is
+    # kept alongside for reference.
+    roll_bep_from_ma(cfg, b)
     # A site Monica records as fully recovered counts as having earned its whole build cost back,
     # even where the cumulative profit on record falls short of it (M9: her recovery note against
     # her own two figures). Without this the bar, the percentage and the totals tell three
@@ -1352,6 +1410,16 @@ def build(root: Path, today: date) -> dict:
         for f in cashrec["flags"]:
             if f["level"] == "red":
                 att.append(dict(level="red", company=f["code"], text=f["text"], tab="cash"))
+    # utilities (12-Oct-2026): gas and electricity per site, so no site gets hit with a year in one go again
+    try:
+        import utilities as _ut
+        utilities = _ut.block(root, cfg, companies, today, gaps)
+        for f in utilities["flags"]:
+            if f["level"] == "red":
+                att.append(dict(level="red", company=f["code"], text=f"{f['fuel'].title()}: {f['text']}", tab="utilities"))
+    except Exception as e:
+        utilities = None
+        gaps.append(dict(company="Group", text=f"Utilities tracker failed: {e}"))
     seen2 = set(); att2 = []
     for a in att:
         k = (a["company"], a["text"])
@@ -1376,11 +1444,12 @@ def build(root: Path, today: date) -> dict:
         mayears=mayears,
         cashrec=cashrec,
         bep=bep,
+        utilities=utilities,
         prior_year=prior_pl,
         target=revenue_target(cfg, store, prior_pl, gaps),
         projection=projection,
         gaps=gaps,
-        tabs_live=["today", "calendar", "health", "ma", "bep", "cash"],
+        tabs_live=["today", "calendar", "health", "ma", "bep", "cash", "utilities"],
         tabs_next=["accounts_payable", "receivables", "fpa", "reconciliation"],
     )
 
